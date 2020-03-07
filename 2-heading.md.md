@@ -128,7 +128,7 @@ Let's break things down to explain what's happening here since the twig code has
 * On line 2 we check whether a url was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in a `<a>` tag to turn the title into a link.  The **href** value for the link is `{{ heading.url }}`.  If no url is provided in the JSON file, we simply print the value of `{{ title }}`as plain text.
 * As part of the `class` attribute in line 1, we check whether there is a value for the modifier key, if there is we pass it as an additional css class to the already available `heading` class.
 
-## Compiling the code
+#### Compiling the code
 
 Repeat steps above for compiling code or if you have the watch task running, your Pattern Lab page should had automatically reloaded with the new changes.
 
