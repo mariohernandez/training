@@ -124,8 +124,8 @@ We just created an object for the heading with key/value **heading\_level, modif
 
 Let's break things down to explain what's happening here since the twig code has significantly changed:
 
-* Line 1 makes use of `heading.heading_level` to complete the number part of the heading.  If a value is not provided for `heading_level` in the JSON file, we are setting a default of `2`.  This will ensue that by default we will have a `<h2>` as the title, much better than &lt;h1&gt; as we had before.  This value can be changed per use case if needed.  Line 9 closes the heading tag the same way as line 1.
-* On line 2 we check whether a url was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in a `<a>` tag to turn the title into a link.  The href value for the link becomes `{{ heading.url }}`.  If no url is provided in the JSON file, we simply print the `{{ title }}`as plain text.
+* Line 1 makes use of `heading.heading_level` to complete the number part of the heading.  If a value is not provided for `heading_level` in the JSON file, we are setting a default of `2`.  This will ensue that by default we will have a `<h2>` as the title, much better than `<h1>` as we had before.  This value can be changed per use case if needed.  Line 9 closes the heading tag.
+* On line 2 we check whether a url was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in a `<a>` tag to turn the title into a link.  The **href** value for the link is `{{ heading.url }}`.  If no url is provided in the JSON file, we simply print the value of `{{ title }}`as plain text.
 * As part of the `class` attribute in line 1, we check whether there is a value for the modifier key, if there is we pass it as an additional css class to the already available `heading` class.
 
 ## Compiling the code
