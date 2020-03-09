@@ -2,7 +2,7 @@
 
 Following the [Atomic Design ](https://bradfrost.com/blog/post/atomic-web-design/)methodology we are going to build a simple component or pattern.  The Heading pattern is an atom which prints a string of text as the title for a page, paragraph, or other component.
 
-As we saw in the [Component Architecture](essentials/untitled-3.md) page, most components will need the following files:
+As we saw in the [Component Architecture]() page, most components will need the following files:
 
 | File type | Purpose |
 | :--- | :--- |
