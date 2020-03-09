@@ -14,7 +14,6 @@
 
 ## Building Components
 
-* [Heading Component](2-heading.md.md)
+* [Heading Component](heading.md)
 
 ## Integrating Components
-
