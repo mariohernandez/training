@@ -96,7 +96,7 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
-## Compiling the code
+### Compiling the code
 
 Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab.
 
