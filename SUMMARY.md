@@ -5,7 +5,7 @@
 
 ## Essentials
 
-* [Front-end tooling](essentials/untitled-1.md)
+* [Front-end tooling](essentials/component-architecture.md)
 * [Mediacurrent Theme Generator](essentials/untitled-1-1.md)
 * [Component Architecture](essentials/untitled-3.md)
 * [Drupal Best Practices](essentials/untitled-2.md)
@@ -17,4 +17,3 @@
 * [Heading Component](2-heading.md.md)
 
 ## Integrating Components
-
