@@ -15,7 +15,7 @@ The challenge we face is having control of the markup while adhering to Drupal's
 </article>
 ```
 
-We've declared a twig block (not the same as Drupal's blocks), in which we are passing the `card_content` variable to print some content. The block on its own does nothing. Content will be rendered normally even if we do nothing with the block. The advantages of the twig block come when it's time to integrate the card component with Drupal.
+We've declared a twig block \(not the same as Drupal's blocks\), in which we are passing the `card_content` variable to print some content. The block on its own does nothing. Content will be rendered normally even if we do nothing with the block. The advantages of the twig block come when it's time to integrate the card component with Drupal.
 
 ```php
 {% embed '@patterns/card/card.twig' with {
@@ -35,3 +35,4 @@ We've declared a twig block (not the same as Drupal's blocks), in which we are p
 ```
 
 This is a simple example of how we can use twig blocks to alter or update content before rendering. In this example we've added a new title above the `card_content` which the original component did not provide. There are so many other things we can do when we wrap things in twig blocks which gives us tremendous flexibility and control.
+

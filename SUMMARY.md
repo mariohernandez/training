@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Local Setup](misc/local-setup.md)
+* [Local Setup](local-setup.md)
 
 ## Essentials
 
@@ -14,7 +14,6 @@
 
 ## Building Components
 
-* [Heading Component](components/heading.md)
-* [Hero Component](components/hero.md)
+* [Heading Component](building-components/heading.md)
+* [Hero Component](building-components/hero.md)
 
-## Integrating Components
