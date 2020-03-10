@@ -1,19 +1,20 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Local Setup](local-setup.md)
+* [Local Setup](misc/local-setup.md)
 
 ## Essentials
 
-* [Front-end tooling](essentials/component-architecture.md)
-* [Mediacurrent Theme Generator](essentials/untitled-1-1.md)
-* [Component Architecture](essentials/untitled-3.md)
-* [Drupal Best Practices](essentials/untitled-2.md)
-* [Drupal Attributes](essentials/untitled-4.md)
-* [Twig Blocks](essentials/untitled-5.md)
+* [Front-end tooling](essentials/frontend-tooling.md)
+* [Mediacurrent Theme Generator](essentials/theme-generator.md)
+* [Component Architecture](essentials/component-architecture.md)
+* [Drupal Best Practices](essentials/drupal-best-practices.md)
+* [Drupal Attributes](essentials/drupal-attributes.md)
+* [Twig Blocks](essentials/twig-blocks.md)
 
 ## Building Components
 
-* [Heading Component](2-heading.md.md)
+* [Heading Component](components/heading.md)
+* [Hero Component](components/hero.md)
 
 ## Integrating Components

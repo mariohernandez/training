@@ -2,7 +2,7 @@
 
 Following the [Atomic Design ](https://bradfrost.com/blog/post/atomic-web-design/)methodology we are going to build a simple component or pattern.  The Heading pattern is an atom which prints a string of text as the title for a page, paragraph, or other component.
 
-As we saw in the [Component Architecture]() page, most components will need the following files:
+As we saw in the [Component Architecture](essentials/untitled-3.md) page, most components will need the following files:
 
 | File type | Purpose |
 | :--- | :--- |
@@ -24,12 +24,12 @@ Some components may also include:
 Let's start by first identifying the content for the component.   Since this is a title field, we only need a string of text.  We'll dive into more complex components in future exercises.
 
 {% hint style="info" %}
-**NOTE:**  All components will be created inside `src/patterns/components`.  
+**NOTE:**  All components will be created inside `src/patterns/components`.
 
 On a typical Drupal project the full path may look something like this: `<project-root>/web/themes/custom/<your-theme-name>/src/patterns/components/`
 {% endhint %}
 
-1. Inside _components_ create a new directory called **heading** 
+1. Inside _components_ create a new directory called **heading**
 2. Inside the _heading_ directory create a new file called **heading.json**
 3. Inside _heading.json_ add the following code:
 
@@ -78,9 +78,9 @@ While in your theme's root directory, run the following commands in your command
 
 `npm run watch`
 
-The **build** command above compiles all scss,  twig and js. files, and should build the new Heading component in Pattern Lab.  The **watch** command watches for changes to your code and automatically compiles them. This is great so you don't have to keep compiling your code every time.  
+The **build** command above compiles all scss,  twig and js. files, and should build the new Heading component in Pattern Lab.  The **watch** command watches for changes to your code and automatically compiles them. This is great so you don't have to keep compiling your code every time.
 
-At the bottom of the watch command you will notice a list of URLs.  In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000).  This will open Pattern Lab where you can find the Heading component.
+At the bottom of the watch command you will notice a list of URLs.  In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000).  This will open Pattern Lab where you can find the Heading pattern under components.
 
 ### Improving the Heading component
 
@@ -136,4 +136,3 @@ Repeat steps above for compiling code or if you have the watch task running, you
 
 * Try changing the heading level in `heading.json` to anything other than H2 and compile the code.
 * Inspect your code to see your changes to the Heading pattern.
-

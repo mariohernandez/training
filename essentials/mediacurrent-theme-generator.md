@@ -1,2 +1,0 @@
-# Mediacurrent Theme Generator
-
