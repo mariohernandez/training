@@ -5,15 +5,16 @@
 
 ## Essentials
 
-* [Front-end tooling](essentials/front-end-tooling.md)
-* [Mediacurrent Theme Generator](essentials/mediacurrent-theme-generator.md)
-* [Component Architecture](essentials/component-architecture.md)
-* [Drupal Best Practices](essentials/drupal-best-practices.md)
-* [Drupal Attributes](essentials/drupal-attributes.md)
-* [Twig Blocks](essentials/twig-blocks.md)
+* [Front-end tooling](essentials/untitled-1.md)
+* [Mediacurrent Theme Generator](essentials/untitled-1-1.md)
+* [Component Architecture](essentials/untitled-3.md)
+* [Drupal Best Practices](essentials/untitled-2.md)
+* [Drupal Attributes](essentials/untitled-4.md)
+* [Twig Blocks](essentials/untitled-5.md)
 
 ## Building Components
 
-* [Heading Component](building-components/heading.md)
-* [Hero Component](hero-component.md)
+* [Heading Component](2-heading.md.md)
+
+## Integrating Components
 
