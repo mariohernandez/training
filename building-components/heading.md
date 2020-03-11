@@ -136,3 +136,4 @@ Repeat steps above for compiling code or if you have the watch task running, you
 
 * Try changing the heading level in `heading.json` to anything other than H2 and compile the code.
 * Inspect your code to see your changes to the Heading pattern.
+

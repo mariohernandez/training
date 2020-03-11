@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Local Setup](misc/local-setup.md)
+* [Local Setup](local-setup.md)
 
 ## Essentials
 
@@ -16,5 +16,6 @@
 
 * [Heading Component](building-components/heading.md)
 * [Hero Component](building-components/hero.md)
-* [Include statements](essentials/includes.md)
-* [Card Component](building-components/card.md)
+* [Include statements](building-components/includes.md)
+* [Card Component](building-components/card-component.md)
+
