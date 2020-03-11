@@ -4,7 +4,17 @@ The Hero component is a more complex component because it contains more fields, 
 
 Whether you are building simple or complex components, the process for getting started is the same; create files for data, markup and styles. Let's do this with the hero component.
 
-First let's take a look at how this component looks so we can identify the different data fields we need. As we can see we need an `image` field, a `title` field, and a `button` or call to action.
+First let's take a look at how this component looks so we can identify the different data fields we need. 
+
+&lt;insert image here&gt;
+
+As we can see we need the following fields:
+
+* **image**: Hero image
+* **eyebrow**: A label or tagline
+* **title or heading:** Hero title
+* **body\_text:** Some teaser or description text
+* **button:** A call to action button
 
 ## Let's start
 
@@ -17,27 +27,32 @@ First let's take a look at how this component looks so we can identify the diffe
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/1400x787' alt='A wonderful image' />",
+  "eyebrow": {
+    "text": "Understanding the benefits",
+    "modifier": "hero__eyebrow"
+  },
   "heading": {
-    "title": "Scholar’s Edge has transitioned to Principal Funds",
+    "title": "Why be accessible?",
     "heading_level": "1",
     "modifier": "hero__title",
     "url": ""
   },
+  "body_text": "Accessibility lawsuits have more than tripled in the last few years, but it's not all bad news!",
   "cta": {
-    "text": "Find out what's changed",
+    "text": "Learn more about accessibility",
     "url": "#",
-    "modifier": ""
+    "modifier": "hero__cta"
   },
   "modifier": ""
 }
 ```
 
-As we did previously with the Heading component, we are using JSON to define the component's fields and add stock content to the component.
+Just as we did with the Heading component, we are using JSON to define the component's fields and add stock content to the component.  Our goal here is to reuse previously built components by nesting them into the hero to avoid code duplicate and improve maintenance of component by having a single source of code.
 
-* We created an `image` field with a random image,
-* then we created an object for the `heading` or title field.  Notice how the heading object structure matches that of the heading component.  This will help us reuse the heading compooonent more easily \(more on this later\),
-* we added a `cta` field which has a `text` property for the button's text and a `url` which will help us link the button to any page.
-* finally we are adding a `modifier` key so we have the option to pass a modifier class to the hero and update its look or behavior if needed.
+#### Some things to notice:
+
+* The `eyebrow`,  `heading`, and `cta` fields were declared as JSON objects with properties within them.  Typically these object's data structure matches the original components.  For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero.  When component's data structures match it makes it easier to nest components into other components.  More on this later.
+* Almost all the fields provide the ability to add a `modifier` css class \(i.e. `hero__*`\).  This is handy because it establishes a relationship between child and parent elements \(using the [BEM](https://css-tricks.com/bem-101/) methodology\), but it also facilitates styling those elements differently than the original components we will be referencing.
 
 ### Component's Markup
 
@@ -55,10 +70,25 @@ Now let's write some HTML for the component.
   {% endif %}
 
   <div class="hero__content">
+    {% if eyebrow %}
+      {%
+        include '@training_theme/eyebrow/eyebrow.twig' with {
+          "eyebrow": eyebrow
+        } only
+      %}
+    {% endif %}
     {% if heading %}
       {%
         include '@training_theme/heading/heading.twig' with {
           "heading": heading
+        } only
+      %}
+    {% endif %}
+
+    {% if body_text %}
+      {%
+        include '@training_theme/body-text/body-text.twig' with {
+          "body_text": body_text
         } only
       %}
     {% endif %}
@@ -68,7 +98,7 @@ Now let's write some HTML for the component.
         include '@training_theme/btn/btn.twig' with {
           "text": cta.text,
           "url": cta.url,
-          "modifier": ' hero__cta'
+          "modifier": cta.modifier
         } only
       %}
     {% endif %}
@@ -76,12 +106,16 @@ Now let's write some HTML for the component.
 </section>
 ```
 
-_In the interest of addressing the basics of component-building, we are going to exclude Drupal-specific elements. We will comeback later to enhace the Hero with those elements_.
+{% hint style="info" %}
+In the interest of addressing the basics of component-building, we are going to exclude Drupal-specific elements. We will comeback later to enhance the Hero with those elements.
+{% endhint %}
 
-* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore it should be named **hero**.  We do this by using the class of `hero`,
-* then we check whether there is an `image` available, and if there is, we print the `{{ image }}` variable within it s own div wrapper \(`<div class="hero__media">`\),
-* **here's is something new and cool**, we make use of Twig's `include` statement to include or nest the **Heading** component we built in the previous exercise.  This is extremely powerful and we will be talking more about it later.
-* Finally, we use another `include` statement to nest the button component which we have already built.
+#### Some things to notice:
+
+* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore it should be named **hero**.  We do this by using the class of `hero.`
+* For each field we want to print, we first check with an `if` statment whether there is content to print.  This is a good practice so we don't print empty HTML.
+* Notice how every field uses a css class that starts with `hero__`.  In some cases the class is declared in the JSON file, and in for other fields is done in the Twig code.  Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the previously built components into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicate code.
 
 ### Component's styles
 
