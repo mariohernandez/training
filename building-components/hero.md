@@ -1,10 +1,10 @@
 # Hero Component
 
-The Hero component is a more complex component because it contains more fields, logic and it also makes use of previously built components. With the Hero we will reuse other components by using twig's [include](https://twig.symfony.com/doc/2.x/tags/include.html) and [Embed](https://twig.symfony.com/doc/2.x/tags/embed.html) statements. More on this later.
+The Hero component is a more complex component because it contains more fields, logic and it also makes use of previously built components. With the Hero we will reuse other components by using twig's [include](https://twig.symfony.com/doc/2.x/tags/include.html) statements. More on this later.
 
 Whether you are building simple or complex components, the process for getting started is the same; create files for data, markup and styles.  Let's do this with the hero component.
 
-First let's take a look at how this component looks so we can identify the different data fields we need.  As we can see we need an image field, a title field, and a button or call to action.
+First let's take a look at how this component looks so we can identify the different data fields we need.  As we can see we need an `image` field, a `title` field, and a `button` or call to action.
 
 ## Let's start
 
@@ -77,7 +77,7 @@ Now let's write some HTML for the component.
 
 _In the interest of addressing the basics of component-building, we are going to exclude Drupal-specific elements.  We will comeback later to enhace the Hero with those elements_.
 
-* We're starting off with a `<section>` HTML5 tag.  Learn more about the [<section>](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore it should be named **hero**.  We do this by using the class of `hero`,
+* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore it should be named **hero**.  We do this by using the class of `hero`,
 * then we check whether there is an `image` available, and if there is, we print the `{{ image }}` variable within it s own div wrapper (`<div class="hero__media">`),
 * **here's is something new and cool**, we make use of Twig's `include` statement to include or nest the **Heading** component we built in the previous exercise.  This is extremely powerful and we will be talking more about it later.
 * Finally, we use another `include` statement to nest the button component which we have already built.

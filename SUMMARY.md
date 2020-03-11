@@ -16,3 +16,5 @@
 
 * [Heading Component](building-components/heading.md)
 * [Hero Component](building-components/hero.md)
+* [Include statements](essentials/includes.md)
+* [Card Component](building-components/card.md)
