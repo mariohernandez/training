@@ -24,3 +24,9 @@
   * [Twig template suggestions](integrating-components/component-integration/twig-template-suggestions.md)
 * [Hero Component](integrating-components/hero-component.md)
 
+## Drupal Backend
+
+* [Content types](drupal-backend/content-types.md)
+* [Paragraph types](drupal-backend/paragraph-types.md)
+* [Image styles](drupal-backend/image-styles.md)
+
