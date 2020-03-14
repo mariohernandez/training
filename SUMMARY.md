@@ -20,6 +20,7 @@
 
 ## Integrating Components
 
-* [Component Integration](integrating-components/component-integration.md)
+* [Before the Integration](integrating-components/component-integration.md)
+* [Twig template suggestions](integrating-components/twig-template-suggestions.md)
 * [Hero Component](integrating-components/hero-component.md)
 
