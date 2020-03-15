@@ -14,7 +14,6 @@ As we can see we need the following fields:
 * **eyebrow**: A label or tagline
 * **title or heading:** Hero title
 * **body\_text:** Some teaser or description text
-* **button:** A call to action button
 
 ## Let's start
 
@@ -38,11 +37,6 @@ As we can see we need the following fields:
     "url": ""
   },
   "body_text": "Accessibility lawsuits have more than tripled in the last few years, but it's not all bad news!",
-  "cta": {
-    "text": "Learn more about accessibility",
-    "url": "#",
-    "modifier": "hero__cta"
-  },
   "modifier": ""
 }
 ```
@@ -51,7 +45,7 @@ Just as we did with the Heading component, we are using JSON to define the compo
 
 #### Some things to notice:
 
-* The `eyebrow`,  `heading`, and `cta` fields were declared as JSON objects with properties within them.  Typically these object's data structure matches the original components.  For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero.  When component's data structures match it makes it easier to nest components into other components.  More on this later.
+* The `eyebrow` and `heading` fields were declared as JSON objects with properties within them.  Typically these object's data structure matches the original components.  For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero.  When component's data structures match it makes it easier to nest components into other components.  More on this later.
 * Almost all the fields provide the ability to add a `modifier` css class \(i.e. `hero__*`\).  This is handy because it establishes a relationship between child and parent elements \(using the [BEM](https://css-tricks.com/bem-101/) methodology\), but it also facilitates styling those elements differently than the original components we will be referencing.
 
 ### Component's Markup
@@ -89,16 +83,6 @@ Now let's write some HTML for the component.
       {%
         include '@training_theme/body-text/body-text.twig' with {
           "body_text": body_text
-        } only
-      %}
-    {% endif %}
-
-    {% if cta %}
-      {%
-        include '@training_theme/btn/btn.twig' with {
-          "text": cta.text,
-          "url": cta.url,
-          "modifier": cta.modifier
         } only
       %}
     {% endif %}
