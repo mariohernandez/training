@@ -23,6 +23,7 @@
 * [Before the Integration](integrating-components/component-integration/README.md)
   * [Twig template suggestions](integrating-components/component-integration/twig-template-suggestions.md)
 * [Hero Component](integrating-components/hero-component.md)
+* [Getting twig variables](integrating-components/getting-twig-variables.md)
 
 ## Drupal Backend
 
