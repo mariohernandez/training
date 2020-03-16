@@ -12,7 +12,7 @@ In the context of component-based theming, we are going to create a library for 
 **Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to make the CSS and Javascript we write for components.
 {% endhint %}
 
-## Structure of a library <a id="structure-of-a-library"></a>
+### Structure of a library
 
 In your editor, open `theme_name.libraries.yml` \(located in your theme's root\). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site \(i.e. font color, font-size, font-family, line-height, etc.\). The global library looks something like this:
 
@@ -47,7 +47,7 @@ There is a lot more to Drupal libraries and we encourage you to learn more about
 
 Libraries are great because Drupal only loads what we need when we need it to avoid having to load assets that our page or component may never use. This helps with the site's performance.
 
-**CLEAR DRUPAL'S CACHE**
+#### **Clear Drupal's cache**
 
 Don't forget to clear your caches when adding new libraries to your theme.
 
@@ -58,7 +58,7 @@ Don't forget to clear your caches when adding new libraries to your theme.
 drush cr
 ```
 
-## Attaching a library <a id="attaching-a-library"></a>
+### Attaching a library
 
 Now that the Hero component's library is ready, we need to make Drupal aware of it so it can use it.
 
