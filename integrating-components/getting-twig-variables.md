@@ -19,11 +19,25 @@ Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your d
 
 ![Example of kint output](../.gitbook/assets/kint.png)
 
-The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means you can expand each field and continue to expanding until you get to the value of the field.  See example below:
+The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means you can drill down each field until you get to the value of the field.  See example below:
 
 ![Example of expanded field\_eyebrow.](../.gitbook/assets/eyebrow.png)
 
-In the example above we expanded `field_eyebrow` until we get to the `value` property of it.  This shows us the actual value entered in Drupal for this field \(_A teaching website for everyone_\).  So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us by Kint.  In this example it would be `content.field_eyebrow`
+In the example above we expanded `field_eyebrow` until we get to the `value` property of it.  This shows us the actual value entered in Drupal for this field \(_A teaching website for everyone_\).  So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us by Kint.  In this example it would be 
 
-This is only a simple example of how to get the right field variables when integrating components.
+```php
+content.field_eyebrow.0['#context'].value
+```
+
+However, this is not necessarily best practice.  Although using the format above to get the field's value will work, there are some issues related to Drupal caching that can arise from this approach.  A better approach would be to use the [Twig Field Value](https://www.drupal.org/project/twig_field_value) module.  Using this module would allow us to type
+
+```php
+content.field_eyebrow|field_value
+```
+
+This will get us the same . value but it will do it in a responsible way without breaking Drupal caching.
+
+{% hint style="info" %}
+Further reading:  [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page).
+{% endhint %}
 

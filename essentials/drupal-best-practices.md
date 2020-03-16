@@ -10,7 +10,7 @@ There are other ways to integrate component with Drupal, such as the [UI Pattern
 
 * It’s best to try and loyally follow the atomic design approach as much as possible when creating components.
 * When at the molecule/organism level of your components, use twig **block tags** generously to help with future embeds of those components.  If in doubt, block it out.
-* Let Drupal render all fields at the theme level with little to no preprocessing. Use view modes as much as possible.
+* Let Drupal render all fields at the theme level with little to no pre-processing. Use view modes as much as possible.
 * Use modules that extend twig \([twig field value](https://www.drupal.org/project/twig_field_value), [twig tweak](https://www.drupal.org/project/twig_tweak), etc.\) when only the field value is required.
 * Create twig template files to help remove bloated field markup, and make use of twig’s extends statements to help streamline reuse of field templates.
 * Accommodate Drupal’s attributes object and title\_prefix/suffix variables when that’s necessary.
