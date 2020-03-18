@@ -41,6 +41,7 @@ For the CTA field, set the following configuration:
 Now that the Hero paragraph type is done, it's time to add it to a content type. Paragraphs on their own are useless. They need to be added to other entities such as a content type as an Entity Reference field.
 
 ### Adding the Hero to the Basic Page Content type
+
 Although we can add a paragraph type to any content type, for this exercise we will use the Basic Page content type.
 
 * From Drupal's Admin Toolbar, click **Structure \| Content Types**

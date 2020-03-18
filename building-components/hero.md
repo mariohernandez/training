@@ -38,7 +38,7 @@ As we can see we need the following fields:
     "url": ""
   },
   "body_text": "Accessibility lawsuits have more than tripled in the last few years, but it's not all bad news!",
-  "button": {
+  "cta": {
     "text": "More about accessibility?",
     "url": "#",
     "modifier": "hero__cta"
@@ -47,11 +47,11 @@ As we can see we need the following fields:
 }
 ```
 
-Just as we did with the Heading component, we are using JSON to define the component's fields and add stock content to the component.  Our goal here is to reuse previously built components by nesting them into the hero to avoid code duplicate and improve maintenance of component by having a single source of code.
+Just as we did with the Heading component, we are using JSON to define the component's fields and add stock content to the component. Our goal here is to reuse previously built components by nesting them into the hero to avoid code duplicate and improve maintenance of component by having a single source of code.
 
 #### Some things to notice:
 
-* The `eyebrow` and `heading` fields were declared as JSON objects with properties within them.  Typically these object's data structure matches the original components.  For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero.  When component's data structures match it makes it easier to nest components into other components.  More on this later.
+* The `eyebrow` `heading` and `cta` fields were declared as JSON objects with properties within them.  Typically these object's data structure matches the original components.  For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero.  When component's data structures match it makes it easier to nest components into other components.  More on this later.
 * Almost all the fields provide the ability to add a `modifier` css class \(i.e. `hero__*`\).  This is handy because it establishes a relationship between child and parent elements \(using the [BEM](https://css-tricks.com/bem-101/) methodology\), but it also facilitates styling those elements differently than the original components we will be referencing.
 
 ### Component's Markup
@@ -93,12 +93,12 @@ Now let's write some HTML for the component.
       %}
     {% endif %}
 
-    {% if call_to_action %}
+    {% if cta %}
       {%
         include '@training_theme/button/button.twig' with {
-          "text": call_to_action.text,
-          "url": call_to_action.url,
-          "modifier": call_to_action.modifier
+          "text": cta.text,
+          "url": cta.url,
+          "modifier": cta.modifier
         } only
       %}
     {% endif %}
@@ -142,3 +142,4 @@ While in your theme's root directory, run the following commands in your command
 This command combines both the `build` and `watch` tasks.
 
 In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
+
