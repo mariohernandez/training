@@ -6,7 +6,7 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's take a look at how this component looks so we can identify the different data fields we need.
 
-![Example of site&apos;s Card.](../.gitbook/assets/card.png)
+![Example of site&apos;s Card.](https://github.com/mariohernandez/training/tree/f5e3790f489d3dd815f23ed91142ea86399a2f34/.gitbook/assets/card.png)
 
 As we can see we need the following fields:
 
@@ -44,7 +44,7 @@ As we can see we need the following fields:
 }
 ```
 
-We're declaring 3 fields in the Card component: **image**, **body_text**, and **author**.
+We're declaring 3 fields in the Card component: **image**, **body\_text**, and **author**.
 
 ### Component's Markup
 
@@ -92,7 +92,7 @@ Now let's write some HTML for the component.
 #### Some things to notice:
 
 * Once again we are starting off with a `<section>` HTML5 tag.  This is the parent selector of the component and therefore it should be named **card**.  We do this by using the class of `card.`
-* We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper (i.e. `card card__inverse`).
+* We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper \(i.e. `card card__inverse`\).
 * For each field we want to print, we first check with an `if` statment whether there is content to print.  This is a good practice so we don't print empty HTML.
 * Notice how every field uses a css class that starts with `card__`.  In some cases the class is declared in the JSON file, and in for other fields is done in the Twig code.  Defining relationships between the parent elements and child elements by using the same namespace \(card\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
 * **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the previously built components into the card.
@@ -122,3 +122,4 @@ While in your theme's root directory, run the following commands in your command
 This command combines both the `build` and `watch` tasks.
 
 In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Card component under components.
+

@@ -35,7 +35,7 @@ However, this is not necessarily best practice.  Although using the format above
 content.field_eyebrow|field_value
 ```
 
-This will get us the same . value but it will do it in a responsible way without breaking Drupal caching.
+This will get us the same value but it will do it in a responsible way without breaking Drupal caching.
 
 {% hint style="info" %}
 Further reading:  [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page).
