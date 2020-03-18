@@ -14,7 +14,7 @@ As we can see we need the following fields:
 * **eyebrow**: A label or tagline
 * **body\_text**: Some teaser or description text
 * **image**: Hero image
-* **call to action**: A call to action button/link
+* **call to action \(cta\)**: A call to action button/link
 
 ## Let's start
 
