@@ -1,10 +1,10 @@
 # Paragraph types
 
-## Hero
+## Hero & Card
 
-There are many ways to build the Hero in Drupal. One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse the hero on any page we need to.
+There are many ways to build the Hero and Card in Drupal. One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse these components on any page we need to.
 
-Using the table below, create a new paragraph type called **Hero**
+Using the instructions below, first create a new paragraph type for the **Hero** and later, another for the **Card**
 
 * From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
 * Click the **Add paragraph type** button
@@ -12,6 +12,7 @@ Using the table below, create a new paragraph type called **Hero**
   | Label | Machine name |
   | :--- | :--- |
   | Hero | `hero` |
+  | Card | `card` |
 
 * Click the **Save and manage fields** button
 
@@ -19,13 +20,16 @@ Add the following fields and settings to the paragraph type:
 
 **NOTE:**: All fields use `1` as the **Allowed Number of values**.
 
-| Field label | Machine name | Field type |
-| :--- | :--- | :--- |
-| Title | `field_title` | Text \(Plain\) |
-| Eyebrow | `field_eyebrow` | Text \(Plain\) |
-| Body | `field_body` | Text \(Plain, long\) |
-| Image | `field_image` | Media Reference |
-| Call To Action | `field_cta` | Link |
+| Field label | Machine name | Field type | Component |
+| :--- | :--- | :--- | :--- |
+| Title | `field_title` | Text \(Plain\) | hero/card |
+| Eyebrow | `field_eyebrow` | Text \(Plain\) | hero |
+| Body | `field_body` | Text \(Plain, long\) | hero/card |
+| Image | `field_image` | Media Reference | hero/card |
+| Call To Action | `field_cta` | Link | hero |
+| Name | `field_name` | Text \(Plain\) | card |
+| Role | `field_role` | Text \(Plain\) | card |
+| City | `field_city` | Text \(Plain\) | card |
 
 For the Image field, set the following configuration:
 
@@ -36,11 +40,11 @@ For the CTA field, set the following configuration:
 * **Allowed link type**: _Both internal and external links_
 * **Allowed link text**: _Required_
 
-## Putting the Hero paragraph type to use
+## Putting the Hero & Card paragraphs type to use
 
 Now that the Hero paragraph type is done, it's time to add it to a content type. Paragraphs on their own are useless. They need to be added to other entities such as a content type as an Entity Reference field.
 
-### Adding the Hero to the Basic Page Content type
+### Adding the Hero & Card to the Basic Page Content type
 
 Although we can add a paragraph type to any content type, for this exercise we will use the Basic Page content type.
 
@@ -52,9 +56,10 @@ Although we can add a paragraph type to any content type, for this exercise we w
   | Label | Machine name |
   | :--- | :--- |
   | Hero | `field_hero` |
+  | Card | `field_card` |
 
 * Click the **Save and continue** button
 * Change _Allowed number of values\__ to **Limited - 1**
-* In the _Reference Type_ section, choose **Hero** under _Paragraph type_
+* In the _Reference Type_ section, choose **Hero** or **Card** under _Paragraph type_
 * Click the **Save settings** button
 
