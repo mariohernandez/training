@@ -1,11 +1,12 @@
-# Paragraph Types
+# Paragraph types
 
 ## Hero
 
-There are many ways to build the Hero in Drupal.  One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse the hero on any page we need to.
+There are many ways to build the Hero in Drupal. One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse the hero on any page we need to.
 
 Using the table below, create a new paragraph type called **Hero**
-* From Drupal's Admin Toolbar, click **Structure | Paragraph Types**
+
+* From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
 * Click the **Add paragraph type** button
 
   | Label | Machine name |
@@ -27,18 +28,21 @@ Add the following fields and settings to the paragraph type:
 | Call To Action | `field_cta` | Link |
 
 For the Image field, set the following configuration:
+
 * **Media type**: `image`
 
 For the CTA field, set the following configuration:
+
 * **Allowed link type**: _Both internal and external links_
 * **Allowed link text**: _Required_
 
 ## Putting the Hero paragraph type to use
-Now that the Hero paragraph type is done, it's time to add it to a content type.  Paragraphs on their own are useless.  They need to be added to other entities such as a content type as an Entity Reference field.
+
+Now that the Hero paragraph type is done, it's time to add it to a content type. Paragraphs on their own are useless. They need to be added to other entities such as a content type as an Entity Reference field.
 
 ### Adding the Hero to the Basic Page Content type
 
-* From Drupal's Admin Toolbar, click **Structure | Content Types**
+* From Drupal's Admin Toolbar, click **Structure \| Content Types**
 * Click the **Manage fields** button next to **Basic Page**
 * Click the **Add field** button
 * Under the _Add a new field_ dropdown, scroll to the **Reference Revisions** section and choose **Paragraph**
@@ -48,6 +52,7 @@ Now that the Hero paragraph type is done, it's time to add it to a content type.
   | Hero | `field_hero` |
 
 * Click the **Save and continue** button
-* Change _Allowed number of values__ to **Limited - 1**
+* Change _Allowed number of values\__ to **Limited - 1**
 * In the _Reference Type_ section, choose **Hero** under _Paragraph type_
 * Click the **Save settings** button
+
