@@ -18,13 +18,14 @@
 * [Hero Component](building-components/hero.md)
 * [Include statements](building-components/includes.md)
 * [Card Component](building-components/card.md)
+* [Component Variations](building-components/component-variations.md)
 
 ## Integrating Components
 
 * [Before the Integration](integrating-components/component-integration/README.md)
   * [Twig template suggestions](integrating-components/component-integration/twig-template-suggestions.md)
 * [Hero Component](integrating-components/hero-component.md)
-* [Getting twig variables](integrating-components/getting-twig-variables.md)
+* [Getting Twig Variables](integrating-components/getting-twig-variables.md)
 * [Drupal Libraries](integrating-components/drupal-libraries.md)
 
 ## Drupal Backend
@@ -32,4 +33,3 @@
 * [Content types](drupal-backend/content-types.md)
 * [Paragraph types](drupal-backend/paragraph-types.md)
 * [Image styles](drupal-backend/image-styles.md)
-
