@@ -28,7 +28,7 @@ Add the following fields and settings to the paragraph type:
 | Image | `field_image` | Media Reference | hero/card |
 | Call To Action | `field_cta` | Link | hero |
 | Name | `field_name` | Text \(Plain\) | card |
-| Role | `field_role` | Text \(Plain\) | card |
+| Job title | `field_job_title` | Text \(Plain\) | card |
 | City | `field_city` | Text \(Plain\) | card |
 
 For the Image field, set the following configuration:
