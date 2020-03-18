@@ -17,6 +17,7 @@
 * [Heading Component](building-components/heading.md)
 * [Hero Component](building-components/hero.md)
 * [Include statements](building-components/includes.md)
+* [Card Component](building-components/card.md)
 
 ## Integrating Components
 
@@ -31,4 +32,3 @@
 * [Content types](drupal-backend/content-types.md)
 * [Paragraph types](drupal-backend/paragraph-types.md)
 * [Image styles](drupal-backend/image-styles.md)
-
