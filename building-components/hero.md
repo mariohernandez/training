@@ -4,16 +4,17 @@ The Hero component is a more complex component because it contains more fields, 
 
 Whether you are building simple or complex components, the process for getting started is the same; create files for data, markup and styles. Let's do this with the hero component.
 
-First let's take a look at how this component looks so we can identify the different data fields we need. 
+First let's take a look at how this component looks so we can identify the different data fields we need.
 
 ![Example of site&apos;s hero.](../.gitbook/assets/hero.png)
 
 As we can see we need the following fields:
 
-* **image**: Hero image
+* **title or heading**: Hero title
 * **eyebrow**: A label or tagline
-* **title or heading:** Hero title
-* **body\_text:** Some teaser or description text
+* **body\_text**: Some teaser or description text
+* **image**: Hero image
+* **call to action**: A call to action button/link
 
 ## Let's start
 
@@ -37,6 +38,11 @@ As we can see we need the following fields:
     "url": ""
   },
   "body_text": "Accessibility lawsuits have more than tripled in the last few years, but it's not all bad news!",
+  "button": {
+    "text": "More about accessibility?",
+    "url": "#",
+    "modifier": "hero__cta"
+  },
   "modifier": ""
 }
 ```
@@ -86,6 +92,16 @@ Now let's write some HTML for the component.
         } only
       %}
     {% endif %}
+
+    {% if call_to_action %}
+      {%
+        include '@training_theme/button/button.twig' with {
+          "text": call_to_action.text,
+          "url": call_to_action.url,
+          "modifier": call_to_action.modifier
+        } only
+      %}
+    {% endif %}
   </div>
 </section>
 ```
@@ -126,4 +142,3 @@ While in your theme's root directory, run the following commands in your command
 This command combines both the `build` and `watch` tasks.
 
 In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
-
