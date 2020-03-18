@@ -2,13 +2,17 @@
 
 ## Hero
 
-There are many ways to build the hero in Drupal.  To keep things simple we will use a paragraph type in which we will add all the fields we identified when building the Hero component in Pattern Lab.
+There are many ways to build the Hero in Drupal.  One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse the hero on any page we need to.
 
-Using the table below, create a new paragraph type called **Hero**.
+Using the table below, create a new paragraph type called **Hero**
+* From Drupal's Admin Toolbar, click **Structure | Paragraph Types**
+* Click the **Add paragraph type** button
 
-| Label | Machine name |
-| :--- | :--- |
-| Hero | `hero` |
+  | Label | Machine name |
+  | :--- | :--- |
+  | Hero | `hero` |
+  
+* Click the **Save and manage fields** button
 
 Add the following fields and settings to the paragraph type:
 
