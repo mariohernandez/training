@@ -1,4 +1,4 @@
-# Getting twig variables
+# Getting Twig Variables
 
 ### Discovering and inspecting variables in Twig templates
 
