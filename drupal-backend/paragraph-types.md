@@ -11,22 +11,24 @@ Using the table below, create a new paragraph type called **Hero**
   | Label | Machine name |
   | :--- | :--- |
   | Hero | `hero` |
-  
+
 * Click the **Save and manage fields** button
 
 Add the following fields and settings to the paragraph type:
 
+**NOTE:**: All fields use `1` as the **Allowed Number of values**.
+
 | Field label | Machine name | Field type |
 | :--- | :--- | :--- |
 | Title | `field_title` | Text \(Plain\) |
-| Eyebrow | `field_eyebrow` | Views Reference |
-| Body | `field_body` | Views Reference |
-| Image | `field_image` | Views Reference |
-| Button | `field_button` | Views Reference |
+| Eyebrow | `field_eyebrow` | Text \(Plain\) |
+| Body | `field_body` | Text \(Plain, long\) |
+| Image | `field_image` | Media Reference |
+| Call To Action | `field_cta` | Link |
 
-For the Movie list view field, set the following configuration:
+For the Image field, set the following configuration:
+* **Media type**: `image`
 
-| Type to reference | Default Value | View Display | Preselect view option |
-| :--- | :--- | :--- | :--- |
-| View | Movie List view, List via Term ID | Block | Movie list |
-
+For the CTA field, set the following configuration:
+* **Allowed link type**: _Both internal and external links_
+* **Allowed link text**: _Required_
