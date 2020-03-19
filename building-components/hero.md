@@ -16,6 +16,8 @@ As we can see we need the following fields:
 * **image**: Hero image
 * **call to action \(cta\)**: A call to action button/link
 
+_Ignore the header/navigation_.
+
 ## Let's start
 
 ### Component's stock content

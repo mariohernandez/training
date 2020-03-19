@@ -25,12 +25,13 @@
 
 * [Before the Integration](integrating-components/component-integration/README.md)
   * [Twig template suggestions](integrating-components/component-integration/twig-template-suggestions.md)
-* [Hero Component](integrating-components/hero-component.md)
-* [Getting Twig Variables](integrating-components/getting-twig-variables.md)
+  * [Getting Twig variables](integrating-components/component-integration/hero-component.md)
+* [Integrating the Hero](integrating-components/getting-twig-variables.md)
 * [Drupal Libraries](integrating-components/drupal-libraries.md)
 
 ## Drupal Backend
 
+* [Before building the back-end](drupal-backend/before-building-the-back-end.md)
 * [Content types](drupal-backend/content-types.md)
 * [Paragraph types](drupal-backend/paragraph-types.md)
 * [Image styles](drupal-backend/image-styles.md)

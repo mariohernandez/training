@@ -1,43 +1,45 @@
-# Getting Twig Variables
+# Integrating the Hero
 
-### Discovering and inspecting variables in Twig templates
+Now it's time to begin the integration process for the Hero component.
 
-Earlier we covered how to enable twig debugging in order to identify the right template suggestions for our components.  Twig debugging also means [discovering and inspecting twig variables](https://www.drupal.org/docs/8/theming/twig/discovering-and-inspecting-variables-in-twig-templates) available within the scope of the twig template we are working with.
-
-In addition to enabling Twig debugging, we need the [devel module](https://www.drupal.org/project/devel) which provides tools to help us identify the right variables in our templates.  One of these tools is **Kint**.  Kint provides a nice user interface to print content arrays.  This makes it easy for developers to see all available variables for the content currently being rendered on the page.
-
-### Debugging with Kint
-
-Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your debugging data in the absolutely best way possible. So let's say you have some data in Drupal and you need to get more data out of it, but you don’t know how the data is structured until you poke around inside it.
-
-### Using Kint
-
-* Before you can use Kint, you need to enable the **devel** and **devel\_kint** modules \(both part of the devel module\)
-* In the twig template you wish to get variables for \(i.e. `paragraph--hero.html.twig`\), type `{{ kint(content) }}`
-* Clear Drupal's cache and reload the page
-* You should see output like the one below:
-
-![Example of kint output](../.gitbook/assets/kint.png)
-
-The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means you can drill down each field until you get to the value of the field.  See example below:
-
-![Example of expanded field\_eyebrow.](../.gitbook/assets/eyebrow.png)
-
-In the example above we expanded `field_eyebrow` until we get to the `value` property of it.  This shows us the actual value entered in Drupal for this field \(_A teaching website for everyone_\).  So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us by Kint.  In this example it would be 
+1. Open `/src/templates/paragraphs/paragraph--hero.html.twig` in your text editor
+2. Remove all code in the file but leave all comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
+3. Add the following code at the bottom of the template:
 
 ```php
-content.field_eyebrow.0['#context'].value
+{% set rendered_content = content|render %}
+
+{%
+  set hero_title = {
+    heading_level: '1',
+    modifier: ' hero__title',
+    title: content.field_title|render|trim is not empty ? content.field_title,
+    url: ''
+  }
+%}
+
+{%
+  include '@theme_name/hero/hero.twig' with {
+    attributes: attributes,
+    title_prefix: title_prefix,
+    title_suffix: title_suffix,
+    image: content.field_image|render|trim is not empty ? content.field_image,
+    eyebrow: content.field_eyebrow|render|trim is not empty ? content.field_eyebrow,
+    heading: hero_title
+    body: content.field_body|render|trim is not empty ? content.field_body
+  } only
+%}
 ```
 
-However, this is not necessarily best practice.  Although using the format above to get the field's value will work, there are some issues related to Drupal caching that can arise from this approach.  A better approach would be to use the [Twig Field Value](https://www.drupal.org/project/twig_field_value) module.  Using this module would allow us to type
+Let's go over what we are doing here:
 
-```php
-content.field_eyebrow|field_value
-```
+* First, as mentioned in [Drupal Best Practices](https://mariohernandez.gitbook.io/training/essentials/drupal-best-practices#passing-fields-values-to-components), we're triggering a full render of the content array variable.
+* Notice how with some fields we are making use of the `field_value` filter which is provided by the [Twig Field Value](https://www.drupal.org/project/twig_field_value) module to pass in the raw value of that field. Using this approach for pulling individual field values from the field's array is the recommended approach to ensure data caching is not compromised.
+* Next, we are setting variable for the title \(`hero_title`\).  While we could do this in the include statement, doing it outside of the include makes things more readable and cleaner.
+* Next we use an `include` twig statement to integrate the Hero component. In the include we are mapping all the Hero component's fields with Drupal's fields. We also pass in Drupal-specific items such as _title\_prefix_, _title\_suffix_, and _attributes_.
+* Also notice that we are using `|render|trim is not empty ?` which is a technique for checking that a field is not empty before printing it.  [Read this thread](https://www.drupal.org/project/drupal/issues/2547559) for this and other similar techniques.
 
-This will get us the same value but it will do it in a responsible way without breaking Drupal caching.
+### How do we get the right Drupal field variables?
 
-{% hint style="info" %}
-Further reading:  [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page).
-{% endhint %}
+If we clear Drupal's cache and reload the page we should see the Hero in Drupal inheriting all the styles and markup from the component in Pattern Lab.  But how did we guess the right field variables above? and more importantly, how do we get the field variables?  Next we will learn exactly how to do this.
 
