@@ -1,6 +1,6 @@
 # Card variations
 
-Probably the first thing you should look at  to determine if a component is a candidate to create variations of, is the data fields, and second, the component's markup.
+Probably the first thing you should look at  to determine if a component is a candidate for variations, is the data fields, and second, the component's markup.
 
 Here's what the markup for the original Card component looks like:
 
@@ -40,7 +40,7 @@ Here's what the markup for the original Card component looks like:
 </section>
 ```
 
-Visually we know the 3 different variations looks similar, however, if we pay close attention we will notice that the data fields among some of the variations are different.  It is a good practice to create your original component with the most elements possible and use the variations to create the least complicated versions of the component.
+Visually we know the 3 different variations looks similar, however, if we pay close attention we will notice that the data fields among some of the variations are different.  In this particular case although some of the fields may be different, I feel we have enough of shared attributes on the variations that we should have no problem going that route.  Let's start!
 
 ### Creating the Card Inverse variation
 
@@ -48,9 +48,9 @@ Visually we know the 3 different variations looks similar, however, if we pay cl
 
 We can see that the overall layout of the inverse version of the component lends itself nicely to a variation.  However, we see that some of the fields found in the original card are not present here \(title and Author info\), and there is also a new field in this variation that is not part of the original card \(button\).
 
-Before we can create a new variation, we need to make some updates to the original Card component so it is easier to adapt to new variations.
+Before we can create a new variation, we need to make some updates to the original Card component so it is easier to adapt it to new variations.
 
-### Updating the Card component
+### Updating the original Card component
 
 Some variations of the Card can be accomplish by simply passing a modifier/CSS class, but others will require a little more work and will also need the use of [Twig Blocks](../essentials/twig-blocks.md), which we discussed before.
 
@@ -62,13 +62,13 @@ If you look at the [Card's JSON](https://mariohernandez.gitbook.io/training/buil
 <section class="card{{ modifier ? ' ' ~ modifier }}">
 ```
 
-The part `{{ modifier ? ' ' ~ modifier }}` is basically a conditional statement asking "Is there a value for modifer in JSON?  if so, print it here along with the class of `card`, but add an empty space in between the two classes.  So if the value for modifier in JSON is say, `card--inverse`, the line above will look like this when it is rendered in the browser:
+The part `{{ modifier ? ' ' ~ modifier }}` is basically a conditional statement asking "Is there a value for modifier in JSON?  if so, print it here along with the class of `card`, but add an empty space in between the two classes.  For example, if the value for modifier in JSON is, `card--inverse`, when the Card is rendered in the browser the section wrapper will now look like this:
 
 ```php
 <section class="card card--inverse">
 ```
 
-Now with this new class available, we can do all kinds of changes to the card variation without affecting the original card.  A couple of simple changes we can make to the inverse card variation is changing the card's background color from cyan to white, and change the text color from white to gray as you see in the Card image above.  
+Now with this new class available, we can do all kinds of changes to the card variation without affecting the original Card.  A couple of simple changes we can make to the inverse card variation are changing the card's background color from cyan to white, and change the text color from white to gray as you see in the Card image above.  
 
 Now let's see how we can add the button and also remove the title in a way that does not affect the original Card component.
 
