@@ -34,5 +34,5 @@ We've declared a twig block \(not the same as Drupal's blocks\), in which we are
 {% endembed %}
 ```
 
-This is a simple example of how we can use twig blocks to alter or update content before rendering. In this example we've added a new title above the `card_content` which the original component did not provide. There are so many other things we can do when we wrap things in twig blocks which gives us tremendous flexibility and control.
+This is a simple example of how we can use twig blocks to alter or update content before rendering. In this example we've added a new title above the `card_content` which the original component did not provide. There are so many other things we can do when we wrap things in twig blocks which gives us tremendous flexibility and control.  We will see other examples throughout this training.
 

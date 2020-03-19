@@ -19,6 +19,7 @@
 * [Include statements](building-components/includes.md)
 * [Card Component](building-components/card.md)
 * [Component Variations](building-components/component-variations.md)
+* [Card variations](building-components/card-variations.md)
 
 ## Integrating Components
 
