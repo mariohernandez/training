@@ -63,3 +63,5 @@ Although we can add a paragraph type to any content type, for this exercise we w
 * In the _Reference Type_ section, choose **Hero** or **Card** under _Paragraph type_
 * Click the **Save settings** button
 
+We'll use the Basic Page content type shortly to create a new hero in our site.
+

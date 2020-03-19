@@ -1,6 +1,6 @@
 # Before the Integration
 
-Before we beging integrating components with Drupal, there are some preparation to be done and some practices to understand.
+Before we begin integrating components with Drupal, there are some preparation to be done and some practices to understand.
 
 ### What is component integration?
 

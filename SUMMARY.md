@@ -32,7 +32,6 @@
 ## Drupal Backend
 
 * [Before building the back-end](drupal-backend/before-building-the-back-end.md)
-* [Content types](drupal-backend/content-types.md)
 * [Paragraph types](drupal-backend/paragraph-types.md)
 * [Image styles](drupal-backend/image-styles.md)
 
