@@ -74,7 +74,78 @@ Now let's see how we can add the button and also remove the title in a way that 
 
 #### Twig Blocks approach
 
-So the idea of Twig Blocks is to place them on areas or fields you think may change from variation to variation.  Let's start
+So the idea of Twig Blocks is to place them on areas or fields you think may change from variation to variation.  
+
+Before we get started, let's discuss how to create component variations in Pattern Lab.  [Pattern Lab uses Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variations of components.  Let's take a look at an example of how pseudo patterns work.
+
+This is the current structure of the card component
+
+```text
+|--card
+|  |-- card.scss
+|  |-- card.twig
+|  |-- card.json
+```
+
+* To create a new pseudo pattern for the card variation we create a new Twig file  with the following name: `card~inverse.twig` \(notice the tilde in the file name\).
+* Next we create a new JSON file with the following name `card~inverse.json`.  The structure should now look like this:
+
+```text
+|--card
+|  |-- card.scss
+|  |-- card.twig
+|  |-- card.json
+|  |-- card~inverse.twig
+|  |-- card~inverse.json
+```
+
+* Now let's copy the content of `card.json` into `card~inverse.json`
+* Since the inverse version of the Card does not use a Title or Author info, let's remove those fields from `card~inverse.json`
+* When we built the Card component we wrapped each field in Twig inside an `if` statement.  This means that if a particular field is not available in the JSON file, that field and its wrapper will not be printed at all.  This addresses removing the Title field in the Card Inverse variation since we are not providing that data.  The same applies to the Author info, since we are not providing those fields in JSON, they will not be rendered in the Inverse card.
+* Now how do we add the CTA field to the inverse card since it does not exist in the original Card component?  This is where Twig Blocks come in
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+<section class="card{{ modifier ? ' ' ~ modifier }}">
+  {% if image %}
+    <div class="card__media">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  <div class="card__content">
+    {% if title %}
+      {%
+        include '@training_theme/heading/heading.twig' with {
+          "heading": heading
+        } only
+      %}
+    {% endif %}
+
+    {% if body_text %}
+      {%
+        include '@training_theme/body-text/body-text.twig' with {
+          "body_text": body_text
+        } only
+      %}
+    {% endif %}
+
+    {% if author %}
+      <cite class="card__author">
+        <p class="card__author--name">{{ author.name }}</p>
+        <p class="card__author--job-title">{{ author.job_title }}</p>
+        <p class="card__author--city">{{ author.city }}</p>
+      </cite>
+    {% endif %}
+
+    {% block card_cta %}
+    {% endblock %}
+  </div>
+</section>
+```
+{% endtab %}
+{% endtabs %}
 
 
 
