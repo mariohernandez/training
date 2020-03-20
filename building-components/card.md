@@ -54,7 +54,8 @@ Now let's write some HTML for the component.
 2. Inside `card.twig` add the following code:
 
 ```php
-<section class="card{{ modifier ? ' ' ~ modifier }}">
+<section class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
   {% if image %}
     <div class="card__media">
       {{ image }}
@@ -92,7 +93,8 @@ Now let's write some HTML for the component.
 #### Some things to notice:
 
 * Once again we are starting off with a `<section>` HTML5 tag.  This is the parent selector of the component and therefore it should be named **card**.  We do this by using the class of `card.`
-* We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper \(i.e. `card card__inverse`\).
+* We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper \(i.e. `card card__inverse`\). 
+* As we did with the Hero, we are passing the `attributes` array which will be handy when we integrate the compoonent with Drupal.  Moe on this later.
 * For each field we want to print, we first check with an `if` statment whether there is content to print.  This is a good practice so we don't print empty HTML.
 * Notice how every field uses a css class that starts with `card__`.  In some cases the class is declared in the JSON file, and in for other fields is done in the Twig code.  Defining relationships between the parent elements and child elements by using the same namespace \(card\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
 * **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the previously built components into the card.
@@ -121,5 +123,5 @@ While in your theme's root directory, run the following commands in your command
 
 This command combines both the `build` and `watch` tasks.
 
-In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Card component under components.
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Card component under components.
 
