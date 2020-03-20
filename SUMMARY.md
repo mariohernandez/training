@@ -28,10 +28,10 @@
 * [Image styles](extras/image-styles.md)
 
 ## Advanced Topics
-* [Card Component](advanced-topics/card.md)
+* [Quote Component](advanced-topics/quote.md)
 * [Component Variations](advanced-topics/component-variations.md)
-* [Card Variations](advanced-topics/card-variations.md)
-* [Integrating the Card](advanced-topics/integrating-the-card.md)
+* [Quote Variations](advanced-topics/quote-variations.md)
+* [Integrating the Quote](advanced-topics/integrating-the-quote.md)
 * [Component collections](advanced-topics/component-collections.md)
 
 ## Resources

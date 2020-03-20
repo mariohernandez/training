@@ -5,13 +5,13 @@ In Drupal's twig templates you'll often see an attributes variable being output 
 In some cases this may not be an issue for you, but in general it's best to plan to accommodate those Drupal-specific variables in your component markup so that when you integrate Drupal content into your components, other features can be available too. Since the attributes variable can include class, id, and data attributes in one variable, we need to make sure we only combine Drupal’s classes with ours, and let the other attributes render without Drupal classes. This can be accomplished on the main wrapper of the component template.
 
 ```php
-<article class="card
+<article class="quote
   {{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
   {% if cover_image %}
-    <div class="card__image">
+    <div class="quote__image">
       {{ image }}
     </div>
   {% endif %}

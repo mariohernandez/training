@@ -7,18 +7,18 @@ Components are typically saved in a project's theme and although they will work 
 |--src
 |  |--patterns
 |     |--components
-|        |--card
-|           |-- card.js
-|           |-- card.md
-|           |-- card.scss
-|           |-- card.twig
-|           |-- card.yml or .json
+|        |--quote
+|           |-- quote.js
+|           |-- quote.md
+|           |-- quote.scss
+|           |-- quote.twig
+|           |-- quote.yml or .json
 +
 ```
 
 A component is typically broken down in four parts:
 
-* **Markup**: Markup or HTML for a component is written in Twig templates, Drupal's new templating engine. Naming convention for a component twig template looks like this: card.twig \(where card is the name of the component\).
+* **Markup**: Markup or HTML for a component is written in Twig templates, Drupal's new templating engine. Naming convention for a component twig template looks like this: quote.twig \(where quote is the name of the component\).
 * **Data**: For the purpose of the style-guide, we need dummy or stock data, which is normally provided in YAML or JSON format.
 * **Styles**: These are written in CSS or SCSS.
 * **Behavior/interaction**: The component's behaviors are usually handled with JavaScript.

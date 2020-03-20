@@ -2,17 +2,17 @@
 
 Component variations are instances of a component with minor or big changes. Component variations are a great way to create different versions of a component without duplicating code by rebuilding components from scratch.
 
-Let's take the Card component for example. Here are three different ways in which this component will be displayed:
+Let's take the Quote component for example. Here are three different ways in which this component will be displayed:
 
-![Default Card component.](../.gitbook/assets/card.png)
+![Default Quote component.](../.gitbook/assets/quote.png)
 
-![White Card variation](../.gitbook/assets/card-white.png)
+![White Quote variation](../.gitbook/assets/quote-white.png)
 
-![Reverse Card variation](../.gitbook/assets/card-oposite.png)
+![Reverse Quote variation](../.gitbook/assets/quote-oposite.png)
 
 ## Planning for component variations
 
-Looking at the 3 cards above, we see that they are practically the same card component but with changes for each variation. There are many factors that determine if a component could be used as the base for variations.
+Looking at the 3 quotes above, we see that they are practically the same quote component but with changes for each variation. There are many factors that determine if a component could be used as the base for variations.
 
 * Does the proposed variation have the overall look and feel of the original component?
 * Are there common patterns \(fields, markup, layout, etc.\) that can facilitate a variation vs. a whole new component?
@@ -21,5 +21,5 @@ Looking at the 3 cards above, we see that they are practically the same card com
 
 These are questions you should ask yourself before deciding to create component variations. Although technically there are ways a component variation can be created, this does not mean you should. If not properly planned, you could paint yourself in a corner when your components have been over engineered in an effort to accommodate for variations. I would much rather build separate components and make the integration easy, than trying to build over complicated variations that will present issues in the long term with integration or implementation.
 
-In the next page we will dive deeper into effectively creating the Card variations we see above.
+In the next page we will dive deeper into effectively creating the Quote variations we see above.
 
