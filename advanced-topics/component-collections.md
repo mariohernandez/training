@@ -1,2 +1,4 @@
 # Component collections
 
+Content here.
+
