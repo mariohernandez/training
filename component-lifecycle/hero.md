@@ -144,5 +144,9 @@ While in your theme's root directory, run the following commands in your command
 
 This command combines both the `build` and `watch` tasks.
 
+{% hint style="info" %}
+**TIP:** Since we created a whole new component; if you had the watch task running, it is recommended you stop it by pressing **Ctrl + C** on your keyboard and run the commands above.  This will ensure the new component will be generated and all related code will be compiled.
+{% endhint %}
+
 In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 

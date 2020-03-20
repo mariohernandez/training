@@ -145,15 +145,26 @@ So the data is ready, let's go ahead and add the markup for the component.
 {% endtab %}
 {% endtabs %}
 
-> As I mentioned earlier, this is like no other component we've built.  Let's go over what we are doing here.
->
-> * As usual, first we attach the library for the component.  Don't forget to create that library
->
-> As I mentioned earlier, this is like no other component we have built.  Let's take a closer look:
->
-> * First we attach the component's library.  **Don't forget to create the library.**
-> * Next we add a `section` element to wrap the entire component.  Here we add the corresponding css class \(`card-collection`\) and we append the `attributes` array as usual.
-> * Next we make use of the **Heading** component to print the component's main title and we wrap it in an `if` statement.
-> * Next we check if the `items` array exists, and if does, we open a `<ul>` element to which we pass the class of `card-collection__items`.  Notice how the classes associated with these elements describe not only what component they belong to, but also the relationship among the elements.
-> * Then, for the first time we use a `for loop` function.
+As I mentioned earlier, this is a unique component and nothing like we've built thus far.  Let's review:
+
+* First we attach the component's library.  **Don't forget to create the library.**
+* Next we add a `<section>` element to wrap the entire component.  As we've done before, the first and main component wrapper should always use the name of the component as its class \(`card-collection`\).  In addition we pass the `modifier` and `attributes` placeholders.
+* Next we make use of the **heading** component to print the component's main title and we wrap it in an `if` statement to ensure we don't print an empty heading tag.
+* Next we check if the `items` array exists, and if so, we open a `<ul>` element in which we pass the class of `card-collection__items`.  Notice how the classes associated with these elements describe not only what the component they belong to, but also the relationship mong the elements.
+* **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
+* Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
+
+### Compiling the code to generate the Card Collection
+
+While in your theme's root directory, run the following commands in your command line and press **Return**
+
+`npm run build && npm run watch`
+
+{% hint style="info" %}
+**TIP:** Since we created a whole new component; if you had the watch task running, it is recommended you stop it by pressing **Ctrl + C** on your keyboard and run the commands above.  This will ensure the new component will be generated and all related code will be compiled.
+{% endhint %}
+
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
+
+Next, we are going to buld the back-end infrastructure in Drupal for this collection.  This also will be a unique approach compared to previous components we've built in Drupal.
 
