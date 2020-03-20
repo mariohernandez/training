@@ -30,6 +30,7 @@
 * [Card Component](advanced/card.md)
 * [Component Variations](advanced/component-variations.md)
 * [Card Variations](advanced/card-variations.md)
+* [Integrating the Card](advanced/integrating-the-card.md)
 
 ## Extras
 
