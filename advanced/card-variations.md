@@ -128,7 +128,7 @@ So far we have been able to create a new card variation by using Pattern Lab's p
 
 ## Twig blocks
 
-The idea of Twig Blocks is to place them on areas of Twig templates where the desired content change is needed. If not used, Twig blocks have no effect on your templates which is a way of saying, you can add Twig blocks to your templates or components, and if you don't use them, don't worry, they won't break anything.
+The idea of Twig Blocks is to place them on areas of Twig templates where the desired content change is expected. If not used, Twig blocks have no effect on your templates which is a way of saying, you can add Twig blocks to your templates or components, and if you don't use them, don't worry, they won't break anything.
 
 Twig blocks are a great way to alter content on Twig templates, including components, prior to rendering the content. With a Twig block we can add or remove content during a component nesting or integration with Drupal.
 
@@ -195,7 +195,7 @@ Let's update the `card.twig` template below by scrolling to the bottom of the te
 }
 ```
 
-Although the data file now reflects the button field, we have no way to add it to the `card~white.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the Twig block we added in the original Card component, we need to update the white twig template by using instead an `embed` statement. Like so:
+Although the data file now reflects the button field, we have no way to add it to the `card~white.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the Twig block we added in the original Card component, we need to update the `card~white.twig` template by using instead an `embed` statement to nest the original  Card component. Like so:
 
 {% tabs %}
 {% tab title="card~white.twig" %}
@@ -220,11 +220,11 @@ Although the data file now reflects the button field, we have no way to add it t
 {% endtab %}
 {% endtabs %}
 
-Thanks to Twig's `embed` statements, we can take advantage of Twig block we created and in it we can include the button component. This is extremely powerful because in addition to be able to inherit most of the attributes from the original Card component, we still have the flexibility to modify the data in the component variation to achieve the outcome we wanted.
+Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add new content to the Card variation.  In this case we included the button component. This is extremely powerful because in addition to be able to inherit most of the attributes from the original Card component, we still have the flexibility to modify the data in the component variation to achieve the outcome we wanted.
 
 If you rebuild your project \(`npm run build && npm run watch`\), you should now see two Card components, the second instance should have a button in addition to the class of `card__white` next to `card`. How cool is this? 🧠 😮
 
 ## Next exercise
 
-Now that you have a good idea of how to handle component variations, go ahead and build the other Card variation. You can call it **Card Reversed**.
+Now that you have a good idea of how to handle component variations, go ahead and build the other Card variation. You can call it **Card Reverse**.
 
