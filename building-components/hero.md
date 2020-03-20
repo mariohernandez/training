@@ -64,7 +64,8 @@ Now let's write some HTML for the component.
 2. Inside `hero.twig` add the following code:
 
 ```php
-<section class="hero">
+<section class="hero{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
   {% if image %}
     <div class="hero__media">
       {{ image }}
@@ -109,7 +110,7 @@ Now let's write some HTML for the component.
 ```
 
 {% hint style="info" %}
-In the interest of addressing the basics of component-building, we are going to exclude Drupal-specific elements. We will comeback later to enhance the Hero with those elements.
+In the interest of addressing the basics of component-building, we are going to ignore for now  Drupal-specific elements found in line 1 above. We will discuss those elements as part of other exercises in this training.
 {% endhint %}
 
 #### Some things to notice:
