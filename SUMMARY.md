@@ -1,8 +1,10 @@
 # Table of contents
+
 * [Welcome](README.md)
 * [Local Setup](local-setup.md)
 
 ## Getting Started
+
 * [Front-end tooling](getting-started/frontend-tooling.md)
 * [Mediacurrent Theme Generator](getting-started/theme-generator.md)
 * [Component Architecture](getting-started/component-architecture.md)
@@ -11,9 +13,11 @@
 * [Twig Blocks](getting-started/twig-blocks.md)
 
 ## Basics
+
 * [Heading Component](basics/heading.md)
 
 ## Component Lifecycle
+
 * [Hero Component](component-lifecycle/hero.md)
 * [Include statements](component-lifecycle/includes.md)
 * [Before building the back-end](component-lifecycle/before-building-the-back-end.md)
@@ -25,9 +29,11 @@
 * [Drupal Libraries](component-lifecycle/drupal-libraries.md)
 
 ## Extras
+
 * [Image styles](extras/image-styles.md)
 
 ## Advanced Topics
+
 * [Quote Component](advanced-topics/quote.md)
 * [Component Variations](advanced-topics/component-variations.md)
 * [Quote Variations](advanced-topics/quote-variations.md)
@@ -35,4 +41,6 @@
 * [Component collections](advanced-topics/component-collections.md)
 
 ## Resources
+
 * [Resources](resources/resources.md)
+

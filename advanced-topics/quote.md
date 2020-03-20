@@ -6,7 +6,7 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's take a look at how this component looks so we can identify the different data fields we need.
 
-![Example of quote](../.gitbook/assets/quote.png)
+![Quote component](../.gitbook/assets/quote.png)
 
 As we can see we need the following fields:
 

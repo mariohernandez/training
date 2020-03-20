@@ -7,7 +7,7 @@ There are many ways to build the Hero and Quote in Drupal. One very common appro
 Using the instructions below, first create a new paragraph type for the **Hero** and later, another for the **Quote**
 
 {% hint style="info" %}
-**TIP:**  After the Hero pagraph type has been created, you can reuse its fields in the Quote paragraph type.
+**TIP:** After the Hero pagraph type has been created, you can reuse its fields in the Quote paragraph type.
 {% endhint %}
 
 * From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**

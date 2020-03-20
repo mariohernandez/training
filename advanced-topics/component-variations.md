@@ -4,11 +4,11 @@ Component variations are instances of a component with minor or big changes. Com
 
 Let's take the Quote component for example. Here are three different ways in which this component will be displayed:
 
-![Default Quote component.](../.gitbook/assets/quote.png)
+![Default Quote component](../.gitbook/assets/quote.png)
 
-![White Quote variation](../.gitbook/assets/quote-white.png)
+![Quote White variation](../.gitbook/assets/quote-white.png)
 
-![Reverse Quote variation](../.gitbook/assets/quote-oposite.png)
+![Quote Reverse variation](../.gitbook/assets/quote-reverse.png)
 
 ## Planning for component variations
 

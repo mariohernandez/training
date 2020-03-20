@@ -45,7 +45,7 @@ Visually we know the 3 different variations look similar, however, if we pay clo
 
 ## Creating the White Quote variation
 
-![White Quote](../.gitbook/assets/quote-white.png)
+![White Quote](https://github.com/mariohernandez/training/tree/3b31750a83e5ccda5cfe62e460988983031df6f4/.gitbook/assets/quote-white.png)
 
 We can see that the overall layout of the "white" version of the component lends itself nicely to a variation. However, we see that some of the fields found in the original quote are not present here \(title and Author info\), and there is also a new field in this variation that is not part of the original quote \(button\).
 
@@ -73,11 +73,11 @@ Now with this new class available, we can do all kinds of changes to the quote v
 
 ### Omitting fields in Quote variations
 
-So the modifier class helped us achieve some of the updates to the white variation, but there is still more to do. For example, the white variation does not use a Title field or any of the Author-related fields \(name, job title, city\). How do we exclude those fields in this variation?  Read on.
+So the modifier class helped us achieve some of the updates to the white variation, but there is still more to do. For example, the white variation does not use a Title field or any of the Author-related fields \(name, job title, city\). How do we exclude those fields in this variation? Read on.
 
 ### Pseudo Patterns in Pattern Lab
 
-Before we can omit fields in the white quote we need to create the necessary files in Pattern Lab.  Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variations of components. Let's take a look at an example of how pseudo patterns work.
+Before we can omit fields in the white quote we need to create the necessary files in Pattern Lab. Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variations of components. Let's take a look at an example of how pseudo patterns work.
 
 This is the current structure of the Quote component
 
@@ -124,7 +124,7 @@ The white variation now only uses two of the fields from the original quote \(`i
 
 ### How do we add new fields to a variation? 🤔
 
-So far we have been able to create a new quote variation by using Pattern Lab's pseudo patterns feature.  We were able to change the background color of the white quote variation by using a modifier css class, and were able to remove or omit fields from the white quote by proactively using `if` statements in the original Quote component.  Now the question is; How do we add new fields to a variation but not to the original component?
+So far we have been able to create a new quote variation by using Pattern Lab's pseudo patterns feature. We were able to change the background color of the white quote variation by using a modifier css class, and were able to remove or omit fields from the white quote by proactively using `if` statements in the original Quote component. Now the question is; How do we add new fields to a variation but not to the original component?
 
 ## Twig blocks
 
@@ -195,7 +195,7 @@ Let's update the `quote.twig` template below by scrolling to the bottom of the t
 }
 ```
 
-Although the data file now reflects the button field, we have no way to add it to the `quote~white.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the Twig block we added in the original Quote component, we need to update the `quote~white.twig` template by using instead an `embed` statement to nest the original  Quote component. Like so:
+Although the data file now reflects the button field, we have no way to add it to the `quote~white.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the Twig block we added in the original Quote component, we need to update the `quote~white.twig` template by using instead an `embed` statement to nest the original Quote component. Like so:
 
 {% tabs %}
 {% tab title="quote~white.twig" %}
@@ -220,7 +220,7 @@ Although the data file now reflects the button field, we have no way to add it t
 {% endtab %}
 {% endtabs %}
 
-Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add new content to the Quote variation.  In this case we included the button component. This is extremely powerful because in addition to be able to inherit most of the attributes from the original Quote component, we still have the flexibility to modify the data in the component variation to achieve the outcome we wanted.
+Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add new content to the Quote variation. In this case we included the button component. This is extremely powerful because in addition to be able to inherit most of the attributes from the original Quote component, we still have the flexibility to modify the data in the component variation to achieve the outcome we wanted.
 
 If you rebuild your project \(`npm run build && npm run watch`\), you should now see two Quote components, the second instance should have a button in addition to the class of `quote__white` next to `quote`. How cool is this? 🧠 😮
 
