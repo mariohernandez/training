@@ -12,25 +12,25 @@
 * [Drupal Attributes](getting-started/drupal-attributes.md)
 * [Twig Blocks](getting-started/twig-blocks.md)
 
-## Building Components
+## Basics
 
-* [Heading Component](building-components/heading.md)
-* [Hero Component](building-components/hero.md)
-* [Include statements](building-components/includes.md)
-* [Card Component](building-components/card.md)
-* [Component Variations](building-components/component-variations.md)
-* [Card Variations](building-components/card-variations.md)
+* [Heading Component](basics/heading.md)
 
-## Integrating Components
+## Advanced
 
-* [Before the Integration](integrating-components/component-integration/README.md)
-  * [Twig template suggestions](integrating-components/component-integration/twig-template-suggestions.md)
-  * [Getting Twig variables](integrating-components/component-integration/hero-component.md)
-* [Integrating the Hero](integrating-components/getting-twig-variables.md)
-* [Drupal Libraries](integrating-components/drupal-libraries.md)
+* [Hero Component](advanced/hero.md)
+* [Include statements](advanced/includes.md)
+* [Before building the back-end](advanced/before-building-the-back-end.md)
+* [Paragraph types](advanced/paragraph-types.md)
+* [Before the Integration](advanced/before-the-integration.md)
+* [Twig template suggestions](advanced/twig-template-suggestions.md)
+* [Getting Twig variables](advanced/hero-component.md)
+* [Integrating the Hero](advanced/getting-twig-variables.md)
+* [Drupal Libraries](advanced/drupal-libraries.md)
+* [Card Component](advanced/card.md)
+* [Component Variations](advanced/component-variations.md)
+* [Card Variations](advanced/card-variations.md)
 
-## Drupal Backend
+## Extras
 
-* [Before building the back-end](drupal-backend/before-building-the-back-end.md)
-* [Paragraph types](drupal-backend/paragraph-types.md)
-* [Image styles](drupal-backend/image-styles.md)
+* [Image styles](extras/image-styles.md)
