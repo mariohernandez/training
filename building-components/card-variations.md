@@ -218,3 +218,7 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig block we crea
 
 If you rebuild your project \(`npm run build && npm run watch`\), you should now see two Card components, the second instance should have a button in addition to the class of `card__inverse` next to `card`.  How cool is this?  🧠 😮
 
+###  Next exercise
+
+Now that you have a good idea  of how to handle component variations, go ahead and build the other Card variation.  You can  call it **Card Reversed**.
+
