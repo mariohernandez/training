@@ -103,6 +103,13 @@ There is a lot going on in this file let's go over it and you will see that it's
 
 ### Component markup
 
+So the data is ready, let's go ahead and add the markup for the component.
+
+1. Inside the _card-collection_ directory create a new file called `card-collection.twig`
+2. Inside _card-collection.twig_ add the following code:
+
+{% tabs %}
+{% tab title="card-collection.twig" %}
 ```php
 {{ attach_library('theme_name/card-collection') }}
 
@@ -135,8 +142,18 @@ There is a lot going on in this file let's go over it and you will see that it's
   {% endif %}
 </section>
 ```
+{% endtab %}
+{% endtabs %}
 
+> As I mentioned earlier, this is like no other component we've built.  Let's go over what we are doing here.
 >
-
-.
+> * As usual, first we attach the library for the component.  Don't forget to create that library
+>
+> As I mentioned earlier, this is like no other component we have built.  Let's take a closer look:
+>
+> * First we attach the component's library.  **Don't forget to create the library.**
+> * Next we add a `section` element to wrap the entire component.  Here we add the corresponding css class \(`card-collection`\) and we append the `attributes` array as usual.
+> * Next we make use of the **Heading** component to print the component's main title and we wrap it in an `if` statement.
+> * Next we check if the `items` array exists, and if does, we open a `<ul>` element to which we pass the class of `card-collection__items`.  Notice how the classes associated with these elements describe not only what component they belong to, but also the relationship among the elements.
+> * Then, for the first time we use a `for loop` function.
 
