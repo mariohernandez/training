@@ -84,3 +84,7 @@ You DID IT! 🙌 🔥
 
 Just for fun, once the hero displays in Drupal, inspect the code again and you should see all the markup we wrote when we built the component in Pattern Lab.  This means Drupal  is only providing the data for the component, but the markup, styles and javascript, if any, is provided by Pattern Lab.
 
+### But wait ...It didn't work
+
+Perhaps the Hero component rendering properly in Drupal, and the Markup when we inspect the code all looks like it's coming from Pattern Lab.  But the Hero is broken as it has no styles at all.  What went wrong?  The answer is [Drupal Libraries](drupal-libraries.md).  Let's fix this problem now.
+

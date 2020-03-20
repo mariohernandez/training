@@ -32,9 +32,8 @@ global:
 
 Let's create a new Drupal library for the Hero component so we can apply all css we've written for it when rendered in Drupal.
 
-* Open `theme_name.libraries.yml` in your editor
-* Copy and paste at the bottom of the file the code above from the Global library
-* Modify the code so it look like this:
+* Open `theme_name.libraries.yml` in your editor \(Replace **theme\_name**\) with your actual theme name.
+* Copy and paste at the bottom of the file the code below:
 
 ```text
 hero:  
@@ -43,7 +42,7 @@ hero:
       dist/css/hero.css: {}
 ```
 
-There is a lot more to Drupal libraries and we encourage you to learn more about them in the URL above.
+There is a lot more to Drupal libraries and we encourage you to learn more about them.
 
 Libraries are great because Drupal only loads what we need when we need it to avoid having to load assets that our page or component may never use. This helps with the site's performance.
 
