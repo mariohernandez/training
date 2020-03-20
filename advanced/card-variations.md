@@ -41,19 +41,19 @@ Here's what the markup for the original Card component looks like:
 </section>
 ```
 
-Visually we know the 3 different variations look similar, however, if we pay close attention we will notice that the data fields among some of the variations are different.  In this particular case although some of the fields may be different, I feel we have enough of shared attributes amongs the variations that we should have no problem going that route.  Let's start!
+Visually we know the 3 different variations look similar, however, if we pay close attention we will notice that the data fields among some of the variations are different.  In this particular case although some of the fields may be different, I feel we have enough of shared attributes among the variations that we should have no problem going the variation route vs. new components.  Let's start!
 
 ### Creating the Card Inverse variation
 
 ![](../.gitbook/assets/card-inverse.png)
 
-We can see that the overall layout of the inverse version of the component lends itself nicely to a variation.  However, we see that some of the fields found in the original card are not present here \(title and Author info\), and there is also a new field in this variation that is not part of the original card \(button\).
+We can see that the overall layout of the "white" version of the component lends itself nicely to a variation.  However, we see that some of the fields found in the original card are not present here \(title and Author info\), and there is also a new field in this variation that is not part of the original card \(button\).
 
 Before we can create a new variation, we need to make some updates to the original Card component so it is easier to adapt it to new variations.
 
 ### Updating the original Card component
 
-Some variations of the Card can be accomplish by simply passing a modifier/CSS class, but others will require a little more work and will also need the use of [Twig Blocks](../getting-started/twig-blocks.md), which we discussed before.
+Some variations of the Card can be accomplish by simply passing a modifier/CSS class, but others will require a little more work and the use of [Twig Blocks](../getting-started/twig-blocks.md), which we discussed before.
 
 #### Modifier class approach
 
@@ -63,10 +63,10 @@ If you look at the [Card's JSON](https://mariohernandez.gitbook.io/training/buil
 <section class="card{{ modifier ? ' ' ~ modifier }}...">
 ```
 
-The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON?  if so, print it here along with the class of `card`, but add an empty space in between the two classes.  For example, if the value for modifier in JSON is, `card--inverse`, when the Card is rendered in the browser the section wrapper will now look like this:
+The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON?  if so, print it here along with the class of `card`, but add an empty space in between the two classes.  For example, if the value for modifier in JSON is, `card--white`, when the Card is rendered in the browser the `section` wrapper will now look like this:
 
 ```php
-<section class="card card--inverse">
+<section class="card card--white">
 ```
 
 Now with this new class available, we can do all kinds of changes to the card variation without affecting the original Card.  A couple of simple changes we can make to the inverse card variation are changing the card's background color from cyan to white, change the text color from white to gray, and change the quote's color to cyan as you see in the Card image above.  
