@@ -23,6 +23,10 @@ Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your d
 
 The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means you can drill down each field until you get to the value of the field.  See example below:
 
+{% hint style="info" %}
+**TIP**: To extend an array **DO NOT** click the **\[+\]** in the array, instead click the the bar/row away from the **\[+\]**.  For some reason Kint crashes if the **\[+\]** is clicked on.
+{% endhint %}
+
 ![Example of expanded field\_eyebrow.](../.gitbook/assets/eyebrow.png)
 
 In the example above we expanded `field_eyebrow` until we get to the `value` property of it.  This shows us the actual value entered in Drupal for this field \(_A teaching website for everyone_\).  So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us by Kint.  In this example it would be 
