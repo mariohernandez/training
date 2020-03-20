@@ -6,7 +6,7 @@ Let's take the Quote component for example. Here are three different ways in whi
 
 ![Default Quote component](../.gitbook/assets/quote.png)
 
-![Quote White variation](../.gitbook/assets/quote-white.png)
+![Quote White variation](../.gitbook/assets/quote-white%20%281%29.png)
 
 ![Quote Reverse variation](../.gitbook/assets/quote-reverse.png)
 
