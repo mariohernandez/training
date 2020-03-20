@@ -1,6 +1,6 @@
 # Card Component
 
-The Card component is a more complex component because it contains more fields, logic and it also makes use of previously built components. With the Card we will reuse other components by using twig's [include](https://twig.symfony.com/doc/2.x/tags/include.html) statements. More on this later.
+The Card component is a more complex component than the Hero because in addition to using more fields, it also requires we crate variations that look different than the original Card component. More on [component variations](component-variations.md) later. Just like we did with the Hero, with the Card we will reuse other components.
 
 Whether you are building simple or complex components, the process for getting started is the same; create files for data, markup and styles. Let's do this with the Card component.
 
@@ -13,9 +13,9 @@ As we can see we need the following fields:
 * **image**: Card image
 * **title**: Card title
 * **body\_text**: Quote text
-* **name**: Card's quote name
-* **job title**: Card's quote job title
-* **city**: Card's quote author
+* **name**: Quote author's name
+* **job title**: Author's job title
+* **city**: Author's city name
 
 ## Let's start
 
@@ -29,12 +29,12 @@ As we can see we need the following fields:
 {
   "image": "<img src='https://source.unsplash.com/TuIcz8wgB74/960x540' alt='A wonderful image' />",
   "heading": {
-    "title": "Small adjustments make a large impact",
+    "title": "Learn all about our retirement plans",
     "heading_level": "2",
     "modifier": "card__title",
     "url": ""
   },
-  "body_text": "Easy additions such as a “skip to” links, focus indicators, and the ability to resize text makes a big difference in the lives of real people, every day.",
+  "body_text": "I've trusted Principal with my retirement because of the simplicity and transparency in their experience.",
   "author": {
     "name": "Sarah Lakos",
     "job_title": "Chief Technology Officer",
@@ -44,7 +44,7 @@ As we can see we need the following fields:
 }
 ```
 
-We're declaring 3 fields in the Card component: **image**, **body\_text**, and **author**.
+We're declaring 4 fields in the Card component: **image**, **heading/title, body\_text**, and **author**.
 
 ### Component's Markup
 
@@ -65,7 +65,7 @@ Now let's write some HTML for the component.
   <div class="card__content">
     {% if title %}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@theme_name/heading/heading.twig' with {
           "heading": heading
         } only
       %}
@@ -73,7 +73,7 @@ Now let's write some HTML for the component.
 
     {% if body_text %}
       {%
-        include '@training_theme/body-text/body-text.twig' with {
+        include '@theme_name/body-text/body-text.twig' with {
           "body_text": body_text
         } only
       %}
@@ -94,9 +94,9 @@ Now let's write some HTML for the component.
 
 * Once again we are starting off with a `<section>` HTML5 tag.  This is the parent selector of the component and therefore it should be named **card**.  We do this by using the class of `card.`
 * We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper \(i.e. `card card__inverse`\). 
-* As we did with the Hero, we are passing the `attributes` array which will be handy when we integrate the compoonent with Drupal.  Moe on this later.
-* For each field we want to print, we first check with an `if` statment whether there is content to print.  This is a good practice so we don't print empty HTML.
-* Notice how every field uses a css class that starts with `card__`.  In some cases the class is declared in the JSON file, and in for other fields is done in the Twig code.  Defining relationships between the parent elements and child elements by using the same namespace \(card\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
+* As we did with the Hero, we are passing the `attributes` array which will be handy when we integrate the component with Drupal.  Moe on this later.
+* For each field we want to print, we first check with an `if` statement whether there is content to print.  This is a good practice so we don't print empty HTML wrappers.
+* Notice how every field uses a css class that starts with `card__`.  In some cases the class is declared in the JSON file, and in for other fields is done in the Twig code.  Defining relationships between the parent elements and child elements by using the same namespace \(`card__`\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
 * **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the previously built components into the card.
 
 ### Component's styles
