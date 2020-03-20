@@ -93,7 +93,7 @@ Now let's write some HTML for the component.
 #### Some things to notice:
 
 * Once again we are starting off with a `<section>` HTML5 tag.  This is the parent selector of the component and therefore it should be named **card**.  We do this by using the class of `card.`
-* We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper \(i.e. `card card__inverse`\). 
+* We are using a placeholder for the `modifier` key so if a value is passed from JSON to Twig, we will use that value as an extra CSS class on the Card wrapper \(i.e. `card card__white`\).
 * As we did with the Hero, we are passing the `attributes` array which will be handy when we integrate the component with Drupal.  Moe on this later.
 * For each field we want to print, we first check with an `if` statement whether there is content to print.  This is a good practice so we don't print empty HTML wrappers.
 * Notice how every field uses a css class that starts with `card__`.  In some cases the class is declared in the JSON file, and in for other fields is done in the Twig code.  Defining relationships between the parent elements and child elements by using the same namespace \(`card__`\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.

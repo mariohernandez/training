@@ -34,4 +34,3 @@
 ## Extras
 
 * [Image styles](extras/image-styles.md)
-
