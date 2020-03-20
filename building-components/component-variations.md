@@ -19,7 +19,7 @@ Looking at the 3 cards above, we see that they are practically the same card com
 * Does the component behavior and layout lend themselves to new variations without altering markup or sacrificing accessibility or user experience? 
 * Can I achieve the variations with a CSS Modifier class or Twig blocks?
 
-These are questions you should ask yourself before deciding to create component variations.  Although technically there are ways a component variation can be created, this does not mean you should.   If not properly planned, you could  paint yourself in a corner when your components and their variations have been over ingeneered.  I would much rather build separate components and make the integration easy, than trying to build over complicated variations that will present issues in the long term with integration or implementation.
+These are questions you should ask yourself before deciding to create component variations.  Although technically there are ways a component variation can be created, this does not mean you should.   If not properly planned, you could  paint yourself in a corner when your components have been over engineered in an effort to accomodate for variations.  I would much rather build separate components and make the integration easy, than trying to build over complicated variations that will present issues in the long term with integration or implementation.
 
 In the next page we will dive deeper into effectively creating the Card variations we see above.
 
