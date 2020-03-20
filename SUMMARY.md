@@ -16,21 +16,21 @@
 
 * [Heading Component](basics/heading.md)
 
-## Advanced
+## Component Lifecycle
 
-* [Hero Component](advanced/hero.md)
-* [Include statements](advanced/includes.md)
-* [Before building the back-end](advanced/before-building-the-back-end.md)
-* [Paragraph types](advanced/paragraph-types.md)
-* [Before the Integration](advanced/before-the-integration.md)
-* [Twig template suggestions](advanced/twig-template-suggestions.md)
-* [Getting Twig variables](advanced/hero-component.md)
-* [Integrating the Hero](advanced/getting-twig-variables.md)
-* [Drupal Libraries](advanced/drupal-libraries.md)
-* [Card Component](advanced/card.md)
-* [Component Variations](advanced/component-variations.md)
-* [Card Variations](advanced/card-variations.md)
-* [Integrating the Card](advanced/integrating-the-card.md)
+* [Hero Component](component-lifecycle/hero.md)
+* [Include statements](component-lifecycle/includes.md)
+* [Before building the back-end](component-lifecycle/before-building-the-back-end.md)
+* [Paragraph types](component-lifecycle/paragraph-types.md)
+* [Before the Integration](component-lifecycle/before-the-integration.md)
+* [Twig template suggestions](component-lifecycle/twig-template-suggestions.md)
+* [Getting Twig variables](component-lifecycle/hero-component.md)
+* [Integrating the Hero](component-lifecycle/getting-twig-variables.md)
+* [Drupal Libraries](component-lifecycle/drupal-libraries.md)
+* [Card Component](component-lifecycle/card.md)
+* [Component Variations](component-lifecycle/component-variations.md)
+* [Card Variations](component-lifecycle/card-variations.md)
+* [Integrating the Card](component-lifecycle/integrating-the-card.md)
 
 ## Extras
 
@@ -39,4 +39,8 @@
 ## Resources
 
 * [Resources](resources/resources.md)
+
+## Advanced Topics
+
+* [Component collections](advanced-topics/component-collections.md)
 
