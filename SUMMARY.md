@@ -3,14 +3,14 @@
 * [Welcome](README.md)
 * [Local Setup](local-setup.md)
 
-## Essentials
+## Getting Started
 
-* [Front-end tooling](essentials/frontend-tooling.md)
-* [Mediacurrent Theme Generator](essentials/theme-generator.md)
-* [Component Architecture](essentials/component-architecture.md)
-* [Drupal Best Practices](essentials/drupal-best-practices.md)
-* [Drupal Attributes](essentials/drupal-attributes.md)
-* [Twig Blocks](essentials/twig-blocks.md)
+* [Front-end tooling](getting-started/frontend-tooling.md)
+* [Mediacurrent Theme Generator](getting-started/theme-generator.md)
+* [Component Architecture](getting-started/component-architecture.md)
+* [Drupal Best Practices](getting-started/drupal-best-practices.md)
+* [Drupal Attributes](getting-started/drupal-attributes.md)
+* [Twig Blocks](getting-started/twig-blocks.md)
 
 ## Building Components
 
@@ -34,4 +34,3 @@
 * [Before building the back-end](drupal-backend/before-building-the-back-end.md)
 * [Paragraph types](drupal-backend/paragraph-types.md)
 * [Image styles](drupal-backend/image-styles.md)
-
