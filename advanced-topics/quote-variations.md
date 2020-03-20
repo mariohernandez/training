@@ -45,7 +45,7 @@ Visually we know the 3 different variations look similar, however, if we pay clo
 
 ## Creating the White Quote variation
 
-![White Quote](https://github.com/mariohernandez/training/tree/3b31750a83e5ccda5cfe62e460988983031df6f4/.gitbook/assets/quote-white.png)
+![](../.gitbook/assets/quote-white.png)
 
 We can see that the overall layout of the "white" version of the component lends itself nicely to a variation. However, we see that some of the fields found in the original quote are not present here \(title and Author info\), and there is also a new field in this variation that is not part of the original quote \(button\).
 
