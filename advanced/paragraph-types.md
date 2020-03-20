@@ -6,6 +6,10 @@ There are many ways to build the Hero and Card in Drupal. One very common approa
 
 Using the instructions below, first create a new paragraph type for the **Hero** and later, another for the **Card**
 
+{% hint style="info" %}
+**TIP:**  After the Hero pagraph type has been created, you can reuse its fields in the Card paragraph type.
+{% endhint %}
+
 * From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
 * Click the **Add paragraph type** button
 

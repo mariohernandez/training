@@ -15,7 +15,7 @@ Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your d
 * Clear Drupal's cache and reload the page
 * You should see output like the one below:
 
-![Example of kint output](../../.gitbook/assets/kint.png)
+![Example of kint output](../.gitbook/assets/kint.png)
 
 {% hint style="warning" %}
 **WARNING**:  By default kint will try to print all available variables on a page unless otherwise specified.  This could slow your site down drastically and even crash it.  The fix for this is to limit the number of levels in a render array that can be available.  [Follow these instructions](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb) to enable this fix.
@@ -23,7 +23,7 @@ Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your d
 
 The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means you can drill down each field until you get to the value of the field.  See example below:
 
-![Example of expanded field\_eyebrow.](../../.gitbook/assets/eyebrow.png)
+![Example of expanded field\_eyebrow.](../.gitbook/assets/eyebrow.png)
 
 In the example above we expanded `field_eyebrow` until we get to the `value` property of it.  This shows us the actual value entered in Drupal for this field \(_A teaching website for everyone_\).  So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us by Kint.  In this example it would be 
 

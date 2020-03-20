@@ -53,7 +53,7 @@ Before we can create a new variation, we need to make some updates to the origin
 
 ### Updating the original Card component
 
-Some variations of the Card can be accomplish by simply passing a modifier/CSS class, but others will require a little more work and will also need the use of [Twig Blocks](../essentials/twig-blocks.md), which we discussed before.
+Some variations of the Card can be accomplish by simply passing a modifier/CSS class, but others will require a little more work and will also need the use of [Twig Blocks](../getting-started/twig-blocks.md), which we discussed before.
 
 #### Modifier class approach
 
