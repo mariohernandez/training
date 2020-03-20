@@ -4,9 +4,7 @@ In a Drupal 8 theme, stylesheets \(CSS\) and JavaScript \(JS\) are loaded throug
 
 Drupal uses a high-level principle: assets \(CSS or JS\) are still only loaded if you tell Drupal it should load them. Drupal does not load all assets on every page because it slows down front-end performance.
 
-​[Learn more about Drupal libraries.](https://www.drupal.org/docs/8/theming-drupal-8/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme)​
-
-In the context of component-based theming, we are going to create a library for each individual component we build. Each library will have all the CSS and JavaScript \(if any\), the component needs to render as expected.
+In the context of component-based theming, we are going to create a library for each individual component we build in Pattern Lab. Each library will have all the CSS and JavaScript \(if any\), the component needs to render as expected.
 
 {% hint style="info" %}
 **Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to generate the CSS and Javascript for components.
@@ -14,7 +12,7 @@ In the context of component-based theming, we are going to create a library for 
 
 ### Structure of a library
 
-In your editor, open `theme_name.libraries.yml` \(located in your theme's root\). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site \(i.e. font color, font-size, font-family, line-height, etc.\). The global library looks something like this:
+In your editor, open `theme_name.libraries.yml` \(located in your theme's root\). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site \(i.e. typography, brand colors, global styles, etc.\). The global library looks something like this:
 
 ```yaml
 global:  
@@ -23,16 +21,20 @@ global:
       dist/css/global.css: {}
 ```
 
-1. **Library name**: In our case this name will always be the name of our component to easily identify what a library is for.
-2. **Asset**: The asset we want to include in the library. Usually `css` and/or `js`.
-3. **Loading ordering**: Ordering category, in this case `base`, is loaded before other categories. Drupal 8 loads stylesheets based on the [SMACSS](https://smacss.com/) ordering: `base`, `layout`, `component`, `state`, and `theme`. All of the components we create will use the `component` ordering.
-4. **The path**: The path to the asset relative to the root of the theme. All assets in our theme are compiled into `dist/css` or `dist/js`. 
+1. **global:** This is the library name.  In our case this name will always be the name of our component to easily identify what a library is for.
+2. **css**: This is the asset we want to include in the library. Usually `css` and/or `js`.
+3. **base**: The ordering category, in this case `base`, is loaded before other categories. Drupal 8 loads stylesheets based on the [SMACSS](https://smacss.com/) ordering: `base`, `layout`, `component`, `state`, and `theme`. All of the components we create will use the `component` ordering.  Drupal also groups together assets that belong to the same category for performance reasons.
+4. **dist/css/global.css: { }**: This is the path to the asset relative to the root of the theme. All assets in our theme are compiled into `dist/css` or `dist/js`.   A library can have both of these assets.  The path can also include multiple lines of assets.  Say you are building a library for a component that uses a third party stylesheet, in addition to the path above you could include a new line with the path for the third party stylesheet.  Same goes for JS assets.
+
+{% hint style="info" %}
+Drupal Asset Libraries are powerful and there is so much more about them.  Learn more about [Drupal Libraries](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module).
+{% endhint %}
 
 ### Creating a new library for the Hero component
 
 Let's create a new Drupal library for the Hero component so we can apply all css we've written for it when rendered in Drupal.
 
-* Open `theme_name.libraries.yml` in your editor \(Replace **theme\_name**\) with your actual theme name.
+* Open `theme_name.libraries.yml` in your editor \(Replace `theme_name` ****with your actual theme name\). 
 * Copy and paste at the bottom of the file the code below:
 
 ```text
@@ -42,39 +44,37 @@ hero:
       dist/css/hero.css: {}
 ```
 
-There is a lot more to Drupal libraries and we encourage you to learn more about them.
-
 Libraries are great because Drupal only loads what we need when we need it to avoid having to load assets that our page or component may never use. This helps with the site's performance.
 
 ### Attaching a library
 
-Now that the Hero component's library is ready, we need to make Drupal aware of it so it can use it.  We do this by using Twig's attach function.
+Now that the Hero component's library is ready, we need to make Drupal aware of it so it can use it.  We do this by using Twig's `attach_library` function.
 
 1. In your editor, open `src/patterns/components/hero/hero.twig`
 2. Edit the file by adding the following code at the first line in the file:
 
-```text
+```php
 {{ attach_library('theme_name/hero') }}
 ```
 
 _Replace `theme_name` with your actual theme/namespace._
 
-The `attach_library` function takes a path parameter which we are declaring by using the theme's namespace \(the namespace is created by the [Components Libraries module](https://www.drupal.org/project/components)\), then the name of the library we want to attach \(i.e. `theme_name/hero`\).
+The `attach_library` function takes a path parameter which we are declaring by using the theme's namespace \(the namespace is registered by the [Components Libraries](https://www.drupal.org/project/components) module\), then the name of the library we want to attach \(i.e. `theme_name/hero`\).
 
 With the code above, we are telling Drupal that whenever we render the Hero component, its library should be attached so the styles for the component can be applied.
 
-### **Clear Drupal's cache**
+#### **Clear Drupal's cache**
 
 Don't forget to clear your caches when adding new libraries to your theme.
 
-* Use the admin menu to flush all caches
-* Or if you have Drush setup, run this command:
+* Use the admin menu to flush all caches \(**Configuration \| Development \| Performance**\)
+* or, if you have Drush setup, run this command:
 
 ```text
 drush cr
 ```
 
-After clearing Drupal's cache if you reload the page where the Hero is you should see all the styles and markup we wrote for it.
+After clearing Drupal's cache if you reload the page with a Hero, you should see all the styles and markup we wrote for it.
 
 ## Creating libraries for each component <a id="creating-libraries-for-each-component"></a>
 
