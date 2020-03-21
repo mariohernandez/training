@@ -1,4 +1,4 @@
-# Component collection
+# Card Collection
 
 A component that will introduce us to a few more useful techniques for working with components is the image you see below.   The image  shows a typical type of content that you will most likely find on most websites.  We will refer to this as **Cards Collection**, but this could be  called many other things \(Card grid, article collection, latest news, etc.\).  Whatever the name is, the point is that we have a component repeated multiple times.  Some may build this a single component and there is nothing wrong with that approach, however, we could probably get more out of building a single card component first, then repeating it as many times as we want to.  By doing this, we have an individual card component we could use not only for this type of content by for various types of content.
 
@@ -95,7 +95,7 @@ This component will be completely different than the ones we've built thus far. 
 {% endtab %}
 {% endtabs %}
 
-There is a lot going on in this file let's go over it and you will see that it's actually relatively straight forward.
+There is a lot going on in this file.  Let's go over it and you will see that it's actually relatively straight forward.
 
 * First we defined the `heading`  object which will be used as the title for the entire collection.
 * At around line 8, we declared an `items` array.  This will help us mimic the array of content to build the collection.  
@@ -132,8 +132,7 @@ So the data is ready, let's go ahead and add the markup for the component.
               "image": item.image,
               "title": item.title,
               "body_text": item.body_text,
-              "cta": item.cta,
-              "modifier": item.modifier
+              "cta": item.cta
             } only
           %}
         </li>
@@ -166,5 +165,5 @@ While in your theme's root directory, run the following commands in your command
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
-Next, we are going to buld the back-end infrastructure in Drupal for this collection.  This also will be a unique approach compared to previous components we've built in Drupal.
+Next, we are going to build the back-end infrastructure in Drupal for this collection.  This also will be a unique approach compared to previous components we've built in Drupal.
 

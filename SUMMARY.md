@@ -38,7 +38,7 @@
 * [Component Variations](advanced-topics/component-variations.md)
 * [Quote Variations](advanced-topics/quote-variations.md)
 * [Integrating the Quote](advanced-topics/integrating-the-quote.md)
-* [Component collection](advanced-topics/component-collections.md)
+* [Card Collection](advanced-topics/component-collections.md)
 
 ## Resources
 
