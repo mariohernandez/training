@@ -25,6 +25,8 @@ As we can see we need the following fields:
 2. Inside the _quote_ directory create a new file called **quote.json**
 3. Inside _quote.json_ add the following code:
 
+{% tabs %}
+{% tab title="quote.json" %}
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/TuIcz8wgB74/960x540' alt='A wonderful image' />",
@@ -43,6 +45,8 @@ As we can see we need the following fields:
   "modifier": ""
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 We're declaring 4 fields in the Quote component: **image**, **heading/title, body\_text**, and **author**.
 
@@ -53,6 +57,8 @@ Now let's write some HTML for the component.
 1. Inside the _quote_ directory create a new file called **quote.twig**
 2. Inside `quote.twig` add the following code:
 
+{% tabs %}
+{% tab title="quote.twig" %}
 ```php
 <section class="quote{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
@@ -89,6 +95,8 @@ Now let's write some HTML for the component.
   </div>
 </section>
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Some things to notice:
 
@@ -106,10 +114,14 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 1. Inside the _quote_ directory create a new file called **quote.scss**
 2. Inside `quote.scss` add this code:
 
+{% tabs %}
+{% tab title="quote.scss" %}
 ```css
 // Import site utilities
 @import '../../global/utils/init';
 ```
+{% endtab %}
+{% endtabs %}
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 

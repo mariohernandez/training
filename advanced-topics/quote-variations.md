@@ -4,6 +4,8 @@ Probably the first thing you should look at to determine if a component is a can
 
 Here's what the markup for the original Quote component looks like:
 
+{% tabs %}
+{% tab title="quote.twig" %}
 ```php
 <section class="quote{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
@@ -40,6 +42,8 @@ Here's what the markup for the original Quote component looks like:
   </div>
 </section>
 ```
+{% endtab %}
+{% endtabs %}
 
 Visually we know the 3 different variations look similar, however, if we pay close attention we will notice that the data fields among some of the variations are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes among the variations that we should have no problem going the variation route vs. new components. Let's start!
 
@@ -59,9 +63,13 @@ Some variations of the Quote can be accomplish by simply passing a modifier/CSS 
 
 If you look at the [Quote's JSON](https://mariohernandez.gitbook.io/training/building-components/quote#components-stock-content) file you will see one of the keys is `modifier.`The **modifier** key in JSON means we can use it to pass a value to the Quote as a CSS class. However, before the Quote can make use of that value, it needs to know where to place it. If you look at the [Quote's markup](https://mariohernandez.gitbook.io/training/building-components/quote#components-markup), you will see the following line which acts as a placeholder for when a modifier value is passed:
 
+{% tabs %}
+{% tab title="quote.twig" %}
 ```php
 <section class="quote{{ modifier ? ' ' ~ modifier }}...">
 ```
+{% endtab %}
+{% endtabs %}
 
 The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON? if so, print it here along with the class of `quote`, but add an empty space in between the two classes. For example, if the value for modifier in JSON is, `quote--white`, when the Quote is rendered in the browser the `section` wrapper will now look like this:
 
@@ -182,6 +190,8 @@ Let's update the `quote.twig` template below by scrolling to the bottom of the t
 * We added a Twig block called **quote\_cta** \(`{%  block quote_cta  %}`\). Currently  the Twig block is empty but we will make use of it in our variation.
 * Update the `quote~white.json` file so it includes the **button/cta** field, like this \(starting  on line 4\):
 
+{% tabs %}
+{% tab title="quote~white.json" %}
 ```text
 {
   "image": "<img src='https://source.unsplash.com/TuIcz8wgB74/960x540' alt='A wonderful image' />",
@@ -194,6 +204,8 @@ Let's update the `quote.twig` template below by scrolling to the bottom of the t
   "modifier": "quote__white"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 Although the data file now reflects the button field, we have no way to add it to the `quote~white.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the Twig block we added in the original Quote component, we need to update the `quote~white.twig` template by using instead an `embed` statement to nest the original Quote component. Like so:
 
