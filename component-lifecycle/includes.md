@@ -16,6 +16,8 @@ In a Drupal 8 theme includes are mainly used to include or nest components into 
 
 ### Let's review the Heading include in the Hero
 
+{% tabs %}
+{% tab title="hero.twig" %}
 ```php
 {%
   include '@training_theme/heading/heading.twig' with {
@@ -23,6 +25,8 @@ In a Drupal 8 theme includes are mainly used to include or nest components into 
   } only
 %}
 ```
+{% endtab %}
+{% endtabs %}
 
 * The include statement above uses a relative path.  This was done by creating a theme namespace \(`training_theme`\), which is mapped to `src/patterns/components/`, then we complete the path by providing the template name for the component.  More on namespaces later
 * The keyword `with` allows to pass additional variable to an include \(i.e. `heading`\)
@@ -33,6 +37,8 @@ Being able to customize components during the "include" process is a must. There
 1. In `hero.json` we could change the `heading_level`, `modifier`, `title`, or `url` to the values we need. 
 2. We could make the changes directly in the `include` as follows:
 
+{% tabs %}
+{% tab title="hero.twig" %}
 ```php
 {%
   include '@training_theme/heading/heading.twig' with {
@@ -45,6 +51,8 @@ Being able to customize components during the "include" process is a must. There
   } only
 %}
 ```
+{% endtab %}
+{% endtabs %}
 
 Being able to reuse components while still having the options to change them on the fly to meet our needs is an incredible advantage of twig includes. We will use includes througout this training to reduce code duplication.
 

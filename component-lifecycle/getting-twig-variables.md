@@ -6,9 +6,13 @@ Now it's time to begin the integration process for the Hero component.
 * Remove all code in the file but leave all comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
 * Add the following code at the bottom of the template:
 
+{% tabs %}
+{% tab title="paragraph--hero.html.twig" %}
 ```php
 {% set rendered_content = content|render %}
 ```
+{% endtab %}
+{% endtabs %}
 
 To follow the best practices we discussed earlier regarding letting Drupal render the full content array, we are setting a twig variable for the sole purpose of triggering a full render of the content array.  We are not going to use the variable at all, it is only intended to trigger Drupal to do its thing.
 
@@ -18,6 +22,8 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 **NOTE:**  We are also going to set variables for the **eyebrow** and **cta** fields, but in the interest of keeping things simple, we won't show those until the end when we show the full integratioon code.
 {% endhint %}
 
+{% tabs %}
+{% tab title="paragraph--hero.html.twig" %}
 ```php
 {% set hero_title = {
     heading_level: '1',
@@ -27,6 +33,8 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
   }
 %}
 ```
+{% endtab %}
+{% endtabs %}
 
 We are setting a Twig variable called `hero_title` which follows the same structure of the **Heading** component we built at the beginning of this training.  The biggest difference here is that for the **title** value \(line 4\), we are passing Drupal data.  
 
@@ -37,6 +45,8 @@ We are setting a Twig variable called `hero_title` which follows the same struct
 
  Now let's make use of the Hero component in the Paragraph template.  Let's look at the code below and explain how this works. 
 
+{% tabs %}
+{% tab title="paragraph--hero.html.twig" %}
 ```php
 {%
   include '@theme_name/hero/hero.twig' with {
@@ -49,6 +59,8 @@ We are setting a Twig variable called `hero_title` which follows the same struct
   } only
 %}
 ```
+{% endtab %}
+{% endtabs %}
 
 * We are using an `include` Twig statement to integrate the Hero component. Using  the  theme's namespace, `theme_name`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  **Component Libraries** module and the namespace we created, we can  direct Drupal to also look for Twig templates in our components directory, among other places. **IMPORTANT**:  Change `theme_name` with your actual namespace.
 * Next we pass in Drupal's `attributes` variable so that Drupal  can inject any attributes it needs to the Hero paragraph type.  This is recommended, but not required.
@@ -59,6 +71,8 @@ We are setting a Twig variable called `hero_title` which follows the same struct
 
 Once you've written all that code, the full component integration should look like this:
 
+{% tabs %}
+{% tab title="paragraph--hero.html.twig" %}
 ```php
 {% set rendered_content = content|render %}
 
@@ -98,6 +112,8 @@ Once you've written all that code, the full component integration should look li
   } only
 %}
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Displaying the integrated Hero in Drupal
 

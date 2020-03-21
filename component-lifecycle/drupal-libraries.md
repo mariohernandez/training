@@ -14,12 +14,16 @@ In the context of component-based theming, we are going to create a library for 
 
 In your editor, open `theme_name.libraries.yml` \(located in your theme's root\). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site \(i.e. typography, brand colors, global styles, etc.\). The global library looks something like this:
 
+{% tabs %}
+{% tab title="theme\_name.libraries.yml" %}
 ```yaml
 global:  
   css:    
     base:      
       dist/css/global.css: {}
 ```
+{% endtab %}
+{% endtabs %}
 
 1. **global:** This is the library name.  In our case this name will always be the name of our component to easily identify what a library is for.
 2. **css**: This is the asset we want to include in the library. Usually `css` and/or `js`.
@@ -37,12 +41,16 @@ Let's create a new Drupal library for the Hero component so we can apply all css
 * Open `theme_name.libraries.yml` in your editor \(Replace `theme_name` ****with your actual theme name\). 
 * Copy and paste at the bottom of the file the code below:
 
+{% tabs %}
+{% tab title="theme\_name.libraries.yml" %}
 ```text
 hero:  
   css:    
     component:      
       dist/css/hero.css: {}
 ```
+{% endtab %}
+{% endtabs %}
 
 Libraries are great because Drupal only loads what we need when we need it to avoid having to load assets that our page or component may never use. This helps with the site's performance.
 
@@ -53,9 +61,13 @@ Now that the Hero component's library is ready, we need to make Drupal aware of 
 1. In your editor, open `src/patterns/components/hero/hero.twig`
 2. Edit the file by adding the following code at the first line in the file:
 
+{% tabs %}
+{% tab title="hero.twig" %}
 ```php
 {{ attach_library('theme_name/hero') }}
 ```
+{% endtab %}
+{% endtabs %}
 
 _Replace `theme_name` with your actual theme/namespace._
 

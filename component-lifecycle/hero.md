@@ -26,6 +26,8 @@ _Ignore the header/navigation_.
 2. Inside the _hero_ directory create a new file called **hero.json**
 3. Inside _hero.json_ add the following code:
 
+{% tabs %}
+{% tab title="hero.json" %}
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/1400x787' alt='A wonderful image' />",
@@ -48,6 +50,8 @@ _Ignore the header/navigation_.
   "modifier": ""
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 Just as we did with the Heading component, we are using JSON to define the component's fields and add stock content to the component. Our goal here is to reuse previously built components by nesting them into the hero to avoid code duplicate and improve maintenance of component by having a single source of code.
 
@@ -63,6 +67,8 @@ Now let's write some HTML for the component.
 1. Inside the _hero_ directory create a new file called **hero.twig**
 2. Inside `hero.twig` add the following code:
 
+{% tabs %}
+{% tab title="hero.twig" %}
 ```php
 <section class="hero{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
@@ -108,6 +114,8 @@ Now let's write some HTML for the component.
   </div>
 </section>
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 In the interest of addressing the basics of component-building, we are going to ignore for now  Drupal-specific elements found in line 1 above. We will discuss those elements as part of other exercises in this training.
@@ -127,10 +135,14 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 1. Inside the _hero_ directory create a new file called **hero.scss**
 2. Inside `hero.scss` add this code:
 
+{% tabs %}
+{% tab title="hero.scss" %}
 ```css
 // Import site utilities
 @import '../../global/utils/init';
 ```
+{% endtab %}
+{% endtabs %}
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
