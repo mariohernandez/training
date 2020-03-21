@@ -24,7 +24,7 @@ Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your d
 The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means you can drill down each field until you get to the value of the field.  See example below:
 
 {% hint style="info" %}
-**TIP**: To extend an array **DO NOT** click the **\[+\]** in the array, instead click the the bar/row away from the **\[+\]**.  For some reason Kint crashes if the **\[+\]** is clicked on.
+**TIP**: To extend an array in Kint, **DO NOT** click the **\[+\]** in the array, for some reason this crashes the page.  Instead click the the bar/row away from the **\[+\]**. 
 {% endhint %}
 
 ![Example of expanded field\_eyebrow.](../.gitbook/assets/eyebrow.png)
@@ -35,7 +35,7 @@ In the example above we expanded `field_eyebrow` until we get to the `value` pro
 content.field_eyebrow.0['#context'].value
 ```
 
-However, this is not necessarily best practice.  Although using the format above to get the field's value will work, there are some issues related to Drupal caching that can arise from this approach.  A better approach would be to use the [Twig Field Value](https://www.drupal.org/project/twig_field_value) module.  Using this module would allow us to type
+However, this is not necessarily best practice.  Although using the format above to get the field's value will work, there are some issues related to Drupal caching that can arise from this approach.  A better approach would be to use the [Twig Field Value](https://www.drupal.org/project/twig_field_value) or [Twig Tweak](https://www.drupal.org/project/twig_tweak) modules.  Using one of these modules would allow us to format the field like so:
 
 ```php
 content.field_eyebrow|field_value
