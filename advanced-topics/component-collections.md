@@ -153,6 +153,24 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 * **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
 * Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
 
+### Component's styles
+
+We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
+
+1. Inside the _hero_ directory create a new file called **card-collection.scss**
+2. Inside `card-collection.scss` add this code:
+
+{% tabs %}
+{% tab title="card-collection.scss" %}
+```css
+// Import site utilities
+@import '../../global/utils/init';
+```
+{% endtab %}
+{% endtabs %}
+
+The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
+
 ### Compiling the code to generate the Card Collection
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
