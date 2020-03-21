@@ -124,20 +124,19 @@ So the data is ready, let's go ahead and add the markup for the component.
   {% endif %}
 
   {% if items %}
-    <ul class="card-collection__items">
+    <div class="card-collection__items">
       {% for item in items %}
-        <li class="card-collection__item">
           {%
             include '@theme_name/card/card.twig' with {
               "image": item.image,
               "title": item.title,
               "body_text": item.body_text,
-              "cta": item.cta
+              "cta": item.cta,
+              "modifier": ' card-collection__item'
             } only
           %}
-        </li>
       {% endfor %}
-    </ul>
+    </div>
   {% endif %}
 </section>
 ```
@@ -149,8 +148,8 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 * First we attach the component's library.  **Don't forget to create the library.**
 * Next we add a `<section>` element to wrap the entire component.  As we've done before, the first and main component wrapper should always use the name of the component as its class \(`card-collection`\).  In addition we pass the `modifier` and `attributes` placeholders.
 * Next we make use of the **heading** component to print the component's main title and we wrap it in an `if` statement to ensure we don't print an empty heading tag.
-* Next we check if the `items` array exists, and if so, we open a `<ul>` element in which we pass the class of `card-collection__items`.  Notice how the classes associated with these elements describe not only what the component they belong to, but also the relationship mong the elements.
-* **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
+* Next we check if the `items` array exists, and if so, we create `<div>` to which we pass the class of `card-collection__items`.  Notice how the classes associated with these elements describe not only what the component they belong to, but also the relationship among the elements.
+* **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array of content and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
 * Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
 
 ### Component's styles
