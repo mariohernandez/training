@@ -14,6 +14,10 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 
 * Next step is to declare a variable for the title of the Hero. Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
 
+{% hint style="info" %}
+**NOTE:**  We are also going to set variables for the **eyebrow** and **cta** fields, but in the interest of keeping things simple, we won't show those until the end when we show the full integratioon code.
+{% endhint %}
+
 ```php
 {% set hero_title = {
     heading_level: '1',
@@ -38,9 +42,10 @@ We are setting a Twig variable called `hero_title` which follows the same struct
   include '@theme_name/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
-    eyebrow: content.field_eyebrow|render|trim is not empty ? content.field_eyebrow,
-    heading: hero_title
-    body: content.field_body|render|trim is not empty ? content.field_body
+    eyebrow: hero_eyebrow,
+    heading: hero_title,
+    body: content.field_body|render|trim is not empty ? content.field_body,
+    cta: hero_cta
   } only
 %}
 ```
@@ -57,6 +62,7 @@ Once you've written all that code, the full component integration should look li
 ```php
 {% set rendered_content = content|render %}
 
+{# Setting variable for hero title #}
 {% set hero_title = {
     heading_level: '1',
     modifier: ' hero__title',
@@ -65,13 +71,30 @@ Once you've written all that code, the full component integration should look li
   }
 %}
 
+{# Setting variable for hero eyebrow #}
+{% set hero_eyebrow = {
+    text: content.field_eyebrow|render|trim is not empty ? content.field_eyebrow|field_value,
+    modifier: ' hero__eyebrow'
+  }
+%}
+
+{# Setting variable for hero cta #}
+{% set hero_cta = {
+    text: content.field_cta|field_raw('title'),
+    url: content.field_cta|field_raw('uri'),
+    modifier: 'hero__cta'
+  }
+%}
+
+{# Including hero component and mapping its fields to Drupal's fields #}
 {%
-  include '@theme_name/hero/hero.twig' with {
+  include '@training_theme/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
-    eyebrow: content.field_eyebrow|render|trim is not empty ? content.field_eyebrow,
-    heading: hero_title
-    body: content.field_body|render|trim is not empty ? content.field_body
+    eyebrow: hero_eyebrow,
+    heading: hero_title,
+    body: content.field_body|render|trim is not empty ? content.field_body,
+    cta: hero_cta
   } only
 %}
 ```
