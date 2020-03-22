@@ -1,4 +1,4 @@
-# Latest Posts
+# Latest Posts component
 
 ## Building the Latest Posts component
 

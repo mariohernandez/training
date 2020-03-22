@@ -39,7 +39,8 @@
 * [Quote Variations](advanced-topics/quote-variations.md)
 * [Integrating the Quote](advanced-topics/integrating-the-quote.md)
 * [Card Component](advanced-topics/card.md)
-* [Latest Posts](advanced-topics/latest-posts.md)
+* [Latest Posts component](advanced-topics/latest-posts.md)
+* [Integrating the Latest Posts](advanced-topics/integrating-the-latest-posts.md)
 
 ## Resources
 
