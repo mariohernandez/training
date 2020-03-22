@@ -38,5 +38,5 @@ We've declared a twig block \(`quote_extra_content`\), in which we can add or re
 {% endembed %}
 ```
 
-The code above shows how we can use the Quote component somewhere and we can make use of the Twig Block, in this example by adding new content the quote component did not originally provide. This gives us a lot of flexibility and control to alter content before rendering. We will see other examples of Twig Blocks throughout this training.
+The code above shows how we can use the Quote component and we can make use of the Twig Block, in this example by adding new content the Quote component did not originally provide. This gives us a lot of flexibility and control to alter content before rendering. We will see other examples of Twig Blocks throughout this training.
 
