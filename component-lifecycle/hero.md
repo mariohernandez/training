@@ -162,10 +162,12 @@ This command combines both the `build` and `watch` tasks.
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
+### Fix the hero
+
 #### Something went wrong.  The Hero component was not built properly.  Why?
 
 * We are using include statements for components we don't have \(eyebrow, button. & cta\).
-* Ideally, everything you need in Pattern Lab should be its own pattern/component \(Atomic Design\)
-* Let's fix this by quickly building an **Eyebrow** and **Body Text** components
-* For the CTA, we will build a component too, but for now let's hard-code it
+* Ideally, everything you need in Pattern Lab should be its own pattern/component \(Atomic Design\).
+* Let's fix this by quickly building an **Eyebrow** and **Body Text** components.
+* For the CTA, we will build a component too, but for now let's hard-code it \(demo\)
 
