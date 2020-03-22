@@ -1,10 +1,10 @@
 # Paragraph types
 
-## Hero & Quote
+## Hero, Quote, and Card Paragraph Types
 
-There are many ways to build the Hero and Quote in Drupal. One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse these components on any page we need to.
+There are many ways to build the Hero, Quote and Card in Drupal. One very common approach is to use a paragraph type. Using a paragraph type will allow us to reuse these components on any page we need to.
 
-Using the instructions below, first create a new paragraph type for the **Hero** and later, another for the **Quote**
+The tabbed content below provides instructions for building paragrap types for the Hero, Quote, and Card componoents.
 
 {% hint style="info" %}
 **TIP:** After the Hero paragraph type has been created, you can reuse its fields in the Quote and Card paragraph types.

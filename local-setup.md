@@ -9,12 +9,14 @@
 
 Regardless of which option you use to setup Drupal 8, the following modules need to be installed and enabled:
 
-* [Components Library](https://www.drupal.org/project/components) module
-* [Devel & Devel Kint](https://www.drupal.org/project/devel) \(both include in devel module\)
-* [Admin Toolbar](https://www.drupal.org/project/admin_toolbar)
+* [Components Libraries](https://www.drupal.org/project/components)
 * [Paragraphs](https://www.drupal.org/project/paragraphs)
+* [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
+* [Devel & Kint](https://www.drupal.org/project/devel) \(both in same module\)
+* [Admin toolbar](https://www.drupal.org/project/admin_toolbar)
 * [Twig Field Value](https://www.drupal.org/project/twig_field_value)
 * [Focal Point](https://www.drupal.org/project/focal_point)
+* [Crop API](https://www.drupal.org/project/crop)
 * Responsive Images \(core\)
 * Media & Media Library \(both on core\)
 
