@@ -1,6 +1,6 @@
 # Integrating the Hero
 
-Now it's time to begin the integration process for the Hero component.
+Now it's time to begin the integration process for the Hero component.  We are going to break things down and explain each part separately.
 
 * Open `/src/templates/paragraphs/paragraph--hero.html.twig` in your text editor
 * Remove all code in the file but leave all comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
@@ -19,7 +19,7 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 * Next step is to declare a variable for the title of the Hero. Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
 
 {% hint style="info" %}
-**NOTE:**  We are also going to set variables for the **eyebrow** and **cta** fields, but in the interest of keeping things simple, we won't show those until the end when we show the full integratioon code.
+**NOTE:**  We are also going to set variables for the **eyebrow** and **cta** fields, but in the interest of keeping things simple, we won't show those until the end when we show the full integration code.
 {% endhint %}
 
 {% tabs %}

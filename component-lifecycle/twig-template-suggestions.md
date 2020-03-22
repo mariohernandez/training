@@ -1,8 +1,8 @@
 # Twig template suggestions
 
-[Template suggestions](https://www.drupal.org/docs/8/theming/twig/working-with-twig-templates) are Twig templates used to override Drupal core or contrib modules templates. Template suggestions are saved in your theme's `/templates` directory. This is where Drupal knows to look for twig templates when rendering content. If it finds twig templates it uses those over the ones in core when rendering content.  Template suggestions are what we will use to integrate components with Drupal.  These template suggestions in the context of component integration, are typically referred to as **Presenter Templates** and as you will see, their only purpose is to pass data from Drupal to  the component.
+[Template suggestions](https://www.drupal.org/docs/8/theming/twig/working-with-twig-templates) are Twig templates used to override Drupal core or contrib modules templates. Template suggestions are saved in your theme's `/templates` directory. This is where Drupal knows to look for twig templates when rendering content. If it finds twig templates it uses those over the ones in core when rendering content.  Template suggestions are what we will use to integrate components with Drupal.  These template suggestions in the context of component integration, are typically referred to as **Presenter Templates** and as you will see, their only purpose is to pass data from Drupal to the component.  They act as the midlemen between Drupal and Pattern Lab components.
 
-#### Identifying template suggestions
+### Identifying template suggestions
 
 If you have been using Drupal for a while you may be well familiar with where to get templates from or what to name them. However if you've never worked with template suggestion no worries, Twig debugging, which [you should have enabled](https://www.drupal.org/node/2598914) in the previous page, will help us identify the templates we need.
 
@@ -19,7 +19,7 @@ If you look at the image above, you will see a few things that are extremely hel
 * Just above that line, under **FILE NAME SUGGESTIONS**:, there is a list of files all of which begin with **paragraph**. Drupal is telling us we can create a Twig template with any of the names listed above and we can customize it to our needs.  This list is what we mean when we say _Template suggestions_.
 * The file name with an **"X"** next to it is the template Drupal is currently using to render the Hero.
 
-## Creating new template suggestions <a id="creating-new-template-suggestions"></a>
+### Creating new template suggestions
 
 {% hint style="warning" %}
 **IMPORTANT:** The first rule of Drupal is "**Don't hack core**".  This means you should never edit or modify a template provided by Drupal core, or a contrib module.  Instead, you create a copy of that template in your theme.  This is a best practice and we are going to follow it throughout this training.
