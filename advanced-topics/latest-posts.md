@@ -13,7 +13,7 @@ This component will be completely different than the ones we've built thus far. 
 3. Inside _latest-posts.json_ add the following code:
 
 {% tabs %}
-{% tab title="card-collectioon.json" %}
+{% tab title="latest-posts.json" %}
 ```yaml
 {
   "heading": {
