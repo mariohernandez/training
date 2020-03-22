@@ -4,6 +4,7 @@ In a fast moving industry like ours, it is imperative that we have tools that al
 
 The local environment we provide for this training already includes a fully functional Drupal 8 theme, which includes the following Front-End tools:
 
+* [Mediacurrent's Theme Generator](https://github.com/mediacurrent/theme_generator_8): For buildign modern, component-ready Drupal 8 themes.
 * [Pattern Lab](https://patternlab.io/): Design system to build a living style-guide.
 * [NodeJS](https://nodejs.org/en/): A Javascript runtime system used by most modern apps today.
 * [NVM](https://github.com/creationix/nvm): Node Version Manager.

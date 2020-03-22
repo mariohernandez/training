@@ -14,3 +14,7 @@
 
 * [Ensure Blocks caching tags bubble up to the page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page)
 
+### Tools
+
+* [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
+
