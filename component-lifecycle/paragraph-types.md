@@ -7,16 +7,18 @@ There are many ways to build the Hero and Quote in Drupal. One very common appro
 Using the instructions below, first create a new paragraph type for the **Hero** and later, another for the **Quote**
 
 {% hint style="info" %}
-**TIP:** After the Hero paragraph type has been created, you can reuse its fields in the Quote paragraph type.
+**TIP:** After the Hero paragraph type has been created, you can reuse its fields in the Quote and Card paragraph types.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Hero Paragraph Type" %}
 * From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
 * Click the **Add paragraph type** button
+* Assign the Label and Machine name below
 
   | Label | Machine name |
   | :--- | :--- |
   | Hero | `hero` |
-  | Quote | `quote` |
 
 * Click the **Save and manage fields** button
 
@@ -24,16 +26,13 @@ Add the following fields and settings to the paragraph type:
 
 **NOTE:**: All fields use `1` as the **Allowed Number of values**.
 
-| Field label | Machine name | Field type | Component |
-| :--- | :--- | :--- | :--- |
-| Title | `field_title` | Text \(Plain\) | hero/quote |
-| Eyebrow | `field_eyebrow` | Text \(Plain\) | hero |
-| Body | `field_body` | Text \(Plain, long\) | hero/quote |
-| Image | `field_image` | Media Reference | hero/quote |
-| Call To Action | `field_cta` | Link | hero |
-| Name | `field_name` | Text \(Plain\) | quote |
-| Job title | `field_job_title` | Text \(Plain\) | quote |
-| City | `field_city` | Text \(Plain\) | quote |
+| Field label | Machine name | Field type |
+| :--- | :--- | :--- |
+| Title | `field_title` | Text \(Plain\) |
+| Eyebrow | `field_eyebrow` | Text \(Plain\) |
+| Body | `field_body` | Text \(Plain, long\) |
+| Image | `field_image` | Media Reference |
+| Call To Action | `field_cta` | Link |
 
 For the Image field, set the following configuration:
 
@@ -43,8 +42,81 @@ For the CTA field, set the following configuration:
 
 * **Allowed link type**: _Both internal and external links_
 * **Allowed link text**: _Required_
+{% endtab %}
 
-## Putting the Hero & Quote paragraphs type to use
+{% tab title="Quote Paragraph Type" %}
+
+
+* From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
+* Click the **Add paragraph type** button
+* Assign the Label and Machine name below
+
+  | Label | Machine name |
+  | :--- | :--- |
+  | Quote | `quote` |
+
+* Click the **Save and manage fields** button
+
+Add the following fields and settings to the paragraph type:
+
+**NOTE:**: All fields use `1` as the **Allowed Number of values**.
+
+| Field label | Machine name | Field type |
+| :--- | :--- | :--- |
+| Title | `field_title` | Text \(Plain\) |
+| Body | `field_body` | Text \(Plain, long\) |
+| Image | `field_image` | Media Reference |
+| Call To Action | `field_cta` | Link |
+| Name | `field_name` | Text \(Plain\) |
+| Job title | `field_job_title` | Text \(Plain\) |
+| City | `field_city` | Text \(Plain\) |
+
+For the Image field, set the following configuration:
+
+* **Media type**: `image`
+
+For the CTA field, set the following configuration:
+
+* **Allowed link type**: _Both internal and external links_
+* **Allowed link text**: _Required_
+{% endtab %}
+
+{% tab title="Card Paragraph Type" %}
+
+
+* From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
+* Click the **Add paragraph type** button
+* Assign the Label and Machine name below
+
+  | Label | Machine name |
+  | :--- | :--- |
+  | Card | `card` |
+
+* Click the **Save and manage fields** button
+
+Add the following fields and settings to the paragraph type:
+
+**NOTE:**: All fields use `1` as the **Allowed Number of values**.
+
+| Field label | Machine name | Field type |
+| :--- | :--- | :--- |
+| Title | `field_title` | Text \(Plain\) |
+| Body | `field_body` | Text \(Plain, long\) |
+| Image | `field_image` | Media Reference |
+| Call To Action | `field_cta` | Link |
+
+For the Image field, set the following configuration:
+
+* **Media type**: `image`
+
+For the CTA field, set the following configuration:
+
+* **Allowed link type**: _Both internal and external links_
+* **Allowed link text**: _Required_
+{% endtab %}
+{% endtabs %}
+
+## Putting the Hero/Quote/Card paragraph types to use
 
 Now that the Hero paragraph type is done, it's time to add it to a content type. Paragraphs on their own are useless. They need to be added to other entities such as a content type as an Entity Reference field.
 
@@ -67,5 +139,5 @@ Although we can add a paragraph type to any content type, for this exercise we w
 * In the _Reference Type_ section, choose **Hero** or **Quote** under _Paragraph type_
 * Click the **Save settings** button
 
-We'll use the Basic Page content type shortly to create a new hero in our site.
+We'll use the Basic Page content type shortly to create a new hero and quote in our site.
 
