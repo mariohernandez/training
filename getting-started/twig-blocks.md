@@ -21,7 +21,7 @@ The challenge we face is having control of the markup while adhering to Drupal's
 We've declared a twig block \(`quote_extra_content`\), in which we can add or remove any content we want. The block on its own does nothing. Currently we added the Twig block as a placeholder to use later.
 
 {% hint style="warning" %}
-**IMPORTANT:** Twig blocks are not the same, and have nothing to do with Drupal blocks.
+**IMPORTANT:** Twig blocks are not the same, or have anything to do with Drupal blocks.
 {% endhint %}
 
 ```php
