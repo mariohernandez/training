@@ -25,7 +25,7 @@ We've declared a twig block \(`quote_extra_content`\), in which we can add or re
 {% endhint %}
 
 ```php
-{% embed '@patterns/quote/quote.twig' with {
+{% embed '@training_theme/quote/quote.twig' with {
     heading: heading,
     image: content.field_image|render|trim is not empty ? content.field_image,
   }
