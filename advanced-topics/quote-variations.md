@@ -121,6 +121,7 @@ This is the current structure of the Quote component
 {% include '@theme_name/quote/quote.twig' with {
     "image": image,
     "body_text": body_text,
+    "modifier": modifier
   } only
 %}
 ```
