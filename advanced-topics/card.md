@@ -17,6 +17,6 @@ If you look at the image above, a single Card has the following data fields:
 
 ## Your assignment
 
-* Following the same steps for building the Hero or Quote components, build a Card component which reflects one of the items in the image above.
-* After the Card component has been build in Pattern Lab, build a paragraph type for it the same way we did with the Hero and Quote components.
+* Following the same steps for building the Hero or Quote components, build a Card component as shown in the image above.
+* After the Card component has been built in Pattern Lab, build a paragraph type for it the same way we did with the Hero and Quote components.
 
