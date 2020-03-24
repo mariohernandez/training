@@ -2,6 +2,8 @@
 
 ## Building the Latest Posts component
 
+![Latest Posts component](../.gitbook/assets/collection.jpg)
+
 Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
 
 This component will be completely different than the ones we've built thus far. All previous components have been a single item, this one will have an unlimited number of items. Let's start

@@ -5,5 +5,5 @@ Just as we did with the Hero component, we need to build build a paragraph type 
 ## New assignments
 
 * Follow [the same instructions](https://github.com/mariohernandez/training/tree/3b31750a83e5ccda5cfe62e460988983031df6f4/advanced-topics/paragraph-types.md) for creating a paragraph type for the Hero, to create a new paragraph type for the Quote component.
-* Then [integrate the Quote component with Drupal](https://github.com/mariohernandez/training/tree/3b31750a83e5ccda5cfe62e460988983031df6f4/advanced-topics/getting-twig-variables.md), similarly how we integrated the Hero.  Keep in mind, we need to be able to create variations within Drupal.
+* Then [integrate the Quote component with Drupal](https://github.com/mariohernandez/training/tree/3b31750a83e5ccda5cfe62e460988983031df6f4/advanced-topics/getting-twig-variables.md), similarly how we integrated the Hero. 
 
