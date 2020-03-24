@@ -108,7 +108,7 @@ Once you've written all that code, the full component integration should look li
 
 {# Including hero component and mapping its fields to Drupal's fields #}
 {%
-  include '@training_theme/hero/hero.twig' with {
+  include '@theme_name/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
     eyebrow: hero_eyebrow,
@@ -121,6 +121,14 @@ Once you've written all that code, the full component integration should look li
 ```
 {% endtab %}
 {% endtabs %}
+
+### Change the field format for the button
+
+By default Drupal is printing the button field as a single `<a>` tag.  While this may work in some situations, it does not in this particular situation since we need the URL and button text values as two separate items.
+
+* In your Drupal site, click **Structure \| Paragraph Types \| Hero**
+* Click the **Manage Display** tab
+* For the **Call To Action** field, change its format to **Separate field text and URL**.  Now the variable we set above will work. 
 
 ### Displaying the integrated Hero in Drupal
 

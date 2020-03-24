@@ -78,11 +78,9 @@ Now let's write some HTML for the component.
     {% endif %}
 
     {% if body_text %}
-      {%
-        include '@theme_name/body-text/body-text.twig' with {
-          "body_text": body_text
-        } only
-      %}
+      <div class="quote__body-text">
+        {{ body_text }}
+      </div>
     {% endif %}
 
     {% if author %}
@@ -131,9 +129,9 @@ Now that the quote component is done, let's compile the code so we can see it in
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
-`npm run build && npm run watch`
+`npm run build`
 
-This command combines both the `build` and `watch` tasks.
+`npm run watch`
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Quote component under components.
 

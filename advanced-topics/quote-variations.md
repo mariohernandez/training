@@ -96,7 +96,9 @@ This is the current structure of the Quote component
 |  |-- quote.json
 ```
 
-* To create a new pseudo pattern, or variation for the quote component, we create a new Twig file with the following naming convention: `quote~white.twig` \(notice the **tilde** in the file name\).  The term following the tilde \(white\), becomes the name by which the variation is know.
+### Creating a new variation
+
+* Inside the _quote_ directory, create a new Twig file with the following naming convention: `quote~white.twig` \(notice the **tilde** in the file name\).  The term following the tilde \(white\), becomes the name by which the variation is know.
 * Next we create a new JSON file with the same naming convention `quote~white.json`.  So the new Twig template will look into the new JSON file for its data.  This means we can be selective as to which fields we include in the new JSON file based on the requirements for this variation.
 * The structure of the Quote component should now look like this:
 
@@ -127,8 +129,11 @@ This is the current structure of the Quote component
 
 The white variation now only uses two of the fields from the original quote \(`image` and `body_text`\). What's going to happen to the remaining fields? Well, if you remember when we built the original Quote component, we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page. Since we are only passing a limited number of fields in the white variation, the missing fields will simply be ignored.
 
-* Rebuild your project \(`npm run build && npm run watch`\)
-* You should now see two Quote components in Pattern Lab.  The second one should not have a title or author-related fields.
+`npm run build`
+
+`npm run watch`
+
+You should now see two Quote components in Pattern Lab.  The second one should not have a title or author-related fields.
 
 ### How do we add new fields to a variation? 🤔
 
@@ -156,18 +161,16 @@ Let's update the `quote.twig` template below by scrolling to the bottom of the t
   <div class="quote__content">
     {% if title %}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@theme_name/heading/heading.twig' with {
           "heading": heading
         } only
       %}
     {% endif %}
 
     {% if body_text %}
-      {%
-        include '@training_theme/body-text/body-text.twig' with {
-          "body_text": body_text
-        } only
-      %}
+      <div class="quote__body-text">
+        {{ body_text }}
+      </div>
     {% endif %}
 
     {% if author %}
@@ -178,7 +181,7 @@ Let's update the `quote.twig` template below by scrolling to the bottom of the t
       </cite>
     {% endif %}
 
-    // Placeholder for a button to be added.
+    {# Placeholder for a button to be added. #}
     {% block quote_cta %}
     {% endblock %}
   </div>
