@@ -18,10 +18,6 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 
 * Next step is to declare a variable for the title of the Hero. Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
 
-{% hint style="info" %}
-**NOTE:**  We are also going to set variables for the **eyebrow** and **cta** fields, but in the interest of keeping things simple, we won't show those until the end when we show the full integration code.
-{% endhint %}
-
 {% tabs %}
 {% tab title="paragraph--hero.html.twig" %}
 ```php
