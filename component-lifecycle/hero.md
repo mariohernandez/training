@@ -140,6 +140,29 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 ```css
 // Import site utilities
 @import '../../global/utils/init';
+
+.hero {
+  background-color: $color-white;
+}
+
+.hero__content {
+  background-color: $color-white;
+  margin: 0 auto;
+  padding: 1.6rem;
+
+  @include breakpoint ($bp-md) {
+    position: absolute;
+    left: 40px;
+    top: calc(50% - 75px);
+    width: 60%;
+  }
+}
+
+.hero__body-text {
+  font-weight: 300;
+  margin-bottom: 20px
+}
+
 ```
 {% endtab %}
 {% endtabs %}
