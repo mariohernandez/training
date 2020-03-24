@@ -16,6 +16,7 @@
 * [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Twig for Template Designers](https://twig.symfony.com/doc/2.x/templates.html)
 * [Twig blocks](https://twig.symfony.com/doc/2.x/tags/extends.html)
+* [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 
 ### Blog Posts/Tutorials
 

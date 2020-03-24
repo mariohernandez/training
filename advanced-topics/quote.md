@@ -117,6 +117,18 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 ```css
 // Import site utilities
 @import '../../global/utils/init';
+
+.quote {
+  display: flex;
+  background-color: blue;
+  color: white;
+}
+
+
+.quote__content {
+  padding: 40px;
+}
+
 ```
 {% endtab %}
 {% endtabs %}
