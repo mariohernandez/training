@@ -29,3 +29,7 @@
 * [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
 * [Pattern Lab](https://patternlab.io/) \(Node edition\)
 
+### Misc
+
+* [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
+
