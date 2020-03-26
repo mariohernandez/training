@@ -115,7 +115,7 @@ So the data is ready, let's go ahead and add the markup for the component.
               "image": item.image,
               "title": item.title,
               "body_text": item.body_text,
-              "cta": item.cta,
+              "tags": item.tags,
               "modifier": ' latest-posts__item'
             } only
           %}
