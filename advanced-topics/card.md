@@ -2,7 +2,7 @@
 
 A component that will introduce us to a few more useful techniques for working with components is the image you see below. The image shows a typical type of content that you will most likely find on most websites. We will refer to this as **Latest Posts**, but this could be called many other things \(Card grid, article collection, latest news, etc.\). Whatever the name is, the point is that we have a component repeated multiple times. Some may build this a single component and there is nothing wrong with that approach, however, we could probably get more out of building a single card component first, then repeating it as many times as we want to. By doing this, we have an individual card component we could use not only for this type of content by for various types of content.
 
-![Card Component](../.gitbook/assets/card.jpg)
+![](../.gitbook/assets/card.png)
 
 ## Planning for an individual Card component
 

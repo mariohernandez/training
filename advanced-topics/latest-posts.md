@@ -2,7 +2,7 @@
 
 ## Building the Latest Posts component
 
-![Latest Posts component](../.gitbook/assets/collection.jpg)
+![](../.gitbook/assets/latest-posts.png)
 
 Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
 
