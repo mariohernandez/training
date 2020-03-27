@@ -1,11 +1,9 @@
 # Local Setup
 
-### Install Drupal 8
+### **Use one of the options below to install Drupal**
 
-#### **Use any of the options below:**
-
-* Use [Acquia Dev Desktop](https://docs.acquia.com/dev-desktop/install/) to setup a Drupal 8 website
-* You can use [Lando](https://docs.lando.dev/basics/installation.html), [DDev](https://ddev.readthedocs.io/en/stable/#installation) or [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html) to setup a new Drupal 8 Website
+* [Acquia Dev Desktop](https://docs.acquia.com/dev-desktop/install/)
+* You could also use [Lando](https://docs.lando.dev/basics/installation.html), [DDev](https://ddev.readthedocs.io/en/stable/#installation) or [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
 
 Regardless of which option you use to setup Drupal 8, the following modules need to be installed and enabled:
 
