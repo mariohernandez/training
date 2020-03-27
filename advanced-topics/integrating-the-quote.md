@@ -4,6 +4,6 @@ Just as we did with the Hero component, we need to build build a paragraph type 
 
 ## New assignments
 
-* Create a new paragraph type for the [Quote component](https://mariohernandez.gitbook.io/training/component-lifecycle/paragraph-types).
+* Create a new paragraph type for the [Quote component](../component-lifecycle/paragraph-types.md).
 * Then [integrate the Quote](../component-lifecycle/getting-twig-variables.md) component with Drupal, similarly how we integrated the Hero. 
 
