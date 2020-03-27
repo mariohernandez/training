@@ -31,14 +31,14 @@ global:
 4. **dist/css/global.css: { }**: This is the path to the asset relative to the root of the theme. All assets in our theme are compiled into `dist/css` or `dist/js`.   A library can have both of these assets.  The path can also include multiple lines of assets.  Say you are building a library for a component that uses a third party stylesheet, in addition to the path above you could include a new line with the path for the third party stylesheet.  Same goes for JS assets.
 
 {% hint style="info" %}
-Drupal Asset Libraries are powerful and there is so much more about them.  Learn more about [Drupal Libraries](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module).
+Drupal Asset Libraries are powerful and there is so much more about them. Learn more about [Drupal Libraries](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module).
 {% endhint %}
 
 ### Creating a new library for the Hero component
 
 Let's create a new Drupal library for the Hero component so we can apply all css we've written for it when rendered in Drupal.
 
-* Open `training_theme.libraries.yml` in your editor \(Replace `training_theme` ****with your actual theme name\).
+* Open `training_theme.libraries.yml` in your editor \(Replace `training_theme` _\*\*_with your actual theme name\).
 * Copy and paste at the bottom of the file the code below:
 
 {% tabs %}
@@ -56,7 +56,7 @@ Libraries are great because Drupal only loads what we need when we need it to av
 
 ### Attaching a library
 
-Now that the Hero component's library is ready, we need to make Drupal aware of it so it can use it.  We do this by using Twig's `attach_library` function.
+Now that the Hero component's library is ready, we need to make Drupal aware of it so it can use it. We do this by using Twig's `attach_library` function.
 
 1. In your editor, open `src/patterns/components/hero/hero.twig`
 2. Edit the file by adding the following code at the first line in the file:
@@ -90,7 +90,7 @@ After clearing Drupal's cache if you reload the page with a Hero, you should see
 
 ## Creating libraries for each component <a id="creating-libraries-for-each-component"></a>
 
-From now on for every new component we create in Pattern Lab, we are going to create a new library for it.  In addition, we are going to attach the new library to the corresponding component.  As I mentioned before, libraries have no effect in Pattern Lab, but it is a good practice to create and attach a component's library while you are working on the component as it can be easy to forget to do it later.
+From now on for every new component we create in Pattern Lab, we are going to create a new library for it. In addition, we are going to attach the new library to the corresponding component. As I mentioned before, libraries have no effect in Pattern Lab, but it is a good practice to create and attach a component's library while you are working on the component as it can be easy to forget to do it later.
 
 {% hint style="info" %}
 **More on Drupal Libraries:** Mediacurrent's Director of Front-End Development, Zack Hawkins, explains libraries in detail: [https://www.youtube.com/watch?v=V8hnfxSx4Ck](https://www.youtube.com/watch?v=V8hnfxSx4Ck)

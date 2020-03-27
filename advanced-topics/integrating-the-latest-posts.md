@@ -2,7 +2,7 @@
 
 In the past two integration exercises we have integrated components with data that is coming from a content type. This time we are going to integrate the movie card collection component with data that is coming from a Drupal view. The process is a little different as Drupal's view offer their own twig templates and the data they produce is usually a collection of fields or list of fields.
 
-### Views template suggestions
+## Views template suggestions
 
 Whether data for a component comes from a content type, paragraph, block or a view, we still need to be able to override Drupal's templates in order to integrate the components, which means we need to create custom twig template suggestions.
 
@@ -12,7 +12,7 @@ One key piece of information in the views article above is this:
 
 > For each view, there will be a minimum of **two templates** used. The first is used for all views: `views-view.html.twig`. The second template is determined by the style selected for the view \(i.e. unformatted, fields, etc.\), for which a template suggestion would look like `views-view-unformatted.html.twig`. Note that certain aspects of the view can also change which style is used; for example, arguments which provide a summary view might change the style to one of the special summary styles.
 
-### Discovering the right views template to override
+## Discovering the right views template to override
 
 The process for discovering the templates Drupal's views are using is the same as what we've done so far, twig debugging. So repeat the same process as follows:
 
@@ -24,7 +24,7 @@ The process for discovering the templates Drupal's views are using is the same a
 
 As we read in the excerpt above, there are usually two views templates using when rendering content, the first one I'd like to think of as the wrapper for the view and the second one wraps the content or content rows, and its name is based on the display format used when creating the view \(i.e. unformatted\). This is what we are seeing in the screenshot above.
 
-### Creating Views template suggestions
+## Creating Views template suggestions
 
 1. Copy the `views-view.html.twig` and `views-view-unformatted.html.twig` files from `/core/themes/stable/templates/views/`, and place them into `<project-root>/web/themes/custom/<theme-name>/src/templates/views/` If the **views** directory does not exist, create it.
 2. We need to rename the templates as follows:
@@ -74,7 +74,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 * As you may recall, in the **latest posts** component, the data for individual **cards** is stored in an `items[ ]` array in the component's `.json` file. We loop through that array, and for each item we use an `include` statement to add a **card** component and pass in the data from the item we're currently iterating over. This gives us a list of movie cards inside our markup for the **Latest Posts** component.
 * Views is essentially doing the same thing. The `latest_posts` view is set up to show a list of article nodes displayed in the teaser view mode. Since we already integrated the **card** with the teaser view mode of article nodes, the end result is the same: a simple list of movie cards.
 
-#### Clear Drupal's caches
+### Clear Drupal's caches
 
 Now if you reload the /news page you should see the latest posts in place. There is one more thing to do for the listing of movies and we will do that next.
 

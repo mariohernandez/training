@@ -1,6 +1,6 @@
 # Integrating the Hero
 
-Now it's time to begin the integration process for the Hero component.  We are going to break things down and explain each part separately.
+Now it's time to begin the integration process for the Hero component. We are going to break things down and explain each part separately.
 
 * Open `/src/templates/paragraphs/paragraph--hero.html.twig` in your text editor
 * Remove all code in the file but leave all comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
@@ -14,7 +14,7 @@ Now it's time to begin the integration process for the Hero component.  We are g
 {% endtab %}
 {% endtabs %}
 
-To follow the best practices we discussed earlier regarding letting Drupal render the full content array, we are setting a twig variable for the sole purpose of triggering a full render of the content array.  We are not going to use the variable at all, it is only intended to trigger Drupal to do its thing.
+To follow the best practices we discussed earlier regarding letting Drupal render the full content array, we are setting a twig variable for the sole purpose of triggering a full render of the content array. We are not going to use the variable at all, it is only intended to trigger Drupal to do its thing.
 
 * Next step is to declare a variable for the title of the Hero. Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
 
@@ -47,9 +47,9 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 
 * We are setting Twig variables for the **Heading, Eyebrow** and **Button** components.  This is not required but it makes the include code look cleaner and easier to read.  You will see.
 * The structure of these 3 variables matches the data structure in the components in Pattern Lab.  The biggest difference here is that for the **title** value \(line 4\), **text** value \(line 10\), **text** value \(line 16\), and **url** value \(line 17\), we are passing Drupal data.
-* A good practice when getting field values is to strip white space by using the `|render|trim`Twig filters, and then check that the field is really not empty \(`is  not empty ?`\)   if that's true, we print the field's value \(i.e.`content.field_titile`\).
+* A good practice when getting field values is to strip white space by using the `|render|trim`Twig filters, and then check that the field is really not empty \(`is not empty ?`\) if that's true, we print the field's value \(i.e.`content.field_titile`\).
 
- Now let's make use of the Hero component in the Paragraph template.  Let's look at the code below and explain how this works.
+  Now let's make use of the Hero component in the Paragraph template. Let's look at the code below and explain how this works.
 
 {% tabs %}
 {% tab title="paragraph--hero.html.twig" %}
@@ -117,28 +117,27 @@ Once you've written all that code, the full component integration should look li
     cta: hero_cta
   } only
 %}
-
 ```
 {% endtab %}
 {% endtabs %}
 
-### Change the field format for the button
+## Change the field format for the button
 
-By default Drupal is printing the button field as a single `<a>` tag.  While this may work in some situations, it does not in this particular situation since we need the URL and button text values as two separate items.
+By default Drupal is printing the button field as a single `<a>` tag. While this may work in some situations, it does not in this particular situation since we need the URL and button text values as two separate items.
 
 * In your Drupal site, click **Structure \| Paragraph Types \| Hero**
 * Click the **Manage Display** tab
 * For the **Call To Action** field, change its format to **Separate field text and URL**.  Now the variable we set above will work.
 
-### Displaying the integrated Hero in Drupal
+## Displaying the integrated Hero in Drupal
 
 If we clear Drupal's cache and reload the page we should see the Hero in Drupal inheriting all the styles and markup from the component in Pattern Lab.
 
 _**You DID IT!**_ 🙌 🔥
 
-Just for fun, once the hero displays in Drupal, inspect the code again and you should see all the markup we wrote when we built the component in Pattern Lab.  This means Drupal  is only providing the data for the component, but the markup, styles and javascript, if any, is sourced from Pattern Lab.
+Just for fun, once the hero displays in Drupal, inspect the code again and you should see all the markup we wrote when we built the component in Pattern Lab. This means Drupal is only providing the data for the component, but the markup, styles and javascript, if any, is sourced from Pattern Lab.
 
-### But wait ...It didn't work 👎 😝
+## But wait ...It didn't work 👎 😝
 
-Perhaps the Hero component is rendering properly in Drupal, and the Markup when we inspect the code all looks like it's coming from Pattern Lab.  But the Hero is broken as it has no styles at all.  What went wrong?  The answer is Drupal Libraries.  Let's fix this problem now by talking about [Drupal Libraries](drupal-libraries.md).
+Perhaps the Hero component is rendering properly in Drupal, and the Markup when we inspect the code all looks like it's coming from Pattern Lab. But the Hero is broken as it has no styles at all. What went wrong? The answer is Drupal Libraries. Let's fix this problem now by talking about [Drupal Libraries](drupal-libraries.md).
 

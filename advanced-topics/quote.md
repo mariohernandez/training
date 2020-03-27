@@ -128,7 +128,6 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 .quote__content {
   padding: 40px;
 }
-
 ```
 {% endtab %}
 {% endtabs %}

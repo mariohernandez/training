@@ -134,7 +134,7 @@ The white variation now only uses two of the fields from the original quote \(`i
 
 `npm run watch`
 
-You should now see two Quote components in Pattern Lab.  The second one should not have a title or author-related fields.
+You should now see two Quote components in Pattern Lab. The second one should not have a title or author-related fields.
 
 ### How do we add new fields to a variation? 🤔
 
