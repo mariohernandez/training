@@ -12,8 +12,9 @@ If you look at the image above, a single Card has the following data fields:
 
 * image
 * title
+* date
 * body
-* & button
+* & tags
 
 ## Your assignment
 
