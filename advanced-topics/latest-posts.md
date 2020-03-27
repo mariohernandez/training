@@ -95,13 +95,13 @@ So the data is ready, let's go ahead and add the markup for the component.
 {% tabs %}
 {% tab title="latest-posts.twig" %}
 ```php
-{{ attach_library('theme_name/latest-posts') }}
+{{ attach_library('training_theme/latest-posts') }}
 
 <section class="latest-posts{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {% if heading %}
     {%
-      include '@theme_name/heading/heading.twig' with {
+      include '@training_theme/heading/heading.twig' with {
         "heading": heading
       } only
     %}
@@ -111,7 +111,7 @@ So the data is ready, let's go ahead and add the markup for the component.
     <div class="latest-posts__items">
       {% for item in items %}
           {%
-            include '@theme_name/card/card.twig' with {
+            include '@training_theme/card/card.twig' with {
               "image": item.image,
               "title": item.title,
               "body_text": item.body_text,

@@ -46,16 +46,16 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 {% endtabs %}
 
 * We are setting Twig variables for the **Heading, Eyebrow** and **Button** components.  This is not required but it makes the include code look cleaner and easier to read.  You will see.
-* The structure of these 3 variables matches the data structure in the components in Pattern Lab.  The biggest difference here is that for the **title** value \(line 4\), **text** value \(line 10\), **text** value \(line 16\), and **url** value \(line 17\), we are passing Drupal data.  
+* The structure of these 3 variables matches the data structure in the components in Pattern Lab.  The biggest difference here is that for the **title** value \(line 4\), **text** value \(line 10\), **text** value \(line 16\), and **url** value \(line 17\), we are passing Drupal data.
 * A good practice when getting field values is to strip white space by using the `|render|trim`Twig filters, and then check that the field is really not empty \(`is  not empty ?`\)   if that's true, we print the field's value \(i.e.`content.field_titile`\).
 
- Now let's make use of the Hero component in the Paragraph template.  Let's look at the code below and explain how this works. 
+ Now let's make use of the Hero component in the Paragraph template.  Let's look at the code below and explain how this works.
 
 {% tabs %}
 {% tab title="paragraph--hero.html.twig" %}
 ```php
 {%
-  include '@theme_name/hero/hero.twig' with {
+  include '@training_theme/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
     eyebrow: hero_eyebrow,
@@ -68,11 +68,11 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 {% endtab %}
 {% endtabs %}
 
-* We are using an `include` Twig statement to integrate the Hero component. Using  the  theme's namespace, `theme_name`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  **Component Libraries** module and the namespace we created, we can  direct Drupal to also look for Twig templates in our components directory, among other places. **IMPORTANT**:  Change `theme_name` with your actual namespace.
+* We are using an `include` Twig statement to integrate the Hero component. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  **Component Libraries** module and the namespace we created, we can  direct Drupal to also look for Twig templates in our components directory, among other places. **IMPORTANT**:  Change `training_theme` with your actual namespace.
 * Next we pass in Drupal's `attributes` variable so that Drupal  can inject any attributes it needs to the Hero paragraph type.  This is recommended, but not required.
-* The next step is to  map the `eyebrow, heading, and button` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  this mapping of these keys to their values, much cleaner.  
+* The next step is to  map the `eyebrow, heading, and button` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  this mapping of these keys to their values, much cleaner.
 * Last but not least we map the `body` key with Drupal's body field and again, repeat the process to strip any white space in the field as well as ensuring the field is not empty.
-* I lied, it's not last  😊 notice in the `include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is an `only` keyword?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title and  body fields,  we could just include those fields and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.  
+* I lied, it's not last  😊 notice in the `include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is an `only` keyword?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title and  body fields,  we could just include those fields and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.
 
 Once you've written all that code, the full component integration should look like this:
 
@@ -108,7 +108,7 @@ Once you've written all that code, the full component integration should look li
 
 {# Including hero component and mapping its fields to Drupal's fields #}
 {%
-  include '@theme_name/hero/hero.twig' with {
+  include '@training_theme/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
     eyebrow: hero_eyebrow,
@@ -128,11 +128,11 @@ By default Drupal is printing the button field as a single `<a>` tag.  While thi
 
 * In your Drupal site, click **Structure \| Paragraph Types \| Hero**
 * Click the **Manage Display** tab
-* For the **Call To Action** field, change its format to **Separate field text and URL**.  Now the variable we set above will work. 
+* For the **Call To Action** field, change its format to **Separate field text and URL**.  Now the variable we set above will work.
 
 ### Displaying the integrated Hero in Drupal
 
-If we clear Drupal's cache and reload the page we should see the Hero in Drupal inheriting all the styles and markup from the component in Pattern Lab.  
+If we clear Drupal's cache and reload the page we should see the Hero in Drupal inheriting all the styles and markup from the component in Pattern Lab.
 
 _**You DID IT!**_ 🙌 🔥
 

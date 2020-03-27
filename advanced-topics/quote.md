@@ -71,7 +71,7 @@ Now let's write some HTML for the component.
   <div class="quote__content">
     {% if title %}
       {%
-        include '@theme_name/heading/heading.twig' with {
+        include '@training_theme/heading/heading.twig' with {
           "heading": heading
         } only
       %}

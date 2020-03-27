@@ -46,7 +46,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% embed '@theme_name/latest-posts/latest-posts.twig' %}
+{% embed '@training_theme/latest-posts/latest-posts.twig' %}
   {% block latest_posts %}
     {{ rows }}
   {% endblock %}

@@ -118,7 +118,7 @@ This is the current structure of the Quote component
 {% tabs %}
 {% tab title="quote~white.twig" %}
 ```php
-{% include '@theme_name/quote/quote.twig' with {
+{% include '@training_theme/quote/quote.twig' with {
     "image": image,
     "body_text": body_text,
     "modifier": modifier
@@ -162,7 +162,7 @@ Let's update the `quote.twig` template below by scrolling to the bottom of the t
   <div class="quote__content">
     {% if title %}
       {%
-        include '@theme_name/heading/heading.twig' with {
+        include '@training_theme/heading/heading.twig' with {
           "heading": heading
         } only
       %}
@@ -216,7 +216,7 @@ Although the data file now reflects the button field, we have no way to add it t
 {% tabs %}
 {% tab title="quote~white.twig" %}
 ```php
-{% embed '@theme_name/quote/quote.twig' with {
+{% embed '@training_theme/quote/quote.twig' with {
     "image": image,
     "body_text": body_text,
     "modifier": modifier
@@ -224,7 +224,7 @@ Although the data file now reflects the button field, we have no way to add it t
 %}
   {% block quote_cta %}
     {%
-      include '@theme_name/button/button.twig' with {
+      include '@training_theme/button/button.twig' with {
         "text": cta.text,
         "url": cta.url,
         "modifier": cta.modifier
