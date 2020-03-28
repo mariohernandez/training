@@ -127,6 +127,8 @@ By now we should be well familiar with the fields structure above.  The one fiel
 1. Inside the _card_ directory create a new file called **card.scss**
 2. Inside _card.scss_ add the following code:
 
+{% tabs %}
+{% tab title="card.scss" %}
 ```css
 // Import site utilities
 @import '../../global/utils/init';
@@ -190,4 +192,6 @@ By now we should be well familiar with the fields structure above.  The one fiel
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
