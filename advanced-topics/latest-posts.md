@@ -2,15 +2,15 @@
 
 We will refer to this as **Latest Posts**, but this could be called many other things \(Card grid, article collection, latest news, etc.\). Whatever the name is, the point is that we have a component repeated multiple times. Some may build this a single component and there is nothing wrong with that approach, however, we could probably get more out of building a single card component first, then repeating it as many times as we want to. By doing this, we have an individual card component we could use not only for this type of content by for various types of content.
 
-## Building the Latest Posts component
-
 ![](../.gitbook/assets/latest-posts.png)
+
+### Exercise: Build the Latest Posts component
 
 Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
 
 This component will be completely different than the ones we've built thus far. All previous components have been a single item, this one will have an unlimited number of items. Let's start
 
-## Component's stock content
+#### Component's stock content
 
 1. Inside _components_ create a new directory called **latest-posts**
 2. Inside the _latest-posts_ directory create a new file called `latest-posts.json`
@@ -22,57 +22,87 @@ This component will be completely different than the ones we've built thus far. 
 {
   "heading": {
     "heading_level": "2",
-    "modifier": "latest-posts__title",
-    "title": "All you need to know about components",
+    "modifier": "latest-posts__heading",
+    "title": "Latest Posts",
     "url": ""
   },
   "items": [
     {
-      "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/720x405' alt='Card image' />",
+      "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
       "title": {
         "heading_level": "3",
-        "modifier": "latest-posts__title",
-        "text": "Want to learn about components?",
-        "url": ""
+        "modifier": "card__title",
+        "text": "The beauty of nature",
+        "url": "#"
       },
+      "date": "March 16 2020",
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-      "cta": {
-        "text": "Getting started",
-        "url": "#",
-        "modifier": "latest-posts__cta"
-      },
+      "tags": [
+        {
+          "text": "Phtography",
+          "url": "#"
+        },
+        {
+          "text": "Nature",
+          "url": "#"
+        },
+        {
+          "text": "Outdoors",
+          "url": "#"
+        }
+      ],
       "modifier": ""
     },
     {
-      "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/720x405' alt='Card image' />",
+      "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
       "title": {
         "heading_level": "3",
-        "modifier": "latest-posts__title",
-        "text": "Top benefits of components",
-        "url": ""
+        "modifier": "card__title",
+        "text": "The beauty of nature",
+        "url": "#"
       },
+      "date": "March 16 2020",
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-      "cta": {
-        "text": "Advantages of components",
-        "url": "#",
-        "modifier": "latest-posts__cta"
-      },
+      "tags": [
+        {
+          "text": "Phtography",
+          "url": "#"
+        },
+        {
+          "text": "Nature",
+          "url": "#"
+        },
+        {
+          "text": "Outdoors",
+          "url": "#"
+        }
+      ],
       "modifier": ""
     },
     {
-      "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/720x405' alt='Card image' />",
+      "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
       "title": {
         "heading_level": "3",
-        "modifier": "latest-posts__title",
-        "text": "Where to go from here?",
-        "url": ""
+        "modifier": "card__title",
+        "text": "The beauty of nature",
+        "url": "#"
       },
+      "date": "March 16 2020",
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-      "cta": {
-        "text": "What's next?",
-        "url": "#",
-        "modifier": "latest-posts__cta"
-      },
+      "tags": [
+        {
+          "text": "Phtography",
+          "url": "#"
+        },
+        {
+          "text": "Nature",
+          "url": "#"
+        },
+        {
+          "text": "Outdoors",
+          "url": "#"
+        }
+      ],
       "modifier": ""
     }
   ]
@@ -87,7 +117,7 @@ There is a lot going on in this file. Let's go over it and you will see that it'
 * At around line 8, we declared an `items` array.  This will help us mimic the array of content to build the collection.
 * Each item in the items array represents a card.  Inside each card item we have defined the card's fields \(`image`, `title`, `body_text`, `cta` \).  We have repeated this 3 times to achieve the collection shown in the Latest Posts image above.
 
-## Component markup
+#### Component markup
 
 So the data is ready, let's go ahead and add the markup for the component.
 
@@ -116,7 +146,7 @@ So the data is ready, let's go ahead and add the markup for the component.
             include '@training_theme/card/card.twig' with {
               "image": item.image,
               "title": item.title,
-              "body_text": item.body_text,
+              "body": item.body,
               "tags": item.tags,
               "modifier": ' latest-posts__item'
             } only
@@ -125,6 +155,7 @@ So the data is ready, let's go ahead and add the markup for the component.
     </div>
   {% endif %}
 </section>
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -138,7 +169,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 * **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array of content and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
 * Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
 
-## Component's styles
+#### Component's styles
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
