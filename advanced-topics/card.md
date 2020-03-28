@@ -164,7 +164,6 @@ By now we should be well familiar with the fields structure above.  The one fiel
   letter-spacing: 2px;
 }
 
-// List of tags.
 .card__tags--items {
   display: flex;
   list-style: none;
@@ -172,7 +171,6 @@ By now we should be well familiar with the fields structure above.  The one fiel
   padding: 0;
 }
 
-// Individual tag.
 .card__tag--item {
   background-color: #edf2f7;
   border-radius: 99999px;
@@ -197,7 +195,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
 
 #### Compiling the code
 
-Now that the card component is done, let's compile the code so we can see it in Pattern Lab.
+Now that the card component is done, let's compile the code so we can see it in Pattern Lab.  If the watch task is running you should be able to see the card component in Pattern Lab, otherwise follow these steps:
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
