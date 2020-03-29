@@ -1,8 +1,9 @@
-# Blog content type
+# Blog
 
-Before we can integrate our new Card component, we need to build a Drupal entity the same way we did for the Hero and Quote.  However, this entity is not going to be a paragraph type.  As we saw in the card component, each card item represents a node, possibly a blog post.  So we are going to build a new content type, Blog, with the same fields as the Card component.
+Before we can integrate our new Card component, we need to build a Drupal entity the same way we did for the Hero and Quote. However, this entity is not going to be a paragraph type. As we saw in the card component, each card item represents a node, possibly a blog post. So we are going to build a new content type, Blog, with the same fields as the Card component.
 
 ## Blog Content Type
+
 * From Drupal's Admin Toolbar, click **Structure \| Content Types**
 * Click the **Add content type** button
 * Assign the Label and Machine name below
@@ -15,7 +16,7 @@ Before we can integrate our new Card component, we need to build a Drupal entity
 
 Add the following fields and settings to the content type:
 
-**NOTE:**: The **Title** and **Body** fields are automatically added when a content type is created.  Keep them.
+**NOTE:**: The **Title** and **Body** fields are automatically added when a content type is created. Keep them.
 
 | Field label | Machine name | Field type |
 | :--- | :--- | :--- |
@@ -35,3 +36,4 @@ For the **Tags** field, set the following configuration:
 * **Reference method**: _Default_
 * _Check the box for_ **Create referenced entities if they don't already exist**
 * _**Vocabulary**:_ Tags
+
