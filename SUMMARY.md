@@ -42,6 +42,7 @@
 * [Card Component](advanced-topics/card.md)
 * [Latest Posts component](advanced-topics/latest-posts.md)
 * [Blog](advanced-topics/blog-content-type.md)
+* [Drupal Views & View Modes](advanced-topics/drupal-views-and-view-modes.md)
 * [Integrating the Latest Posts](advanced-topics/integrating-the-latest-posts.md)
 
 ## Resources
