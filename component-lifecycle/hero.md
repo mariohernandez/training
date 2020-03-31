@@ -18,7 +18,7 @@ Based on the design above, we need the following fields:
 
 _Ignore the header/navigation_.
 
-## Let's start
+## Exercise:  Build the Hero component
 
 ### Component's stock content
 
@@ -31,10 +31,7 @@ _Ignore the header/navigation_.
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/1400x787' alt='A wonderful image' />",
-  "eyebrow": {
-    "text": "Understanding the benefits",
-    "modifier": "hero__eyebrow"
-  },
+  "eyebrow": "Understanding the benefits",
   "heading": {
     "heading_level": "1",
     "modifier": "hero__title",
@@ -53,7 +50,7 @@ _Ignore the header/navigation_.
 {% endtab %}
 {% endtabs %}
 
-Just as we did with the Heading component, we are using JSON to define the component's fields and add stock/drummy content to the component. Our goal here is to reuse previously built components by nesting them into the hero to avoid code duplicate and improve maintenance of component by having a single source of code.
+Just as we did with the Heading component, we are using JSON to define the component's fields and add stock/dummy content to the component. Our goal here is to reuse previously built components by nesting them into the hero to avoid code duplicate and improve maintenance of component by having a single source of code.
 
 #### Some things to notice:
 
@@ -80,11 +77,9 @@ Now let's write some HTML for the component.
 
   <div class="hero__content">
     {% if eyebrow %}
-      {%
-        include '@training_theme/eyebrow/eyebrow.twig' with {
-          "eyebrow": eyebrow
-        } only
-      %}
+      <div class="hero__eyebrow">
+        {{ eyebrow }}
+      </div>
     {% endif %}
     {% if heading %}
       {%
@@ -95,21 +90,15 @@ Now let's write some HTML for the component.
     {% endif %}
 
     {% if body_text %}
-      {%
-        include '@training_theme/body-text/body-text.twig' with {
-          "body_text": body_text
-        } only
-      %}
+      <div class="hero__body-text">
+        {{ body_text }}
+      </div>
     {% endif %}
 
     {% if cta %}
-      {%
-        include '@training_theme/button/button.twig' with {
-          "text": cta.text,
-          "url": cta.url,
-          "modifier": cta.modifier
-        } only
-      %}
+      <a href="{{ cta.url }}" class="hero__cta">
+        {{ cta.text }}
+      </a>
     {% endif %}
   </div>
 </section>
@@ -126,7 +115,7 @@ In the interest of addressing the basics of component-building, we are going to 
 * We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore it should be named **hero**.  We do this by using the class of `hero.`
 * For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\).  This is a good practice so we don't print empty HTML.
 * Notice how every field uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
-* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the previously built components into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously built components into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
 
 ### Component's styles
 
@@ -185,12 +174,11 @@ While in your theme's root directory, run the following commands in your command
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
-### Fix the hero
+### Exercise:  Create new components
 
-#### Something went wrong.  The Hero component was not built properly.  Why?
+Notice how some of the fields above do not use an `include` statement?  This is because we don't have components for **Eyebrow,** **Body Text,** and **CTA**.  If we want to adopt a truly atomic design workflow, any fields we know will be reused on different components should be built as components.
 
-* We are using include statements for components we don't have \(eyebrow, button. & cta\).
-* Ideally, everything you need in Pattern Lab should be its own pattern/component \(Atomic Design\).
-* Let's fix this by quickly building an **Eyebrow** and **Body Text** components.
-* For the CTA, we will build a component too, but for now let's hard-code it \(demo\)
+1. Build new atoms for **Eyebrow**, **Body text**, and **Call To Action**
+2. Use the same data structure for each component you see in `hero.json` above
+3. After the 3 new components have been built, replace the hard-coded fields and use `include` to use the newly built components as we are doing for the **Heading** component. 
 
