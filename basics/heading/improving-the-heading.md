@@ -4,6 +4,8 @@ The heading component looks good and it will work great, ...as long as we always
 
 * Update `heading.json` to look like this:
 
+{% tabs %}
+{% tab title="heading.json" %}
 ```bash
 {
   "heading": {
@@ -14,6 +16,8 @@ The heading component looks good and it will work great, ...as long as we always
   }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 We just created an object for the heading with key/value **heading\_level, modifier, title**, and **url**.
 
@@ -26,6 +30,8 @@ We just created an object for the heading with key/value **heading\_level, modif
 
 * Update the `heading.twig` file to look like this:
 
+{% tabs %}
+{% tab title="heading.twig" %}
 ```php
 <h{{ heading.heading_level|default('2') }} class="heading{{ heading.modifier ? ' ' ~ heading.modifier }}">
   {% if heading.url %}
@@ -37,6 +43,8 @@ We just created an object for the heading with key/value **heading\_level, modif
   {% endif %}
 </h{{ heading.heading_level|default('2') }}>
 ```
+{% endtab %}
+{% endtabs %}
 
 Wow! What's all this? 😮
 

@@ -33,11 +33,15 @@ On a typical Drupal project the full path may look something like this: `<drupal
 2. Inside the _heading_ directory create a new file called **heading.json**
 3. Inside _heading.json_ add the following code:
 
+{% tabs %}
+{% tab title="heading.json" %}
 ```yaml
 {
   "title": "Welcome to the best training workshop!"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 We just created key/value pair for the heading with a key of **title** and **value** of _Welcome to the best training workshop!_.
 
@@ -48,9 +52,13 @@ Now let's write some HTML to be able to see the Heading component in the browser
 1. Inside the _heading_ directory create a new file called **heading.twig**
 2. Inside `heading.twig` add the following code:
 
+{% tabs %}
+{% tab title="heading.twig" %}
 ```php
 <h1 class="heading">{{ title }}</h1>
 ```
+{% endtab %}
+{% endtabs %}
 
 We created a **h1** heading in which we pass the value of title from the `json` file.
 
@@ -61,10 +69,14 @@ We don't need to write any CSS for this component, but let's at least create a S
 1. Inside the _heading_ directory create a new file called **heading.scss**
 2. Inside `heading.scss` add this code:
 
+{% tabs %}
+{% tab title="heading.scss" %}
 ```css
 // Import site utilities
 @import '../../global/utils/init';
 ```
+{% endtab %}
+{% endtabs %}
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
