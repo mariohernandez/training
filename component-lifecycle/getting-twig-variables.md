@@ -2,6 +2,8 @@
 
 Now it's time to begin the integration process for the Hero component. We are going to break things down and explain each part separately.
 
+### Exercise: Integrate the Hero
+
 * Open `/src/templates/paragraphs/paragraph--hero.html.twig` in your text editor
 * Remove all code in the file but leave all comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
 * Add the following code at the bottom of the template:
@@ -14,9 +16,9 @@ Now it's time to begin the integration process for the Hero component. We are go
 {% endtab %}
 {% endtabs %}
 
-To follow the best practices we discussed earlier regarding letting Drupal render the full content array, we are setting a twig variable for the sole purpose of triggering a full render of the content array. We are not going to use the variable at all, it is only intended to trigger Drupal to do its thing.
+To follow best practices we discussed earlier regarding letting Drupal render the full content array, we are setting a twig variable for the sole purpose of triggering a full render of the content array. We are not going to use the variable at all, it is only intended to trigger Drupal to do its thing.
 
-* Next step is to declare a variable for the title of the Hero. Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
+* Next step is to declare variables for the `title`, `eyebrow`, and `cta` fields. Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
 
 {% tabs %}
 {% tab title="paragraph--hero.html.twig" %}
@@ -45,7 +47,7 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 {% endtab %}
 {% endtabs %}
 
-* We are setting Twig variables for the **Heading, Eyebrow** and **Button** components.  This is not required but it makes the include code look cleaner and easier to read.  You will see.
+* Reason for setting variables for the fields above is that they all have several properties in addition to the actual value of the field. Setting these variables allow us to configure all their properties and their values prior to using the variables.
 * The structure of these 3 variables matches the data structure in the components in Pattern Lab.  The biggest difference here is that for the **title** value \(line 4\), **text** value \(line 10\), **text** value \(line 16\), and **url** value \(line 17\), we are passing Drupal data.
 * A good practice when getting field values is to strip white space by using the `|render|trim`Twig filters, and then check that the field is really not empty \(`is not empty ?`\) if that's true, we print the field's value \(i.e.`content.field_titile`\).
 
@@ -68,9 +70,9 @@ To follow the best practices we discussed earlier regarding letting Drupal rende
 {% endtab %}
 {% endtabs %}
 
-* We are using an `include` Twig statement to integrate the Hero component. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  **Component Libraries** module and the namespace we created, we can  direct Drupal to also look for Twig templates in our components directory, among other places. **IMPORTANT**:  Change `training_theme` with your actual namespace.
+* We are using an `include` Twig statement to integrate the Hero component. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can  direct Drupal to also look for Twig templates in our components directory, among other places. **IMPORTANT**:  Change `training_theme` with your actual namespace.
 * Next we pass in Drupal's `attributes` variable so that Drupal  can inject any attributes it needs to the Hero paragraph type.  This is recommended, but not required.
-* The next step is to  map the `eyebrow, heading, and button` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  this mapping of these keys to their values, much cleaner.
+* The next step is to  map the `eyebrow, heading, and button` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  the mapping of keys to their values, much cleaner.
 * Last but not least we map the `body` key with Drupal's body field and again, repeat the process to strip any white space in the field as well as ensuring the field is not empty.
 * I lied, it's not last  😊 notice in the `include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is an `only` keyword?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title and  body fields,  we could just include those fields and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.
 

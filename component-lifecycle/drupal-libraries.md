@@ -34,12 +34,12 @@ global:
 Drupal Asset Libraries are powerful and there is so much more about them. Learn more about [Drupal Libraries](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module).
 {% endhint %}
 
-### Creating a new library for the Hero component
+### Exercise: Create a new library for the Hero component
 
 Let's create a new Drupal library for the Hero component so we can apply all css we've written for it when rendered in Drupal.
 
-* Open `training_theme.libraries.yml` in your editor \(Replace `training_theme` _\*\*_with your actual theme name\).
-* Copy and paste at the bottom of the file the code below:
+* Open `training_theme.libraries.yml` in your editor \(Replace `training_theme` with your actual theme name\).
+* Add the code below:
 
 {% tabs %}
 {% tab title="theme\_name.libraries.yml" %}
@@ -51,6 +51,10 @@ hero:
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+**TIP**:  Mind the indentation in YML files.
+{% endhint %}
 
 Libraries are great because Drupal only loads what we need when we need it to avoid having to load assets that our page or component may never use. This helps with the site's performance.
 
@@ -79,16 +83,11 @@ With the code above, we are telling Drupal that whenever we render the Hero comp
 
 Don't forget to clear your caches when adding new libraries to your theme.
 
-* Use the admin menu to flush all caches \(**Configuration \| Development \| Performance**\)
-* or, if you have Drush setup, run this command:
-
-```text
-drush cr
-```
-
 After clearing Drupal's cache if you reload the page with a Hero, you should see all the styles and markup we wrote for it.
 
-## Creating libraries for each component <a id="creating-libraries-for-each-component"></a>
+### Exercise:  Create libraries for all previous component
+
+Create libraries for each of the components inside `src/patterns/components` that do not have a library.  Then attach the library to each of the component.
 
 From now on for every new component we create in Pattern Lab, we are going to create a new library for it. In addition, we are going to attach the new library to the corresponding component. As I mentioned before, libraries have no effect in Pattern Lab, but it is a good practice to create and attach a component's library while you are working on the component as it can be easy to forget to do it later.
 
