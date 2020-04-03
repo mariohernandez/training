@@ -76,8 +76,8 @@ By creating a view mode for the Image Media Entity we can define configurations 
 3. Under **View mode** select **Hero**
 4. Click the **Update** button then the **Save** button
 
-If you visit a page on your site with a hero image, you should notice the updates we just made.  In some cases you may need to clear your drupal caches.
+If you visit a page on your site with a hero image, you should notice the updates we just made.  In some cases you may need to clear your Drupal caches.
 
-* Inspect the hero by right-clikcing on ithe hero image and select **Inspect** or **Inspect element** depending on your browser
+* Inspect the hero by right-clicking on ithe hero image and select **Inspect** or **Inspect element** depending on your browser
 * You will notice that the code for the image has now changed to include all the image styles we created as well as their dimensions and the sizes information \(100vw\).  With this we are giving the browser a collection of images to choose from, how big we want them to be rendered at \(100vw\).  Now the browser can pick the best image possible for each breakpoint.
 
