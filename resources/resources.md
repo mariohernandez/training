@@ -24,6 +24,10 @@
 * [Responsive Images](https://cloudfour.com/thinks/responsive-images-101-definitions/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 
+### Screencasts/Video Tutorials
+
+* [A Walkthrough of Mediacurrent's Theme Generator](https://www.youtube.com/watch?v=cVyA2v-UwSQ)
+
 ### Tools
 
 * [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
