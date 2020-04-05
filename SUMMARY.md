@@ -29,14 +29,8 @@
 * [Integrating the Hero](component-lifecycle/getting-twig-variables.md)
 * [Drupal Libraries](component-lifecycle/drupal-libraries.md)
 
-## Extras
-
-* [Image styles](extras/image-styles.md)
-
 ## Advanced Topics
 
-* [Quote Component](advanced-topics/quote.md)
-* [Integrating the Quote](advanced-topics/integrating-the-quote.md)
 * [Card Component](advanced-topics/card.md)
 * [Component Variations](advanced-topics/component-variations.md)
 * [Card Variation](advanced-topics/card-variation.md)
@@ -45,7 +39,12 @@
 * [Drupal Views & View Modes](advanced-topics/drupal-views-and-view-modes.md)
 * [Integrating the Latest Posts](advanced-topics/integrating-the-latest-posts.md)
 
+## Extras (work in progress)
+
+* [Image styles](extras/image-styles.md)
+* [Quote Component](advanced-topics/quote.md)
+* [Integrating the Quote](advanced-topics/integrating-the-quote.md)
+
 ## Resources
 
 * [Resources](resources/resources.md)
-
