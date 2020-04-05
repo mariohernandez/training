@@ -277,11 +277,11 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add
 
 ### Compiling the code
 
-If you rebuild yoouor project you should see two card components. The second variation should have a buttoon in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
+If you rebuild yoouor project you should see two card components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 `npm run build`
 
 `npm run watch`
 
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variatioons should match the expected components.
 
