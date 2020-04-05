@@ -39,12 +39,13 @@
 * [Drupal Views & View Modes](advanced-topics/drupal-views-and-view-modes.md)
 * [Integrating the Latest Posts](advanced-topics/integrating-the-latest-posts.md)
 
-## Extras (work in progress)
+## Extras \(work in progress\)
 
-* [Image styles](extras/image-styles.md)
-* [Quote Component](advanced-topics/quote.md)
-* [Integrating the Quote](advanced-topics/integrating-the-quote.md)
+* [Image styles](extras-work-in-progress/image-styles.md)
+* [Quote Component](extras-work-in-progress/quote.md)
+* [Integrating the Quote](extras-work-in-progress/integrating-the-quote.md)
 
 ## Resources
 
 * [Resources](resources/resources.md)
+

@@ -58,11 +58,11 @@ Here's what the markup for the original Card component looks like:
 {% endtab %}
 {% endtabs %}
 
-Visually we know the two different variations look similar, however, if we pay close attention we will notice that the data fields between the variations are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variations that we should have no problem going the variation route vs. new components. Let's start!  The new variation will be called **Card wide**.
+Visually we know the two different variations look similar, however, if we pay close attention we will notice that the data fields between the variations are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variations that we should have no problem going the variation route vs. new components. Let's start! The new variation will be called **Card wide**.
 
 ## Exercise: Creating the Card variation
 
-![](../.gitbook/assets/quote-white%20%281%29.png)
+![](../.gitbook/assets/card-wide.png)
 
 We can see that the overall layout of the "Card wide" version of the component lends itself nicely to a variation. However, we see that some of the fields found in the original card are not present here \(tags\), and there is also a new field in this variation that is not part of the original card \(button\).
 
@@ -90,7 +90,7 @@ The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional state
 <a class="card card__wide">
 ```
 
-Now with this new class available, we can do all kinds of changes to the card variation without affecting the original card. One simple change we can make to the **card__wide** variation is changing the card's layout so the image is moved to the left and the rest of the content is moved to the right.
+Now with this new class available, we can do all kinds of changes to the card variation without affecting the original card. One simple change we can make to the **card\_\_wide** variation is changing the card's layout so the image is moved to the left and the rest of the content is moved to the right.
 
 ### Omitting fields in Card wide variations
 
@@ -148,7 +148,7 @@ The card wide variation now excludes tags and date fields. When we built the car
 
 `npm run watch`
 
-You should now see two Card components in Pattern Lab. The second one should not have tag or date fields.  However, the variation is still missing a button and eyebrow fields.  Let's work on this next.
+You should now see two Card components in Pattern Lab. The second one should not have tag or date fields. However, the variation is still missing a button and eyebrow fields. Let's work on this next.
 
 ### How do we add new fields to a variation? 🤔
 
@@ -217,7 +217,7 @@ Let's update the `card.twig` template below by scrolling to the bottom of the te
 {% endtab %}
 {% endtabs %}
 
-* First, we added the **job title** field.  Reason for this is that the date field, although uses the eyebrow component, is its own field type (date), wheeas the _job title_ field is a text field type
+* First, we added the **job title** field.  Reason for this is that the date field, although uses the eyebrow component, is its own field type \(date\), wheeas the _job title_ field is a text field type
 * Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\). Currently  the Twig block is empty but we will make use of it in our variation.
 * Update the `card~white.json` file so it includes the **button/cta** field, like this \(starting  on line 4\):
 
@@ -277,10 +277,11 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add
 
 ### Compiling the code
 
-If you rebuild yoouor project you should see two card components.  The second variation should have a buttoon in addition to the class of `card__wide` along with `card`.  How cool is this? 🧠 😮
+If you rebuild yoouor project you should see two card components. The second variation should have a buttoon in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 `npm run build`
 
 `npm run watch`
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).
+
