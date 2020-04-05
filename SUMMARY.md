@@ -36,10 +36,10 @@
 ## Advanced Topics
 
 * [Quote Component](advanced-topics/quote.md)
-* [Component Variations](advanced-topics/component-variations.md)
-* [Quote Variations](advanced-topics/quote-variations.md)
 * [Integrating the Quote](advanced-topics/integrating-the-quote.md)
 * [Card Component](advanced-topics/card.md)
+* [Component Variations](advanced-topics/component-variations.md)
+* [Card Variation](advanced-topics/card-variation.md)
 * [Latest Posts component](advanced-topics/latest-posts.md)
 * [Blog](advanced-topics/blog-content-type.md)
 * [Drupal Views & View Modes](advanced-topics/drupal-views-and-view-modes.md)
