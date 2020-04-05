@@ -238,9 +238,17 @@ Although the data file now reflects the button field, we have no way to add it t
 
 Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add new content to the Quote variation. In this case we included the button component. This is extremely powerful because in addition to be able to inherit most of the attributes from the original Quote component, we still have the flexibility to modify the data in the component variation to achieve the outcome we wanted.
 
-If you rebuild your project \(`npm run build && npm run watch`\), you should now see two Quote components, the second instance should have a button in addition to the class of `quote__white` next to `quote`. How cool is this? 🧠 😮
+### Compiling the code
 
-## Your assignment, should you choose to accept ...
+If you rebuild yoouor project you should see two Quote components.  The second variation should have a buttoon in addition to the class of `quote__white` along with `quote`.  How cool is this? 🧠 😮
+
+`npm run build`
+
+`npm run watch`
+
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). 
+
+## Exercise:  Build the remaining variation
 
 Now that you have a good idea of how to handle component variations, go ahead and build the other Quote variation. You can call it **Quote Reverse**.
 
