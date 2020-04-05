@@ -1,18 +1,16 @@
 # Component Variations
 
-Component variations are instances of a component with minor or big changes. Component variations are a great way to create different versions of a component without duplicating code by rebuilding components from scratch.
+Component variations are instances of a component with minor or big changes on look and/or behavior. Component variations are a great way to build new components using existing components to avoid code repetition.
 
-Let's take the Quote component for example. Here are three different ways in which this component will be displayed:
+Let's take the Card component for example. Here are two different ways in which this component will be displayed:
 
-![Default Quote component](../.gitbook/assets/quote.png)
+![Default Card component](../.gitbook/assets/card.png)
 
-![Quote White variation](../.gitbook/assets/quote-white%20%281%29.png)
-
-![Quote Reverse variation](../.gitbook/assets/quote-reverse.png)
+![Example of Card variation](../.gitbook/assets/card-wide.png)
 
 ## Planning for component variations
 
-Looking at the 3 quotes above, we see that they are practically the same quote component but with changes for each variation. There are many factors that determine if a component could be used as the base for variations.
+Looking at the two cards above, we see that they are practically the same quote component but with changes for each variation. There are many factors that determine if a component could be used as the base for variations.
 
 * Does the proposed variation have the overall look and feel of the original component?
 * Are there common patterns \(fields, markup, layout, etc.\) that can facilitate a variation vs. a whole new component?

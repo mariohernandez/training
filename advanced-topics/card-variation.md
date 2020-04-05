@@ -1,4 +1,4 @@
-# Quote Variations
+# Card Variation
 
 Probably the first thing you should look at to determine if a component is a candidate for variations, is the data fields, and second, the component's markup.
 
