@@ -98,6 +98,7 @@ Now with this new class available, we can do all kinds of changes to the card va
 {% tab title="card.scss" %}
 ```css
 .card {
+  ...
   display: flex;
 }
 
@@ -108,6 +109,8 @@ Now with this new class available, we can do all kinds of changes to the card va
 ```
 {% endtab %}
 {% endtabs %}
+
+The styles above help float the image and content side by side, plus assign each a 50% width so things are evently sized.  The card markup was written this way by design.  Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
 
 ### Omitting fields in Card wide variations
 
@@ -256,7 +259,7 @@ Let's update the `card.twig` template below by scrolling to the bottom of the te
     "url": "#",
     "modifier": "card__cta"
   },
-  "modifier": ""
+  "modifier": "card__wide"
 }
 ```
 {% endtab %}
@@ -279,9 +282,7 @@ Although the data file now reflects the button field, we have no way to add it t
   {% block card_cta %}
     {%
       include '@training_theme/button/button.twig' with {
-        "text": cta.text,
-        "url": cta.url,
-        "modifier": cta.modifier
+        "button": cta
       } only
     %}
   {% endblock %}
