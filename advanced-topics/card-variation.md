@@ -79,18 +79,35 @@ If you look at the [Card's JSON](https://mariohernandez.gitbook.io/training/adva
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-<section class="card{{ modifier ? ' ' ~ modifier }}...">
+<article class="card{{ modifier ? ' ' ~ modifier }}...">
 ```
 {% endtab %}
 {% endtabs %}
 
-The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON? if so, print it here along with the class of `card`, but add an empty space in between the two classes. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in the browser the `section` wrapper will now look like this:
+The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional statement asking "Is there a value for modifier in JSON? if so, print it here along with the class of `card`, but add an empty space in between the two classes. For example, if the value for modifier in JSON is, `card__wide`, when the card is rendered in the browser the `article` wrapper will now look like this:
 
 ```php
-<a class="card card__wide">
+<article class="card card__wide">
 ```
 
 Now with this new class available, we can do all kinds of changes to the card variation without affecting the original card. One simple change we can make to the **card\_\_wide** variation is changing the card's layout so the image is moved to the left and the rest of the content is moved to the right.
+
+#### CSS updates
+
+{% tabs %}
+{% tab title="card.scss" %}
+```css
+.card {
+  display: flex;
+}
+
+.card__media,
+.card__content {
+  flex: 0 0 50%;
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Omitting fields in Card wide variations
 
