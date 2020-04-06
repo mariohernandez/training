@@ -74,7 +74,7 @@ The card variation can be accomplished with a combination of a modifier CSS clas
 
 ### Modifier class approach
 
-If you look at the [Card's JSON](https://mariohernandez.gitbook.io/training/building-components/quote#components-stock-content) file you will see one of the keys is `modifier.`The **modifier** key in JSON means we can use it to pass a value to the Card as a CSS class. However, before the Card can make use of that value, it needs to know where to place it. If you look at the [Card's markup](https://mariohernandez.gitbook.io/training/building-components/quote#components-markup), you will see the following line which acts as a placeholder for when a modifier value is passed:
+If you look at the [Card's JSON](https://mariohernandez.gitbook.io/training/advanced-topics/card#components-stock-content) file you will see one of the keys is `modifier.`The **modifier** key in JSON means we can use it to pass a value to the Card as a CSS class. However, before the Card can make use of that value, it needs to know where to place it. If you look at the [Card's markup](https://mariohernandez.gitbook.io/training/advanced-topics/card#components-markup), you will see the following line which acts as a placeholder for when a modifier value is passed:
 
 {% tabs %}
 {% tab title="card.twig" %}
@@ -283,5 +283,9 @@ If you rebuild yoouor project you should see two card components. The second var
 
 `npm run watch`
 
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variatioons should match the expected components.
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variations should match the expected components.
+
+### Exercise: Create a Card paragraph type
+
+Following the Hero's steps for creating a paragraph type in Drupal, do the same for a Card paragraph type which includes the fields for the **Card wide** variation \(title, image, job title, body text, and cta\).  In this particular case, the card title field will not be a link field.
 
