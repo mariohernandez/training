@@ -2,62 +2,6 @@
 
 Probably the first thing you should look at to determine if a component is a candidate for variations, is the data fields, and second, the component's markup.
 
-Here's what the markup for the original Card component looks like:
-
-{% tabs %}
-{% tab title="card.twig" %}
-```php
-{{ attach_library('training_theme/card') }}
-
-<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
-  {{- attributes ? attributes|without(class) -}}>
-  {%  if image %}
-    <div class="card__media">
-      {{ image }}
-    </div>
-  {% endif %}
-  {% if title or date or body or tags %}
-  <div class="card__content">
-    {% if title %}
-      {%
-        include '@training_theme/heading/heading.twig' with {
-          heading: title
-        } only
-      %}
-    {% endif %}
-    {% if date %}
-      {%
-        include '@training_theme/eyebrow/eyebrow.twig' with {
-          eyebrow: {
-            text: date,
-            modifier: 'card__date'
-          }
-        } only
-      %}
-    {% endif %}
-    {% if body %}
-      <p class="card__body">
-        {{ body }}
-      </p>
-    {% endif %}
-    {% if tags %}
-      <ul class="card__tags--items">
-        {% for item in tags %}
-          <li class="card__tag--item">
-            <a href="{{ item.url }}" class="card__tag--link">
-              {{ item.text }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
-  {% endif %}
-</article>
-```
-{% endtab %}
-{% endtabs %}
-
 Visually we know the two different variations look similar, however, if we pay close attention we will notice that the data fields between the variations are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variations that we should have no problem going the variation route vs. new components. Let's start! The new variation will be called **Card wide**.
 
 ## Exercise: Creating the Card variation
@@ -110,7 +54,7 @@ Now with this new class available, we can do all kinds of changes to the card va
 {% endtab %}
 {% endtabs %}
 
-The styles above help float the image and content side by side, plus assign each a 50% width so things are evently sized.  The card markup was written this way by design.  Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
+The styles above help float the image and content side by side, plus assign each a 50% width so things are evenly sized.  The card markup was written this way by design.  Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
 
 ### Omitting fields in Card wide variations
 
@@ -295,7 +239,7 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add
 
 ### Compiling the code
 
-If you rebuild yoouor project you should see two card components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
+If you rebuild your project you should see two card components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 `npm run build`
 
