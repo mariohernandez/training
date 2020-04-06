@@ -74,7 +74,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 * As you may recall, in the **latest posts** component, the data for individual **cards** is stored in an `items[ ]` array in the component's `.json` file. We loop through that array, and for each item we use an `include` statement to add a **card** component and pass in the data from the item we're currently iterating over. This gives us a list of movie cards inside our markup for the **Latest Posts** component.
 * Views is essentially doing the same thing. The `latest_posts` view is set up to show a list of article nodes displayed in the teaser view mode. Since we already integrated the **card** with the teaser view mode of article nodes, the end result is the same: a simple list of movie cards.
 
-### Clear Drupal's caches
+#### Clear Drupal's caches
 
 Now if you reload the /news page you should see the latest posts in place. There is one more thing to do for the listing of movies and we will do that next.
 
