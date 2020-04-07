@@ -124,7 +124,10 @@ The idea of Twig Blocks is to place them on areas of Twig templates where the de
 
 Twig blocks are a great way to alter content on Twig templates prior to rendering the content. With a Twig block we can add or remove content during a component nesting or integration with Drupal.
 
-Let's update the `card.twig` template below by scrolling to the bottom of the template and adding a Twig block in the place where we expect the button to display. In this example, that will be around line 35.
+### Exercise: Add a Twig block to the Card
+
+* Add the `job_title` field directly after the the **date** field \(around line 29 in this example\)
+* Scroll to the bottom of the template and add a Twig block in the place where we expect the button to display. In this example, that will be around line 44.
 
 {% tabs %}
 {% tab title="card.twig" %}
@@ -181,9 +184,9 @@ Let's update the `card.twig` template below by scrolling to the bottom of the te
 {% endtab %}
 {% endtabs %}
 
-* First, we added the **job title** field.  Reason for this is that the date field, although uses the eyebrow component, is its own field type \(date\), wheeas the _job title_ field is a text field type
-* Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\). Currently  the Twig block is empty but we will make use of it in our variation.
-* Update the `card~white.json` file so it includes the **button/cta** field, like this \(starting  on line 4\):
+* First, we added the **job title** field.  Reason for this is that the `date` field, although uses the eyebrow component, is its own field type \(date\), whereas the `job_title`field is a text field type.  Although they may share the same styles when the content is entered in Drupal, date and job title will be separate fields.
+* Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\). Currently  the Twig block is empty but we will make use of it in the variation.
+* Update the `card~white.json` file so it includes the **button/cta** field as well as the **job\_title** field, like this \(starting  on line 9, then around line 11\):
 
 {% tabs %}
 {% tab title="card.json" %}
@@ -209,7 +212,7 @@ Let's update the `card.twig` template below by scrolling to the bottom of the te
 {% endtab %}
 {% endtabs %}
 
-Although the data file now reflects the button field, we have no way to add it to the `card~wide.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the Twig block we added in the original Card component, we need to update the `card~wide.twig` template by using instead an `embed` statement to nest the original Card component. Like so:
+Although the data file now reflects the button field, we have no way to add it to the `card~wide.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the **card\_cta** Twig block, we need to update the `card~wide.twig` template by using instead an `embed` statement to nest the original Card component. Like so:
 
 {% tabs %}
 {% tab title="card~wide.twig" %}
@@ -239,13 +242,11 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add
 
 ### Compiling the code
 
-If you rebuild your project you should see two card components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
-
 `npm run build`
 
 `npm run watch`
 
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variations should match the expected components.
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variations should match the expected components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 ### Exercise: Create a Card paragraph type
 
