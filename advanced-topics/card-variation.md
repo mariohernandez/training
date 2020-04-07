@@ -248,7 +248,5 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variations should match the expected components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
-### Exercise: Create a Card paragraph type
-
-Following the Hero's steps for creating a paragraph type in Drupal, do the same for a Card paragraph type which includes the fields for the **Card wide** variation \(title, image, job title, body text, and cta\).  In this particular case, the card title field will not be a link field.
+### Next: Create a Card paragraph type
 
