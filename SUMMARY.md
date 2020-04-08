@@ -32,8 +32,8 @@
 ## Advanced Topics
 
 * [Card Component](advanced-topics/card.md)
-* [Component Variations](advanced-topics/component-variants.md)
-* [Card Variation](advanced-topics/card-variant.md)
+* [Component Variants](advanced-topics/component-variants.md)
+* [Card Variant](advanced-topics/card-variant.md)
 * [Card paragraph type](advanced-topics/card-paragraph-type.md)
 * [Latest Posts component](advanced-topics/latest-posts.md)
 * [Blog](advanced-topics/blog-content-type.md)
@@ -49,4 +49,3 @@
 ## Resources
 
 * [Resources](resources/resources.md)
-
