@@ -134,15 +134,33 @@ By now we should be well familiar with the fields structure above.  The one fiel
 @import '../../global/utils/init';
 
 .card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   max-width: 420px;
   margin: 50px auto 20px;
   border-radius: 4px;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   img {
     display: block;
   }
+
+  &.card__wide {
+
+    @include breakpoint($bp-sm) {
+      flex-direction: row;
+
+      .card__media,
+      .card__content {
+        flex: 0 0 50%;
+      }
+    }
+  }
+}
+
+.card__content {
+  padding: 20px;
 }
 
 .card__title {
@@ -152,8 +170,8 @@ By now we should be well familiar with the fields structure above.  The one fiel
   font-weight: 600;
 }
 
-.card__content {
-  padding: 20px;
+.eyebrow__text {
+  margin: 0;
 }
 
 .card__date {
@@ -189,6 +207,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
     color: lighten(#1a202c, 25%);
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}
