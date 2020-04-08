@@ -1,4 +1,4 @@
-# Card Variation
+# Card Variant
 
 Probably the first thing you should look at to determine if a component is a candidate for variants, is the data fields, and second, the component's markup.
 
@@ -54,7 +54,7 @@ Now with this new class available, we can do all kinds of changes to the card va
 {% endtab %}
 {% endtabs %}
 
-The styles above help float the image and content side by side, plus assign each a 50% width so things are evenly sized.  The card markup was written this way by design.  Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
+The styles above help float the image and content side by side, plus assign each a 50% width so things are evenly sized. The card markup was written this way by design. Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
 
 ### Omitting fields in Card wide variants
 
@@ -88,7 +88,7 @@ This is the current structure of the Card component
 
 ### Exercise:  Displaying the right fields for the card variant
 
-As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`.  This is usually good but in our case, we don't need some of the fields in the Card variant.  For example, we don't need the tags or the article date fields.  In addition, the card title in the variant should not be a link and its text should read "Marie The Producer".  So how do we remove those fields without affecting the original Card component?
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the article date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer". So how do we remove those fields without affecting the original Card component?
 
 ```yaml
 {
@@ -115,13 +115,13 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 * Next, for those fields we don't need, we are declaring them with no values.
 * Finally, for the fields we need to change, we can change their values as we've done with the **title**, **url**, and **modifier** fields.
 
-The card wide varian now excludes tags and date fields. When we built the card we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page .
+The card wide variant now excludes tags and date fields. When we built the card we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page .
 
 `npm run build`
 
 `npm run watch`
 
-You should now see two Card components in Pattern Lab. The second one should not have tag or date fields. We still have one thing to solve, although we have added the **cta** field to the JSON file, we are not seeing in the card variant.  Let's fix that next.
+You should now see two Card components in Pattern Lab. The second one should not have tag or date fields. We still have one thing to solve, although we have added the **cta** field to the JSON file, we are not seeing in the card variant. Let's fix that next.
 
 ### How do we add new fields to a variant? 🤔
 
@@ -208,7 +208,6 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
   </div>
   {% endif %}
 </article>
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -223,7 +222,7 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
 
 `npm run watch`
 
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variants should match the expected components. The second variant should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). Now both component variants should match the expected components. The second variant should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 ### Next: Create a Card paragraph type
 

@@ -1,4 +1,4 @@
-# Component Variations
+# Component Variants
 
 Component variants are instances of a component with minor or big changes in look and/or behavior. Component variants are a great way to build new components using existing components to avoid code repetition.
 
