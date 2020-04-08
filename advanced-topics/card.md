@@ -32,7 +32,7 @@ Now that we have identified the fields our card component needs, let's start bui
   "title": {
     "heading_level": "3",
     "modifier": "card__title",
-    "text": "The beauty of nature",
+    "title": "The beauty of nature",
     "url": "#"
   },
   "date": "March 16 2020",
@@ -95,9 +95,9 @@ By now we should be well familiar with the fields structure above.  The one fiel
         } only
       %}
     {% endif %}
-    {% if body %}
+    {% if body_text %}
       <p class="card__body">
-        {{ body }}
+        {{ body_text }}
       </p>
     {% endif %}
     {% if tags %}

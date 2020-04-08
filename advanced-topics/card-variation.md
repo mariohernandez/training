@@ -73,48 +73,57 @@ This is the current structure of the Card component
 |  |-- card.json
 ```
 
-### Creating a new variation
+### Creating a new variant
 
-* Inside the _card_ directory, create a new Twig file with the following naming convention: `card~wide.twig` \(notice the **tilde** in the file name\).  The term following the tilde \(wide\), becomes the name by which the variation is known.
-* Next we create a new JSON file with the same naming convention `card~wide.json`.  So the new Twig template will look into the new JSON file for its data.  This means we can be selective as to which fields we include in the new JSON file based on the requirements for this variation.
-* The structure of the card component should now look like this:
+* Inside the _card_ directory, create a new JSON file with the following naming convention: `card~wide.json` \(notice the tilde \(~\)  in the file name\).  The tilde \(`~`\) and `.json` file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The `card` part of the file name, tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html). It has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s pattern-specific JSON file. This is not always a good thing and we will need to address this in our exercise.
+* The structure of the card component should now look like below.  We don't need to create a new Twig file because by default Pattern Lab will use the original card.twig template.  This also will need updating in order for us to achieve our card variant.
 
 ```text
 |--card
 |  |-- card.scss
 |  |-- card.twig
 |  |-- card.json
-|  |-- card~wide.twig
 |  |-- card~wide.json
 ```
 
-1. Now let's copy the content of `card.json` into `card~wide.json`
-2. Since the wide version of the card does not use tags or date fields, let's remove those fields from `card~wide.json`
-3. In `card~wide.twig` add the following code:
+### Exercise:  Displaying the right fields for the card variant
 
-{% tabs %}
-{% tab title="card~white.twig" %}
-```php
-{% include '@training_theme/card/card.twig' with {
-    "body_text": body_text,
-    "image": image,
-    "modifier": modifier
-    "title": title,
-  } only
-%}
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`.  This is usually good but in our case, we don't need some of the fields in the Card variant.  For example, we don't need the tags or the article date fields.  In addition, the card title in the variant should not be a link and its text should read "Marie The Producer".  So how do we remove those fields without affecting the original Card component?
+
+```yaml
+{
+  "title": {
+    "heading_level": "3",
+    "modifier": "card__title",
+    "title": "Marie The Producer",
+    "url": ""
+  },
+  "date": "",
+  "job_title": "Executive Producer",
+  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+  "tags": "",
+  "cta": {
+    "text": "Read the full bio",
+    "url": "#",
+    "modifier": "card__cta"
+  },
+  "modifier": "card__wide"
+}
 ```
-{% endtab %}
-{% endtabs %}
 
-The card wide variation now excludes tags and date fields. When we built the card we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page .
+* Let's start with the new fields.  As you can see we have added the **job\_title** and **cta** fields
+* Next, for those fields we don't need, we are declaring them with no values. 
+* Finally, for the fields we need to change, we can change their values as we've done with the **title**, **url**, and **modifier** fields.
+
+The card wide varian now excludes tags and date fields. When we built the card we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page .
 
 `npm run build`
 
 `npm run watch`
 
-You should now see two Card components in Pattern Lab. The second one should not have tag or date fields. However, the variation is still missing a button and eyebrow fields. Let's work on this next.
+You should now see two Card components in Pattern Lab. The second one should not have tag or date fields. We still have one thing to solve, although we have added the **cta** field to the JSON file, we are not seeing in the card variant.  Let's fix that next.
 
-### How do we add new fields to a variation? 🤔
+### How do we add new fields to a variant? 🤔
 
 So far we have been able to create a new card variation by using Pattern Lab's pseudo patterns feature. We were able to change the card's layout by using a modifier css class, and were able to remove or omit fields by using `if` statements in the original card component. Now the question is; How do we add new fields to a variation but not to the original component?
 
@@ -126,8 +135,9 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
 
 ### Exercise: Add a Twig block to the Card
 
-* Add the `job_title` field directly after the the **date** field \(around line 29 in this example\)
-* Scroll to the bottom of the template and add a Twig block in the place where we expect the button to display. In this example, that will be around line 44.
+* Edit `card.twig` and add the `job_title` field directly after the the **date** field \(around line 29\)
+* Scroll to the bottom of the template and add a Twig block in the place where we expect the button to display. In this example, that will be around line 55.
+* To ensure the button will only display if the field is not empty, we wrapped it in an `if` statement. This will ensure any markup related to the button will not print in the original card component since that field does not exist in `card.json`.
 
 {% tabs %}
 {% tab title="card.twig" %}
@@ -141,7 +151,7 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date eyebrow or body or tags or cta %}
+  {% if title or date or job_title or body or tags or cta %}
   <div class="card__content">
     {% if title %}
       {%
@@ -170,75 +180,42 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
         } only
       %}
     {% endif %}
-    {% if body %}
-      <p class="card__body">
-        {{ body }}
+    {% if body_text %}
+      <p class="card__body-text">
+        {{ body_text }}
       </p>
     {% endif %}
+    {% if tags %}
+      <ul class="card__tags--items">
+        {% for item in tags %}
+          <li class="card__tag--item">
+            <a href="{{ item.url }}" class="card__tag--link">
+              {{ item.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     {% block card_cta %}
+      {% if cta %}
+        {%
+          include '@training_theme/button/button.twig' with {
+            button: cta
+          } only
+        %}
+      {% endif %}
     {% endblock %}
   </div>
   {% endif %}
 </article>
+
 ```
 {% endtab %}
 {% endtabs %}
 
 * First, we added the **job title** field.  Reason for this is that the `date` field, although uses the eyebrow component, is its own field type \(date\), whereas the `job_title`field is a text field type.  Although they may share the same styles when the content is entered in Drupal, date and job title will be separate fields.
-* Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\). Currently  the Twig block is empty but we will make use of it in the variation.
-* Update the `card~white.json` file so it includes the **button/cta** field as well as the **job\_title** field, like this \(starting  on line 9, then around line 11\):
-
-{% tabs %}
-{% tab title="card.json" %}
-```yaml
-{
-  "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
-  "title": {
-    "heading_level": "3",
-    "modifier": "card__title",
-    "text": "The beauty of nature",
-    "url": "#"
-  },
-  "job_title": "Executive Producer",
-  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-  "cta": {
-    "text": "Read the full bio",
-    "url": "#",
-    "modifier": "card__cta"
-  },
-  "modifier": "card__wide"
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Although the data file now reflects the button field, we have no way to add it to the `card~wide.twig` template because Twig `include` statements can't alter the included template's data. Before we can make use the the **card\_cta** Twig block, we need to update the `card~wide.twig` template by using instead an `embed` statement to nest the original Card component. Like so:
-
-{% tabs %}
-{% tab title="card~wide.twig" %}
-```php
-{% embed '@training_theme/card/card.twig' with
-  {
-    "title": title,
-    "image": image,
-    "job_title": job_title,
-    "body_text": body_text,
-    "modifier": modifier
-  }
-%}
-  {% block card_cta %}
-    {%
-      include '@training_theme/button/button.twig' with {
-        "button": cta
-      } only
-    %}
-  {% endblock %}
-{% endembed %}
-```
-{% endtab %}
-{% endtabs %}
-
-Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add new content to the Card variation. In this case we included the button component. This is extremely powerful because in addition to being able to inherit most of the attributes from the original Card component, we still have the flexibility to modify the data in the component variation to achieve the outcome we wanted.
+* Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\). 
+* Inside the twig block we added the logic for the button and included the button component.
 
 ### Compiling the code
 
@@ -246,7 +223,7 @@ Thanks to Twig's `embed` statements, we can take advantage of Twig blocks to add
 
 `npm run watch`
 
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variations should match the expected components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variants should match the expected components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 ### Next: Create a Card paragraph type
 

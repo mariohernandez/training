@@ -7,6 +7,7 @@ Follow the stepsbelow to build a paragraph type for the Card component.
 {% endhint %}
 
 ## Exercise: Create the Card paragraph type in Drupal
+
 * From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
 * Click the **Add paragraph type** button
 * Assign the Label and Machine name below
@@ -58,3 +59,4 @@ Now that the paragraph type is done, it's time to add it to a content type. Para
 * Click the **Save settings** button
 
 We'll use the Article content type shortly to create a new Hero node.
+
