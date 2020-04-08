@@ -43,18 +43,23 @@ Now with this new class available, we can do all kinds of changes to the card va
 ```css
 .card {
   ...
-  display: flex;
-}
+  &.card__wide {
 
-.card__media,
-.card__content {
-  flex: 0 0 50%;
+    @include breakpoint($bp-sm) {
+      flex-direction: row;
+
+      .card__media,
+      .card__content {
+        flex: 0 0 50%;
+      }
+    }
+  }
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-The styles above help float the image and content side by side, plus assign each a 50% width so things are evenly sized. The card markup was written this way by design. Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
+I've streamlined the styles above to show how we will turn the original card into the wider version. The styles above only apply if the card component has both, `card card__wide` classes to help float the image and content side by side, plus assign each a 50% width so things are evenly sized. The card markup was written this way by design. Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things extremely easy.
 
 ### Omitting fields in Card wide variants
 
