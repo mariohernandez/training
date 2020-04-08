@@ -1,20 +1,20 @@
 # Card Variation
 
-Probably the first thing you should look at to determine if a component is a candidate for variations, is the data fields, and second, the component's markup.
+Probably the first thing you should look at to determine if a component is a candidate for variants, is the data fields, and second, the component's markup.
 
-Visually we know the two different variations look similar, however, if we pay close attention we will notice that the data fields between the variations are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variations that we should have no problem going the variation route vs. new components. Let's start! The new variation will be called **Card wide**.
+Visually we know the two different variants look similar, however, if we pay close attention we will notice that the data fields between the variants are different. In this particular case although some of the fields may be different, I feel we have enough of shared attributes between the variants that we should have no problem going the variant route vs. new components. Let's start! The new variant will be called **Card wide**.
 
-## Exercise: Creating the Card variation
+## Exercise: Creating the Card variant
 
 ![](../.gitbook/assets/card-wide.png)
 
-We can see that the overall layout of the "Card wide" version of the component lends itself nicely to a variation. However, we see that some of the fields found in the original card are not present here \(tags\), and there is also a new field in this variation that is not part of the original card \(button\).
+We can see that the overall layout of the "Card wide" version of the component lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and there is also a new field in this variant that is not part of the original card \(button\).
 
-Before we can create a new variation, we need to make some updates to the original Card component so it is easier to adapt it to new variation.
+Before we can create a new variant, we need to make some updates to the original Card component so it is easier to adapt it to new variant.
 
 ## Updating the original Card component
 
-The card variation can be accomplished with a combination of a modifier CSS class and the use of [Twig Blocks](../getting-started/twig-blocks.md), which we discussed before.
+The card variant can be accomplished with a combination of a modifier CSS class and the use of [Twig Blocks](../getting-started/twig-blocks.md), which we discussed before.
 
 ### Modifier class approach
 
@@ -34,7 +34,7 @@ The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional state
 <article class="card card__wide">
 ```
 
-Now with this new class available, we can do all kinds of changes to the card variation without affecting the original card. One simple change we can make to the **card\_\_wide** variation is changing the card's layout so the image is moved to the left and the rest of the content is moved to the right.
+Now with this new class available, we can do all kinds of changes to the card variant without affecting the original card. One simple change we can make to the **card\_\_wide** variant is changing the card's layout so the image is moved to the left and the rest of the content is moved to the right.
 
 #### CSS updates
 
@@ -56,13 +56,13 @@ Now with this new class available, we can do all kinds of changes to the card va
 
 The styles above help float the image and content side by side, plus assign each a 50% width so things are evenly sized.  The card markup was written this way by design.  Placing the image and remaining of content in two separate wrappers \(`card__media` & `card__content`\), makes things kind of layout changes extremely easy.
 
-### Omitting fields in Card wide variations
+### Omitting fields in Card wide variants
 
-So the modifier class helped us achieve some of the updates to the card wide variation, but there is still more to do. For example, the card wide variation does not use the tags. How do we exclude those fields in this variation? Read on.
+So the modifier class helped us achieve some of the updates to the card wide variant, but there is still more to do. For example, the card wide variant does not use the tags. How do we exclude those fields in this variant? Read on.
 
 ### Pseudo Patterns in Pattern Lab
 
-Before we can omit fields in the card variation we need to create the necessary files in Pattern Lab. Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variations of components. Let's take a look at an example of how pseudo patterns work.
+Before we can omit fields in the card variant we need to create the necessary files in Pattern Lab. Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Let's take a look at an example of how pseudo patterns work.
 
 This is the current structure of the Card component
 
@@ -112,7 +112,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 ```
 
 * Let's start with the new fields.  As you can see we have added the **job\_title** and **cta** fields
-* Next, for those fields we don't need, we are declaring them with no values. 
+* Next, for those fields we don't need, we are declaring them with no values.
 * Finally, for the fields we need to change, we can change their values as we've done with the **title**, **url**, and **modifier** fields.
 
 The card wide varian now excludes tags and date fields. When we built the card we wrapped each field in conditional `if` statements. This means if the fields don't exist or have no values, they will never get printed or rendered on a page .
@@ -125,7 +125,7 @@ You should now see two Card components in Pattern Lab. The second one should not
 
 ### How do we add new fields to a variant? 🤔
 
-So far we have been able to create a new card variation by using Pattern Lab's pseudo patterns feature. We were able to change the card's layout by using a modifier css class, and were able to remove or omit fields by using `if` statements in the original card component. Now the question is; How do we add new fields to a variation but not to the original component?
+So far we have been able to create a new card variant by using Pattern Lab's pseudo patterns feature. We were able to change the card's layout by using a modifier css class, and were able to remove or omit fields by using `if` statements in the original card component. Now the question is; How do we add new fields to a variant but not to the original component?
 
 ## Twig blocks
 
@@ -214,7 +214,7 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
 {% endtabs %}
 
 * First, we added the **job title** field.  Reason for this is that the `date` field, although uses the eyebrow component, is its own field type \(date\), whereas the `job_title`field is a text field type.  Although they may share the same styles when the content is entered in Drupal, date and job title will be separate fields.
-* Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\). 
+* Then we added a Twig block called **card\_cta** \(`{%  block card_cta  %}`\).
 * Inside the twig block we added the logic for the button and included the button component.
 
 ### Compiling the code
@@ -223,7 +223,7 @@ Twig blocks are a great way to alter content on Twig templates prior to renderin
 
 `npm run watch`
 
-In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variants should match the expected components. The second variation should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000).  Now both component variants should match the expected components. The second variant should have a button in addition to the class of `card__wide` along with `card`. How cool is this? 🧠 😮
 
 ### Next: Create a Card paragraph type
 

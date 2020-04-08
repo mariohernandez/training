@@ -1,6 +1,6 @@
 # Quote Component
 
-The Quote component is a more complex component than the Hero because in addition to using more fields, it also requires we crate variations that look different than the original Quote component. More on [component variations](../advanced-topics/component-variations.md) later. Just like we did with the Hero, with the Quote we will reuse other components.
+The Quote component is a more complex component than the Hero because in addition to using more fields, it also requires we crate variants that look different than the original Quote component. More on [component variants](../advanced-topics/component-variants.md) later. Just like we did with the Hero, with the Quote we will reuse other components.
 
 Whether you are building simple or complex components, the process for getting started is the same; create files for data, markup and styles. Let's do this with the Quote component.
 

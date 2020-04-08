@@ -59,4 +59,3 @@ Now that the paragraph type is done, it's time to add it to a content type. Para
 * Click the **Save settings** button
 
 We'll use the Article content type shortly to create a new Hero node.
-
