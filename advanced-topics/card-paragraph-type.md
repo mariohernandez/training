@@ -1,9 +1,9 @@
 # Card paragraph type
 
-Follow the stepsbelow to build a paragraph type for the Card component.
+Follow the steps below to build a paragraph type for the Card component.
 
 {% hint style="info" %}
-**TIP:** You can reuse fields from previously created entities such as Hero paragraph type.
+**TIP:** You can reuse fields from previously built Drupal entities such as Hero paragraph type.
 {% endhint %}
 
 ## Exercise: Create the Card paragraph type in Drupal
