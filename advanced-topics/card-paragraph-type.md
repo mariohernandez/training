@@ -6,7 +6,7 @@ Follow the steps below to build a paragraph type for the Card component.
 **TIP:** You can reuse fields from previously built Drupal entities such as Hero paragraph type.
 {% endhint %}
 
-## Exercise: Create the Card paragraph type in Drupal
+### Exercise: Create the Card paragraph type in Drupal
 
 * From Drupal's Admin Toolbar, click **Structure \| Paragraph Types**
 * Click the **Add paragraph type** button
@@ -25,6 +25,7 @@ Add the following fields and settings to the paragraph type:
 | Field label | Machine name | Field type |
 | :--- | :--- | :--- |
 | Title | `field_title` | Text \(Plain\) |
+| Job title | field\_job\_title | Text \(Plain\) |
 | Body | `field_body` | Text \(Plain, long\) |
 | Image | `field_image` | Media Reference |
 | Call To Action | `field_cta` | Link |
@@ -57,6 +58,4 @@ Now that the paragraph type is done, it's time to add it to a content type. Para
 * Change _Allowed number of values\__ to **Limited - 1**
 * In the _Reference Type_ section, choose **Hero** under _Paragraph type_
 * Click the **Save settings** button
-
-We'll use the Article content type shortly to create a new Hero node.
 
