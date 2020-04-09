@@ -16,7 +16,7 @@ Before we can create a new variant, we need to make some updates to the original
 
 The card variant can be accomplished with a combination of a modifier CSS class and the use of [Twig Blocks](../getting-started/twig-blocks.md), which we discussed before.
 
-### Modifier class approach
+### Modifier class
 
 If you look at the [Card's JSON](https://mariohernandez.gitbook.io/training/advanced-topics/card#components-stock-content) file you will see one of the keys is `modifier.`The **modifier** key in JSON means we can use it to pass a value to the Card as a CSS class. However, before the Card can make use of that value, it needs to know where to place it. If you look at the [Card's markup](https://mariohernandez.gitbook.io/training/advanced-topics/card#components-markup), you will see the following line which acts as a placeholder for when a modifier value is passed:
 
@@ -36,12 +36,14 @@ The part `{{ modifier ? ' ' ~ modifier }}` is basically a Twig conditional state
 
 Now with this new class available, we can do all kinds of changes to the card variant without affecting the original card. One simple change we can make to the **card\_\_wide** variant is changing the card's layout so the image is moved to the left and the rest of the content is moved to the right.
 
-#### CSS updates
+#### CSS updates \(no need to this\)
 
 {% tabs %}
 {% tab title="card.scss" %}
 ```css
 .card {
+  display: flex;
+  flex-direction: column;
   ...
   &.card__wide {
 
@@ -91,7 +93,7 @@ This is the current structure of the Card component
 |  |-- card~wide.json
 ```
 
-### Exercise:  Displaying the right fields for the card variant
+### Displaying the right fields for the card variant
 
 As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the article date fields. In addition, the card title in the variant should not be a link and its text should read "Marie The Producer". So how do we remove those fields without affecting the original Card component?
 
@@ -132,7 +134,7 @@ You should now see two Card components in Pattern Lab. The second one should not
 
 So far we have been able to create a new card variant by using Pattern Lab's pseudo patterns feature. We were able to change the card's layout by using a modifier css class, and were able to remove or omit fields by using `if` statements in the original card component. Now the question is; How do we add new fields to a variant but not to the original component?
 
-## Twig blocks
+### Twig blocks
 
 The idea of Twig Blocks is to place them on areas of Twig templates where the desired content change is expected. If not used, Twig blocks have no effect on your templates which is a way of saying, you can add Twig blocks to your templates or components, and if you don't use them, don't worry, they won't break anything.
 
