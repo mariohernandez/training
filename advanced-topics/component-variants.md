@@ -1,6 +1,6 @@
 # Component Variants
 
-Component variants are instances of a component with minor or big changes in look and/or behavior. Component variants are a great way to build new components using existing components to avoid code repetition.
+Variants are useful when you have one component that has **multiple different possible implementations**. These could be implemented as separate components but often it's easier and more semantic to create them as variants of an existing component.
 
 Let's take a look at the Card component for example. Here are two different ways in which this component will be displayed:
 
