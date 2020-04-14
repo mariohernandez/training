@@ -76,7 +76,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or body or tags %}
+  {% if title or date or body_text or tags %}
   <div class="card__content">
     {% if title %}
       {%
