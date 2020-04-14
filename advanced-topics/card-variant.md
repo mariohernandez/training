@@ -8,7 +8,7 @@ Visually we know the two different variants look similar, however, if we pay clo
 
 ![](../.gitbook/assets/card-wide.png)
 
-We can see that the overall layout of the "Card wide" version of the component lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and there is also a new field in this variant that is not part of the original card \(button\).
+We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and there is also a new field in this variant that is not part of the original card \(button\).
 
 Before we can create a new variant, we need to make some updates to the original Card component so it is easier to adapt it to new variant.
 
