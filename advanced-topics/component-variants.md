@@ -8,9 +8,9 @@ Let's take a look at the Card component for example. Here are two different ways
 
 ![Example of Card variant](../.gitbook/assets/card-wide.png)
 
-## Planning for component variants
+### Planning for component variants
 
-Looking at the two cards above, we see that they are practically the same card component but with changes for each variant. There are many factors that determine if a component could be used as the base for variants.
+Looking at the two cards above, we see that they are practically the same card component but with soome differences. There are many factors that determine if a component could be used as the base for variants.
 
 * Does the proposed variant have the overall look and feel of the original component?
 * Are there common patterns \(fields, markup, layout, etc.\) that can facilitate a variant vs. a whole new component?
