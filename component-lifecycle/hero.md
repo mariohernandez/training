@@ -6,17 +6,13 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's take a look at how this component looks so we can identify the different data fields we need.
 
-![Example of Hero component](../.gitbook/assets/hero.png)
+![](../.gitbook/assets/hero.png)
 
 Based on the design above, we need the following fields:
 
-* **title or heading**: Hero title
-* **eyebrow**: A label or tagline
-* **body\_text**: Some teaser or description text
+* **title or heading**: Hero titl
 * **image**: Hero image
-* **call to action \(cta\)**: A call to action button/link
-
-_Ignore the header/navigation_.
+* **call to action \(CTA\)**: A call to action button/link
 
 ## Exercise:  Build the Hero component
 
