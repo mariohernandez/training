@@ -29,7 +29,7 @@ Let's start by first identifying the content for the component. Since this is a 
 On a typical Drupal project the full path may look something like this: `<drupal-root>/web/themes/custom/<your-theme-name>/src/patterns/components/`
 {% endhint %}
 
-1. Inside _components_ create a new directory called **heading**
+1. Inside `src/patterns/components` create a new directory called **heading**
 2. Inside the _heading_ directory create a new file called **heading.json**
 3. Inside _heading.json_ add the following code:
 

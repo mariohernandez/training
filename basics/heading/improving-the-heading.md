@@ -56,7 +56,15 @@ Let's break things down to explain what's happening here since the twig code has
 
 ### Compiling the code
 
-Repeat the steps above for compiling code or, if you have the watch task running, your Pattern Lab page should had automatically reloaded with the new changes.
+If Pattern Lab is running you should see the updates to the Heading component.  Otherwise run the commands below:
+
+```text
+npm run build
+```
+
+```text
+npm run watch
+```
 
 **Just for fun 💥**
 
