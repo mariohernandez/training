@@ -66,6 +66,12 @@ npm run build
 npm run watch
 ```
 
+You could also combine both commands like this:
+
+```text
+npm run build && npm run watch
+```
+
 **Just for fun 💥**
 
 * Try changing the heading level in `heading.json` to anything other than H2.

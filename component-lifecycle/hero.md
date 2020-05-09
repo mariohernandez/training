@@ -174,11 +174,3 @@ While in your theme's root directory, run the following commands in your command
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
-### Exercise:  Create new components
-
-Notice how some of the fields above do not use an `include` statement?  This is because we don't have components for **Eyebrow,** **Body Text,** and **CTA**.  If we want to adopt a truly atomic design workflow, any fields we know will be reused on different components should be built as components.
-
-1. Build new atoms for **Eyebrow**, **Body text**, and **Call To Action**
-2. Use the same data structure for each component you see in `hero.json` above
-3. After the 3 new components have been built, replace the hard-coded fields and use `include` to use the newly built components as we are doing for the **Heading** component. 
-
