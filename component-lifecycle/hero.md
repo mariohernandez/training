@@ -27,14 +27,12 @@ Based on the design above, we need the following fields:
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/1400x787' alt='A wonderful image' />",
-  "eyebrow": "Understanding the benefits",
   "heading": {
     "heading_level": "1",
     "modifier": "hero__title",
     "title": "Why be accessible",
     "url": ""
   },
-  "body_text": "Accessibility lawsuits have more than tripled in the last few years, but it's not all bad news!",
   "cta": {
     "text": "More about accessibility?",
     "url": "#",
@@ -72,23 +70,12 @@ Now let's write some HTML for the component.
   {% endif %}
 
   <div class="hero__content">
-    {% if eyebrow %}
-      <div class="hero__eyebrow">
-        {{ eyebrow }}
-      </div>
-    {% endif %}
     {% if heading %}
       {%
         include '@training_theme/heading/heading.twig' with {
           "heading": heading
         } only
       %}
-    {% endif %}
-
-    {% if body_text %}
-      <div class="hero__body-text">
-        {{ body_text }}
-      </div>
     {% endif %}
 
     {% if cta %}
@@ -142,12 +129,6 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
     width: 60%;
   }
 }
-
-.hero__body-text {
-  font-weight: 300;
-  margin-bottom: 20px
-}
-
 ```
 {% endtab %}
 {% endtabs %}
