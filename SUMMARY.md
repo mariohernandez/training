@@ -21,8 +21,8 @@
 
 * [Hero Component](component-lifecycle/hero.md)
 * [Include statements](component-lifecycle/includes.md)
-* [Building Drupal's back-end](component-lifecycle/before-building-the-back-end.md)
-* [Hero paragraph type](component-lifecycle/hero-paragraph-type.md)
+* [Drupal prep](component-lifecycle/before-building-the-back-end.md)
+* [Building the Hero in Drupal](component-lifecycle/hero-paragraph-type.md)
 * [Components Integration with Drupal](component-lifecycle/before-the-integration.md)
 * [Twig template suggestions](component-lifecycle/twig-template-suggestions.md)
 * [Getting Twig variables](component-lifecycle/hero-component.md)
