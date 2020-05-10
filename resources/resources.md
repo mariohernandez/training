@@ -10,6 +10,7 @@
 * [Twig Field Value](https://www.drupal.org/project/twig_field_value) module
 * [Twig Tweak](https://www.drupal.org/project/twig_tweak) module
 * [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page)
+* [Render API](https://www.drupal.org/docs/8/api/render-api)
 
 ### Twig
 
