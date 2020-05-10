@@ -6,6 +6,34 @@
 
 If you have been using Drupal for a while you may be well familiar with where to get templates from or what to name them. However if you've never worked with template suggestion no worries, Twig debugging, which [you should have enabled](https://www.drupal.org/node/2598914) in the previous page, will help us identify the templates we need.
 
+### Examples of Twig template suggestions
+
+Template suggestions can be generic or extremely specific depending on the task at hand.  Below are two examples of naming conventions for template suggestions; one for **Node types** and the other for **Paragraph types**.
+
+{% tabs %}
+{% tab title="node" %}
+```text
+node--[nodeid]--[viewmode].html.twig
+node--[nodeid].html.twig
+node--[content-type]--[viewmode].html.twig
+node--[content-type].html.twig
+node--[viewmode].html.twig
+node.html.twig
+```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="paragraph" %}
+```text
+paragraph--[paragraph-type]--[viewmode].html.twig
+paragraph--[paragraph-type].html.twig
+paragraph--[viewmode].html.twig
+paragraph.html.twig
+```
+{% endtab %}
+{% endtabs %}
+
 ### Exercise:  Debugging the Hero paragraph type
 
 * In your Drupal site, create  a basic page node and add a Hero, or visit a page that already has a Hero
@@ -28,12 +56,12 @@ If you look at the image above, you will see a few things that are extremely hel
 Based on the Twig debugging code above we see Drupal is using a Paragraph template to render the Hero.  This is because we created a Paragraph type called Hero to use as the data entry form for any Hero. 
 
 1. The last line of green text \(`BEGIN OUTPUT...`\) shows where the paragraph template being used is located \(`modules/contrib/paragraphs/templates/paragraph.html.twig`\).
-2. Navigate to that path and copy the `paragraph.html.twig` template then paste it inside your project's `/themes/custom/<theme-name>/src/templates/paragraphs/` \(if this path does not exist in your theme, create it\).
+2. Copy`paragraph.html.twig` from its original location into your project's `/themes/custom/training_theme/src/templates/paragraphs/` \(if this path does not exist in your theme, create it\).
 3. Rename the newly copied template in your theme to `paragraph--hero.html.twig`.  Why this name?  Well, while we could had used any of the suggested names above, this name is the one that makes the most sense for our template suggestion.  Now every time the Hero component is rendered, Drupal will use this new template and not the one under the Paragraph's module.
 4. Next clear Drupal's cache
 5. Reload the page and inspect the code one more time.
 
-![Example of Twig debug after template suggestion was created.](../.gitbook/assets/debug-after.png)
+![](../.gitbook/assets/debug-after.png)
 
 Notice there is an **"X"** next to `paragraph--hero.html.twig`, which means Drupal is now using our custom twig template suggestion. Also notice the path of the template is now our own theme's template directory.
 
