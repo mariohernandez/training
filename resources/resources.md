@@ -9,6 +9,7 @@
 * [Drupal Attributes](https://www.drupal.org/docs/8/theming-drupal-8/using-attributes-in-templates)
 * [Twig Field Value](https://www.drupal.org/project/twig_field_value) module
 * [Twig Tweak](https://www.drupal.org/project/twig_tweak) module
+* [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page)
 
 ### Twig
 
@@ -20,7 +21,6 @@
 
 ### Blog Posts/Tutorials
 
-* [Ensure Blocks caching tags bubble up to the page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page)
 * [Responsive Images](https://cloudfour.com/thinks/responsive-images-101-definitions/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 
@@ -31,7 +31,7 @@
 ### Tools
 
 * [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
-* [Pattern Lab](https://patternlab.io/) \(Node edition\)
+* [Pattern Lab](https://patternlab.io/) 
 
 ### Misc
 
