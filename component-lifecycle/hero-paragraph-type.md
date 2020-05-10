@@ -58,5 +58,21 @@ Now that the paragraph type is done, it's time to add it to a content type. Para
 * In the _Reference Type_ section, choose **Hero** under _Paragraph type_
 * Click the **Save settings** button
 
-We'll use the Basic Page content type shortly to create a new Hero node.
+### Create a new Node with a Hero
+
+Using the Basic page content type, create a new page and add a Hero component in it:
+
+1. From Drupal's Admin toolbar, click **Content**
+2. Click the **Add content** button
+3. Select **Basic Page**
+4. Fill out the Page's title using **Homepage**
+5. Then fill out all fields in the Hero paragraph type
+6. Ignore the Body field if available
+7. Click the **Save** button
+
+After saving your page the hero component should look something similar to this:
+
+![Drupal Node with Hero Paragraph](../.gitbook/assets/d8-hero.png)
+
+It's pretty obvious there are a lot of things that need improvement with our Hero above, but we will get to that shortly.  
 
