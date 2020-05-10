@@ -8,6 +8,15 @@ Enabling our new theme is not required to build Drupal's back-end for the Hero, 
 2. Scroll to the **Uninstalled themes** section where you will find the new theme you created.  It should have a thumbnail image with the Mediacurrent logo
 3. Click **Install and set as default** under the theme name
 
+### Disable CSS/JavaScript Aggregation
+
+For some reason, Drupal core comes with CSS and Javascript Aggregation turned on out of the box.  Although this is highly recommended on production websites, during development it is recommended we turn aggregation off.  This will ensure CSS and Javascript code we write will be instantly available on our drupal pages without having to continuously clearn Drupal caches.
+
+1. From Drupal's Admin toolbar click **Configuration &gt; Development &gt; Performance**
+2. Clear bot check boxes: **Aggregate CSS files** & **Aggregate JavaScript files**
+3. Click the **Save configuration** button
+4. While you're at it, click the **Clear all caches** button on the same page
+
 ### Enable modules
 
 Before we can build Drupal's back-end for the Hero and other components, we need to enable a few modules:

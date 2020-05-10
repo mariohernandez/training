@@ -41,29 +41,29 @@ paragraph.html.twig
 
 ![Example of Paragraph template suggestions.](../.gitbook/assets/debug.png)
 
-If you look at the image above, you will see a few things that are extremely helpful for creating the right template suggestions.
+If you look at the image above, you will see a few things that are extremely helpful for creating the right template suggestions:
 
 * The last line of green text \(`BEGIN OUTPUT...`\) shows where the template being used by Drupal to render the Hero is located and what its name is \(`modules/contrib/paragraphs/templates/paragraph.html.twig`\).
-* Just above that line, under **FILE NAME SUGGESTIONS**:, there is a list of files all of which begin with **paragraph**. Drupal is telling us we can create a Twig template with any of the names listed above and we can customize it to our needs.  This list is what we mean when we say _Template suggestions_.
+* Just above that line, under **FILE NAME SUGGESTIONS**:, there is a list of files all of which begin with **paragraph**. This is because we created a Paragraph type called Hero to use as the data entry form for any Hero content. Drupal is telling us we can create a Twig template with any of the names listed above and we can customize it to our needs.  This list is what we mean when we say _Template suggestions_.
 * The file with an **"X"** next to it is the template Drupal is currently using to render the Hero.
 
 ### Creating new template suggestions
 
 {% hint style="warning" %}
-**IMPORTANT:** The first rule of Drupal is "**Don't hack core**".  This means you should never edit or modify a template provided by Drupal core, or a contrib module.  Instead, you create a copy of that template in your theme.  This is a best practice and we are going to follow it throughout this training.
+**IMPORTANT:** The first rule of Drupal is "**Don't hack core**".  This means you should never modify a template provided by Drupal core, or a contrib module.  Instead, you create a copy of that template in your theme.  This is a best practice and we are going to follow it throughout this training.
 {% endhint %}
 
-Based on the Twig debugging code above we see Drupal is using a Paragraph template to render the Hero.  This is because we created a Paragraph type called Hero to use as the data entry form for any Hero. 
+1. Copy`paragraph.html.twig` from `modules/contrib/paragraphs/templates/`
 
-1. The last line of green text \(`BEGIN OUTPUT...`\) shows where the paragraph template being used is located \(`modules/contrib/paragraphs/templates/paragraph.html.twig`\).
-2. Copy`paragraph.html.twig` from its original location into your project's `/themes/custom/training_theme/src/templates/paragraphs/` \(if this path does not exist in your theme, create it\).
-3. Rename the newly copied template in your theme to `paragraph--hero.html.twig`.  Why this name?  Well, while we could had used any of the suggested names above, this name is the one that makes the most sense for our template suggestion.  Now every time the Hero component is rendered, Drupal will use this new template and not the one under the Paragraph's module.
-4. Next clear Drupal's cache
-5. Reload the page and inspect the code one more time.
+   into your project's `/themes/custom/training_theme/src/templates/paragraphs/` .  Feel free to create the **paragraphs** folder inside _templates_ if it does not exist.   You can use the command line or Mac's Finder/ Window's Explorer to copy this file.
+
+2. Rename the newly copied template in your theme to `paragraph--hero.html.twig`.  Why this name?  Well, while we could have used any of the suggested names above, `paragraph--hero*` is specific enough so that any changes we make to the template will only affect the Hero content and not other Paragraph's content.  Now every time the Hero component is rendered, Drupal will use this new template and not the one under the Paragraph's module.
+3. Next clear Drupal's cache \(**Configuration &gt; Development &gt; Performance**\)
+4. Reload the page and inspect the code one more time \(Right-click on Hero and select **Inspect**\).
 
 ![](../.gitbook/assets/debug-after.png)
 
-Notice there is an **"X"** next to `paragraph--hero.html.twig`, which means Drupal is now using our custom twig template suggestion. Also notice the path of the template is now our own theme's template directory.
+Notice there is an **"X"** next to `paragraph--hero.html.twig`, which means Drupal is now using our custom twig template suggestion. In addition, notice the path of the template is now our own theme's template directory.
 
 {% hint style="info" %}
 **TIP**: If I know I will be creating multiple template suggestions of the same kind \(i.e. paragraph\), I would normally leave the unchanged copy of `paragraph.html.twig` in my theme and make copies of it every time I need a new template. This way I don't have to copy the same template over and over from Drupal core or a contrib module \(I'm lazy\).
