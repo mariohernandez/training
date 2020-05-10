@@ -114,20 +114,27 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 @import '../../global/utils/init';
 
 .hero {
-  background-color: $color-white;
+  // @include component-spacing;
+  position: relative;
+
+  // Styles heading when inside the hero.
+  .heading {
+    color: #003954;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+
+  img {
+    display: block;
+  }
 }
 
 .hero__content {
-  background-color: $color-white;
-  margin: 0 auto;
-  padding: 1.6rem;
-
-  @include breakpoint ($bp-md) {
-    position: absolute;
-    left: 40px;
-    top: calc(50% - 75px);
-    width: 60%;
-  }
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  width: 100%;
 }
 ```
 {% endtab %}
