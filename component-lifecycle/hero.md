@@ -26,15 +26,15 @@ Based on the design above, we need the following fields:
 {% tab title="hero.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/1400x787' alt='A wonderful image' />",
+  "image": "<img src='https://source.unsplash.com/DOoYFgTQWfs/1900x700' alt='Books on computer' />",
   "heading": {
     "heading_level": "1",
     "modifier": "hero__title",
-    "title": "Why be accessible",
+    "title": "Leveling up",
     "url": ""
   },
   "cta": {
-    "text": "More about accessibility?",
+    "text": "Get started",
     "url": "#",
     "modifier": "hero__cta"
   },
