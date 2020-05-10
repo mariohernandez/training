@@ -29,14 +29,16 @@ Based on the design above, we need the following fields:
   "image": "<img src='https://source.unsplash.com/DOoYFgTQWfs/1900x700' alt='Books on computer' />",
   "heading": {
     "heading_level": "1",
-    "modifier": "hero__title heading--large",
-    "title": "Leveling Up",
+    "modifier": "hero__title",
+    "title": "Leveling up",
     "url": ""
   },
   "cta": {
     "text": "Get started",
-    "url": "#"
-  }
+    "url": "#",
+    "modifier": "hero__cta"
+  },
+  "modifier": ""
 }
 ```
 {% endtab %}
