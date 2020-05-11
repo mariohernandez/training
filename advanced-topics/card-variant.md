@@ -6,7 +6,7 @@ Visually we know the two different variants look similar, however, if we pay clo
 
 ## Exercise: Creating the Card variant
 
-![](../.gitbook/assets/card-wide%20%281%29.png)
+![Card Wide variant](../.gitbook/assets/card-wide.png)
 
 We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and there is also a new field in this variant that is not part of the original card \(button\).
 
