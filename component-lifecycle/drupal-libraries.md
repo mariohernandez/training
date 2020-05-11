@@ -81,7 +81,7 @@ With the code above, we are telling Drupal that whenever we render the Hero comp
 
 #### Rebuild the theme
 
-Since we modified the Hero component by attaching the new library, we need to rebuild the component by running the following command, but first stop any other commands by pressing **Ctrl + C** on your keyaboard.
+Since we modified the Hero component by attaching the new library, we need to rebuild the component by running the following command, but first stop any other commands by pressing **Ctrl + C** on your keyboard.
 
 ```text
 npm run build
@@ -89,9 +89,8 @@ npm run build
 
 #### **Clear Drupal's cache**
 
-Before Drupal can have access to the new library and its assets, clear Drupal's caches.
-
-After clearing Drupal's cache if you reload the page with a Hero, you should see all the styles and markup we wrote for it.
+1. Before Drupal can have access to the new library and its assets, clear Drupal's caches.
+2. After clearing Drupal's cache reload the page with a Hero.  The CSS styles we wrote should now be available in Drupal.
 
 ### Exercise:  Create libraries for all previous component
 
