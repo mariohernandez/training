@@ -1,13 +1,13 @@
 # Drupal Libraries
 
-In a Drupal 8 theme, stylesheets \(CSS\) and JavaScript \(JS\) are loaded through the same system for modules \(code\) and themes, for everything: [asset libraries](https://www.drupal.org/node/2274843).
+In a Drupal 8 theme, stylesheets \(CSS\) and JavaScript \(JS\) are loaded through the same system for modules and themes, for everything: [asset libraries](https://www.drupal.org/node/2274843).
 
 Drupal uses a high-level principle: assets \(CSS or JS\) are still only loaded if you tell Drupal it should load them. Drupal does not load all assets on every page because it slows down front-end performance.
 
 In the context of component-based theming, we are going to create a library for each individual component we build in Pattern Lab. Each library will have all the CSS and JavaScript \(if any\), the component needs to render as expected.
 
 {% hint style="info" %}
-**Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to generate the CSS and Javascript for components.
+**NOTE: Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to generate the CSS and Javascript for components.
 {% endhint %}
 
 ### Structure of a library
@@ -79,9 +79,17 @@ The `attach_library` function takes a path parameter which we are declaring by u
 
 With the code above, we are telling Drupal that whenever we render the Hero component, its library should be attached so the styles for the component can be applied.
 
+#### Rebuild the theme
+
+Since we modified the Hero component by attaching the new library, we need to rebuild the component by running the following command, but first stop any other commands by pressing **Ctrl + C** on your keyaboard.
+
+```text
+npm run build
+```
+
 #### **Clear Drupal's cache**
 
-Don't forget to clear your caches when adding new libraries to your theme.
+Before Drupal can have access to the new library and its assets, clear Drupal's caches.
 
 After clearing Drupal's cache if you reload the page with a Hero, you should see all the styles and markup we wrote for it.
 
