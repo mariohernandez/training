@@ -1,14 +1,14 @@
 # Card Component
 
-A component that will introduce us to a more useful techniques for working with components is the image you see below. A Card component is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in almost all websites nowadays.  The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content.  For example, we could use a collection of cards to display latest blog posts or upcoming events.  In this training we will use the card component to build a **Latest Posts** collection of content.
+A component that will introduce us to a more useful technique for working with components is the image you see below. A Card component is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in many websites nowadays.  The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content.  For example, we could use a collection of cards to display latest blog posts or upcoming events.  In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
 
 ![Example of a Card component](../.gitbook/assets/card.png)
 
-Although we could build the Latest Posts component from the start, a better approach is to first build a single instance of a card component that then we can reuse over and over.  Having a single card component available makes it possible to even build other types of content collections.  Re-usability should always be at the top of our priorities when building components.
+Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over.  Having a single card component available makes it possible to even build other types of content collections.  
 
 ### Exercise:  Card component
 
-As we've done with other components, one of the first things we need to define are the data fields that makeup the component.  If you look at the image above, a single Card has the following data fields:
+As we've did with the Hero component, one of the first things we need to define are the data fields that makeup the component.  If you look at the image above, a single Card has the following data fields:
 
 * image
 * title \(link to full article\)
@@ -20,7 +20,7 @@ Now that we have identified the fields our card component needs, let's start bui
 
 #### Component's stock content
 
-1. Inside _components_ create a new directory called **card**
+1. Inside `src/patterns/components` create a new directory called **card**
 2. Inside the _card_ directory create a new file called **card.json**
 3. Inside _card.json_ add the following code:
 
@@ -28,26 +28,26 @@ Now that we have identified the fields our card component needs, let's start bui
 {% tab title="card.json" %}
 ```yaml
 {
-  "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
+  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/640x360' alt='Women running' />",
   "title": {
-    "heading_level": "3",
+    "heading_level": "2",
     "modifier": "card__title",
-    "title": "The beauty of nature",
+    "title": "Level up your game",
     "url": "#"
   },
   "date": "March 16 2020",
   "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
   "tags": [
     {
-      "text": "Phtography",
+      "text": "Photography",
       "url": "#"
     },
     {
-      "text": "Nature",
+      "text": "Sports",
       "url": "#"
     },
     {
-      "text": "Outdoors",
+      "text": "Outdors",
       "url": "#"
     }
   ],
@@ -57,7 +57,7 @@ Now that we have identified the fields our card component needs, let's start bui
 {% endtab %}
 {% endtabs %}
 
-By now we should be well familiar with the fields structure above.  The one field type we probably have not used much is an array.  In the code above we are declaring the tags as an array.  Each tag item inside the array has a text and URL keys so they can basically become links to tag-driven pages on our site.
+By now we should be well familiar with the fields structure above.  The one field type we probably have not seen until now is an array.  In the code above we are declaring the tags as an array of items.  Each tag item inside the array has a `text` and `url` keys so they can become links to tag-driven pages on our site.
 
 #### Component's markup
 
@@ -77,41 +77,36 @@ By now we should be well familiar with the fields structure above.  The one fiel
     </div>
   {% endif %}
   {% if title or date or body_text or tags %}
-  <div class="card__content">
-    {% if title %}
-      {%
-        include '@training_theme/heading/heading.twig' with {
-          heading: title
-        } only
-      %}
-    {% endif %}
-    {% if date %}
-      {%
-        include '@training_theme/eyebrow/eyebrow.twig' with {
-          eyebrow: {
-            text: date,
-            modifier: 'card__date'
-          }
-        } only
-      %}
-    {% endif %}
-    {% if body_text %}
-      <p class="card__body">
-        {{ body_text }}
-      </p>
-    {% endif %}
-    {% if tags %}
-      <ul class="card__tags--items">
-        {% for item in tags %}
-          <li class="card__tag--item">
-            <a href="{{ item.url }}" class="card__tag--link">
-              {{ item.text }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
+    <div class="card__content">
+      {% if title %}
+        {%
+          include '@training_theme/heading/heading.twig' with {
+            heading: title
+          } only
+        %}
+      {% endif %}
+      {% if date %}
+       <div class="card__date">
+          {{ date }}
+        </div>
+      {% endif %}
+      {% if body_text %}
+        <p class="card__body">
+          {{ body_text }}
+        </p>
+      {% endif %}
+      {% if tags %}
+        <ul class="card__tags">
+          {% for item in tags %}
+            <li class="card__tag--item">
+              <a href="{{ item.url }}" class="card__tag--link">
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
   {% endif %}
 </article>
 ```
@@ -146,7 +141,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
     display: block;
   }
 
-  &.card__wide {
+  &.card--wide {
 
     @include breakpoint($bp-sm) {
       flex-direction: row;
@@ -170,10 +165,6 @@ By now we should be well familiar with the fields structure above.  The one fiel
   font-weight: 600;
 }
 
-.eyebrow__text {
-  margin: 0;
-}
-
 .card__date {
   text-transform: uppercase;
   display: block;
@@ -182,7 +173,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
   letter-spacing: 2px;
 }
 
-.card__tags--items {
+.card__tags {
   display: flex;
   list-style: none;
   margin: 0;
@@ -223,4 +214,17 @@ While in your theme's root directory, run the following commands in your command
 `npm run watch`
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Card component under components.
+
+#### Accessing Pattern Lab from within Drupal
+
+When working with Pattern Lab locally it makes sense to use http://localhost:3000 to view your work. However, if you are viewing your project from a server during development, or want to show your work and progress to a stakeholder or client, this approach will not work.  Luckily for us, we can access Pattern Lab using Drupal's URL as follows:
+
+`/themes/custom/training_theme/patternlab/index.html`
+
+Two things to keep in mind with the path above:
+
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is **https://mc-training.dev.pantheon.io**, the full URL would become `https://mc-training.dev.pantheon.io/themes/custom/training_theme/patternlab/index.html`
+2. Replace `training_theme` with your project's theme name if your theme name is different.
+
+\`\`
 

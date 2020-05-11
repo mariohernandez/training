@@ -7,7 +7,7 @@ Drupal uses a high-level principle: assets \(CSS or JS\) are still only loaded i
 In the context of component-based theming, we are going to create a library for each individual component we build in Pattern Lab. Each library will have all the CSS and JavaScript \(if any\), the component needs to render as expected.
 
 {% hint style="info" %}
-**NOTE: Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to generate the CSS and Javascript for components.
+**NOTE: Drupal libraries are only intended to work in Drupal**. They have no effect in Pattern Lab. In Pattern Lab we use Gulp tasks to generate the CSS and JavaScript for components.
 {% endhint %}
 
 ### Structure of a library
