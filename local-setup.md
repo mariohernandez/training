@@ -1,6 +1,6 @@
 # Local Setup
 
-### **Use one of the options below to install Drupal**
+### **Use one of the options below to install Drupal 8**
 
 * [Acquia Dev Desktop](https://docs.acquia.com/dev-desktop/install/)
 * You could also use [Lando](https://docs.lando.dev/basics/installation.html), [DDev](https://ddev.readthedocs.io/en/stable/#installation) or [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
