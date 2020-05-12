@@ -115,7 +115,9 @@ By now we should be well familiar with the fields structure above.  The one fiel
 
 * Most things look pretty straight forward in the code above.  With the tags we loop through the `tags` array and then add each  tag item as a list item in the unordered list.
 
-#### Create the card library.
+{% hint style="warning" %}
+Don't forget to create the Card's library.
+{% endhint %}
 
 #### Component styles
 
@@ -141,14 +143,28 @@ By now we should be well familiar with the fields structure above.  The one fiel
     display: block;
   }
 
+  // ========== Card wide styles=========
   &.card--wide {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    flex-direction: column;
 
-    @include breakpoint($bp-sm) {
+    .card__body-text {
+      margin-bottom: 40px;
+    }
+
+    // Changes card layout on larger screens.
+    @media screen and (min-width: 640px) {
       flex-direction: row;
+      max-width: 720px;
 
       .card__media,
       .card__content {
         flex: 0 0 50%;
+      }
+
+      .card__content {
+        padding: 40px 20px 20px 40px;
       }
     }
   }
