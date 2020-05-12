@@ -3,14 +3,16 @@
 ### Front-End tooling installation
 
 1. Install **NVM** \([macOS](https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc) or [Windows 10](https://www.youtube.com/watch?v=px9N1JOzRVU)\)
-2. Install **NodeJS** & **NPM**.  You will do this when building the theme below.
+2. Install the latest LTS versions of [NodeJS with NPM](https://nodejs.org/en/).  It is recommended you install NodeJS with [NVM](https://tecadmin.net/install-nodejs-with-nvm/).
 
 ### **Drupal 8**
 
-Use one fo the options below to install Drupal 8.  Install the [latest Drupal 8 ](https://www.drupal.org/project/drupal/)release.
+Use one of the options below to install Drupal 8.  Install the [latest Drupal 8 ](https://www.drupal.org/project/drupal/)release.
 
 * [Acquia Dev Desktop](https://docs.acquia.com/dev-desktop/install/)
 * You could also use [Lando](https://docs.lando.dev/basics/installation.html), [DDev](https://ddev.readthedocs.io/en/stable/#installation) or [Vagrant](https://www.vagrantup.com/intro/getting-started/install.html)
+
+### Drupal Modules
 
 Regardless of which option you use to setup Drupal 8, the following modules need to be installed and enabled:
 
@@ -25,9 +27,7 @@ Regardless of which option you use to setup Drupal 8, the following modules need
 * Responsive Images \(core\)
 * Media & Media Library \(both on core\)
 
-You also need the latest LTS versions of [NodeJS with NPM](https://nodejs.org/en/).  Ideally, if you can install NodeJS with [NVM](https://tecadmin.net/install-nodejs-with-nvm/) that would be preferred.
-
 {% hint style="info" %}
-**WINDOWS USERS**: Use Power Shell to run the commands in the instructions.
+**WINDOWS USERS**: Use [PowerShell](https://www.youtube.com/watch?v=VFuobJbbDtU) to run the commands in the instructions.
 {% endhint %}
 
