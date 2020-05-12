@@ -1,4 +1,6 @@
-# Mediacurrent Theme Generator
+# Create a new D8 theme
+
+### Mediacurrent Theme Generator
 
 The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generator_8) is a scaffolding tool that has evolved with the years to provide a production-ready Drupal 8 theme that is component-based ready out of the box.
 
@@ -6,8 +8,8 @@ The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generat
 
 The instructions below will get you up and running with the Theme Generator:
 
-* In your Drupal 8 site, create a new directory for your theme \(i.e. `/themes/custom/training_theme`\)
-* Inside **training\_theme** type the following command and press **Return**:
+1. In your Drupal 8 site, create a new directory for your theme \(i.e. `/themes/custom/training_theme`\)
+2. In your command line app, change into the newly created directory \(**training\_theme**\),  type the following command and press **Return**:
 
 ```bash
 nvm install node && node -v > .nvmrc
@@ -21,7 +23,18 @@ _The command above will install the latest stable version of NodeJS and create a
 npm create yo mc-d8-theme
 ```
 
-This command will begin the process to create your new theme.  Follow the on-screen instructions.
+#### Respond to the on-screen prompts as follows:
+
+1. Assign a Human readable name to your theme
+2. **IMPORTANT:** When the **What is your theme's machine name?** question comes up, be sure it matches the name of the directory you created in step 1 above \(i.e. `training_theme`\).  By default the system will try to use a similar name to the human readable name, but you need to make sure you type the name of the directory you created or you will run into issues in Drupal.
+3. Type a description for your theme
+4. Select **Use stable** **as your base theme**
+5. Type **Y** and press **Return** when **Should we update the .gitignore to ignore compiled files?** comes up.  This ensures already committed/compiled code does not keep showing as modified every time code gets compiled.
+6. While you can select any demo components from the list, select the followings to start with \(use your space bar to select an item and up/down arrows to move through the list\):
+   1. Button
+   2. Eyebrow
+   3. Drupal Messages
+   4. Drupal Tabs
 
 {% hint style="warning" %}
 **WARNING:**  The theme's machine name should always match the directory you created in the first step above \(i.e. `training_theme`\).
