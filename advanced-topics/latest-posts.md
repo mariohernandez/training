@@ -1,8 +1,8 @@
-# Latest Posts component
+# Featured Content List
 
-We will refer to this as **Latest Posts**, but this could be called many other things \(Card grid, article collection, latest news, etc.\). Whatever the name is, the point is that we have a component repeated multiple times. Some may build this a single component and there is nothing wrong with that approach, however, we could probably get more out of building a single card component first, then repeating it as many times as we want to. By doing this, we have an individual card component we could use not only for this type of content by for various types of content.
+So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title or heading of "Our Featured Content" and a Call To Action button to see more content.
 
-![](../.gitbook/assets/latest-posts.png)
+![](../.gitbook/assets/featured.png)
 
 ### Exercise: Build the Latest Posts component
 

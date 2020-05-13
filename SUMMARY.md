@@ -35,7 +35,7 @@
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
 * [Card paragraph type](advanced-topics/card-paragraph-type.md)
-* [Latest Posts component](advanced-topics/latest-posts.md)
+* [Featured Content List](advanced-topics/latest-posts.md)
 * [Blog](advanced-topics/blog-content-type.md)
 * [Drupal Views & View Modes](advanced-topics/drupal-views-and-view-modes.md)
 * [Integrating the Latest Posts](advanced-topics/integrating-the-latest-posts.md)

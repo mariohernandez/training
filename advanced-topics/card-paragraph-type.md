@@ -25,7 +25,7 @@ Add the following fields and settings to the paragraph type:
 | Field label | Machine name | Field type |
 | :--- | :--- | :--- |
 | Title | `field_title` | Text \(Plain\) |
-| Job title | field\_job\_title | Text \(Plain\) |
+| Category | field\_category | Taxonomy Term Reference |
 | Body | `field_body` | Text \(Plain, long\) |
 | Image | `field_image` | Media Reference |
 | Call To Action | `field_cta` | Link |
@@ -38,6 +38,8 @@ For the CTA field, set the following configuration:
 
 * **Allowed link type**: _Both internal and external links_
 * **Allowed link text**: _Required_
+
+For the Category field, select **Tags** as the vocabulary to reference.
 
 ### Putting the new paragraph type\(s\) to use
 
