@@ -4,7 +4,7 @@ So far we've been building individual components and built them in a way we can 
 
 ![](../.gitbook/assets/featured.png)
 
-### Exercise: Build the Latest Posts component
+### Exercise: Build the Featured Content component
 
 Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
 
@@ -12,18 +12,18 @@ This component will be completely different than the ones we've built thus far. 
 
 #### Component's stock content
 
-1. Inside _components_ create a new directory called **latest-posts**
-2. Inside the _latest-posts_ directory create a new file called `latest-posts.json`
-3. Inside _latest-posts.json_ add the following code:
+1. Inside _components_ create a new directory called **featured-content**
+2. Inside the _featured-content_ directory create a new file called `featured-content.json`
+3. Inside _featured-content.json_ add the following code:
 
 {% tabs %}
-{% tab title="latest-posts.json" %}
+{% tab title="featured-content.json" %}
 ```yaml
 {
   "heading": {
     "heading_level": "2",
-    "modifier": "latest-posts__heading",
-    "title": "Latest Posts",
+    "modifier": "featured-content__heading",
+    "title": "Featured Content",
     "url": ""
   },
   "items": [
@@ -115,21 +115,21 @@ There is a lot going on in this file. Let's go over it and you will see that it'
 
 * First we defined the `heading`  object which will be used as the title for the entire collection.
 * At around line 8, we declared an `items` array.  This will help us mimic the array of content to build the collection.
-* Each item in the items array represents a card.  Inside each card item we have defined the card's fields \(`image`, `title`, `body_text`, `cta` \).  We have repeated this 3 times to achieve the collection shown in the Latest Posts image above.
+* Each item in the items array represents a card.  Inside each card item we have defined the card's fields \(`image`, `title`, `body_text`, `cta` \).  We have repeated this 3 times to achieve the collection shown in the Featured Content image above.
 
 #### Component markup
 
 So the data is ready, let's go ahead and add the markup for the component.
 
-1. Inside the _latest-posts_ directory create a new file called `latest-posts.twig`
-2. Inside _latest-posts.twig_ add the following code:
+1. Inside the _featured-content_ directory create a new file called `featured-content.twig`
+2. Inside _featured-content.twig_ add the following code:
 
 {% tabs %}
-{% tab title="latest-posts.twig" %}
+{% tab title="featured-content.twig" %}
 ```php
-{{ attach_library('training_theme/latest-posts') }}
+{{ attach_library('training_theme/featured-content') }}
 
-<section class="latest-posts{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+<section class="featured-content{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {% if heading %}
     {%
@@ -140,7 +140,7 @@ So the data is ready, let's go ahead and add the markup for the component.
   {% endif %}
 
   {% if items %}
-    <div class="latest-posts__items">
+    <div class="featured-content__items">
       {% for item in items %}
           {%
             include '@training_theme/card/card.twig' with {
@@ -148,7 +148,7 @@ So the data is ready, let's go ahead and add the markup for the component.
               "title": item.title,
               "body": item.body,
               "tags": item.tags,
-              "modifier": ' latest-posts__item'
+              "modifier": ' featured-content__item'
             } only
           %}
       {% endfor %}
@@ -163,9 +163,9 @@ So the data is ready, let's go ahead and add the markup for the component.
 As I mentioned earlier, this is a unique component and nothing like we've built thus far. Let's review:
 
 * First we attach the component's library.  **Don't forget to create the library.**
-* Next we add a `<section>` element to wrap the entire component.  As we've done before, the first and main component wrapper should always use the name of the component as its class \(`latest-posts`\).  In addition we pass the `modifier` and `attributes` placeholders.
+* Next we add a `<section>` element to wrap the entire component.  As we've done before, the first and main component wrapper should always use the name of the component as its class \(`featured-content`\).  In addition we pass the `modifier` and `attributes` placeholders.
 * Next we make use of the **heading** component to print the component's main title and we wrap it in an `if` statement to ensure we don't print an empty heading tag.
-* Next we check if the `items` array exists, and if so, we create `<div>` to which we pass the class of `latest-posts__items`.  Notice how the classes associated with these elements describe not only what the component they belong to, but also the relationship among the elements.
+* Next we check if the `items` array exists, and if so, we create `<div>` to which we pass the class of `featured-content__items`.  Notice how the classes associated with these elements describe not only what the component they belong to, but also the relationship among the elements.
 * **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array of content and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
 * Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
 
@@ -173,11 +173,11 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
-1. Inside the _hero_ directory create a new file called **latest-posts.scss**
-2. Inside `latest-posts.scss` add this code:
+1. Inside the _hero_ directory create a new file called **featured-content.scss**
+2. Inside `featured-content.scss` add this code:
 
 {% tabs %}
-{% tab title="latest-posts.scss" %}
+{% tab title="featured-content.scss" %}
 ```css
 // Import site utilities
 @import '../../global/utils/init';
@@ -187,7 +187,7 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
-## Compiling the code to generate the Latest Posts
+## Compiling the code to generate the Featured Content
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
@@ -202,4 +202,3 @@ While in your theme's root directory, run the following commands in your command
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
 Next, we are going to build the back-end infrastructure in Drupal for this collection. This also will be a unique approach compared to previous components we've built in Drupal.
-

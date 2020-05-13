@@ -35,10 +35,10 @@
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
 * [Card paragraph type](advanced-topics/card-paragraph-type.md)
-* [Featured Content List](advanced-topics/latest-posts.md)
+* [Featured Content List](advanced-topics/featured-content.md)
 * [Blog](advanced-topics/blog-content-type.md)
 * [Drupal Views & View Modes](advanced-topics/drupal-views-and-view-modes.md)
-* [Integrating the Latest Posts](advanced-topics/integrating-the-latest-posts.md)
+* [Integrating Featured Content](advanced-topics/integrating-featured-content.md)
 * [News page](advanced-topics/news-page.md)
 
 ## Extras \(work in progress\)
@@ -50,4 +50,3 @@
 ## Resources
 
 * [Resources](resources/resources.md)
-
