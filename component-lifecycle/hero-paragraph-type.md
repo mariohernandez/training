@@ -2,7 +2,7 @@
 
 ### Whose line is it anyway?
 
-Before embarquing on this Drupal journey, keep in mind that your role in this process may vary.  Depending on your team, your skillset or other factors, you will most likely not going to do it all.  For example, a typical project for me consists of an architect building all of Drupal's infrastructure, a front-end developer building components in Pattern Lab, and perhaps a back-end developer integrating the components with Drupal.  However, in other projects I may be responsible for building and integrating components.
+Before embarking on this Drupal journey, keep in mind that your role in this process may vary.  Depending on your team, your skillset or other factors, you will most likely not going to do it all.  For example, a typical project for me consists of an architect building all of Drupal's infrastructure, a front-end developer building components in Pattern Lab, and perhaps a back-end developer integrating the components with Drupal.  However, in other projects I may be responsible for building and integrating components.
 
 ### Drupal entities
 
