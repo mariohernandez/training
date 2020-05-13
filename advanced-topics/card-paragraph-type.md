@@ -41,7 +41,11 @@ For the CTA field, set the following configuration:
 
 For the Category field, select **Tags** as the vocabulary to reference.
 
-### Putting the new paragraph type\(s\) to use
+### 🛑 Putting the new paragraph type to use
+
+We are going to hold off on adding the Card's paragraph type to a content type for the time being.  We are first going to build the **Featured Content** list which uses a collection of cards.
+
+
 
 Now that the paragraph type is done, it's time to add it to a content type. Paragraph types on their own are useless. They need to be added to other entities such as a content type as an **Entity Reference** field.
 
