@@ -12,7 +12,7 @@ This component will be completely different than the ones we've built thus far. 
 
 #### Component's stock content
 
-1. Inside _components_ create a new directory called **featured-content**
+1. Inside `src/patterns/components`create a new directory called **featured-content**
 2. Inside the _featured-content_ directory create a new file called `featured-content.json`
 3. Inside _featured-content.json_ add the following code:
 
@@ -22,17 +22,17 @@ This component will be completely different than the ones we've built thus far. 
 {
   "heading": {
     "heading_level": "2",
-    "modifier": "featured-content__heading",
-    "title": "Featured Content",
+    "modifier": "heading--large",
+    "title": "Our Featured Content",
     "url": ""
   },
   "items": [
     {
-      "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
+      "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/640x360' alt='Man doing yoga' />",
       "title": {
         "heading_level": "3",
-        "modifier": "card__title",
-        "text": "The beauty of nature",
+        "modifier": "featured-content__card",
+        "title": "The beauty of nature",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -47,18 +47,18 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
-      "modifier": ""
+      "modifier": "featured-content__card"
     },
     {
-      "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
+      "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
       "title": {
         "heading_level": "3",
-        "modifier": "card__title",
-        "text": "The beauty of nature",
+        "modifier": "featured-content__card",
+        "title": "The beauty of nature",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -73,18 +73,18 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
-      "modifier": ""
+      "modifier": "featured-content__card"
     },
     {
-      "image": "<img src='https://placeimg.com/640/350/places' alt='Card image' />",
+      "image": "<img src='https://source.unsplash.com/4b9Talfia6c/640x360' alt='Candy in shape of heart' />",
       "title": {
         "heading_level": "3",
-        "modifier": "card__title",
-        "text": "The beauty of nature",
+        "modifier": "featured-content__card",
+        "title": "The beauty of nature",
         "url": "#"
       },
       "date": "March 16 2020",
@@ -99,11 +99,37 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         },
         {
-          "text": "Outdoors",
+          "text": "Outdors",
           "url": "#"
         }
       ],
-      "modifier": ""
+      "modifier": "featured-content__card"
+    },
+    {
+      "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Painting of a tiger' />",
+      "title": {
+        "heading_level": "3",
+        "modifier": "featured-content__card",
+        "title": "The beauty of nature",
+        "url": "#"
+      },
+      "date": "March 16 2020",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+      "tags": [
+        {
+          "text": "Phtography",
+          "url": "#"
+        },
+        {
+          "text": "Nature",
+          "url": "#"
+        },
+        {
+          "text": "Outdors",
+          "url": "#"
+        }
+      ],
+      "modifier": "featured-content__card"
     }
   ]
 }
@@ -155,7 +181,6 @@ So the data is ready, let's go ahead and add the markup for the component.
     </div>
   {% endif %}
 </section>
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -181,6 +206,22 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 ```css
 // Import site utilities
 @import '../../global/utils/init';
+
+TODO: Create mixin below
+// .featured-content {
+//   @include component-spacing;
+// }
+
+.featured-content__items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.featured-content__card {
+  flex: 0 0 22%;
+  max-width: 400px;
+}
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -202,3 +243,4 @@ While in your theme's root directory, run the following commands in your command
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
 Next, we are going to build the back-end infrastructure in Drupal for this collection. This also will be a unique approach compared to previous components we've built in Drupal.
+
