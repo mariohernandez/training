@@ -8,7 +8,7 @@ The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generat
 
 [Watch the video tutorial,](https://www.youtube.com/watch?v=cVyA2v-UwSQ&feature=youtu.be) or follow the instructions below.
 
-1. In your Drupal 8 site, create a new directory for your theme \(i.e. `/themes/custom/training_theme`\)
+1. In your Drupal 8 site, create a new folder for your theme \(i.e. `/themes/custom/training_theme`\)
 2. In your command line app, change into the newly created directory \(**training\_theme**\),  type the following command and press **Return**:
 
 ```bash
@@ -30,7 +30,7 @@ npm create yo mc-d8-theme
 3. Type a description for your theme
 4. Select **Use stable** **as your base theme**
 5. Type **Y** and press **Return** when **Should we update the .gitignore to ignore compiled files?** comes up.  This will hide `/dist` from git to avoid having to commit already compiled files.
-6. While you can select any demo components from the list, we recommend the following ones: 
+6. While you can select any demo components from the list, we recommend the following ones:
    1. Button
    2. Eyebrow
    3. Drupal Messages

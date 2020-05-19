@@ -29,8 +29,8 @@ Let's start by first identifying the content for the component. Since this is a 
 On a typical Drupal project the full path may look something like this: `<project-root>/web/themes/custom/<your-theme-name>/src/patterns/components/`
 {% endhint %}
 
-1. Inside _components_ create a new directory called **heading**
-2. Inside the _heading_ directory create a new file called **heading.json**
+1. Inside _components_ create a new folder called **heading**
+2. Inside the _heading_ folder create a new file called **heading.json**
 3. Inside _heading.json_ add the following code:
 
 ```yaml
@@ -45,7 +45,7 @@ We just created key/value pair for the heading with a key of **title** and **val
 
 Now let's write some HTML to be able to see the Heading component in the browser.
 
-1. Inside the _heading_ directory create a new file called **heading.twig**
+1. Inside the _heading_ folder create a new file called **heading.twig**
 2. Inside `heading.twig` add the following code:
 
 ```php
@@ -58,7 +58,7 @@ We created a **h1** heading in which we pass the value of title from the `json` 
 
 We don't need to write any CSS for this component, but let's at least create a Sass file for when we need to write styles.
 
-1. Inside the _heading_ directory create a new file called **heading.scss**
+1. Inside the _heading_ folder create a new file called **heading.scss**
 2. Inside `heading.scss` add this code:
 
 ```css

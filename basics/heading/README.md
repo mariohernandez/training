@@ -29,8 +29,8 @@ Let's start by first identifying the content for the component. Since this is a 
 On a typical Drupal project the full path may look something like this: `<drupal-root>/web/themes/custom/<your-theme-name>/src/patterns/components/`
 {% endhint %}
 
-1. Inside `src/patterns/components` create a new directory called **heading**
-2. Inside the _heading_ directory create a new file called **heading.json**
+1. Inside `src/patterns/components` create a new folder called **heading**
+2. Inside the _heading_ folder create a new file called **heading.json**
 3. Inside _heading.json_ add the following code:
 
 {% tabs %}
@@ -49,7 +49,7 @@ We just created a JSON object with a `key | value` pair for the heading with key
 
 Now let's write some HTML to be able to see the Heading component in Pattern Lab.
 
-1. Inside the _heading_ directory create a new file called **heading.twig**
+1. Inside the _heading_ folder create a new file called **heading.twig**
 2. Inside `heading.twig` add the following code:
 
 {% tabs %}
@@ -66,7 +66,7 @@ We created a **h1** heading in which we pass the value of title from the `json` 
 
 We'll write temporary styles for this component.  We'll comeback to update these styles later.
 
-1. Inside the _heading_ directory create a new file called **heading.scss**
+1. Inside the _heading_ folder create a new file called **heading.scss**
 2. Inside `heading.scss` add this code:
 
 {% tabs %}
@@ -77,7 +77,7 @@ We'll write temporary styles for this component.  We'll comeback to update these
 
 .heading {
   color: #ff9900;
-  
+
   a {
     text-decoration: none;
   }

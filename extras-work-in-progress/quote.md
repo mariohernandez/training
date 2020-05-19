@@ -21,8 +21,8 @@ As we can see we need the following fields:
 
 ### Component's stock content
 
-1. Inside _components_ create a new directory called **quote**
-2. Inside the _quote_ directory create a new file called **quote.json**
+1. Inside _components_ create a new folder called **quote**
+2. Inside the _quote_ folder create a new file called **quote.json**
 3. Inside _quote.json_ add the following code:
 
 {% tabs %}
@@ -54,7 +54,7 @@ We're declaring 4 fields in the Quote component: **image**, **heading/title, bod
 
 Now let's write some HTML for the component.
 
-1. Inside the _quote_ directory create a new file called **quote.twig**
+1. Inside the _quote_ folder create a new file called **quote.twig**
 2. Inside `quote.twig` add the following code:
 
 {% tabs %}
@@ -109,7 +109,7 @@ Now let's write some HTML for the component.
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
-1. Inside the _quote_ directory create a new file called **quote.scss**
+1. Inside the _quote_ folder create a new file called **quote.scss**
 2. Inside `quote.scss` add this code:
 
 {% tabs %}

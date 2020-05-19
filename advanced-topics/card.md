@@ -4,7 +4,7 @@ A component that will introduce us to a more useful technique for working with c
 
 ![Example of a Card component](../.gitbook/assets/card.png)
 
-Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over.  Having a single card component available makes it possible to even build other types of content collections.  
+Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over.  Having a single card component available makes it possible to even build other types of content collections.
 
 ### Exercise:  Card component
 
@@ -20,8 +20,8 @@ Now that we have identified the fields our card component needs, let's start bui
 
 #### Component's stock content
 
-1. Inside `src/patterns/components` create a new directory called **card**
-2. Inside the _card_ directory create a new file called **card.json**
+1. Inside `src/patterns/components` create a new folder called **card**
+2. Inside the _card_ folder create a new file called **card.json**
 3. Inside _card.json_ add the following code:
 
 {% tabs %}
@@ -61,7 +61,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
 
 #### Component's markup
 
-1. Inside the _card_ directory create a new file called **card.twig**
+1. Inside the _card_ folder create a new file called **card.twig**
 2. Inside _card.twig_ add the following code:
 
 {% tabs %}
@@ -121,7 +121,7 @@ Don't forget to create the Card's library.
 
 #### Component styles
 
-1. Inside the _card_ directory create a new file called **card.scss**
+1. Inside the _card_ folder create a new file called **card.scss**
 2. Inside _card.scss_ add the following code:
 
 {% tabs %}

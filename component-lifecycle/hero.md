@@ -18,8 +18,8 @@ Based on the design above, we need the following fields:
 
 ### Component's stock content
 
-1. Inside _components_ create a new directory called **hero**
-2. Inside the _hero_ directory create a new file called **hero.json**
+1. Inside _components_ create a new folder called **hero**
+2. Inside the _hero_ folder create a new file called **hero.json**
 3. Inside _hero.json_ add the following code:
 
 {% tabs %}
@@ -55,7 +55,7 @@ Just as we did with the Heading component, we are using JSON to define the compo
 
 Now let's write some HTML for the component.
 
-1. Inside the _hero_ directory create a new file called **hero.twig**
+1. Inside the _hero_ folder create a new file called **hero.twig**
 2. Inside `hero.twig` add the following code:
 
 {% tabs %}
@@ -104,7 +104,7 @@ In the interest of addressing the basics of component-building, we are going to 
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
-1. Inside the _hero_ directory create a new file called **hero.scss**
+1. Inside the _hero_ folder create a new file called **hero.scss**
 2. Inside `hero.scss` add this code:
 
 {% tabs %}

@@ -12,8 +12,8 @@ This component will be completely different than the ones we've built thus far. 
 
 #### Component's stock content
 
-1. Inside `src/patterns/components`create a new directory called **featured-content**
-2. Inside the _featured-content_ directory create a new file called `featured-content.json`
+1. Inside `src/patterns/components`create a new folder called **featured-content**
+2. Inside the _featured-content_ folder create a new file called `featured-content.json`
 3. Inside _featured-content.json_ add the following code:
 
 {% tabs %}
@@ -147,7 +147,7 @@ There is a lot going on in this file. Let's go over it and you will see that it'
 
 So the data is ready, let's go ahead and add the markup for the component.
 
-1. Inside the _featured-content_ directory create a new file called `featured-content.twig`
+1. Inside the _featured-content_ folder create a new file called `featured-content.twig`
 2. Inside _featured-content.twig_ add the following code:
 
 {% tabs %}
@@ -198,7 +198,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
-1. Inside the _hero_ directory create a new file called **featured-content.scss**
+1. Inside the _hero_ folder create a new file called **featured-content.scss**
 2. Inside `featured-content.scss` add this code:
 
 {% tabs %}
