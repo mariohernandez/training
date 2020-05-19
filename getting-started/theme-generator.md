@@ -6,7 +6,7 @@ The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generat
 
 ## Exercise:  Create a new D8 theme
 
-The instructions below will get you up and running with the Theme Generator:
+[Watch the video tutorial,](https://www.youtube.com/watch?v=cVyA2v-UwSQ&feature=youtu.be) or follow the instructions below.
 
 1. In your Drupal 8 site, create a new directory for your theme \(i.e. `/themes/custom/training_theme`\)
 2. In your command line app, change into the newly created directory \(**training\_theme**\),  type the following command and press **Return**:
@@ -26,11 +26,11 @@ npm create yo mc-d8-theme
 #### Respond to the on-screen prompts as follows:
 
 1. Assign a Human readable name to your theme
-2. **IMPORTANT:** When the **What is your theme's machine name?** question comes up, be sure it matches the name of the directory you created in step 1 above \(i.e. `training_theme`\).  By default the system will try to use a similar name to the human readable name, but you need to make sure you type the name of the directory you created or you will run into issues in Drupal.
+2. **IMPORTANT:** When the **What is your theme's machine name?** question comes up, be sure it matches the name of the directory you created in step 1 above \(i.e. `training_theme`\).  By default the system will try to use the name name as the human readable name, but you need to make sure you type the name of the directory you created or you will run into issues in Drupal.
 3. Type a description for your theme
 4. Select **Use stable** **as your base theme**
-5. Type **Y** and press **Return** when **Should we update the .gitignore to ignore compiled files?** comes up.  This ensures already committed/compiled code does not keep showing as modified every time code gets compiled.
-6. While you can select any demo components from the list, select the followings to start with \(use your space bar to select an item and up/down arrows to move through the list\):
+5. Type **Y** and press **Return** when **Should we update the .gitignore to ignore compiled files?** comes up.  This will hide `/dist` from git to avoid having to commit already compiled files.
+6. While you can select any demo components from the list, we recommend the following ones: 
    1. Button
    2. Eyebrow
    3. Drupal Messages
@@ -40,7 +40,7 @@ npm create yo mc-d8-theme
 **WARNING:**  The theme's machine name should always match the directory you created in the first step above \(i.e. `training_theme`\).
 {% endhint %}
 
-* After the theme has been successfully created, type the following commands:
+* After the theme has been successfully created, type the following commands from the theme's root:
 
 ```bash
 npm run build
