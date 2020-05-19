@@ -2,14 +2,14 @@
 
 ## Presenter templates
 
-Presenter templates are Twig templates in a theme \(e.g., `node.html.twig`, `block.html.twig`, `field.html.twig`, etc.\), but in the context of Component-development, their only purpose is to pass data from Drupal to the component. This means everything related to the component such as Markup, CSS and Javascript is done at the component level in Pattern Lab, and when is time to wire the component with Drupal, we use the appropriate presenter template, or Twig template suggestion, to simply map the Drupal fields with the component's fields we defined in Pattern Lab.
+Presenter templates are Twig template suggestions in a theme \(e.g., `node--news.html.twig`, `block--card.html.twig`, `field--something.html.twig`, etc.\), but in the context of Component-based development, their only purpose is to pass data from Drupal to the component. This means everything related to the component such as Markup, CSS and Javascript is done at the component level in Pattern Lab, and when is time to wire the component with Drupal, we use the appropriate presenter template, or Twig template suggestion, to simply map Drupal fields with the component's fields we defined in Pattern Lab.
 
 There are other ways to integrate component with Drupal, such as the [UI Patterns](https://www.drupal.org/project/ui_patterns) module, pre-processing, but the most popular approach is presenter templates.
 
 ## Presenter templates best practices
 
 * It’s best to try and loyally follow the atomic design approach as much as possible when creating components.
-* When at the molecule/organism level of your components, use twig **block tags** generously to help with future embeds of those components.  If in doubt, block it out.
+* When at the molecule/organism level of your components, use twig **blocks** \(not the same or related to Drupal blocks\), generously to help with future embeds of those components.  If in doubt, block it out.
 * Let Drupal render all fields at the theme level with little to no pre-processing. Use view modes as much as possible.
 * Use modules that extend twig \([twig field value](https://www.drupal.org/project/twig_field_value), [twig tweak](https://www.drupal.org/project/twig_tweak), etc.\) when only the field value is required.
 * Create twig template files to help remove bloated field markup, and make use of twig’s extends statements to help streamline reuse of field templates.
