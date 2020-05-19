@@ -11,7 +11,7 @@ The heading component looks good and it will work great, ...as long as we always
   "heading": {
     "heading_level": "",
     "modifier": "",
-    "title": "Welcome to the best training workshop!",
+    "title": "Welcome to Mediacurrent training!",
     "url": ""
   }
 }
@@ -19,14 +19,14 @@ The heading component looks good and it will work great, ...as long as we always
 {% endtab %}
 {% endtabs %}
 
-We just created an object for the heading with key/value **heading\_level, modifier, title**, and **url**.
+We just created a JSON object for the heading with properties that include **heading\_level, modifier, title**, and **url**.
 
 * The **heading\_level** is something we will use later as we start nesting the heading component into other components. This will allows us to change the headings from say, h1 to h2 if we need to.
 * The **modifier** key allows us to pass a modifier CSS class when we make use of this component. The modifier class will make it possible for us to style the heading differently than other headings, if needed.
 * the **title** key is the title's string of text that will become the title of a page or a component.
 * ... and finally, the **url** key, if present, will allow us to wrap the title in an `<a>` tag, to make it a link.
 
-## Update the heading's markup and logic
+### Update the heading's markup and logic
 
 * Update the `heading.twig` file to look like this:
 
@@ -59,17 +59,7 @@ Let's break things down to explain what's happening here since the twig code has
 If Pattern Lab is running you should see the updates to the Heading component.  Otherwise run the commands below:
 
 ```text
-npm run build
-```
-
-```text
 npm run watch
-```
-
-You could also combine both commands like this:
-
-```text
-npm run build && npm run watch
 ```
 
 **Just for fun 💥**
