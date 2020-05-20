@@ -1,14 +1,14 @@
 # Card Component
 
-A component that will introduce us to a more useful technique for working with components is the image you see below. A Card component is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in many websites nowadays.  The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content.  For example, we could use a collection of cards to display latest blog posts or upcoming events.  In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
+A component that will introduce us to a more useful technique for working with components is the image you see below. A Card component is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in many websites nowadays. The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
 
 ![Example of a Card component](../.gitbook/assets/card.png)
 
-Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over.  Having a single card component available makes it possible to even build other types of content collections.
+Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over. Having a single card component available makes it possible to even build other types of content collections.
 
-### Exercise:  Card component
+## Exercise:  Card component
 
-As we've did with the Hero component, one of the first things we need to define are the data fields that makeup the component.  If you look at the image above, a single Card has the following data fields:
+As we've did with the Hero component, one of the first things we need to define are the data fields that makeup the component. If you look at the image above, a single Card has the following data fields:
 
 * image
 * title \(link to full article\)
@@ -18,7 +18,7 @@ As we've did with the Hero component, one of the first things we need to define 
 
 Now that we have identified the fields our card component needs, let's start building it.
 
-#### Component's stock content
+### Component's stock content
 
 1. Inside `src/patterns/components` create a new folder called **card**
 2. Inside the _card_ folder create a new file called **card.json**
@@ -57,9 +57,9 @@ Now that we have identified the fields our card component needs, let's start bui
 {% endtab %}
 {% endtabs %}
 
-By now we should be well familiar with the fields structure above.  The one field type we probably have not seen until now is an array.  In the code above we are declaring the tags as an array of items.  Each tag item inside the array has a `text` and `url` keys so they can become links to tag-driven pages on our site.
+By now we should be well familiar with the fields structure above. The one field type we probably have not seen until now is an array. In the code above we are declaring the tags as an array of items. Each tag item inside the array has a `text` and `url` keys so they can become links to tag-driven pages on our site.
 
-#### Component's markup
+### Component's markup
 
 1. Inside the _card_ folder create a new file called **card.twig**
 2. Inside _card.twig_ add the following code:
@@ -119,7 +119,7 @@ By now we should be well familiar with the fields structure above.  The one fiel
 Don't forget to create the Card's library.
 {% endhint %}
 
-#### Component styles
+### Component styles
 
 1. Inside the _card_ folder create a new file called **card.scss**
 2. Inside _card.scss_ add the following code:
@@ -214,14 +214,13 @@ Don't forget to create the Card's library.
     color: lighten(#1a202c, 25%);
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}
 
-#### Compiling the code
+### Compiling the code
 
-Now that the card component is done, let's compile the code so we can see it in Pattern Lab.  If the watch task is running you should be able to see the card component in Pattern Lab, otherwise follow these steps:
+Now that the card component is done, let's compile the code so we can see it in Pattern Lab. If the watch task is running you should be able to see the card component in Pattern Lab, otherwise follow these steps:
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
@@ -231,15 +230,15 @@ While in your theme's root directory, run the following commands in your command
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Card component under components.
 
-#### Accessing Pattern Lab from within Drupal
+### Accessing Pattern Lab from within Drupal
 
-When working with Pattern Lab locally it makes sense to use http://localhost:3000 to view your work. However, if you are viewing your project from a server during development, or want to show your work and progress to a stakeholder or client, this approach will not work.  Luckily for us, we can access Pattern Lab using Drupal's URL as follows:
+When working with Pattern Lab locally it makes sense to use [http://localhost:3000](http://localhost:3000) to view your work. However, if you are viewing your project from a server during development, or want to show your work and progress to a stakeholder or client, this approach will not work. Luckily for us, we can access Pattern Lab using Drupal's URL as follows:
 
 `/themes/custom/training_theme/patternlab/index.html`
 
 Two things to keep in mind with the path above:
 
-1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is **https://mc-training.dev.pantheon.io**, the full URL would become `https://mc-training.dev.pantheon.io/themes/custom/training_theme/patternlab/index.html`
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is [https://mc-training.dev.pantheon.io](https://mc-training.dev.pantheon.io), the full URL would become `https://mc-training.dev.pantheon.io/themes/custom/training_theme/patternlab/index.html`
 2. Replace `training_theme` with your project's theme name if your theme name is different.
 
 \`\`

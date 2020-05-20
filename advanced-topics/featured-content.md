@@ -221,7 +221,6 @@ TODO: Create mixin below
   flex: 0 0 22%;
   max-width: 400px;
 }
-
 ```
 {% endtab %}
 {% endtabs %}

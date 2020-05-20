@@ -64,7 +64,7 @@ We created a **h1** heading in which we pass the value of title from the `json` 
 
 ### Component's styles
 
-We'll write temporary styles for this component.  We'll comeback to update these styles later.
+We'll write temporary styles for this component. We'll comeback to update these styles later.
 
 1. Inside the _heading_ folder create a new file called **heading.scss**
 2. Inside `heading.scss` add this code:

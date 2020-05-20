@@ -37,7 +37,7 @@ npm create yo mc-d8-theme
    4. Drupal Tabs
 
 {% hint style="warning" %}
-**WARNING:**  The theme's machine name should always match the directory you created in the first step above \(i.e. `training_theme`\).
+**WARNING:** The theme's machine name should always match the directory you created in the first step above \(i.e. `training_theme`\).
 {% endhint %}
 
 * After the theme has been successfully created, type the following commands from the theme's root:
@@ -48,11 +48,11 @@ npm run build
 npm run watch
 ```
 
-* Click the URL provided at the end of the last command's output \(http://localhost:3000\), to access Pattern Lab.
+* Click the URL provided at the end of the last command's output \([http://localhost:3000\](http://localhost:3000\)\), to access Pattern Lab.
 
 If you wish to access Pattern Lab using Drupal's URL, use the following path:
 
-* http://**&lt;drupal-url&gt;**/themes/custom/**training\_theme**/patternlab/index.html
+* [http://\*\*&lt;drupal-url&gt;\*\*/themes/custom/\*\*training\_theme\*\*/patternlab/index.html](http://**<drupal-url>**/themes/custom/**training_theme**/patternlab/index.html)
 
 _Update **&lt;drupal-url&gt;** and **training\_theme** to match your environment_.
 

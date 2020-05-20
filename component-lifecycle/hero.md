@@ -10,9 +10,9 @@ First let's take a look at how this component looks so we can identify the diffe
 
 Based on the design above, we need the following fields:
 
-* **title or heading**: Hero titl
-* **image**: Hero image
-* **call to action \(CTA\)**: A call to action button/link
+* **title or heading**
+* **image**
+* **call to action \(CTA\)**
 
 ## Exercise:  Build the Hero component
 
@@ -48,8 +48,8 @@ Just as we did with the Heading component, we are using JSON to define the compo
 
 #### Some things to notice:
 
-* The `eyebrow` `heading` and `cta` fields were declared as JSON objects with `key|value`properties within them.  Typically these object's data structure matches the original components.  For example, if you look at the data structure for the **Heading** component you will see it is the same as what we have here in the Hero.  When component's data structures match it makes it easier to nest components into other components.  More on this later.
-* Almost all the fields provide the ability to add a `modifier` css class \(i.e. `hero__*`\).  This is handy because it establishes a relationship between child and parent elements \(using the [BEM](https://css-tricks.com/bem-101/) methodology\), but it also facilitates styling those elements differently than the original components.
+* We created data objects for **heading** and **cta**.  Although this is not required, doing this helps to organize fields and their properties as well as it simplifies the component nesting process in Twig.  More on this shortly
+* We added a `modifier` key with an empty value.  This will come in handy when we need to pass custom CSS classes to component to style them.
 
 ### Component's Markup
 
@@ -89,20 +89,16 @@ Now let's write some HTML for the component.
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-In the interest of addressing the basics of component-building, we are going to ignore for now  Drupal-specific elements found in line 1 above. We will discuss those elements as part of other exercises in this training.
-{% endhint %}
-
 #### Some things to notice:
 
-* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore it should be named **hero**.  We do this by using the class of `hero.`
-* For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\).  This is a good practice so we don't print empty HTML.
-* Notice how every field uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
-* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest previously built components into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
+* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore assigned the CSS class of **hero**, which also becomes the namespace for this component.  This namespace helps with CSS scope to ensure our styles are unique to this and this component only.
+* In line 1, in addition to the component's class of **hero** we are writing a conditional statement to determine if there is a value being passed for the modifier \(`{{ modifier ? '  ' ~ modifier }}`\), and if so, we are printing it as an additional CSS class.
+* Still in line 1, we are preparing this component for when we integrate it with Drupal by assigning a placeholder for any Drupal attributes that may be available.  We will make use of `attriubutes` later in the process.
+* For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\).  This is a good practice so we don't print empty HTML tags.
+* Notice how every field and div uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the Heading component into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
 
 ### Component's styles
-
-We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
 1. Inside the _hero_ folder create a new file called **hero.scss**
 2. Inside `hero.scss` add this code:
@@ -140,20 +136,18 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
 {% endtab %}
 {% endtabs %}
 
-The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
+We'll refine these styles later on.
 
 ### Compiling the code
 
-Now that the Hero component is done, let's compile the code so we can see it in Pattern Lab.
+If Pattern Lab is running you should see the Hero component in Pattern Lab under the Component menu item.  Otherwise run the commands below:
 
-While in your theme's root directory, run the following commands in your command line and press **Return**
-
-`npm run build`
-
-`npm run watch`
+```text
+npm run watch
+```
 
 {% hint style="info" %}
-**TIP:** Since we created a whole new component; if you had the watch task running, it is recommended you stop it by pressing **Ctrl + C** on your keyboard, and run the commands above.  This will ensure the new component will be generated and all related code will be compiled.
+**TIP:** Since we created a whole new component; if you had the watch task running, you may need to stop it by pressing **Ctrl + C** on your keyboard, and run `npm run build`. This will ensure the new component will be generated and all related code will be compiled.
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
