@@ -96,5 +96,3 @@ Now that the Button component is done, let's compile the code so we can see it i
 ```bash
 npm run watch
 ```
-
-### Next:  Update the Hero to make use of the new button atom
