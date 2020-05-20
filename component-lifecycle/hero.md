@@ -79,9 +79,11 @@ Now let's write some HTML for the component.
     {% endif %}
 
     {% if cta %}
-      <a href="{{ cta.url }}" class="hero__cta">
-        {{ cta.text }}
-      </a>
+      {%
+        include '@training_theme/button/button.twig' with {
+          "button": cta
+        } only
+      %}
     {% endif %}
   </div>
 </section>
@@ -96,7 +98,7 @@ Now let's write some HTML for the component.
 * Still in line 1, we are preparing this component for when we integrate it with Drupal by assigning a placeholder for any Drupal attributes that may be available.  We will make use of `attriubutes` later in the process.
 * For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\).  This is a good practice so we don't print empty HTML tags.
 * Notice how every field and div uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
-* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the Heading component into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
+* **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the Heading and Button components into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
 
 ### Component's styles
 
@@ -151,4 +153,3 @@ npm run watch
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
-

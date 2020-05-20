@@ -16,6 +16,7 @@
 
 * [Heading Component](basics/heading/README.md)
   * [Improving the Heading](basics/heading/improving-the-heading.md)
+* [Button Component](basics/button.md)
 
 ## Component Lifecycle
 
@@ -50,4 +51,3 @@
 ## Resources
 
 * [Resources](resources/resources.md)
-
