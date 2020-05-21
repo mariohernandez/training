@@ -112,10 +112,8 @@ Now let's write some HTML for the component.
 @import '../../global/utils/init';
 
 .hero {
-  // @include component-spacing;
   position: relative;
 
-  // Styles heading when inside the hero.
   .heading {
     color: #003954;
     font-weight: 900;
