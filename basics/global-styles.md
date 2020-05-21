@@ -62,16 +62,16 @@ Create mixins, color variables, breakpoint variables, etc.
 ### Color variables
 
 {% tabs %}
-{% tab title="\_variables.scss" %}
+{% tab title="\_colors.scss" %}
 ```css
 //Colors
 
 // Standard.
-$color-white: #ffffff;
-$color-black: #000000;
+$color-white: #fff;
+$color-black: #1b2b34;
 
 // Primary.
-$navy-blue : #003954;
+$color-navy-blue : #003954;
 
 // Grays.
 $color-gray: #808080;
@@ -88,6 +88,10 @@ $color-error : #f00;
 $color-success : #089e00;
 $color-warning : #fff664;
 $color-info : #000db5;
+$color-gray-mid;
+$color-gray-mid;
+$color-gray-lt;
+$color-gray-xlt;
 ```
 {% endtab %}
 {% endtabs %}
