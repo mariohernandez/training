@@ -29,6 +29,7 @@
 * [Getting Twig variables](component-lifecycle/hero-component.md)
 * [Integrating the Hero](component-lifecycle/getting-twig-variables.md)
 * [Drupal Libraries](component-lifecycle/drupal-libraries.md)
+* [Hero Image styles](component-lifecycle/image-styles.md)
 
 ## Advanced Topics
 
@@ -44,11 +45,9 @@
 
 ## Extras \(work in progress\)
 
-* [Image styles](extras-work-in-progress/image-styles.md)
 * [Quote Component](extras-work-in-progress/quote.md)
 * [Integrating the Quote](extras-work-in-progress/integrating-the-quote.md)
 
 ## Resources
 
 * [Resources](resources/resources.md)
-
