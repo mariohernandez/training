@@ -112,25 +112,58 @@ Now let's write some HTML for the component.
 @import '../../global/utils/init';
 
 .hero {
-  position: relative;
+  @include component-spacing;
+  @include image-crop (320px);
 
-  .heading {
-    color: #003954;
-    font-weight: 900;
-    margin-bottom: 50px;
-    text-transform: uppercase;
+  @media screen and (min-width: $bp-sm) {
+    height: 400px;
   }
 
-  img {
-    display: block;
+  @media screen and (min-width: $bp-md) {
+    height: 600px;
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    height: 700px;
+  }
+
+  // Styles heading when inside the hero.
+  .heading {
+    color: $color-navy-blue;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $bp-md) {
+      font-size: 5rem;
+      margin-bottom: 25px;
+    }
+
+    @media screen and (min-width: $bp-lg) {
+      font-size: 10rem;
+      margin-bottom: 25px;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+      margin-bottom: 50px;
+      font-size: 12rem;
+    }
   }
 }
 
 .hero__content {
-  position: absolute;
+  @include center-align(absolute);
   text-align: center;
-  top: 45%;
   width: 100%;
+}
+
+.hero__media {
+
+  // Fixes drupal bug with position property when
+  // rendering image in drupal.
+  .contextual-region {
+    position: unset;
+  }
 }
 ```
 {% endtab %}

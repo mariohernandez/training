@@ -133,7 +133,7 @@ Don't forget to create and attach the Card's library.
 @import '../../global/utils/init';
 
 .card {
-  box-shadow: 0 10px 15px -3px rgba($black, 0.1), 0 4px 6px -2px rgba($black, 0.05);
+  box-shadow: 0 10px 15px -3px rgba($color-black, 0.1), 0 4px 6px -2px rgba($color-black, 0.05);
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -145,14 +145,14 @@ Don't forget to create and attach the Card's library.
     width: 100%;
   }
 
-  @media screen and (min-width: $bp-med) {
+  @media screen and (min-width: $bp-md) {
     flex: 0 0 45%;
     max-width: 325px;
   }
 
   // ========== Card wide styles=========
   &.card--wide {
-    border: 1px solid $gray-lighter;
+    border: 1px solid $color-gray-light;
     box-shadow: none;
     flex-direction: column;
 
@@ -161,7 +161,7 @@ Don't forget to create and attach the Card's library.
     }
 
     // Changes card layout on larger screens.
-    @media screen and (min-width: $bp-small-3) {
+    @media screen and (min-width: $bp-sm) {
       flex-direction: row;
       max-width: 720px;
 
@@ -183,7 +183,7 @@ Don't forget to create and attach the Card's library.
     display: block;
     margin: 0 auto;
 
-    @media screen and (min-width: $bp-small-3) {
+    @media screen and (min-width: $bp-sm) {
       display: inline-block;
       margin: 0;
     }
@@ -202,7 +202,7 @@ Don't forget to create and attach the Card's library.
 }
 
 .card__date {
-  border-bottom: 1px solid $gray-med;
+  border-bottom: 1px solid $color-gray-med;
   display: block;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -217,23 +217,24 @@ Don't forget to create and attach the Card's library.
 }
 
 .card__tag--item {
-  background-color: $catskill-white;
+  background-color: $color-catskill-white;
   border-radius: 99999px;
-  color: $gray-dark;
+  color: $color-gray-dark;
   display: inline-block;
   margin-right: 10px;
   padding: 4px 10px;
 }
 
 .card__tag--link {
-  color: lighten($gray-dark, 25%);
+  color: lighten($color-gray-dark, 25%);
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $gray-dark;
+    color: $color-gray-dark;
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}

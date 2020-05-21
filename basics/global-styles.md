@@ -88,10 +88,10 @@ $color-error : #f00;
 $color-success : #089e00;
 $color-warning : #fff664;
 $color-info : #000db5;
-$color-gray-mid;
-$color-gray-mid;
-$color-gray-lt;
-$color-gray-xlt;
+$color-gray-mid:  #cccccc;
+$color-gray-lt: #444444;
+$color-gray-xlt: #131313;
+
 ```
 {% endtab %}
 {% endtabs %}

@@ -25,7 +25,7 @@ To follow best practices we discussed earlier regarding letting Drupal render th
 ```php
 {% set hero_title = {
     heading_level: '1',
-    modifier: 'hero__title',
+    modifier: 'hero__title heading--large',
     title: content.field_title|render|trim is not empty ? content.field_title,
     url: ''
   }
