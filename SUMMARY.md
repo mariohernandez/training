@@ -14,6 +14,7 @@
 
 ## Basics
 
+* [Global styles](basics/global-styles.md)
 * [Heading Component](basics/heading/README.md)
   * [Improving the Heading](basics/heading/improving-the-heading.md)
 * [Button Component](basics/button.md)
@@ -51,3 +52,4 @@
 ## Resources
 
 * [Resources](resources/resources.md)
+

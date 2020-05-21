@@ -113,10 +113,12 @@ By now we should be well familiar with the fields structure above. The one field
 {% endtab %}
 {% endtabs %}
 
-* Most things look pretty straight forward in the code above.  With the tags we loop through the `tags` array and then add each  tag item as a list item in the unordered list.
+* Just as we did with the Hero, we are including the `attributes` placeholder so when we integrate the card with Drupal the attributes Drupal provides can be available in our card.
+* Once again we are making use of the Heading component by using a Twig include statement.
+* With the tags we loop through the `tags` array and then add each  tag item as a list item in an unordered list.
 
 {% hint style="warning" %}
-Don't forget to create the Card's library.
+Don't forget to create and attach the Card's library.
 {% endhint %}
 
 ### Component styles
@@ -131,41 +133,59 @@ Don't forget to create the Card's library.
 @import '../../global/utils/init';
 
 .card {
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1), 0 4px 6px -2px rgba($black, 0.05);
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
+  max-width: 320px;
   position: relative;
-  max-width: 420px;
-  margin: 50px auto 20px;
-  border-radius: 4px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   img {
     display: block;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $bp-med) {
+    flex: 0 0 45%;
+    max-width: 325px;
   }
 
   // ========== Card wide styles=========
   &.card--wide {
+    border: 1px solid $gray-lighter;
     box-shadow: none;
-    border: 1px solid #ddd;
     flex-direction: column;
 
     .card__body-text {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     // Changes card layout on larger screens.
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: $bp-small-3) {
       flex-direction: row;
       max-width: 720px;
 
-      .card__media,
-      .card__content {
-        flex: 0 0 50%;
+      .card__media {
+        flex: 0 0 30%;
       }
 
       .card__content {
-        padding: 40px 20px 20px 40px;
+        flex: 0 0 70%;
       }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .button--ghost {
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (min-width: $bp-small-3) {
+      display: inline-block;
+      margin: 0;
     }
   }
 }
@@ -175,21 +195,21 @@ Don't forget to create the Card's library.
 }
 
 .card__title {
-  margin-bottom: 8px;
-  margin-top: 0;
   font-size: 24px;
   font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
 }
 
 .card__date {
-  text-transform: uppercase;
+  border-bottom: 1px solid $gray-med;
   display: block;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
 }
 
-.card__tags {
+.card__tags--items {
   display: flex;
   list-style: none;
   margin: 0;
@@ -197,21 +217,21 @@ Don't forget to create the Card's library.
 }
 
 .card__tag--item {
-  background-color: #edf2f7;
+  background-color: $catskill-white;
   border-radius: 99999px;
-  color: #4a5568;
+  color: $gray-dark;
   display: inline-block;
-  padding: 4px 10px;
   margin-right: 10px;
+  padding: 4px 10px;
 }
 
 .card__tag--link {
+  color: lighten($gray-dark, 25%);
   text-decoration: none;
-  color: #1a202c;
 
   &:hover,
   &:focus {
-    color: lighten(#1a202c, 25%);
+    color: $gray-dark;
   }
 }
 ```
