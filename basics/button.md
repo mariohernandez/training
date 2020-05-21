@@ -1,6 +1,6 @@
-# Button component
+# Button Component
 
-![Button component](../../.gitbook/assets/components-for-beginners-button.png)
+![](../.gitbook/assets/button.png)
 
 Buttons are some of those things that are used over and over on a website. For this reason it makes sense to create a new component for it.
 
@@ -24,7 +24,7 @@ Buttons are some of those things that are used over and over on a website. For t
 
 We created an object called `button` and added several properties or attributes such as `text`, `url`, and `modifier`. By now we've seen this kind of data structure on other components.
 
-### Writing the button's logic
+## Writing the button's logic
 
 1. Inside the _button_ folder create a new file called **button.twig**
 2. Inside `button.twig` add the following code:
@@ -47,7 +47,7 @@ We created an object called `button` and added several properties or attributes 
 
 * We've added some logic to the button to ensure we render the right HTML element based on the data we receive. For example, if a URL is passed, we use an `<a>` tag with the class of **button**, otherwise we use a `<button>` tag. We always want to make sure we use proper semantic markup for accessibility and for the task at hand. An `<a>` tag will allow us to link to another page or a section within the same page, whereas a `<button>` element will allow us to perform an action such as submit content.
 
-### Button Styles
+## Button Styles
 
 1. Inside the `button` folder create a new file called **button.scss**
 2. Inside `button.scss` add the following code:
@@ -55,6 +55,9 @@ We created an object called `button` and added several properties or attributes 
 {% tabs %}
 {% tab title="button.scss" %}
 ```css
+// Import site utilities
+@import '../../global/utils/init';
+
 .button {
   background-color: #003954;
   border: 2px solid #003954;
@@ -89,10 +92,11 @@ We created an object called `button` and added several properties or attributes 
 
 * Some basic css styles to make our button look decent.  We can probably improve them but for now this will do.
 
-### Compiling the code
+## Compiling the code
 
 Now that the Button component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Button component. Otherwise, run the following command in your command line and press **Return**
 
 ```bash
 npm run watch
 ```
+

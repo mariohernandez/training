@@ -89,7 +89,7 @@ We'll write temporary styles for this component. We'll comeback to update these 
 * First we imported `init` which is a Sass partial that includes all of the theme's global styles.
 * Then we create a couple of basic CSS rules.
 
-## Compiling the code
+### Compiling the code
 
 Now that the Heading component is done, let's compile the code so we can see it in Pattern Lab.
 

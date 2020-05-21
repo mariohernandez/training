@@ -142,7 +142,7 @@ We'll refine these styles later on.
 
 ### Compiling the code
 
-If Pattern Lab is running you should see the Hero component in Pattern Lab under the Component menu item.  Otherwise run the commands below:
+If Pattern Lab is running you should see the Hero component in Pattern Lab under the Component menu item. Otherwise run the commands below:
 
 ```text
 npm run watch
@@ -153,3 +153,4 @@ npm run watch
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
+
