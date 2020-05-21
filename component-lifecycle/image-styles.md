@@ -18,6 +18,8 @@ Although we can accomplish most of the requirements above with Image styles, doi
 Read more about [how to serve responsive images ](https://www.mediacurrent.com/blog/responsive-images-d8/)on your Drupal 8 website.
 {% endhint %}
 
+## Exercise: Image Styles
+
 1. From Drupal's admin toolbar click **Configuration \| Media \| Image Styles**
 2. Click the **Add image style** button
 3. Create the following image styles:
