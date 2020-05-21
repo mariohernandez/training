@@ -26,22 +26,26 @@ Read more about [how to serve responsive images ](https://www.mediacurrent.com/b
 
 | Image Style Name | Effect | Dimensions |
 | :--- | :--- | :--- |
-| Hero Large | Scale and Crop | 1600x800 |
+| Hero Large | Scale and Crop | 1900x700 |
 | Hero Medium | Scale and Crop | 1200x700 |
 | Hero Small | Scale and Crop | 900x600 |
+| Hero Smallest | Scale and Crop | 640x350 |
+|  |  |  |
+| Hero Large 2x | Scale and Crop | 3800x1400 |
+| Heo Medium 2x | Scale and Crop | 2400x1400 |
 
-The image dimensions above reflect the natural size we want images to be rendered at.  However, on high resolution screens such as retina screens, thos dimensions may display much smaller.  It is recommended to create image styles that are 2x the dimensions of the original images.  In our example above this means we will need images that are 3200x1600, 2400x1400 & 1800x1200.  We will make use of all these image styles next when we create Responsive Image Styles.
+The image dimensions above reflect the natural size we want images to be rendered at.  However, on high resolution screens such as retina screens, those dimensions may display much smaller.  It is recommended to create image styles that are 2x the dimensions of the original images.  In our example above this means we will need images that are 3800x1400 and 2400x1400.  The other remaining two dimensions can be achieved from reusing some of the other image styles.  We will make use of all these image styles next when we create Responsive Image Styles.
 
 ### Exercise: Responsive Image Styles
 
 It can be confusing, but Responsive Image Styles are not the same as Image Styles.  I think of responsive image styles as bundles that can contain one or multiple image styles.
 
-1. From Drupal's admin toolbar click **Configuration \| Media \| Responsive Images Styles** \(Responsive Images core module should be installed and enabled for this option\)
+1. From Drupal's admin toolbar click **Configuration \| Media \| Responsive Images Styles** \(Responsive Images core module must be enabled for this option\)
 2. Click the **Add responsive image style** button
 3. Type **Hero** for label
 4. For Responsive group select **Responsive Image**
 5. Select one of the smaller images styles we created as **Fallback image style** and press the **Save** button
-6. Expand **1x Viewport Sizing \[\]**
+6. Expand **1x Viewport Sizing \[ \]**
 7. Under Type check **Select multiple image styles and use the sizes attribute**
 8. In the **Sizes** box, ensure **100vw** is available \(this tells Drupal to render the image at full width or viewport width\)
 9. Under Image Styles check all the image styles we created for Hero
@@ -49,7 +53,7 @@ It can be confusing, but Responsive Image Styles are not the same as Image Style
 
 ### Exercise: Configure the Hero image field Part I
 
-Now that image styles and responsive image styles are in place, we need to configure the Hero image field to use them.  Since we used a Media entity reference for the Hero image, we would do this configuration in the Image Entity by using a view mode. If we had used a plain Image field type for the Hero, we would configure the image field directly in the Hero paragraph type.
+Now that image styles and responsive image styles are in place, we need to configure the Hero image field to use them.  Since we used a Media entity reference for the Hero image, we would do this configuration in the Image Entity by using a view mode. If we had used a plain Image field type for the Hero, we would configure the image field directly in the Hero paragraph type.  However, using the media features give us more options and a better interface when working with Media assets.
 
 1. From Drupal's admin toolbar click **Structure \| Media types \| Image**
 2. Click the **Manage display** tab.  You should see _Default_ and maybe other view modes.  View modes are perfect for ensuring the configuration updates you are making only affect the field of the component you are working with \(i.e. Hero\).
@@ -59,7 +63,7 @@ Now that image styles and responsive image styles are in place, we need to confi
 6. Name it **Hero** and click the **Save** button.  If you scroll down again you will see Hero as one of the view modes for Media
 7. Repeat steps 1 & 2 above to return to the image configuration page
 8. Expand the CUSTOM DISPLAY SETTINGS fieldset again and you should see the Hero view mode
-9. Check **Hero** and press the **Save**  button to enable the new view mode.  Now you should see Hero next to Default and other existing view modes
+9. Select **Hero** and press the **Save**  button to enable the new view mode.  Now you should see Hero next to Default and other existing view modes
 10. Click **Hero** from the list of view modes
 11. Ensure **Image** is the only field outside of the _Disabled_ group
 12. Change the FORMAT from _Image_ to **Responsive Image**
@@ -78,6 +82,6 @@ By creating a view mode for the Image Media Entity we can define configurations 
 
 If you visit a page on your site with a hero image, you should notice the updates we just made.  In some cases you may need to clear your Drupal caches.
 
-* Inspect the hero by right-clicking on ithe hero image and select **Inspect** or **Inspect element** depending on your browser
+* Inspect the hero by right-clicking on the hero image and select **Inspect** or **Inspect element** depending on your browser
 * You will notice that the code for the image has now changed to include all the image styles we created as well as their dimensions and the sizes information \(100vw\).  With this we are giving the browser a collection of images to choose from, how big we want them to be rendered at \(100vw\).  Now the browser can pick the best image possible for each breakpoint.
 
