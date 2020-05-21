@@ -18,14 +18,14 @@ Now it's time to begin the integration process for the Hero component. We are go
 
 To follow best practices we discussed earlier regarding letting Drupal render the full content array, we are setting a twig variable for the sole purpose of triggering a full render of the content array. We are not going to use the variable at all, it is only intended to trigger Drupal to do its thing.
 
-* Next step is to declare variables for the `title` and `cta` fields. The reason we want to do this is so we can structure these fiedls the same way we did when we built themin Pattern Lab.  In the example of the title field, we built in Pattern Lab with properties such as `heading_level`, `modifier`, `url`, and `title` text.  Since Drupal is only giving us the value for the `title` text property, we need to structure the remaining properties ourselves.  Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
+* Next step is to declare variables for the `title` and `cta` fields. The reason we want to do this is so we can structure these fields the same way we did when we built them in Pattern Lab.  In the example of the title field, we built in Pattern Lab with properties such as `heading_level`, `modifier`, `url`, and `title` text.  Since Drupal is only giving us the value for the `title` text property, we need to structure the remaining properties ourselves.  Although this is not required, it will make things look cleaner and more readable later on.  You'll see:
 
 {% tabs %}
 {% tab title="paragraph--hero.html.twig" %}
 ```php
 {% set hero_title = {
     heading_level: '1',
-    modifier: ' hero__title',
+    modifier: 'hero__title',
     title: content.field_title|render|trim is not empty ? content.field_title,
     url: ''
   }
@@ -63,10 +63,10 @@ To follow best practices we discussed earlier regarding letting Drupal render th
 {% endtab %}
 {% endtabs %}
 
-* We are using an `include` Twig statement to nest the Hero component into the paragraph template. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can  direct Drupal to also look for Twig templates in our components directory, among other places.  **IMPORTANT**:  If your theme name is not **training\_theme** be sure you use your theme name in the `@include` above. 
+* We are using an `include` Twig statement to nest the Hero component into the paragraph template. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can direct Drupal to also look for Twig templates in our components directory, among other places.  **IMPORTANT**:  If your theme name is not **training\_theme** be sure you use your theme name in the `@include` above. 
 * Next we pass in Drupal's `attributes` variable so that Drupal  can inject any attributes it needs to the Hero paragraph type.  This is recommended, but not required.
 * The next step is to  map the `image`, `heading, and cta` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  the mapping of keys to their values, much cleaner.
-* Notice in the `@include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is an `only` keyword?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title field,  we could just include that field and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.
+* Notice in the `@include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is a keyword `only` ?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title field,  we could just include that field and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.
 * Save your changes.
 
 Once you've written all that code, the full component integration should look like this:

@@ -2,7 +2,7 @@
 
 In a Drupal 8 theme, stylesheets \(CSS\) and JavaScript \(JS\) are loaded through the same system for modules and themes, for everything: [asset libraries](https://www.drupal.org/node/2274843).
 
-Drupal uses a high-level principle: assets \(CSS or JS\) are still only loaded if you tell Drupal it should load them. Drupal does not load all assets on every page because it slows down front-end performance.
+Drupal uses a high-level principle: assets \(CSS or JS\) are only loaded if you tell Drupal it should load them. Drupal does not load all assets on every page because it slows down front-end performance.
 
 In the context of component-based theming, we are going to create a library for each individual component we build in Pattern Lab. Each library will have all the CSS and JavaScript \(if any\), the component needs to render as expected.
 
@@ -25,9 +25,9 @@ global:
 {% endtab %}
 {% endtabs %}
 
-1. **global:** This is the library name.  In our case this name will always be the name of our component to easily identify what a library is for.
+1. **global:** This is the library name.  When we build component's individual libraries, the library name will always be the name of the component it is for.
 2. **css**: This is the asset we want to include in the library. Usually `css` and/or `js`.
-3. **base**: The ordering category, in this case `base`, is loaded before other categories. Drupal 8 loads stylesheets based on the [SMACSS](https://smacss.com/) ordering: `base`, `layout`, `component`, `state`, and `theme`. All of the components we create will use the `component` ordering.  Drupal also groups together assets that belong to the same category for performance reasons.
+3. **base**: The ordering category, in this case `base`, is loaded before other categories. Drupal 8 loads stylesheets based on the [SMACSS](https://smacss.com/) ordering: `base`, `layout`, `component`, `state`, and `theme`. All of the components we create will use the `component` ordering.  Drupal also groups/aggregates together assets that belong to the same category for performance reasons.
 4. **dist/css/global.css: { }**: This is the path to the asset relative to the root of the theme. All assets in our theme are compiled into `dist/css` or `dist/js`.   A library can have both of these assets.  The path can also include multiple lines of assets.  Say you are building a library for a component that uses a third party stylesheet, in addition to the path above you could include a new line with the path for the third party stylesheet.  Same goes for JS assets.
 
 {% hint style="info" %}
@@ -38,8 +38,8 @@ Drupal Asset Libraries are powerful and there is so much more about them. Learn 
 
 Let's create a new Drupal library for the Hero component so we can apply all css we've written for it when rendered in Drupal.
 
-* Open `training_theme.libraries.yml` in your editor \(Replace `training_theme` with your actual theme name\).
-* Add the code below:
+* In the root of your Drupal theme, open `training_theme.libraries.yml` in your editor \(replace `training_theme` if you used a different name for your theme\).
+* Somewhere at the bottom of the file, add the code below:
 
 {% tabs %}
 {% tab title="theme\_name.libraries.yml" %}
@@ -73,7 +73,7 @@ Now that the Hero component's library is ready, we need to make Drupal aware of 
 {% endtab %}
 {% endtabs %}
 
-_Replace `training_theme` with your actual theme/namespace._
+_Replace `training_theme` if your theme name is different._
 
 The `attach_library` function takes a path parameter which we are declaring by using the theme's namespace \(the namespace is registered by the [Components Libraries](https://www.drupal.org/project/components) module\), then the name of the library we want to attach \(i.e. `training_theme/hero`\).
 
@@ -94,9 +94,9 @@ npm run build
 
 ### Exercise:  Create libraries for all previous component
 
-Create libraries for each of the components inside `src/patterns/components` that do not have a library.  Then attach the library to each of the component.
+Create libraries for each of the components we've built so far \(Heading and Button\).  Then attach the library to each of the components.
 
-From now on for every new component we create in Pattern Lab, we are going to create a new library for it. In addition, we are going to attach the new library to the corresponding component. As I mentioned before, libraries have no effect in Pattern Lab, but it is a good practice to create and attach a component's library while you are working on the component as it can be easy to forget to do it later.
+From now on for every new component we create in Pattern Lab, we are going to create a new library for it. In addition, we are going to attach the new library to the component. As I mentioned before, libraries have no effect in Pattern Lab, but it is a good practice to create and attach a component's library while you are working on the component as it can be easy to forget to do it later.
 
 {% hint style="info" %}
 **More on Drupal Libraries:** Mediacurrent's Director of Front-End Development, Zack Hawkins, explains libraries in detail: [https://www.youtube.com/watch?v=V8hnfxSx4Ck](https://www.youtube.com/watch?v=V8hnfxSx4Ck)
