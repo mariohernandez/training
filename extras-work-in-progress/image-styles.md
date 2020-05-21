@@ -27,14 +27,14 @@ Read more about [how to serve responsive images ](https://www.mediacurrent.com/b
 | Image Style Name | Effect | Dimensions |
 | :--- | :--- | :--- |
 | Hero Large | Scale and Crop | 1900x700 |
-| Hero Medium | Scale and Crop | 1200x700 |
-| Hero Small | Scale and Crop | 900x600 |
+| Hero Medium | Scale and Crop | 1200x600 |
+| Hero Small | Scale and Crop | 900x500 |
 | Hero Smallest | Scale and Crop | 640x350 |
 |  |  |  |
 | Hero Large 2x | Scale and Crop | 3800x1400 |
 | Heo Medium 2x | Scale and Crop | 2400x1400 |
 
-The image dimensions above reflect the natural size we want images to be rendered at.  However, on high resolution screens such as retina screens, those dimensions may display much smaller.  It is recommended to create image styles that are 2x the dimensions of the original images.  In our example above this means we will need images that are 3800x1400 and 2400x1400.  The other remaining two dimensions can be achieved from reusing some of the other image styles.  We will make use of all these image styles next when we create Responsive Image Styles.
+The image dimensions above reflect the natural size we want images to be rendered at.  However, on high resolution screens such as retina screens, those dimensions may display much smaller.  It is recommended to create image styles that are 2x the dimensions of the original images.  In our example above this means we will need images that are 3800x1400 and 2400x1200.  The other remaining two dimensions can be achieved from reusing some of the other image styles.  We will make use of all these image styles next when we create Responsive Image Styles.
 
 ### Exercise: Responsive Image Styles
 
@@ -56,14 +56,14 @@ It can be confusing, but Responsive Image Styles are not the same as Image Style
 Now that image styles and responsive image styles are in place, we need to configure the Hero image field to use them.  Since we used a Media entity reference for the Hero image, we would do this configuration in the Image Entity by using a view mode. If we had used a plain Image field type for the Hero, we would configure the image field directly in the Hero paragraph type.  However, using the media features give us more options and a better interface when working with Media assets.
 
 1. From Drupal's admin toolbar click **Structure \| Media types \| Image**
-2. Click the **Manage display** tab.  You should see _Default_ and maybe other view modes.  View modes are perfect for ensuring the configuration updates you are making only affect the field of the component you are working with \(i.e. Hero\).
+2. Click the **Manage display** tab.  You should see _Default_ , _Media Library_, and maybe other view modes.  View modes are perfect for ensuring the configuration updates you are making only affect the field of the component you are working with \(i.e. Hero\).
 3. Expand the CUSTOM DISPLAY SETTINGS fieldset
 4. Click **Manage view modes**
 5. Scroll down to **Media** and click **Add new Media view mode**
 6. Name it **Hero** and click the **Save** button.  If you scroll down again you will see Hero as one of the view modes for Media
 7. Repeat steps 1 & 2 above to return to the image configuration page
 8. Expand the CUSTOM DISPLAY SETTINGS fieldset again and you should see the Hero view mode
-9. Select **Hero** and press the **Save**  button to enable the new view mode.  Now you should see Hero next to Default and other existing view modes
+9. Select **Hero** and press the **Save**  button to enable the new view mode.  Now you should see Hero next to Default, _Media Library,_ and other existing view modes
 10. Click **Hero** from the list of view modes
 11. Ensure **Image** is the only field outside of the _Disabled_ group
 12. Change the FORMAT from _Image_ to **Responsive Image**
@@ -84,4 +84,13 @@ If you visit a page on your site with a hero image, you should notice the update
 
 * Inspect the hero by right-clicking on the hero image and select **Inspect** or **Inspect element** depending on your browser
 * You will notice that the code for the image has now changed to include all the image styles we created as well as their dimensions and the sizes information \(100vw\).  With this we are giving the browser a collection of images to choose from, how big we want them to be rendered at \(100vw\).  Now the browser can pick the best image possible for each breakpoint.
+
+### Exercise:  Hide Hero fields labels
+
+You may have noticed that each of the fields in the Hero are showing their labels \(Title, Hero, etc.\).  Let's remove these labels so we only see the actual content on the page.
+
+1. From Drupal's admin toolbar, click **Structure &gt; Paragraph Types &gt; Hero &gt; Manage Display**
+2. In the Label column, click each of the field's dropdown and select **Hidden** for each field
+3. Click the **Save** button.  If you view the hero again, you may still see the label of "Hero" directly above the Hero image.  This label is probably coming from the Homepage content type.
+4. Repeat the 3 steps above using the **Homepage** content type.
 

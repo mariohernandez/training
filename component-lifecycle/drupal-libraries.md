@@ -92,6 +92,12 @@ npm run build
 1. Before Drupal can have access to the new library and its assets, clear Drupal's caches.
 2. After clearing Drupal's cache reload the page with a Hero.  The CSS styles we wrote should now be available in Drupal.
 
+### Inspecting the Hero again
+
+If you visit the the Homepage node where you added the Hero and inspect its code \(right-click on Hero and select **Inspect**\), you will notice the Hero is using all the markup from Pattern Lab.  In addition, you should notice a few attributes added by Drupal to the Hero's markup \(`data-quickedit-entity-id` and `data-quickedit-entity-instance-id`\) .  See screenshot below.  Because we accounted for attributes when we built the component in Pattern Lab, Drupal now has the ability to add these attributes to the markup.  In addition, you should be able to see the contextual links on the hero which allow you to quickly edit the hero component.
+
+![Example of Drupal Attributes on Hero markup.](../.gitbook/assets/attributes.png)
+
 ### Exercise:  Create libraries for all previous component
 
 Create libraries for each of the components we've built so far \(Heading and Button\).  Then attach the library to each of the components.
