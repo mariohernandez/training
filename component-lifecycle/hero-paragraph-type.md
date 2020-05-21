@@ -2,7 +2,7 @@
 
 ### Whose line is it anyway?
 
-Before embarking on this Drupal journey, keep in mind that your role in this process may vary.  Depending on your team, your skillset or other factors, you will most likely not going to do it all.  For example, a typical project for me consists of an architect building all of Drupal's infrastructure, a front-end developer building components in Pattern Lab, and perhaps a back-end developer integrating the components with Drupal.  However, in other projects I may be responsible for building and integrating components.
+Before embarking on this Drupal journey, keep in mind that your role in this process may vary.  Depending on your team, your skillset or other factors, you may not be responsible for building the front-end and back-end of a project.  For example, a typical project for me consists of an architect building all of Drupal's infrastructure, me, as a front-end developer building components in Pattern Lab, and perhaps a back-end developer integrating the components with Drupal.  However, in other projects I may be responsible for building and integrating components.
 
 ### Drupal entities
 
@@ -16,7 +16,7 @@ Instead of putting all their content in one WYSIWYG body field including images 
 
 ![Example of paragraphs content options](../.gitbook/assets/paragraphs.png)
 
-Using a paragraph type for the Hero and other components will allow us to reuse these components on any page we need to. In Drupal we will build a custom paragraph type called Hero.  This custom entity will contain the same fields we identified when building the Hero component in Pattern Lab \(image, title, and CTA\). 
+Using a paragraph type for the Hero and other components will allow us to reuse these components on any page we need to. In Drupal we will build a custom paragraph type called Hero.  This custom entity will contain the same fields we identified when building the Hero component in Pattern Lab \(image, title, and button\). 
 
 {% hint style="info" %}
 **TIP:** After the Hero paragraph type has been created, you can reuse its fields in other paragraph types you will build later.
@@ -58,37 +58,44 @@ For the CTA field, set the following configuration:
 
 Paragraph types on their own are useless. They need to be added to other entities such as a content type as an **Entity Reference** field.
 
-### Adding the paragraph type to the Basic Page content type
+### Building a Homepage content type
+
+We'll build a new content type which we will use to build the homepage with all of its components shown in our design.
 
 1. From Drupal's Admin Toolbar, click **Structure \| Content Types**
-2. Click the **Manage fields** button next to **Basic Page**
-3. Click the **Add field** button
-4. Under the _Add a new field_ dropdown, scroll to the **Reference Revisions** section and select **Paragraph**
+2. Click the **Add content type** button
+3. In the _name_ field type **Homepage**
+4. Click the **Save and manage fields** button at the bottom of the page
+5. Delete the **body** field
+
+### Adding the paragraph type to the Homepage content type
+
+1. While still in the Homepage content type, click the **Add field** button
+2. Under the _Add a new field_ dropdown, scroll to the **Reference Revisions** section and select **Paragraph**
 
    | Label | Machine name |
    | :--- | :--- |
    | Hero | `field_hero` |
 
-5. Click the **Save and continue** button
-6. Change _Allowed number of values\__ to **Limited - 1**
-7. In the _Reference Type_ section, choose **Hero** under _Paragraph type_
-8. Click the **Save settings** button
+3. Click the **Save and continue** button
+4. Change _Allowed number of values\__ to **Limited - 1**
+5. In the _Reference Type_ section, choose **Hero** under _Paragraph type_
+6. Click the **Save settings** button
 
 ### Create a new Node with a Hero
 
-Using the Basic page content type, create a new page and add a Hero component in it:
+Using the Homepage content type, create a new node and add a Hero component in it:
 
 1. From Drupal's Admin toolbar, click **Content**
 2. Click the **Add content** button
-3. Select **Basic Page**
+3. Select **Homepage**
 4. Fill out the Page's title using **Homepage**
 5. Then fill out all fields in the Hero paragraph type
-6. Ignore the Body field if available
-7. Click the **Save** button
+6. Click the **Save** button
 
 After saving your page the hero component should look something similar to this:
 
 ![Drupal Node with Hero Paragraph](../.gitbook/assets/d8-hero.png)
 
-It's pretty obvious there are a lot of things that need improvement with our Hero above, but we will get to that shortly.  
+It's pretty obvious there are a lot of things that need improvement with our Hero, but we will get to that shortly.  
 
