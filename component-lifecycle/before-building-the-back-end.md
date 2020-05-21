@@ -19,7 +19,7 @@ For some reason, Drupal core comes with CSS and Javascript Aggregation turned on
 3. Click the **Save configuration** button
 4. While you're at it, click the **Clear all caches** button on the same page
 
-### Ecercise: Enable modules
+### Exercise: Enable modules
 
 If you haven't already, enable the following modules:
 
