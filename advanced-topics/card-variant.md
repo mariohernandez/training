@@ -48,7 +48,7 @@ The part `{{ modifier ? ' ' ~ modifier }}` is a Twig conditional statement askin
 {% endtab %}
 {% endtabs %}
 
-Now that we have the modifier key available, you can test it by adding any value to the `modifier` key and running `npm start` to view the card component in Pattern Lab. The Card component should now have, in addition to `card`, the value you added as an extra CSS class.
+Now that we have the modifier key available, you can test it by adding any value to the `modifier` key and running `npm run watch` to view the card component in Pattern Lab. The Card component should now have, in addition to `card`, the value you added as an extra CSS class.
 
 ### CSS updates
 
@@ -66,7 +66,7 @@ patternName~pseudoPatternName.json
 
 The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudoPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . But it has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s JSON file. This is not always a good thing and we will need to address this in our exercise.
 
-From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined. Meaning you will find all variants of a component groupped together in Pattern Lab's navigation.
+From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.
 
 ### Exercise: Creating a new variant
 

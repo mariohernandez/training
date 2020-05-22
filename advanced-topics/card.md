@@ -71,6 +71,8 @@ By now we should be well familiar with the fields structure above. The one field
 
 <article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
   {%  if image %}
     <div class="card__media">
       {{ image }}
@@ -137,7 +139,7 @@ Don't forget to create and attach the Card's library.
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  max-width: 320px;
+  max-width: 340px;
   position: relative;
 
   img {
@@ -147,7 +149,6 @@ Don't forget to create and attach the Card's library.
 
   @media screen and (min-width: $bp-md) {
     flex: 0 0 45%;
-    max-width: 325px;
   }
 
   // ========== Card wide styles=========
