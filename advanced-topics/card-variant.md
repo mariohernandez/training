@@ -12,7 +12,7 @@ We can see that the overall layout of the "Card wide" lends itself nicely to a v
 
 Before we can create a new variant, we need to make some updates to the original Card component so it is easier to adapt it to new variants.
 
-## Modifier class
+### Modifier class
 
 A CSS modifier class is a pretty common way to make changes to any element. For example, let's say we use two types of buttons in our website; one red and one blue. Using CSS classes like say, `button--blue`, and `button--red` will allow us to change their colors without altering the original button. We will use a similar approach to achieve some of the changes in the Card wide variant.
 

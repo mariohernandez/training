@@ -1,8 +1,30 @@
 # Global styles
 
-Create mixins, color variables, breakpoint variables, etc.
+Make the updates below to improve our theming experience.
+
+### Global
+
+* Update `src/patterns/global/global.scss` with the following changes.  Leave all other code in `html` and `body` as is.
+
+{% tabs %}
+{% tab title="global.scss" %}
+```css
+html {
+  @include font-stack-primary;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Mixins
+
+* Add the following mixins at the bottom of `src/patterns/global/util/_mixins.scss`.
 
 {% tabs %}
 {% tab title="\_mixins.csss" %}
@@ -60,6 +82,8 @@ Create mixins, color variables, breakpoint variables, etc.
 {% endtabs %}
 
 ### Color variables
+
+* Replace all existing color variables in `src/patterns/global/colors/_colors.scss` with the code below.
 
 {% tabs %}
 {% tab title="\_colors.scss" %}

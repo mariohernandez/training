@@ -130,12 +130,13 @@ Now let's write some HTML for the component.
   // Styles heading when inside the hero.
   .heading {
     color: $color-navy-blue;
+    font-size: 6rem;
     font-weight: 900;
     margin-bottom: 10px;
     text-transform: uppercase;
 
     @media screen and (min-width: $bp-md) {
-      font-size: 5rem;
+      font-size: 8rem;
       margin-bottom: 25px;
     }
 
