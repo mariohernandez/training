@@ -70,7 +70,7 @@ From a navigation and naming perspective **patternName** and **pseudoPatternName
 
 ### Exercise: Creating a new variant
 
-1. Inside the _card_ directory, create a new JSON file with the following name: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
+1. Inside the _card_ folder create a new JSON file with the following name: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
 2. Copy all the code from `card.json` into `card~wide.json`
 
 ### Displaying the right fields for the card variant
@@ -128,7 +128,7 @@ If you are wondering, Why are we doing this? It's considered best practice to en
 {% endif %}
 ```
 
-The above is one of the new fields found in the card wide variant.  Again, the line numbers in this exercise my not match the ones in your code.  
+The above is one of the new fields found in the card wide variant.  Again, the line numbers in this exercise my not match the ones in your code.
 
 * Finally, at around line 45 \(directly after the `{% endif %}` statement for **tags**\), add the following code:
 
@@ -216,4 +216,3 @@ If you don't have Pattern Lab running, run this command:
 ```php
 npm run watch
 ```
-
