@@ -15,7 +15,7 @@ We'll build a new content type which we will use to build blog articles.  Blog a
 | :--- | :--- | :--- |
 | Image | `field_blog_image` | Media Reference |
 | Tags | field\_blog\_tags | Taxonomy Term Reference |
-| Author | field\_author | Paragraph Reference Revision |
+| Author | field\_author | User Reference |
 | Call To Action | `field_cta` | Link |
 
 For the Image field, set the following configuration:
@@ -30,5 +30,5 @@ For the Tags field, set the following configuration:
 For the Author field, set the following configuration:
 
 * **Allowed number of values** is 1
-* **Reference type** is Author
+* **Reference type** deselect _Include the anonymous user_
 
