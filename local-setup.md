@@ -33,7 +33,7 @@ Regardless of which option you use to setup Drupal 8, the following modules need
 * [Twig Field Value](https://www.drupal.org/project/twig_field_value)
 * [Focal Point](https://www.drupal.org/project/focal_point)
 * [Crop API](https://www.drupal.org/project/crop)
-* [Views Reference](https://www.drupal.org/project/viewsreference)
+* [Views Reference Field](https://www.drupal.org/project/viewsreference)
 * Responsive Images \(core\)
 * Media & Media Library \(both on core\)
 
