@@ -115,7 +115,7 @@ $color-info : #000db5;
 $color-gray-mid:  #cccccc;
 $color-gray-lt: #444444;
 $color-gray-xlt: #131313;
-
+$color-tan-hide: #f99157;
 ```
 {% endtab %}
 {% endtabs %}

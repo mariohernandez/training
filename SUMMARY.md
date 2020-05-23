@@ -25,6 +25,7 @@
 * [Include statements](component-lifecycle/includes.md)
 * [Drupal prep](component-lifecycle/before-building-the-back-end.md)
 * [Building the Hero in Drupal](component-lifecycle/hero-paragraph-type.md)
+* [Homepage content type](component-lifecycle/homepage-content-type.md)
 * [Components Integration with Drupal](component-lifecycle/before-the-integration.md)
 * [Twig template suggestions](component-lifecycle/twig-template-suggestions.md)
 * [Getting Twig variables](component-lifecycle/hero-component.md)
@@ -37,6 +38,7 @@
 * [Card Component](advanced-topics/card.md)
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
+* [Blog content type](advanced-topics/blog-content-type-1.md)
 * [Card paragraph type](advanced-topics/card-paragraph-type.md)
 * [Featured Content List](advanced-topics/featured-content.md)
 * [Blog](advanced-topics/blog-content-type.md)
@@ -49,6 +51,7 @@
 * [Quote Component](extras-work-in-progress/quote.md)
 * [Integrating the Quote](extras-work-in-progress/integrating-the-quote.md)
 * [Menu](extras-work-in-progress/menu.md)
+* [Adding webfonts](extras-work-in-progress/adding-webfonts.md)
 
 ## Resources
 
