@@ -38,6 +38,7 @@
 * [Card Component](advanced-topics/card.md)
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
+* [Author](advanced-topics/author.md)
 * [Blog content type](advanced-topics/blog-content-type-1.md)
 * [Card paragraph type](advanced-topics/card-paragraph-type.md)
 * [Featured Content List](advanced-topics/featured-content.md)
