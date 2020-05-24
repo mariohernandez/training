@@ -1,6 +1,6 @@
 # Managing fields with view modes
 
-#### Why view modes?
+### Why view modes?
 
 Most of the content in our site is driven by Blog articles.  However, each section on our site, although displaying blog articles, they display them in different ways. The Featured Content shows articles differently than From our Blog.  By "different" we don't mean they look different visually, but the fields also vary.  Once we get into a full blog node, things look even more different.
 
@@ -8,7 +8,7 @@ There are many ways to manage how the same type of content can be displayed diff
 
 Managing fields with view modes ensures we are letting Drupal do things they way Drupal like to do things for rendering content.  Then through the use of template suggestions per view mode we simply provide the components we want to use for the fields we want to render.
 
-#### Configure the Featured view modes
+### Configure the Featured view modes
 
 1. From Drupal's Admin Toolbar, click **Structure \| Content Types**
 2. Click the **Featured** view mode
@@ -20,12 +20,12 @@ Managing fields with view modes ensures we are letting Drupal do things they way
 8. Click the **Update** button
 9. Click the **Save** button
 
-#### Teaser view mode
+### Teaser view mode
 
 1. Repeat all the steps above for the **Teaser** view mode except on step 3, drag the **Author** and **Links** into the **Disabled** section
 2. For the image field, change its format to be **Rendered entity**
 
-#### **Full content view mode**
+### **Full content view mode**
 
 1. Drag the **Links** field into the **Disabled** section
 2. Hide the labels of all the fields
