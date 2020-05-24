@@ -40,6 +40,7 @@
 * [Card Variant](advanced-topics/card-variant.md)
 * [Author](advanced-topics/author.md)
 * [Blog content type](advanced-topics/blog-content-type-1.md)
+* [Managing fields with view modes](advanced-topics/managing-fields-with-view-modes.md)
 * [Card paragraph type](advanced-topics/card-paragraph-type.md)
 * [Featured Content List](advanced-topics/featured-content.md)
 * [Blog](advanced-topics/blog-content-type.md)
