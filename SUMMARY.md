@@ -23,13 +23,13 @@
 
 * [Hero Component](component-lifecycle/hero.md)
 * [Include statements](component-lifecycle/includes.md)
-* [Drupal prep](component-lifecycle/before-building-the-back-end.md)
+* [Drupal prep](component-lifecycle/drupal-prep.md)
 * [Building the Hero in Drupal](component-lifecycle/hero-paragraph-type.md)
 * [Homepage content type](component-lifecycle/homepage-content-type.md)
-* [Components Integration with Drupal](component-lifecycle/before-the-integration.md)
+* [Disable Drupal cache and enable twig debugging](component-lifecycle/cache-debug.md)
 * [Twig template suggestions](component-lifecycle/twig-template-suggestions.md)
-* [Getting Twig variables](component-lifecycle/hero-component.md)
-* [Integrating the Hero](component-lifecycle/getting-twig-variables.md)
+* [Getting field values](component-lifecycle/field-values.md)
+* [Integrating the Hero](component-lifecycle/integrating-hero.md)
 * [Drupal Libraries](component-lifecycle/drupal-libraries.md)
 * [Hero Image styles](component-lifecycle/image-styles.md)
 
@@ -38,14 +38,22 @@
 * [Card Component](advanced-topics/card.md)
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
-* [Author](advanced-topics/author.md)
-* [Blog content type](advanced-topics/blog-content-type-1.md)
-* [View modes](advanced-topics/managing-fields-with-view-modes.md)
-* [Drupal Views](advanced-topics/drupal-views-and-view-modes.md)
 * [From our blog](advanced-topics/from-our-blog.md)
-* [Featured Content List](advanced-topics/featured-content.md)
-* [Integrating Featured Content](advanced-topics/integrating-featured-content.md)
-* [News page](advanced-topics/news-page.md)
+
+## Drupal site building
+* [Author](site-building/author.md)
+* [Blog content type](site-building/blog-content-type.md)
+* [View modes](site-building/view-modes.md)
+* [Drupal Views](site-building/drupal-views.md)
+
+## Integrations
+* [Integrating From our blog](integrations/integrating-from-our-blog.md)
+* [Date formats](integrations/date-formats.md)
+* [Featured Content List](integrations/featured-content.md)
+* [Integrating Featured Content](integrations/integrating-featured-content.md)
+
+## Final components and integration
+* [Blog landing page](advanced-topics/blog.md)
 
 ## Extras \(work in progress\)
 
@@ -57,4 +65,3 @@
 ## Resources
 
 * [Resources](resources/resources.md)
-

@@ -1,4 +1,4 @@
-# Getting Twig variables
+# Getting field values
 
 Earlier we enabled twig debugging in order to identify the right template suggestions for our components.  Twig debugging also means [discovering and inspecting twig variables](https://www.drupal.org/docs/8/theming/twig/discovering-and-inspecting-variables-in-twig-templates) available within the scope of the twig template we are working with.
 
@@ -24,7 +24,7 @@ Kint is a PHP Debugging tool.  Kint for PHP is a tool designed to present your d
 The example above shows us the fields or variables available in the `content` array.  Notice how each field has a **\[** **+ \]** sign next to it.  This means each field is an array you can drill down into until you get to its value.  See example below:
 
 {% hint style="info" %}
-**TIP**: To extend an array in Kint, **DO NOT** click the **\[+\]** in the array, for some reason this crashes the page.  Instead click the the bar/row away from the **\[+\]**. 
+**TIP**: To extend an array in Kint, **DO NOT** click the **\[+\]** in the array, for some reason this crashes the page.  Instead click the the bar/row away from the **\[+\]**.
 {% endhint %}
 
 ![](../.gitbook/assets/field-value.png)
@@ -46,4 +46,3 @@ This will get us the same value but it will do it in a responsible way without b
 {% hint style="info" %}
 Further reading:  [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page).
 {% endhint %}
-
