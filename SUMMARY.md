@@ -57,7 +57,7 @@
 
 ## Extras \(work in progress\)
 
-* [Quote Component](extras-work-in-progress/hook-alter.md)
+* [Hook alter](extras-work-in-progress/hook-alter.md)
 * [Quote Component](extras-work-in-progress/quote.md)
 * [Integrating the Quote](extras-work-in-progress/integrating-the-quote.md)
 * [Menu](extras-work-in-progress/menu.md)
