@@ -53,15 +53,5 @@ Now we are going to create a new views display for the Featured Content.  We wil
 
 The Featured Content display/block should look like this.  Click on it to zoom in.,
 
-![](../.gitbook/assets/featured-view.png)
-
-## View Modes
-
-View modes in Drupal are a great ways to display content in different ways. The same type of content can be displayed differently in different pages by managing the fields to show. Most entities in Drupal \(node, views, blocks, paragraph types, media, etc.\), support view modes. In the example of our blog posts, we can show the post's image very large when viewing the post in its full view mode, but show it as a thumbnail when viewing the post in a card as part of the Featured Content view. We will make these configurations shortly.
-
-## Why View Modes?
-
-By default Drupal provides some view modes out of the box. For example, for Content Types, we can use the Default, Full and Teaser view modes. By using view modes we let Drupal add all the logic for how to show/hide your content fields.
-
-A typical view mode to display a minimal version of your nodes is the **Teaser** view mode. This is perfect to only show the fields we want using the Card component.
+![Featured Content View](../.gitbook/assets/featured-view.png)
 
