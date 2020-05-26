@@ -2,6 +2,8 @@
 
 In this two-day hands-on training workshop you will learn the process of identifying, building, and integrating components with Drupal 8 using Pattern Lab and Twig. Drupal 8 best practices will be at the core of the training to ensure components are built in a way that leverage caching, performance and re-usability.
 
+![Homepage design](.gitbook/assets/homepage.jpg)
+
 #### This training covers the following topics:
 
 * Principles of Atomic Design for building flexible and scalable components
