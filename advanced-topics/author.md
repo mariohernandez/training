@@ -2,6 +2,8 @@
 
 ### Add new fields to the User profile  
 
+As we just saw in the Card Wide variant, we are displaying the article's author information.  By default Drupal does not have a full name or title fields as part of user's profiles.  Let's add these fields so we can use them in our cards.
+
 1. From Drupal's admin toolbar, select **Configuration &gt; People &gt; Account Settings**
 2. Click **Manage fields**
 3. Click **Add field**
@@ -13,6 +15,8 @@
 | Title | `field_title` | Text\(plain\) | 1 |
 
 #### New User view mode
+
+We'll create a new view mode to control which user's fields we can display.
 
 1. While still within the People Account Settings screen, click **Manage Display**
 2. Under the **Default** view mode, expand the **CUSTOM DISPLAY SETTINGS** fieldset

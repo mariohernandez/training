@@ -6,7 +6,7 @@ Visually we know the two different variants look similar, however, if we pay clo
 
 ## Creating the Card variant
 
-![Card Wide variant](../.gitbook/assets/card-wide.png)
+![Card wide variant](../.gitbook/assets/card-wide.png)
 
 We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and, there is also a new field in this variant that is not part of the original card \(button\).
 
@@ -83,133 +83,210 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% tab title="card~wide.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/640x640' alt='Women running' />",
+  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/360x450' alt='Women running' />",
   "title": {
     "heading_level": "2",
-    "modifier": "",
+    "modifier": "card__title",
     "title": "Level up your game",
-    "url": ""
+    "url": "#"
   },
-  "date": "",
+  "date": "Mar 16",
   "category": "Sports",
-  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   "tags": "",
-  "cta": {
-    "text": "Read the full article",
-    "url": "#",
-    "modifier": "button--ghost"
-  },
+  "author": "<div class=\"author__photo\"><img src=\"https://source.unsplash.com/qzDF5PNEWKc/180x180\" alt=\"Author\"s headshot\" /></div><div class=\"author__name\"><span>Valentina Delgado</span><span>Digital Strategist</span></div>",
   "modifier": "card--wide"
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-* Let's start with the new fields.  As you can see we have added the **category** and **CTA** fields.  If you are wondering, Why not use the date field for the category since they look exactly the same? A date and text fields hold different type of data.  You can't enter text in a date field.  In addition, using the right field type for the type of data expected, will help editors when the content is being entered in the form.  In a date-type filed, the editor entering the content will be able to select the date from a calendar or date picker.  This is why we are using different fields here.
-* Next, for those fields we don't need in the card wide variant, we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `card.twig` we first check if the field exists or it has content by using an `if` statement.  So any field that is empty above, will not be used.
+* Let's start with the new fields.  As you can see we have added the **category** and **Author** fields.
+* Next, for those fields we don't need in the card wide variant \(tags\), we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `card.twig` we first check if the field exists or it has content by using an `if` statement.  So any field that is empty above, will not be used.
 
 ### Twig blocks
 
 Now that the variant's JSON is ready with only the fields we want, it's time to update **card.twig** to ensure the right card variant is rendered. Here is what we are going to do:
 
-* Open `card.twig` and at around line 10 \(line numbers may not match your project\), we need to update the `if` statement by including the new fields used in the card wide variant \(category and CTA\).  Update the conditional statement as follows:
-
-```php
-{% if title or date or category or body_text or tags or cta %}
-```
-
-If you are wondering, Why are we doing this? It's considered best practice to ensure we check for whether there is content to render before we start writing HTML. If we don't check for this, we may end up with an empty `<div class="card__content">...</div>` wrapper in Pattern Lab and that's not cool 😃
-
-* Next, at around line 24 \(directly after the `{% endif %}` statement for **date**\), add the following code:
-
-```php
-{% if category %}
-  <div class="card__category">{{ category }}</div>
-{% endif %}
-```
-
-The above is one of the new fields found in the card wide variant. Again, the line numbers in this exercise my not match the ones in your code.
-
-* Finally, at around line 45 \(directly after the `{% endif %}` statement for **tags**\), add the following code:
-
-```php
-{% if cta %}
-  {%
-    include '@atoms/button/button.twig' with {
-      button: cta
-    } only
-  %}
-{% endif %}
-```
+#### Date for card wide
 
 {% hint style="info" %}
-If you are wondering why are we placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card. If we were to add the button or category fields at the top or bottom of card.twig, they would display at the top or bottom of the card in Drupal or Pattern Lab.
+**Code indentation:**  Be sure to properly indent your code.  The snippets below may not always match your current indentation settings.
 {% endhint %}
 
-The full `card.twig` template should now look like this:
+* In your editor, open `card.twig` and at around line 7 \(your line numbers may vary\), we need to add a twig block for the date which in the Card wide variant is displayed on the top left corner of the card over a navy blue corner chip..  Add the following code snippet directly after the `{{ title_suffix }}` line:
+
+```php
+{% if modifier == 'card--wide' or view_mode == 'featured' %}
+  <div class="card__featured--date">
+    {% block featured_date %}
+      {{ date }}
+    {% endblock featured_date %}
+  </div>
+{% endif %}
+```
+
+* First we are checking whether the value of the `modifier` variable is `card--wide`, or if the Drupal view mode we are using is `featured`.  This will ensure that only if one of this conditions is met we will be able to access this twig block.  
+* The twig block name is `featured_date`.  However this name can be anything that makes sense to you.
+* Inside the twig block we are printing the date variable.
+* Finally we close the twig block and the if statement.  The name of the twig block in the `endblock` statement is optional.  For example, the following should also work: `{% endblock %}`.  However, we expect a few twig blocks on this template so adding each of the block's names at the end makes it clear where blocks start and end.
+
+#### Regular card date
+
+* Next, we need to repeat the process above for printing the date on the non-wide card.  Having twig blocks for each date on each card variant will help us be more explicit about where we want to print each of the dates based on the card type we are working with.  Modify the existing date field to look like this:
+
+```php
+{% if not view_mode == 'featured' %}
+  <div class="eyebrow card__date">
+    {% block card_date %}
+      {{ date }}
+    {% endblock card_date %}
+  </div>
+{% endif %}
+```
+
+* The conditional statement above is checking that the view\_mode's value is not `featured`.  If so, it will print the date directly under the card's title.
+* Again, using a twig block gives us the ability to modify this field before Drupal prints it.
+
+#### Category field
+
+* For the category field we don't need to perform any type of conditional since it will only be displayed in the card wide variant.  This means we can hide it from the regular card view mode \(teaser\).  Modify the category field as shown below:
+
+```php
+{% block category %}
+  {% if category %}
+    <div class="eyebrow card__category">
+      {{ category }}
+    </div>
+  {% endif %}
+{% endblock category %}
+```
+
+* Notice that both, the date and category fields use the same CSS class of `eyebrow`.  This will allow us to style both fields identically.
+
+{% hint style="info" %}
+If you are wondering why are we placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card. 
+{% endhint %}
+
+#### Card tags
+
+* Just like the category field above, the tags are only used in the regular card variant and not the card wide variant.  So we will just wrap it in a twig block to be sure.  Update the tag's code as follows:
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+{% if tags %}
+  {% block tags %}
+    {%
+      include '@training_theme/tags/tags.twig' with {
+        "items": tags
+      } only
+    %}
+  {% endblock tags %}
+{% endif %}
+```
+{% endtab %}
+{% endtabs %}
+
+#### Author
+
+* Finally, we are going to add directly after the ending of the tags field, the author info.  Since this only displays in the card wide variant, we can also control its display through the view mode settings.  We'll do this shortly.  Add the following code just below the tags field:
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+{% block author %}
+  {% if author and date %}
+    {%
+      include '@training_theme/author/author.twig' with {
+        author: author
+      } only
+    %}
+  {% endif %}
+{% endblock author %}
+```
+{% endtab %}
+{% endtabs %}
+
+#### Full card
+
+* The full card code should look like this:
 
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
 {{ attach_library('training_theme/card') }}
 
-<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
-  {%  if image %}
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {# Date for featured content cards. #}
+  {% if view_mode == 'featured' %}
+    <div class="card__featured--date">
+      {% block featured_date %}
+        {{ date }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if image %}
     <div class="card__media">
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or category or body_text or tags or cta %}
-    <div class="card__content">
-      {% if title %}
-        {%
-          include '@training_theme/heading/heading.twig' with {
-            heading: title
-          } only
-        %}
-      {% endif %}
-      {% if date %}
-       <div class="card__date">
+  <div class="card__content">
+    {% if title %}
+      {%
+        include '@training_theme/heading/heading.twig' with {
+          heading: title
+        } only
+      %}
+    {% endif %}
+    {% if not view_mode == 'featured' %}
+      <div class="eyebrow card__date">
+        {% block card_date %}
           {{ date }}
-        </div>
-      {% endif %}
+        {% endblock card_date %}
+      </div>
+    {% endif %}
+    {% block category %}
       {% if category %}
-        <div class="card__eyebrow">
+        <div class="eyebrow card__category">
           {{ category }}
         </div>
       {% endif %}
-      {% if body_text %}
-        <p class="card__body">
-          {{ body_text }}
-        </p>
-      {% endif %}
-      {% if tags %}
-        <ul class="card__tags">
-          {% for item in tags %}
-            <li class="card__tag--item">
-              <a href="{{ item.url }}" class="card__tag--link">
-                {{ item.text }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% if cta %}
+    {% endblock category %}
+    {% if body_text %}
+      <div class="card__body">
+        {{ body_text }}
+      </div>
+    {% endif %}
+    {% if tags %}
+      {% block tags %}
         {%
-          include '@training_theme/button/button.twig' with {
-            button: cta
+          include '@training_theme/tags/tags.twig' with {
+            "items": tags
+          } only
+        %}
+      {% endblock tags %}
+    {% endif %}
+    {% block author %}
+      {% if author and date %}
+        {%
+          include '@training_theme/author/author.twig' with {
+            author: author
           } only
         %}
       {% endif %}
-    </div>
-  {% endif %}
+    {% endblock author %}
+  </div>
 </article>
+
 ```
 {% endtab %}
 {% endtabs %}
 
-Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field, and the other one without tags or date fields, but with a button and a category field. In addition, the Card wide variant's layout is horizontal vs. the original card has a vertical layout.
+* Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field under its title, and the other one without tags, with date on top left corner of the card.  In addition, the card wide variant should display the author's headshot, name and title. 
 
 If you don't have Pattern Lab running, run this command:
 

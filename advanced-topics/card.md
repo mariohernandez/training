@@ -36,7 +36,7 @@ Now that we have identified the fields our card component needs, let's start bui
     "url": "#"
   },
   "date": "March 16 2020",
-  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
+  "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   "tags": [
     {
       "text": "Photography",
@@ -78,38 +78,36 @@ By now we should be well familiar with the fields structure above. The one field
       {{ image }}
     </div>
   {% endif %}
-  {% if title or date or body_text or tags %}
-    <div class="card__content">
-      {% if title %}
-        {%
-          include '@training_theme/heading/heading.twig' with {
-            heading: title
-          } only
-        %}
-      {% endif %}
-      {% if date %}
-       <div class="card__date">
-          {{ date }}
-        </div>
-      {% endif %}
-      {% if body_text %}
-        <p class="card__body">
-          {{ body_text }}
-        </p>
-      {% endif %}
-      {% if tags %}
-        <ul class="card__tags">
-          {% for item in tags %}
-            <li class="card__tag--item">
-              <a href="{{ item.url }}" class="card__tag--link">
-                {{ item.text }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-  {% endif %}
+  <div class="card__content">
+    {% if title %}
+      {%
+        include '@training_theme/heading/heading.twig' with {
+          heading: title
+        } only
+      %}
+    {% endif %}
+    {% if date %}
+      <div class="eyebrow card__date">
+        {{ date }}
+      </div>
+    {% endif %}
+    {% if body_text %}
+      <p class="card__body">
+        {{ body_text }}
+      </p>
+    {% endif %}
+    {% if tags %}
+      <ul class="card__tags">
+        {% for item in tags %}
+          <li class="card__tag--item">
+            <a href="{{ item.url }}" class="card__tag--link">
+              {{ item.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
 </article>
 ```
 {% endtab %}
@@ -142,23 +140,51 @@ Don't forget to create and attach the Card's library.
   max-width: 340px;
   position: relative;
 
+  @media screen and (min-width: $bp-md) {
+    flex: 0 0 45%;
+  }
+
   img {
     display: block;
     width: 100%;
   }
 
-  @media screen and (min-width: $bp-md) {
-    flex: 0 0 45%;
+  .card__content {
+    padding: 10px 20px 20px;
   }
 
   // ========== Card wide styles=========
   &.card--wide {
-    border: 1px solid $color-gray-light;
+    border: 1px solid darken($color-gray-light, 10%);
     box-shadow: none;
     flex-direction: column;
 
-    .card__body-text {
-      margin-bottom: 20px;
+    // Adds blue corner ship to card wide.
+    &::before {
+      border-right: 70px solid transparent;
+      border-top: 70px solid $color-navy-blue;
+      display: block;
+      content: '';
+      height: 0;
+      left: -1px;
+      position: absolute;
+      top: -1px;
+      width: 0;
+      z-index: $zi-lowest;
+    }
+
+    // Positions date in 45 degrees over blue chip.
+    .card__featured--date {
+      color: $color-white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      left: 0;
+      line-height: 1;
+      position: absolute;
+      text-transform: uppercase;
+      top: 18px;
+      transform: rotate(-45deg);
+      z-index: $zi-lowest;
     }
 
     // Changes card layout on larger screens.
@@ -166,79 +192,57 @@ Don't forget to create and attach the Card's library.
       flex-direction: row;
       max-width: 720px;
 
-      .card__media {
-        flex: 0 0 30%;
-      }
-
       .card__content {
         flex: 0 0 70%;
+
+        @include breakpoint($bp-sm) {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+      }
+
+      .author {
+        margin-top: auto;
       }
 
       img {
         max-width: 100%;
       }
     }
+
+    .card__media {
+
+      @include breakpoint($bp-sm) {
+        flex: 0 0 30%;
+      }
+    }
   }
 
-  .button--ghost {
-    display: block;
-    margin: 0 auto;
-
-    @media screen and (min-width: $bp-sm) {
-      display: inline-block;
-      margin: 0;
-    }
+  .eyebrow {
+    border-bottom: 1px solid $color-gray-med;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 8px;
   }
 }
 
-.card__content {
-  padding: 20px;
+.card__body {
+  margin-bottom: 20px;
 }
 
 .card__title {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 8px;
-  margin-top: 0;
-}
-
-.card__date {
-  border-bottom: 1px solid $color-gray-med;
-  display: block;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding-bottom: 8px;
-}
-
-.card__tags--items {
-  display: flex;
-  list-style: none;
   margin: 0;
-  padding: 0;
-}
-
-.card__tag--item {
-  background-color: $color-catskill-white;
-  border-radius: 99999px;
-  color: $color-gray-dark;
-  display: inline-block;
-  margin-right: 10px;
-  padding: 4px 10px;
-}
-
-.card__tag--link {
-  color: lighten($color-gray-dark, 25%);
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: $color-gray-dark;
-  }
 }
 
 ```
 {% endtab %}
 {% endtabs %}
+
+* We'll get into the styles above in more detail later on.
 
 ### Compiling the code
 
@@ -260,8 +264,6 @@ When working with Pattern Lab locally it makes sense to use [http://localhost:30
 
 Two things to keep in mind with the path above:
 
-1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is [https://mc-training.dev.pantheon.io](https://mc-training.dev.pantheon.io), the full URL would become `https://mc-training.dev.pantheon.io/themes/custom/training_theme/patternlab/index.html`
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is _https://dev.pantheon.io_, the full URL would become **https://dev.pantheon.io/themes/custom/training\_theme/patternlab/index.html**
 2. Replace `training_theme` with your project's theme name if your theme name is different.
-
-\`\`
 

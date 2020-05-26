@@ -1,12 +1,14 @@
-# Featured Content List
+# From our blog
 
-So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title of "Featured Content" .
+So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. Using the designs below, we will build the **From our blog** content list.  Here are some details about this component:
 
-![Featured Content List](../.gitbook/assets/featured-content.jpg)
+* The entire collection has a heading of "From our blog"
+* It uses 4 cards but this could be any number of items.  These are the regular/default cards, not the card wide.
+* There is a CTA at the bottom of the list that links users to a page like `/blog`
 
-### Exercise: Build the Featured Content component
+![](../.gitbook/assets/blog-content.jpg)
 
-Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
+### Exercise: Build the From our blog component
 
 This component will be completely different than the ones we've built thus far. All previous components have been a single item, this one will have an unlimited number of items. Let's start
 

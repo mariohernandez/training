@@ -6,7 +6,7 @@ Let's take a look at the Card component for example. Here are two different ways
 
 ![Default Card component](../.gitbook/assets/card.png)
 
-![Card Wide variant](../.gitbook/assets/card-wide.png)
+![Card wide variant](../.gitbook/assets/card-wide.png)
 
 ### Planning for component variants
 
