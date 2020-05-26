@@ -42,8 +42,8 @@
 * [Blog content type](advanced-topics/blog-content-type-1.md)
 * [View modes](advanced-topics/managing-fields-with-view-modes.md)
 * [Drupal Views](advanced-topics/drupal-views-and-view-modes.md)
-* [Featured Content List](advanced-topics/featured-content.md)
 * [From our blog](advanced-topics/from-our-blog.md)
+* [Featured Content List](advanced-topics/featured-content.md)
 * [Integrating Featured Content](advanced-topics/integrating-featured-content.md)
 * [News page](advanced-topics/news-page.md)
 

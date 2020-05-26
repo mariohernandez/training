@@ -2,9 +2,9 @@
 
 So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. Using the designs below, we will build the **From our blog** content list.  Here are some details about this component:
 
+* It uses multiple instances of the card component
 * The entire collection has a heading of "From our blog"
-* It uses 4 cards but this could be any number of items.  These are the regular/default cards, not the card wide.
-* There is a CTA at the bottom of the list that links users to a page like `/blog`
+* It uses a bottom that links users to a page like `/blog`
 
 ![](../.gitbook/assets/blog-content.jpg)
 
