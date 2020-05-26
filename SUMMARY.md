@@ -41,19 +41,22 @@
 * [From our blog](advanced-topics/from-our-blog.md)
 
 ## Drupal site building
-* [Author](site-building/author.md)
-* [Blog content type](site-building/blog-content-type.md)
-* [View modes](site-building/view-modes.md)
-* [Drupal Views](site-building/drupal-views.md)
+
+* [Author](drupal-site-building/author.md)
+* [Blog content type](drupal-site-building/blog-content-type.md)
+* [View modes](drupal-site-building/view-modes.md)
+* [Drupal Views](drupal-site-building/drupal-views.md)
 
 ## Integrations
+
 * [Integrating From our blog](integrations/integrating-from-our-blog.md)
 * [Date formats](integrations/date-formats.md)
-* [Featured Content List](integrations/featured-content.md)
+* [Featured Content List](integrations/featured-content-list.md)
 * [Integrating Featured Content](integrations/integrating-featured-content.md)
 
 ## Final components and integration
-* [Blog landing page](advanced-topics/blog.md)
+
+* [Blog landing page](final-components-and-integration/blog.md)
 
 ## Extras \(work in progress\)
 
@@ -66,3 +69,4 @@
 ## Resources
 
 * [Resources](resources/resources.md)
+

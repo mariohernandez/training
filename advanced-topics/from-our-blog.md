@@ -1,6 +1,6 @@
 # From our blog
 
-So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. Using the designs below, we will build the **From our blog** content list.  Here are some details about this component:
+So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. Using the designs below, we will build the **From our blog** content list. Here are some details about this component:
 
 * It uses multiple instances of the card component
 * The entire collection has a heading of "From our blog"
@@ -240,4 +240,5 @@ While in your theme's root directory, run the following commands in your command
 **TIP:** Since we created a whole new component; if you had the watch task running, it is recommended you stop it by pressing **Ctrl + C** on your keyboard and run the commands above. This will ensure the new component will be generated and all related code will be compiled.
 {% endhint %}
 
-In your browser of choice open the following URL: http://localhost:3000.  You should be able to find the _From our blog_ component.  The styles we wrote already account for responsive behavior of this component.
+In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). You should be able to find the _From our blog_ component. The styles we wrote already account for responsive behavior of this component.
+

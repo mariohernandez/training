@@ -1,4 +1,4 @@
-# Components Integration with Drupal
+# Drupal cache & twig debugging
 
 Before we begin integrating components with Drupal, there are some preparation to be done and some practices to understand.
 
