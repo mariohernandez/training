@@ -26,7 +26,7 @@
 * [Drupal prep](component-lifecycle/drupal-prep.md)
 * [Building the Hero in Drupal](component-lifecycle/hero-paragraph-type.md)
 * [Homepage content type](component-lifecycle/homepage-content-type.md)
-* [Disable Drupal cache and enable twig debugging](component-lifecycle/cache-debug.md)
+* [Drupal cache & twig debugging](component-lifecycle/cache-debug.md)
 * [Twig template suggestions](component-lifecycle/twig-template-suggestions.md)
 * [Getting field values](component-lifecycle/field-values.md)
 * [Integrating the Hero](component-lifecycle/integrating-hero.md)
