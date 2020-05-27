@@ -54,62 +54,62 @@ We'll break the integration process down so we can explain each part of it.  You
 1. Open **node--blog--teaser.html.twig** in your editor and remove all the code except for the comments at the top of the template
 
 2. At the bottom of the template, add the following code:
-{% tabs %}
-{% tab title="node--blog--teaser.html.twig" %}
-```php
-{% set rendered_content = content|render %}
-```
-{% endtab %}
-{% endtabs %}
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% set rendered_content = content|render %}
+  ```
+  {% endtab %}
+  {% endtabs %}
 
   First thing we are setting a twig variable to trigger a full render of the content variable
 
 3. Now let's create twig variable for the card's title field
-{% tabs %}
-{% tab title="node--blog--teaser.html.twig" %}
-```php
-{% set article_title = {
-    "heading_level": 3,
-    "modifier": "card__title",
-    "title": label,
-    "url": url
-  }
-%}
-```
-{% endtab %}
-{% endtabs %}
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% set article_title = {
+      "heading_level": 3,
+      "modifier": "card__title",
+      "title": label,
+      "url": url
+    }
+  %}
+  ```
+  {% endtab %}
+  {% endtabs %}
 
   Why are we doing this?  Well, Drupal gives us the article title text and url, but we still need to add a modifier class and a heading level.  We are setting a variable so we can construct the title the same way we did when we built the heading component.
 
 4. Now, let's add an `embed` statement for the Card component:
-{% tabs %}
-{% tab title="node--blog--teaser.html.twig" %}
-```php
-{% embed '@training_theme/card/card.twig' with { ... } %} {% endembed %}
-```
-{% endtab %}
-{% endtabs %}
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% embed '@training_theme/card/card.twig' with { ... } %} {% endembed %}
+  ```
+  {% endtab %}
+  {% endtabs %}
 
   Why use `embed` and not `include`?  Twig gives us 3 ways to nest or "include" templates/components into other twig templates; `include`, `extends`, and `embed`.  Each have their pros/cons.  You can [learn more about them](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed).
   We need to use `embed` instead of `include` to be able to use the twig blocks we added in the Card component for the `date` and `tags` fields
 
 5. Now let's start mapping the card's variables with Drupal fields or variables.
-{% tabs %}
-{% tab title="node--blog--teaser.html.twig" %}
-```php
-{% embed '@training_theme/card/card.twig' with
-  {
-    "attributes": attributes,
-    "title_prefix": title_prefix,
-    "title_suffix": title_suffix,
-    ...
-  }
-%}
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% embed '@training_theme/card/card.twig' with
+    {
+      "attributes": attributes,
+      "title_prefix": title_prefix,
+      "title_suffix": title_suffix,
+      ...
+    }
+  %}
 
-{% endembed %}
-```
-{% endtab %}
-{% endtabs %}
+  {% endembed %}
+  ```
+  {% endtab %}
+  {% endtabs %}
 
   The first 3 items inside the `embed` statement above are Drupal specific variables so we laverage Drupal's use of `attributes`, `title_prefix` and `title suffix`.  Adding these items will allows us to make use of Drupal's contextual links to quickly edit content as well as allowing Drupal to add its attributes to our component's markup.
 
