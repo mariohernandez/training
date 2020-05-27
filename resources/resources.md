@@ -11,14 +11,15 @@
 * [Twig Tweak](https://www.drupal.org/project/twig_tweak) module
 * [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page)
 * [Render API](https://www.drupal.org/docs/8/api/render-api)
+* [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
+* [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 
 ### Twig
 
 * [Twig documentation](https://twig.symfony.com/doc/3.x/)
-* [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Twig for Template Designers](https://twig.symfony.com/doc/2.x/templates.html)
 * [Twig blocks](https://twig.symfony.com/doc/2.x/tags/extends.html)
-* [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
+* [When to use Include, embed or extends](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
 
 ### Blog Posts/Tutorials
 
@@ -32,9 +33,8 @@
 ### Tools
 
 * [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
-* [Pattern Lab](https://patternlab.io/) 
+* [Pattern Lab](https://patternlab.io/)
 
 ### Misc
 
 * [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
-

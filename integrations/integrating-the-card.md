@@ -60,7 +60,7 @@ We'll break the integration process down so we can explain each part of it.  You
   ```
   {% endtab %}
   {% endtabs %}
-* First thing we are setting a twig variable to trigger a full render of the content variable
+  * First thing we are setting a twig variable to trigger a full render of the content variable
 3. Now let's create twig variable for the card's title field
   {% tabs %}
   {% tab title="node--blog--teaser.html.twig" %}
@@ -75,7 +75,7 @@ We'll break the integration process down so we can explain each part of it.  You
   ```
   {% endtab %}
   {% endtabs %}
-* Why are we doing this?  Well, Drupal only gives us the value of the title text and its url.  We are setting a variable so we can construct the title the same way we did when we built the heading component (heading_level and modifier).
+  * Why are we doing this?  Well, Drupal only gives us the value of the title text and its url.  We are setting a variable so we can construct the title the same way we did when we built the heading component (heading_level and modifier).
 4. Now, let's embed the Card component as follows:
   {% tabs %}
   {% tab title="node--blog--teaser.html.twig" %}
@@ -105,4 +105,12 @@ We'll break the integration process down so we can explain each part of it.  You
   ```
   {% endtab %}
   {% endtabs %}
-* Why use `embed` and not `include`?
+  * Why use `embed` and not `include`?  Twig gives us 3 ways to nest or "include" templates/components into other twig templates; `include`, `extends`, and `embed`.  Each have their pros/cons.  You can [learn more about them](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed).
+  We need to use `embed` instead of `include` to be able to use the twig blocks for date and tags at the bottom of the code snippet above.
+  * The first 3 items inside the `embed` statement above are Drupal specific variables so we laverage Drupal's use of `attributes`, `title_prefix` and `title suffix`.  Adding these items will allows us to do quick edit of content among other things.
+  * Next we are mapping the Image variable from the Card component to Drupal's image field by first ensuring the field is really not empty.
+  * Then we are making use of the `article_variable` we created.  Although creating this variable was not needed, it sure make things look cleaner inside the embed block.
+  * The we map the date and tags elements.  For the tags we are mapping the variable `tags` with Drupal's taxonomy entity (`content.field_blog_tags`).  This is only half the job.  More on this shortly.
+  * **Twig blocks**: So mapping each of the components with Drupal's respective fields is only half the job.  At least for the date and tags fields in this case.  Using Twig blocks at the bottom of the embed, we can now pass the values for the elements we want to render when using this template.  In the case of the date, we are using the twig block called `card_date`.  If you remember, we also created another twig block for date but that will be used in the Card Wide variant.  Using twig blocks here allows us to pick which and where we want the content.  Let's say we used the `featured_date` twig block instead, then the date info will be displayed in the top left corner of each card as it currently does in the Card Wide variant.
+
+  As for the `tags` twig block, we also first mapped the variable from the component to Drupal's tags entity, then in the twig block we are telling it to print them.
