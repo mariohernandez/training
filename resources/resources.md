@@ -1,6 +1,6 @@
 # Resources
 
-### Drupal
+## Drupal
 
 * [Drupal 8 Theming](https://www.drupal.org/docs/8/theming)
 * [Drupal 8 Theming Guide](https://sqndr.github.io/d8-theming-guide/index.html)
@@ -14,27 +14,28 @@
 * [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 
-### Twig
+## Twig
 
 * [Twig documentation](https://twig.symfony.com/doc/3.x/)
 * [Twig for Template Designers](https://twig.symfony.com/doc/2.x/templates.html)
 * [Twig blocks](https://twig.symfony.com/doc/2.x/tags/extends.html)
 * [When to use Include, embed or extends](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
 
-### Blog Posts/Tutorials
+## Blog Posts/Tutorials
 
 * [Responsive Images](https://cloudfour.com/thinks/responsive-images-101-definitions/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 
-### Screencasts/Video Tutorials
+## Screencasts/Video Tutorials
 
 * [A Walkthrough of Mediacurrent's Theme Generator](https://www.youtube.com/watch?v=cVyA2v-UwSQ)
 
-### Tools
+## Tools
 
 * [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
 * [Pattern Lab](https://patternlab.io/)
 
-### Misc
+## Misc
 
 * [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
+
