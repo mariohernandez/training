@@ -53,20 +53,56 @@ We'll break the integration process down so we can explain each part of it.  You
 
 1. Open **node--blog--teaser.html.twig** in your editor and remove all its code except for the comments at the top of the template
 2. At the bottom of the template, add the following code:
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% set rendered_content = content|render %}
+  ```
+  {% endtab %}
+  {% endtabs %}
+  * First thing we are setting a twig variable to trigger a full render of the content variable
+3. Now let's create twig variable for the card's title field
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% set article_title = {
+      "heading_level": 3,
+      "modifier": "card__title",
+      "title": label,
+      "url": url
+    }
+  %}
+  ```
+  {% endtab %}
+  {% endtabs %}
+  * Why are we doing this?  Well, Drupal only gives us the value of the title text and its url.  We are setting a variable so we can construct the title the same way we did when we built the heading component (heading_level and modifier).
+4. Now, let's embed the Card component as follows:
+  {% tabs %}
+  {% tab title="node--blog--teaser.html.twig" %}
+  ```php
+  {% embed '@training_theme/card/card.twig' with
+    {
+      "attributes": attributes,
+      "title_prefix": title_prefix,
+      "title_suffix": title_suffix,
+      "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
+      "title": article_title,
+      "date": date,
+      "body_text": content.body|render|trim is not empty ? content.body,
+      "tags": content.field_blog_tags,
+      "modifier": ""
+    }
+  %}
 
-{% tabs %}
-{% tab title="node--blog--teaser.html.twig" %}
-```php
-{% set rendered_content = content|render %}
-```
-{% endtab %}
-{% endtabs %}
+    {% block card_date %}
+      {{ date }}
+    {% endblock card_date %}
 
-
-
-
-
-
-
-
-
+    {% block tags %}
+      {{ tags }}
+    {% endblock tags %}
+  {% endembed %}
+  ```
+  {% endtab %}
+  {% endtabs %}
+  * Why use `embed` and not `include`?
