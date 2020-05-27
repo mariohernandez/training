@@ -60,7 +60,7 @@ We'll break the integration process down so we can explain each part of it.  You
   ```
   {% endtab %}
   {% endtabs %}
-  * First thing we are setting a twig variable to trigger a full render of the content variable
+* First thing we are setting a twig variable to trigger a full render of the content variable
 3. Now let's create twig variable for the card's title field
   {% tabs %}
   {% tab title="node--blog--teaser.html.twig" %}
@@ -75,7 +75,7 @@ We'll break the integration process down so we can explain each part of it.  You
   ```
   {% endtab %}
   {% endtabs %}
-  * Why are we doing this?  Well, Drupal only gives us the value of the title text and its url.  We are setting a variable so we can construct the title the same way we did when we built the heading component (heading_level and modifier).
+* Why are we doing this?  Well, Drupal only gives us the value of the title text and its url.  We are setting a variable so we can construct the title the same way we did when we built the heading component (heading_level and modifier).
 4. Now, let's embed the Card component as follows:
   {% tabs %}
   {% tab title="node--blog--teaser.html.twig" %}
@@ -105,4 +105,4 @@ We'll break the integration process down so we can explain each part of it.  You
   ```
   {% endtab %}
   {% endtabs %}
-  * Why use `embed` and not `include`?
+* Why use `embed` and not `include`?
