@@ -38,7 +38,6 @@
 * [Card Component](advanced-topics/card.md)
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
-* [From our blog](advanced-topics/from-our-blog.md)
 
 ## Drupal site building
 
@@ -46,9 +45,12 @@
 * [Blog content type](drupal-site-building/blog-content-type.md)
 * [View modes](drupal-site-building/view-modes.md)
 * [Drupal Views](drupal-site-building/drupal-views.md)
+* [Generate content](drupal-site-building/generate-content.md)
 
 ## Integrations
 
+* [Integrating the Card](integrations/integrating-the-card.md)
+* [From our blog](integrations/from-our-blog.md)
 * [Integrating From our blog](integrations/integrating-from-our-blog.md)
 * [Date formats](integrations/date-formats.md)
 * [Featured Content List](integrations/featured-content-list.md)
