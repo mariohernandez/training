@@ -193,9 +193,17 @@ Now the full integration template should look like below. Clear Drupal's cache a
 {% tabs %}
 {% tab title="node--blog--teaser.html.twig" %}
 ```php
+{# Sets date variable to change to short format. #}
 {% set date = node.createdtime|format_date('long') %}
+
+{# Sets variable to trigger content render array. #}
 {% set rendered_content = content|render %}
 
+{#
+Sets variable for article title to provide all
+properties needed by the heading component (heading_level,
+modifier, title, and url).
+#}
 {% set article_title = {
     "heading_level": 3,
     "modifier": "card__title",
@@ -204,6 +212,10 @@ Now the full integration template should look like below. Clear Drupal's cache a
   }
 %}
 
+{#
+Uses embed to be able to include card component
+and make use of twig blocks found in such component.
+#}
 {% embed '@training_theme/card/card.twig' with
   {
     "attributes": attributes,
@@ -218,10 +230,20 @@ Now the full integration template should look like below. Clear Drupal's cache a
   } only
 %}
 
+  {#
+  Removes content from featured_date twig block
+  to avoid printing the date twice and in
+  different places.
+  #}
+  {% block featured_date %}
+  {% endblock featured_date %}
+
+  {# Calls card_date twig block.#}
   {% block card_date %}
     {{ date }}
   {% endblock card_date %}
 
+  {# Calls tags twig block.#}
   {% block tags %}
     {{ tags }}
   {% endblock tags %}
