@@ -54,6 +54,7 @@
 * [From our blog](drupal-integrations/from-our-blog.md)
 * [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
 * [Featured Content](drupal-integrations/featured-content-list.md)
+* [Integrating Featured Content](drupal-integrations/integrating-featured-content.md)
 
 ## Final components and integration
 
