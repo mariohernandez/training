@@ -49,11 +49,11 @@
 
 ## Drupal Integrations
 
-* [Integrating the Card](integrations/integrating-the-card.md)
-* [Integrating the Card Wide](integrations/integrating-the-card-wide.md)
-* [From our blog](integrations/from-our-blog.md)
-* [Integrating From our blog](integrations/integrating-from-our-blog.md)
-* [Featured Content List](integrations/featured-content-list.md)
+* [Integrating the Card](drupal-integrations/integrating-the-card.md)
+* [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
+* [From our blog](drupal-integrations/from-our-blog.md)
+* [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
+* [Featured Content List](drupal-integrations/featured-content-list.md)
 
 ## Final components and integration
 
@@ -70,3 +70,4 @@
 ## Resources
 
 * [Resources](resources/resources.md)
+
