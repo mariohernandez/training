@@ -47,10 +47,10 @@
 * [Drupal Views](drupal-site-building/drupal-views.md)
 * [Generate content](drupal-site-building/generate-content.md)
 
-## Integrations
+## Drupal Integrations
 
 * [Integrating the Card](integrations/integrating-the-card.md)
-* [Integrating Featured Content](integrations/integrating-featured-content.md)
+* [Integrating the Card Wide](integrations/integrating-the-card-wide.md)
 * [From our blog](integrations/from-our-blog.md)
 * [Integrating From our blog](integrations/integrating-from-our-blog.md)
 * [Featured Content List](integrations/featured-content-list.md)
@@ -70,4 +70,3 @@
 ## Resources
 
 * [Resources](resources/resources.md)
-

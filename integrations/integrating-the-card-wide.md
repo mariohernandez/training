@@ -1,4 +1,4 @@
-# Integrating Featured Content
+# Integrating the Card Wide
 
 ![Card Wide variant](../.gitbook/assets/card-wide.png)
 
@@ -77,4 +77,3 @@ and make use of twig blocks found in such component.
 ```
 {% endtab %}
 {% endtabs %}
-
