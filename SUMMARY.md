@@ -53,7 +53,6 @@
 * [Integrating Featured Content](integrations/integrating-featured-content.md)
 * [From our blog](integrations/from-our-blog.md)
 * [Integrating From our blog](integrations/integrating-from-our-blog.md)
-* [Date formats](integrations/date-formats.md)
 * [Featured Content List](integrations/featured-content-list.md)
 
 ## Final components and integration
