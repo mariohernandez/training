@@ -1,4 +1,4 @@
-# Featured Content List
+# Featured Content
 
 
 

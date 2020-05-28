@@ -53,7 +53,7 @@
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
 * [From our blog](drupal-integrations/from-our-blog.md)
 * [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
-* [Featured Content List](drupal-integrations/featured-content-list.md)
+* [Featured Content](drupal-integrations/featured-content-list.md)
 
 ## Final components and integration
 
