@@ -38,6 +38,7 @@
 * [Card Component](advanced-topics/card.md)
 * [Component Variants](advanced-topics/component-variants.md)
 * [Card Variant](advanced-topics/card-variant.md)
+* [Author component](advanced-topics/author-component.md)
 
 ## Drupal site building
 
