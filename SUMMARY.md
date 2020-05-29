@@ -2,6 +2,7 @@
 
 * [Welcome](README.md)
 * [Local Setup](local-setup.md)
+* [The project](the-project.md)
 
 ## Getting Started
 
