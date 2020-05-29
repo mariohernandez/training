@@ -14,7 +14,7 @@ As we just saw in the Card Wide variant, we are displaying the article's author 
 | Full name | `field_full_name` | Text\(plain\) | 1 |
 | Title | `field_title` | Text\(plain\) | 1 |
 
-#### New User view mode
+### New User view mode
 
 We'll create a new view mode to control which user's fields we can display.
 
@@ -22,19 +22,19 @@ We'll create a new view mode to control which user's fields we can display.
 2. Under the **Default** view mode, expand the **CUSTOM DISPLAY SETTINGS** fieldset
 3. Click **Manage view modes**
 4. Scroll down to the **Users** section and click **Add new User view mode** link
-5. Type **Custom** as the view mode name and click the **Save** button
+5. Type **Author** as the view mode name and click the **Save** button
 6. Repeat steps 1 & 2 from _Add new fields to the User Profile ****_section at the top of the page
 7. Expand the **CUSTOM DISPLAY SETTINGS** fieldset
-8. Check **Custom** and click the **Save** button
+8. Check **Author** and click the **Save** button
 
-#### Customize Custom view mode
+### Customize Author view mode
 
-1. From the list of view modes now available \(Default, Compact, and Custom\), click **Custom**
+1. From the list of view modes now available \(Default, Author, and Compact\), click **Author**
 2. Drag the **Member for** field into the **Disabled** section
 3. For the remaining fields, hide their labels by selecting **Hidden** in the Label's dropdowns
 4. Click the **Save** button
 
-#### Remove the link from the User's image
+### Remove the link from the User's image
 
 1. While still in the People Account Settings screen, click the gear icon to the right of the Image field
 2. Change the **Link image to** dropdown to **Nothing**
