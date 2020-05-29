@@ -41,7 +41,6 @@
 
 ## Drupal site building
 
-* [Author](drupal-site-building/author.md)
 * [Blog content type](drupal-site-building/blog-content-type.md)
 * [View modes](drupal-site-building/view-modes.md)
 * [Drupal Views](drupal-site-building/drupal-views.md)
@@ -52,6 +51,7 @@
 * [Integrating the Card](drupal-integrations/integrating-the-card/README.md)
   * [Taxonomy terms](drupal-integrations/integrating-the-card/taxonomy-terms.md)
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
+* [Author](drupal-integrations/author.md)
 * [From our blog](drupal-integrations/from-our-blog.md)
 * [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
 * [Featured Content](drupal-integrations/featured-content-list.md)

@@ -78,3 +78,5 @@ and make use of twig blocks found in such component.
 {% endtab %}
 {% endtabs %}
 
+Reloading Drupal's homepage after the changes above should display the the blog posts in the Featured Content section rendered with the Card wide.  But there seems to be a problem with the author information.  Let's fix it next
+
