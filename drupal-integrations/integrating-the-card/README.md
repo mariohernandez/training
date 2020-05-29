@@ -1,6 +1,6 @@
 # Integrating the Card
 
-![Default card component](../.gitbook/assets/card.png)
+![Default card component](../../.gitbook/assets/card.png)
 
 Our homepage is displaying blog posts that meet the requirements of the Drupal View we created, but they lack styles. As we indicated before, each blog article will be represented by a Card component. Let's integrate the Card so our articles inherit all the attributes of the component.Let's recap the work we've done and what the next steps are:
 
@@ -19,7 +19,7 @@ We'll get back to the full view of a blog post later, for now we are going to fo
 2. Right-click on any of the Blog posts articles within the _From our blog_ section, and select **Inspect** or **Inspect Element**
 3. Scroll up in the inspector's code until you find the `<article>` element that wraps the entire article you clicked on.  There may be multiple `<article>` tags within each article, but ensure you are looking at the main article wrapper.  See screenshot below \(click on it to zoom in\):
 
-![Example of debugging info for a node](../.gitbook/assets/node-teaser.png)
+![Example of debugging info for a node](../../.gitbook/assets/node-teaser.png)
 
 * I've marked a couple of important items in the screenshot above to ensure you are looking at the correct section in the code.
 * **THEME HOOK:** Tells you what entity you are currently looking at.  In this example we are looking at the **node**, which is what we want since we are trying to configure the Blog nodes with the right component.
@@ -47,7 +47,7 @@ I know I will be creating other node related template suggestion so I will leave
 
 If you reload the homepage, you shouldn't really notice much difference. However, if you right-click on the same article as you did before and select **Inspect** or **Inspect Element**, and scroll to the `<article>` element, you should see your new template being used by Drupal to render some of the blog nodes. See below for an example:
 
-![Example of using teaser view mode for blog nodes.](../.gitbook/assets/node-blog-teaser.png)
+![Example of using teaser view mode for blog nodes.](../../.gitbook/assets/node-blog-teaser.png)
 
 ### Integrating the Card component
 
@@ -328,7 +328,7 @@ If you recall when we built the Tags component above we did it in two steps, fir
 1. Inspect the tags found in the homepage From our blog section \(right-click + Inspect\) 
 2. Identify the twig template suggestions for taxonomy.
 
-![Taxonomy term template suggestions.](../.gitbook/assets/term.png)
+![Taxonomy term template suggestions.](../../.gitbook/assets/term.png)
 
 The first template suggestions above give us 3 options.  We are going to name our template `taxonomy-term--tags.html.twig`.  
 
@@ -341,7 +341,7 @@ Don't forget to clear Drupal's cache every time you add a new template to your t
 
 The next template we need will be found just above the first one. The code looks like this:
 
-![Tags field info.](../.gitbook/assets/taxonomy-field.png)
+![Tags field info.](../../.gitbook/assets/taxonomy-field.png)
 
 As I mentioned before, we only want to affect tags that appear on blog posts.  Looking at the list of options for template suggestions I can see that `field--node--field-blog-tags--blog.html.twig` \(top one\), is the one that gives us the more specific target.  This template is for the Tags field in the blog content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
 

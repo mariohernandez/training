@@ -49,7 +49,8 @@
 
 ## Drupal Integrations
 
-* [Integrating the Card](drupal-integrations/integrating-the-card.md)
+* [Integrating the Card](drupal-integrations/integrating-the-card/README.md)
+  * [Taxonomy terms](drupal-integrations/integrating-the-card/taxonomy-terms.md)
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
 * [From our blog](drupal-integrations/from-our-blog.md)
 * [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
