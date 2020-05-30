@@ -274,13 +274,14 @@ If you are wondering why are we placing the code snippets in those very location
     {% if author %}
       {%
         include '@training_theme/author/author.twig' with {
-          author: author
+          "photo": author.photo,
+          "name": author.name,
+          "title": author.title
         } only
       %}
     {% endif %}
   </div>
 </article>
-
 ```
 {% endtab %}
 {% endtabs %}
