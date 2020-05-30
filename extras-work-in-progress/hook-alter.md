@@ -1,7 +1,6 @@
 # Hook alter
 
-This hook alter allows for creating template suggestions for users.
-Add this hook alter to your theme's `training_theme.theme` file.
+This hook alter allows for creating template suggestions for users. Add this hook alter to your theme's `training_theme.theme` file.
 
 {% tabs %}
 {% tab title="training\_theme.theme" %}
@@ -21,3 +20,4 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 ```
 {% endtab %}
 {% endtabs %}
+
