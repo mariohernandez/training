@@ -79,5 +79,27 @@ As we just saw, the Card wide variant uses some information from the article aut
 
 * Create the **author** library in `training_theme.libraries.yml`.
 
+### Update the Card component with new Author component
 
+Let's update the card component so we make use of the newly built Author component.
+
+1. Edit `card.twig` by replacing the current code for author information with the code below:
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+{% if author %}
+  {%
+    include '@training_theme/author/author.twig' with {
+      "photo": author.photo,
+      "name": author.name,
+      "title": author.title
+    } only
+  %}
+{% endif %}
+```
+{% endtab %}
+{% endtabs %}
+
+Rebuild your theme by running `npm run build` then `npm run watch`, and ensure Pattern Lab shows both, the new Author component as well as the Card Wide variant shows the author info properly styled.
 
