@@ -197,11 +197,13 @@ If you are wondering why are we placing the code snippets in those very location
 {% tab title="card.twig" %}
 ```php
 {% if author %}
-  {%
-    include '@training_theme/author/author.twig' with {
-      author: author
-    } only
-  %}
+  <div class="author">
+    <div class="author__meta">
+      <div class="author__name">{{ name }}</div>
+      <div class="author__title">{{ title }}</div>
+    </div>
+    <div class="author__photo">{{ photo }}</div>
+  </div>
 {% endif %}
 ```
 {% endtab %}
@@ -274,13 +276,13 @@ If you are wondering why are we placing the code snippets in those very location
     {% endblock tags %}
 
     {% if author %}
-      {%
-        include '@training_theme/author/author.twig' with {
-          "photo": author.photo,
-          "name": author.name,
-          "title": author.title
-        } only
-      %}
+      <div class="author">
+        <div class="author__meta">
+          <div class="author__name">{{ name }}</div>
+          <div class="author__title">{{ title }}</div>
+        </div>
+        <div class="author__photo">{{ photo }}</div>
+      </div>
     {% endif %}
   </div>
 </article>

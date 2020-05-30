@@ -101,5 +101,90 @@ Let's update the card component so we make use of the newly built Author compone
 {% endtab %}
 {% endtabs %}
 
-Rebuild your theme by running `npm run build` then `npm run watch`, and ensure Pattern Lab shows both, the new Author component as well as the Card Wide variant shows the author info properly styled.
+1. Rebuild your theme by running
+
+```text
+npm run build && npm run watch
+```
+
+Windows users may need to run the two commands above separately \(`npm run build` then `npm run watch`
+
+### Full Card code
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+{{ attach_library('training_theme/card') }}
+
+<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {# Date for featured content cards. #}
+  {% block featured_date %}
+    {% if view_mode == 'featured' %}
+      <div class="card__featured--date">
+        {{ date }}
+      </div>
+    {% endif %}
+  {% endblock featured_date %}
+
+  {% if image %}
+    <div class="card__media">
+      {{ image }}
+    </div>
+  {% endif %}
+  <div class="card__content">
+    {% if title %}
+      {%
+        include '@training_theme/heading/heading.twig' with {
+          heading: title
+        } only
+      %}
+    {% endif %}
+
+    {% block card_date %}
+      {% if not view_mode == 'featured' %}
+        <div class="eyebrow card__date">
+          {{ date }}
+        </div>
+      {% endif %}
+    {% endblock card_date %}
+
+    {% if category %}
+      <div class="eyebrow card__category">
+        {{ category }}
+      </div>
+    {% endif %}
+
+    {% if body_text %}
+      <div class="card__body">
+        {{ body_text }}
+      </div>
+    {% endif %}
+
+    {% block tags %}
+      {% if tags %}
+        {%
+          include '@training_theme/tags/tags.twig' with {
+            "items": tags
+          } only
+        %}
+      {% endif %}
+    {% endblock tags %}
+
+    {% if author %}
+      {%
+        include '@training_theme/author/author.twig' with {
+          "photo": author.photo,
+          "name": author.name,
+          "title": author.title
+        } only
+      %}
+    {% endif %}
+  </div>
+</article>
+```
+{% endtab %}
+{% endtabs %}
 
