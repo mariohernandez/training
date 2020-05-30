@@ -50,7 +50,7 @@ and make use of twig blocks found in such component.
     "date": date,
     "category": content.field_category|render|trim is not empty ? content.field_category,
     "body_text": content.body|render|trim is not empty ? content.body,
-    "author": content.field_author|render|trim is not empty ? content.field_author,
+    "author": content.field_author,
     "modifier": 'card--wide'
   } only
 %}
@@ -67,6 +67,11 @@ and make use of twig blocks found in such component.
   #}
   {% block card_date %}
   {% endblock card_date %}
+
+  {# Calls author twig block.#}
+  {% block author %}
+    {{ author }}
+  {% endblock author %}
 {% endembed %}
 ```
 {% endtab %}

@@ -105,15 +105,16 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 {% tabs %}
 {% tab title="user--author.html.twig" %}
 ```php
-{% if content %}
-  {%
-    include '@training_theme/author/author.twig' with {
-      "photo": content.user_picture|render|trim is not empty ? content.user_picture,
-      "name": content.field_full_name|render|trim is not empty ? content.field_full_name,
-      "title": content.field_title|render|trim is not empty ? content.field_title,
+{% include "@training_theme/author/author.twig" with
+  {
+    "attributes": attributes,
+    "author": {
+      "photo": content.user_picture,
+      "name": content.field_full_name,
+      "title": content.field_title
     }
-  %}
-{% endif %}
+  }
+%}
 ```
 {% endtab %}
 {% endtabs %}
