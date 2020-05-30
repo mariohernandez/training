@@ -68,12 +68,8 @@ and make use of twig blocks found in such component.
   #}
   {% block card_date %}
   {% endblock card_date %}
-
-  {# Calls author twig block. #}
-  {% block author %}
-    {{ author }}
-  {% endblock author %}
 {% endembed %}
+
 ```
 {% endtab %}
 {% endtabs %}
