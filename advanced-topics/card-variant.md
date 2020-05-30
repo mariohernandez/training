@@ -263,13 +263,15 @@ If you are wondering why are we placing the code snippets in those very location
       </div>
     {% endif %}
 
-    {% if tags %}
-      {%
-        include '@training_theme/tags/tags.twig' with {
-          "items": tags
-        } only
-      %}
-    {% endif %}
+    {% block tags %}
+      {% if tags %}
+        {%
+          include '@training_theme/tags/tags.twig' with {
+            "items": tags
+          } only
+        %}
+      {% endif %}
+    {% endblock tags %}
 
     {% if author %}
       {%

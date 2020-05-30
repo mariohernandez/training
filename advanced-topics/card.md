@@ -51,7 +51,6 @@ Now that we have identified the fields our card component needs, let's start bui
       "url": "#"
     }
   ],
-  "view_mode": "",
   "modifier": ""
 }
 ```
@@ -74,14 +73,6 @@ By now we should be well familiar with the fields structure above. The one field
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {# Date for featured content cards. #}
-  {% block featured_date %}
-    {% if view_mode == 'featured' %}
-      <div class="card__featured--date">
-        {{ date }}
-      </div>
-    {% endif %}
-  {% endblock featured_date %}
 
   {% if image %}
     <div class="card__media">
@@ -97,17 +88,9 @@ By now we should be well familiar with the fields structure above. The one field
       %}
     {% endif %}
 
-    {% block card_date %}
-      {% if not view_mode == 'featured' %}
-        <div class="eyebrow card__date">
-          {{ date }}
-        </div>
-      {% endif %}
-    {% endblock card_date %}
-
-    {% if category %}
-      <div class="eyebrow card__category">
-        {{ category }}
+    {% if date %}
+      <div class="eyebrow card__date">
+        {{ date }}
       </div>
     {% endif %}
 
@@ -124,19 +107,8 @@ By now we should be well familiar with the fields structure above. The one field
         } only
       %}
     {% endif %}
-
-    {% if author %}
-      {%
-        include '@training_theme/author/author.twig' with {
-          "photo": author.photo,
-          "name": author.name,
-          "title": author.title
-        } only
-      %}
-    {% endif %}
   </div>
 </article>
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -267,7 +239,6 @@ Don't forget to create and attach the Card's library.
   font-weight: 600;
   margin: 0;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
