@@ -46,15 +46,15 @@ This component will be completely different than the ones we've built thus far. 
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
       "tags": [
         {
-          "title": "Phtography",
+          "name": "Phtography",
           "url": "#"
         },
         {
-          "title": "Nature",
+          "name": "Nature",
           "url": "#"
         },
         {
-          "title": "Outdors",
+          "name": "Outdors",
           "url": "#"
         }
       ],
@@ -72,15 +72,15 @@ This component will be completely different than the ones we've built thus far. 
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
       "tags": [
         {
-          "title": "Phtography",
+          "name": "Phtography",
           "url": "#"
         },
         {
-          "title": "Nature",
+          "name": "Nature",
           "url": "#"
         },
         {
-          "title": "Outdors",
+          "name": "Outdors",
           "url": "#"
         }
       ],
@@ -98,15 +98,15 @@ This component will be completely different than the ones we've built thus far. 
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
       "tags": [
         {
-          "title": "Phtography",
+          "name": "Phtography",
           "url": "#"
         },
         {
-          "title": "Nature",
+          "name": "Nature",
           "url": "#"
         },
         {
-          "title": "Outdors",
+          "name": "Outdors",
           "url": "#"
         }
       ],
@@ -124,15 +124,15 @@ This component will be completely different than the ones we've built thus far. 
       "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
       "tags": [
         {
-          "title": "Phtography",
+          "name": "Phtography",
           "url": "#"
         },
         {
-          "title": "Nature",
+          "name": "Nature",
           "url": "#"
         },
         {
-          "title": "Outdors",
+          "name": "Outdors",
           "url": "#"
         }
       ],
@@ -163,21 +163,21 @@ So the data is ready, let's go ahead and add the markup for the component.
 ```php
 {{ attach_library('training_theme/from-our-blog') }}
 
-<section class="from-our-blog{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+<section class="from-our-blog{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
-  {% if heading %}
-    {%
-      include '@training_theme/heading/heading.twig' with {
-        "heading": heading
-      } only
-    %}
-  {% endif %}
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {%
+    include '@training_theme/heading/heading.twig' with {
+      "heading": heading
+    } only
+  %}
 
   <div class="from-our-blog__items">
     {% block blog_items %}
       {% for item in items %}
-        {%
-          include '@training_theme/card/card.twig' with {
+        {% embed '@training_theme/card/card.twig' with
+          {
             "image": item.image,
             "title": item.title,
             "date": item.date,
@@ -186,6 +186,9 @@ So the data is ready, let's go ahead and add the markup for the component.
             "modifier": ""
           } only
         %}
+          {% block featured_date %}
+          {% endblock %}
+        {% endembed %}
       {% endfor %}
     {% endblock blog_items %}
   </div>
@@ -242,7 +245,6 @@ We'll skip styles for now, but let's at least create a Sass file for when we nee
   margin-top: 50px;
   text-align: center;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
