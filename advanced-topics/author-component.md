@@ -49,7 +49,6 @@ As we just saw, the Card wide variant uses some information from the article aut
   flex-direction: row;
   font-size: 1.3rem;
   height: 70px;
-  justify-content: flex-end;
 }
 
 .author__photo {

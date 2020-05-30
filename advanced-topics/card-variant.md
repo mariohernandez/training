@@ -94,7 +94,12 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
   "category": "Sports",
   "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   "tags": "",
-  "author": "<div class=\"author__photo\"><img src=\"https://source.unsplash.com/qzDF5PNEWKc/180x180\" alt=\"Author\"s headshot\" /></div><div class=\"author__name\"><span>Valentina Delgado</span><span>Digital Strategist</span></div>",
+  "author": {
+    "photo": "<img src='https://source.unsplash.com/_cvwXhGqG-o/100x100' alt='Author's headshot' />",
+    "name": "Valentina De Leon",
+    "title": "Digital Strategist"
+  },
+  "view_mode": "featured",
   "modifier": "card--wide"
 }
 ```
@@ -117,13 +122,13 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * In your editor, open `card.twig` and at around line 7 \(your line numbers may vary\), we need to add a twig block for the date which in the Card wide variant is displayed on the top left corner of the card over a navy blue corner chip..  Add the following code snippet directly after the `{{ title_suffix }}` line:
 
 ```php
-{% if modifier == 'card--wide' or view_mode == 'featured' %}
-  <div class="card__featured--date">
-    {% block featured_date %}
+{% block featured_date %}
+  {% if view_mode == 'featured' %}
+    <div class="card__featured--date">
       {{ date }}
-    {% endblock featured_date %}
-  </div>
-{% endif %}
+    </div>
+  {% endif %}
+{% endblock featured_date %}
 ```
 
 * First we are checking whether the value of the `modifier` variable is `card--wide`, or if the Drupal view mode we are using is `featured`.  This will ensure that only if one of this conditions is met we will be able to access this twig block.  
@@ -136,13 +141,13 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * Next, we need to repeat the process above for printing the date on the non-wide card.  Having twig blocks for each date on each card variant will help us be more explicit about where we want to print each of the dates based on the card type we are working with.  Modify the existing date field to look like this:
 
 ```php
-{% if not view_mode == 'featured' %}
-  <div class="eyebrow card__date">
-    {% block card_date %}
+{% block card_date %}
+  {% if not view_mode == 'featured' %}
+    <div class="eyebrow card__date">
       {{ date }}
-    {% endblock card_date %}
-  </div>
-{% endif %}
+    </div>
+  {% endif %}
+{% endblock card_date %}
 ```
 
 * The conditional statement above is checking that the view\_mode's value is not `featured`.  If so, it will print the date directly under the card's title.
@@ -153,13 +158,11 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * For the category field we don't need to perform any type of conditional since it will only be displayed in the card wide variant.  This means we can hide it from the regular card view mode \(teaser\).  Modify the category field as shown below:
 
 ```php
-{% block category %}
-  {% if category %}
-    <div class="eyebrow card__category">
-      {{ category }}
-    </div>
-  {% endif %}
-{% endblock category %}
+{% if category %}
+  <div class="eyebrow card__category">
+    {{ category }}
+  </div>
+{% endif %}
 ```
 
 * Notice that both, the date and category fields use the same CSS class of `eyebrow`.  This will allow us to style both fields identically.
@@ -176,13 +179,11 @@ If you are wondering why are we placing the code snippets in those very location
 {% tab title="card.twig" %}
 ```php
 {% if tags %}
-  {% block tags %}
-    {%
-      include '@training_theme/tags/tags.twig' with {
-        "items": tags
-      } only
-    %}
-  {% endblock tags %}
+  {%
+    include '@training_theme/tags/tags.twig' with {
+      "items": tags
+    } only
+  %}
 {% endif %}
 ```
 {% endtab %}
@@ -195,15 +196,13 @@ If you are wondering why are we placing the code snippets in those very location
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{% block author %}
-  {% if author and date %}
-    {%
-      include '@training_theme/author/author.twig' with {
-        author: author
-      } only
-    %}
-  {% endif %}
-{% endblock author %}
+{% if author %}
+  {%
+    include '@training_theme/author/author.twig' with {
+      author: author
+    } only
+  %}
+{% endif %}
 ```
 {% endtab %}
 {% endtabs %}
@@ -222,13 +221,14 @@ If you are wondering why are we placing the code snippets in those very location
   {{ title_prefix }}
   {{ title_suffix }}
   {# Date for featured content cards. #}
-  {% if view_mode == 'featured' %}
-    <div class="card__featured--date">
-      {% block featured_date %}
+  {% block featured_date %}
+    {% if view_mode == 'featured' %}
+      <div class="card__featured--date">
         {{ date }}
-      {% endblock %}
-    </div>
-  {% endif %}
+      </div>
+    {% endif %}
+  {% endblock featured_date %}
+
   {% if image %}
     <div class="card__media">
       {{ image }}
@@ -242,43 +242,42 @@ If you are wondering why are we placing the code snippets in those very location
         } only
       %}
     {% endif %}
-    {% if not view_mode == 'featured' %}
-      <div class="eyebrow card__date">
-        {% block card_date %}
+
+    {% block card_date %}
+      {% if not view_mode == 'featured' %}
+        <div class="eyebrow card__date">
           {{ date }}
-        {% endblock card_date %}
-      </div>
-    {% endif %}
-    {% block category %}
-      {% if category %}
-        <div class="eyebrow card__category">
-          {{ category }}
         </div>
       {% endif %}
-    {% endblock category %}
+    {% endblock card_date %}
+
+    {% if category %}
+      <div class="eyebrow card__category">
+        {{ category }}
+      </div>
+    {% endif %}
+
     {% if body_text %}
       <div class="card__body">
         {{ body_text }}
       </div>
     {% endif %}
+
     {% if tags %}
-      {% block tags %}
-        {%
-          include '@training_theme/tags/tags.twig' with {
-            "items": tags
-          } only
-        %}
-      {% endblock tags %}
+      {%
+        include '@training_theme/tags/tags.twig' with {
+          "items": tags
+        } only
+      %}
     {% endif %}
-    {% block author %}
-      {% if author and date %}
-        {%
-          include '@training_theme/author/author.twig' with {
-            author: author
-          } only
-        %}
-      {% endif %}
-    {% endblock author %}
+
+    {% if author %}
+      {%
+        include '@training_theme/author/author.twig' with {
+          author: author
+        } only
+      %}
+    {% endif %}
   </div>
 </article>
 

@@ -39,18 +39,19 @@ Now that we have identified the fields our card component needs, let's start bui
   "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   "tags": [
     {
-      "text": "Photography",
+      "name": "Photography",
       "url": "#"
     },
     {
-      "text": "Sports",
+      "name": "Sports",
       "url": "#"
     },
     {
-      "text": "Outdors",
+      "name": "Outdors",
       "url": "#"
     }
   ],
+  "view_mode": "",
   "modifier": ""
 }
 ```
@@ -69,11 +70,20 @@ By now we should be well familiar with the fields structure above. The one field
 ```php
 {{ attach_library('training_theme/card') }}
 
-<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {%  if image %}
+  {# Date for featured content cards. #}
+  {% block featured_date %}
+    {% if view_mode == 'featured' %}
+      <div class="card__featured--date">
+        {{ date }}
+      </div>
+    {% endif %}
+  {% endblock featured_date %}
+
+  {% if image %}
     <div class="card__media">
       {{ image }}
     </div>
@@ -86,29 +96,47 @@ By now we should be well familiar with the fields structure above. The one field
         } only
       %}
     {% endif %}
-    {% if date %}
-      <div class="eyebrow card__date">
-        {{ date }}
+
+    {% block card_date %}
+      {% if not view_mode == 'featured' %}
+        <div class="eyebrow card__date">
+          {{ date }}
+        </div>
+      {% endif %}
+    {% endblock card_date %}
+
+    {% if category %}
+      <div class="eyebrow card__category">
+        {{ category }}
       </div>
     {% endif %}
+
     {% if body_text %}
-      <p class="card__body">
+      <div class="card__body">
         {{ body_text }}
-      </p>
+      </div>
     {% endif %}
+
     {% if tags %}
-      <ul class="card__tags">
-        {% for item in tags %}
-          <li class="card__tag--item">
-            <a href="{{ item.url }}" class="card__tag--link">
-              {{ item.text }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      {%
+        include '@training_theme/tags/tags.twig' with {
+          "items": tags
+        } only
+      %}
+    {% endif %}
+
+    {% if author %}
+      {%
+        include '@training_theme/author/author.twig' with {
+          "photo": author.photo,
+          "name": author.name,
+          "title": author.title
+        } only
+      %}
     {% endif %}
   </div>
 </article>
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -133,6 +161,7 @@ Don't forget to create and attach the Card's library.
 @import '../../global/utils/init';
 
 .card {
+  background-color: $color-white;
   box-shadow: 0 10px 15px -3px rgba($color-black, 0.1), 0 4px 6px -2px rgba($color-black, 0.05);
   display: flex;
   flex: 0 0 auto;
@@ -204,6 +233,7 @@ Don't forget to create and attach the Card's library.
 
       .author {
         margin-top: auto;
+        margin-left: auto;
       }
 
       img {
