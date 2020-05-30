@@ -125,7 +125,7 @@ We'll break the integration process down so we can explain each part of it. You 
 
    Next we are mapping the `image`, `date`, `body_text`, and `tags` variables with Drupal fields for those elements but first we check that the fields are not empty.
 
-7. Time to add the twig blocks for the date and the tags
+7. Time to add the twig blocks for date and tag fields.  Update your template as follows:
 
    ```php
    {% embed '@training_theme/card/card.twig' with
@@ -142,62 +142,30 @@ We'll break the integration process down so we can explain each part of it. You 
     } only
    %}
 
-    {% block card_date %}
-      {{ date }}
-    {% endblock card_date %}
+     {% block featured_date %}
+     {% endblock featured_date %}
 
-    {% block tags %}
-      {{ tags }}
-    {% endblock tags %}
+     {% block card_date %}
+       {{ date }}
+     {% endblock card_date %}
+
+     {% block tags %}
+       {{ tags }}
+     {% endblock tags %}
    {% endembed %}
    ```
 
-   Mapping each of the components with Drupal's equivalent fields is only half the job. At least for the date and tags fields in this case. By using Twig blocks we can explicitly declare the data we want to render in the cards. If you remember, we created two twig blocks for the date field. One for the regular card and one for the card wide. Twig blocks in the embed statement above let us pick which of the two we want to use. The one not used above will be completely ignored when Drupal renders the card.
-
-### Rendering blog nodes as cards in Drupal
-
-Now that the card integration is complete, let's take a look at how the blog nodes look in Drupal.
-
-1. After saving all your changes to **node--blog--teaser.html.twig**, clear Drupal's cache
-2. Reload the homepage
-
-### Custom date formats
-
-The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all.  Let's fix these two issues.
-
-1. In Drupal, click on **Configuration &gt; Regional and language &gt; Date and time formats**
-2. Click **Edit** next to **Default long date**
-3. In the **Format string** field, update its value with `l, F j, Y`
-4. Click **Save format**
-5. Repeat these steps with **Default short date** and replace its value with `F j`
-6. Save your changes.
-
-## Update the date format in the teaser template
-
-Now that we've updated Drupal's date formats, let's make use of one of them. We will use the other one when we integrate the card wide variant.
-
-1. Add the following code in `node--blog--teaser.html.twig`
-
-{% tabs %}
-{% tab title="node--blog--teaser.html.twig" %}
-```php
-{% set date = node.createdtime|format_date('long') %}
-```
-{% endtab %}
-{% endtabs %}
-
-* We are setting a variable for date to change its format to the **long** format we just setup.
+   * Mapping each of the components with Drupal's equivalent fields is only half the job. At least for the date and tags fields in this case. By using Twig blocks we can explicitly declare the data we want to render in the cards. 
+   * If you remember, we created two twig blocks for the date field. One for the regular card and one for the card wide. Twig blocks in the embed statement above let us pick which of the two we want to use. 
+   * We start by declaring the `featured_date` twig block but we leave it empty.  This means Drupal will not output any content for that block.  Since the featured\_date is only used in the card wide, we don't need to render it in the regular card.
+   * Next we declare the `card_date` twig block to print the date information.
+   * Finally we declare the `tags` twig block to render the tags.
 
 ### Full integration code
 
-Now the full integration template should look like below. Clear Drupal's cache again and reload the homepage. The date format on the articles using the card should now match our designs.
-
 {% tabs %}
 {% tab title="node--blog--teaser.html.twig" %}
 ```php
-{# Sets date variable to change to short format. #}
-{% set date = node.createdtime|format_date('long') %}
-
 {# Sets variable to trigger content render array. #}
 {% set rendered_content = content|render %}
 
@@ -240,12 +208,12 @@ and make use of twig blocks found in such component.
   {% block featured_date %}
   {% endblock featured_date %}
 
-  {# Calls card_date twig block.#}
+  {# Calls card_date twig block. #}
   {% block card_date %}
     {{ date }}
   {% endblock card_date %}
 
-  {# Calls tags twig block.#}
+  {# Outputs tags. #}
   {% block tags %}
     {{ tags }}
   {% endblock tags %}
@@ -254,5 +222,14 @@ and make use of twig blocks found in such component.
 {% endtab %}
 {% endtabs %}
 
-This was quite the exercise, but unfortunately, we're not done with the Card integration.  If you look at the homepage you will notice that the Card's tags are not styled at all.  Let's fix this.
+### Rendering blog nodes as cards in Drupal
+
+Now that the card integration is complete, let's take a look at how the blog nodes look in Drupal.
+
+1. After saving all your changes to **node--blog--teaser.html.twig**, clear Drupal's cache
+2. Reload the homepage
+
+### Date format issue
+
+The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all.  Let's fix these two issues.
 
