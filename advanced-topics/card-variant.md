@@ -122,13 +122,13 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * In your editor, open `card.twig` and at around line 7 \(your line numbers may vary\), we need to add a twig block for the date which in the Card wide variant is displayed on the top left corner of the card over a navy blue corner chip..  Add the following code snippet directly after the `{{ title_suffix }}` line:
 
 ```php
-{% block featured_date %}
-  {% if view_mode == 'featured' %}
+{% if 'card--wide' in modifier %}
+  {% block featured_date %}
     <div class="card__featured--date">
       {{ date }}
     </div>
-  {% endif %}
-{% endblock featured_date %}
+  {% endblock featured_date %}
+{% endif %}
 ```
 
 * First we are checking whether the value of the `modifier` variable is `card--wide`, or if the Drupal view mode we are using is `featured`.  This will ensure that only if one of this conditions is met we will be able to access this twig block.  
@@ -141,13 +141,13 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * Next, we need to repeat the process above for printing the date on the non-wide card.  Having twig blocks for each date on each card variant will help us be more explicit about where we want to print each of the dates based on the card type we are working with.  Modify the existing date field to look like this:
 
 ```php
-{% block card_date %}
-  {% if not view_mode == 'featured' %}
-    <div class="eyebrow card__date">
-      {{ date }}
-    </div>
-  {% endif %}
-{% endblock card_date %}
+{% if 'card--wide' not in modifier %}
+  {% block card_date %}
+      <div class="eyebrow card__date">
+        {{ date }}
+      </div>
+  {% endblock card_date %}
+{% endif %}
 ```
 
 * The conditional statement above is checking that the view\_mode's value is not `featured`.  If so, it will print the date directly under the card's title.
@@ -178,13 +178,15 @@ If you are wondering why are we placing the code snippets in those very location
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{% if tags %}
-  {%
-    include '@training_theme/tags/tags.twig' with {
-      "items": tags
-    } only
-  %}
-{% endif %}
+{% block tags %}
+  {% if tags %}
+    {%
+      include '@training_theme/tags/tags.twig' with {
+        "items": tags
+      } only
+    %}
+  {% endif %}
+{% endblock tags %}
 ```
 {% endtab %}
 {% endtabs %}
@@ -218,18 +220,19 @@ If you are wondering why are we placing the code snippets in those very location
 ```php
 {{ attach_library('training_theme/card') }}
 
-<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
+<article class="card{{ modifier ? ' ' ~ modifier }}
+  {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
   {# Date for featured content cards. #}
-  {% block featured_date %}
-    {% if view_mode == 'featured' %}
+  {% if 'card--wide' in modifier %}
+    {% block featured_date %}
       <div class="card__featured--date">
         {{ date }}
       </div>
-    {% endif %}
-  {% endblock featured_date %}
+    {% endblock featured_date %}
+  {% endif %}
 
   {% if image %}
     <div class="card__media">
@@ -245,13 +248,13 @@ If you are wondering why are we placing the code snippets in those very location
       %}
     {% endif %}
 
-    {% block card_date %}
-      {% if not view_mode == 'featured' %}
-        <div class="eyebrow card__date">
-          {{ date }}
-        </div>
-      {% endif %}
-    {% endblock card_date %}
+    {% if 'card--wide' not in modifier %}
+      {% block card_date %}
+          <div class="eyebrow card__date">
+            {{ date }}
+          </div>
+      {% endblock card_date %}
+    {% endif %}
 
     {% if category %}
       <div class="eyebrow card__category">

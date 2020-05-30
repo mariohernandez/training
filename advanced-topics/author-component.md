@@ -88,15 +88,15 @@ Let's update the card component so we make use of the newly built Author compone
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{% if author %}
-  {%
-    include '@training_theme/author/author.twig' with {
-      "photo": author.photo,
-      "name": author.name,
-      "title": author.title
-    } only
-  %}
-{% endif %}
+{% block author %}
+  {% if author %}
+    {%
+      include '@training_theme/author/author.twig' with {
+        "author": author
+      } only
+    %}
+  {% endif %}
+{% endblock author %}
 ```
 {% endtab %}
 {% endtabs %}
@@ -116,18 +116,19 @@ Windows users may need to run the two commands above separately \(`npm run build
 ```php
 {{ attach_library('training_theme/card') }}
 
-<article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
+<article class="card{{ modifier ? ' ' ~ modifier }}
+  {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
   {# Date for featured content cards. #}
-  {% block featured_date %}
-    {% if view_mode == 'featured' %}
+  {% if 'card--wide' in modifier %}
+    {% block featured_date %}
       <div class="card__featured--date">
         {{ date }}
       </div>
-    {% endif %}
-  {% endblock featured_date %}
+    {% endblock featured_date %}
+  {% endif %}
 
   {% if image %}
     <div class="card__media">
@@ -143,13 +144,13 @@ Windows users may need to run the two commands above separately \(`npm run build
       %}
     {% endif %}
 
-    {% block card_date %}
-      {% if not view_mode == 'featured' %}
-        <div class="eyebrow card__date">
-          {{ date }}
-        </div>
-      {% endif %}
-    {% endblock card_date %}
+    {% if 'card--wide' not in modifier %}
+      {% block card_date %}
+          <div class="eyebrow card__date">
+            {{ date }}
+          </div>
+      {% endblock card_date %}
+    {% endif %}
 
     {% if category %}
       <div class="eyebrow card__category">
@@ -173,15 +174,15 @@ Windows users may need to run the two commands above separately \(`npm run build
       {% endif %}
     {% endblock tags %}
 
-    {% if author %}
-      {%
-        include '@training_theme/author/author.twig' with {
-          "photo": author.photo,
-          "name": author.name,
-          "title": author.title
-        } only
-      %}
-    {% endif %}
+    {% block author %}
+      {% if author %}
+        {%
+          include '@training_theme/author/author.twig' with {
+            "author": author
+          } only
+        %}
+      {% endif %}
+    {% endblock author %}
   </div>
 </article>
 ```
