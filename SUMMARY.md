@@ -12,14 +12,14 @@
 * [Drupal Attributes](getting-started/drupal-attributes.md)
 * [Twig Blocks](getting-started/twig-blocks.md)
 
-## Basics
+## Basic Components
 
 * [Global styles](basics/global-styles.md)
 * [Heading Component](basics/heading/README.md)
   * [Improving the Heading](basics/heading/improving-the-heading.md)
 * [Button Component](basics/button.md)
 
-## Component Lifecycle
+## A component's lifecycle
 
 * [Hero Component](component-lifecycle/hero.md)
 * [Include statements](component-lifecycle/includes.md)
@@ -33,7 +33,7 @@
 * [Drupal Libraries](component-lifecycle/drupal-libraries.md)
 * [Hero Image styles](component-lifecycle/image-styles.md)
 
-## Advanced Topics
+## Card component
 
 * [Card Component](advanced-topics/card.md)
 * [Component Variants](advanced-topics/component-variants.md)
@@ -45,6 +45,7 @@
 * [Blog content type](drupal-site-building/blog-content-type.md)
 * [View modes](drupal-site-building/view-modes.md)
 * [Drupal Views](drupal-site-building/drupal-views.md)
+* [Author](drupal-site-building/author.md)
 * [Generate content](drupal-site-building/generate-content.md)
 
 ## Drupal Integrations
@@ -53,7 +54,7 @@
   * [Date formats](drupal-integrations/integrating-the-card/date-formats.md)
   * [Taxonomy terms](drupal-integrations/integrating-the-card/taxonomy-terms.md)
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
-* [Author](drupal-integrations/author.md)
+* [Author integration](drupal-integrations/author.md)
 * [From our blog](drupal-integrations/from-our-blog.md)
 * [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
 * [Featured Content](drupal-integrations/featured-content-list.md)
@@ -64,15 +65,12 @@
 * [Blog image styles](final-components-and-integration/blog-image-styles.md)
 * [Blog detail page](final-components-and-integration/blog.md)
 
-## Extras \(work in progress\)
+## Extras
 
 * [Hook alter](extras-work-in-progress/hook-alter.md)
-* [Quote Component](extras-work-in-progress/quote.md)
-* [Integrating the Quote](extras-work-in-progress/integrating-the-quote.md)
 * [Menu](extras-work-in-progress/menu.md)
 * [Adding webfonts](extras-work-in-progress/adding-webfonts.md)
 
 ## Resources
 
 * [Resources](resources/resources.md)
-

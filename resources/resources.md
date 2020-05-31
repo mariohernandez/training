@@ -25,6 +25,8 @@
 
 * [Responsive Images](https://cloudfour.com/thinks/responsive-images-101-definitions/)
 * [BEM 101](https://css-tricks.com/bem-101/)
+* [Building and integrating drupal menus](https://www.mediacurrent.com/blog/building-and-integrating-menu-drupal/)
+* [A walkthrough of the Theme Generator](https://www.youtube.com/watch?v=cVyA2v-UwSQ&feature=youtu.be)
 
 ## Screencasts/Video Tutorials
 
@@ -39,4 +41,3 @@
 
 * [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
 * [Aspect ratio calculator](https://calculateaspectratio.com/)
-
