@@ -14,24 +14,24 @@
 
 ## Basic Components
 
-* [Global styles](basics/global-styles.md)
-* [Heading Component](basics/heading.md)
-  * [Improving the Heading](basics/improving-the-heading.md)
-* [Button Component](basics/button.md)
+* [Global styles](basic-components/global-styles.md)
+* [Heading Component](basic-components/heading/README.md)
+  * [Improving the Heading](basic-components/heading/improving-the-heading.md)
+* [Button Component](basic-components/button.md)
 
 ## A component's lifecycle
 
-* [Hero Component](component-lifecycle/hero.md)
-* [Include statements](component-lifecycle/includes.md)
-* [Drupal prep](component-lifecycle/drupal-prep.md)
-* [Building the Hero in Drupal](component-lifecycle/hero-paragraph-type.md)
-* [Homepage content type](component-lifecycle/homepage-content-type.md)
-* [Drupal cache & twig debugging](component-lifecycle/cache-debug.md)
-* [Twig template suggestions](component-lifecycle/twig-template-suggestions.md)
-* [Getting field values](component-lifecycle/field-values.md)
-* [Integrating the Hero](component-lifecycle/integrating-hero.md)
-* [Drupal Libraries](component-lifecycle/drupal-libraries.md)
-* [Hero Image styles](component-lifecycle/image-styles.md)
+* [Hero Component](a-components-lifecycle/hero.md)
+* [Include statements](a-components-lifecycle/includes.md)
+* [Drupal prep](a-components-lifecycle/drupal-prep.md)
+* [Building the Hero in Drupal](a-components-lifecycle/hero-paragraph-type.md)
+* [Homepage content type](a-components-lifecycle/homepage-content-type.md)
+* [Drupal cache & twig debugging](a-components-lifecycle/cache-debug.md)
+* [Twig template suggestions](a-components-lifecycle/twig-template-suggestions.md)
+* [Getting field values](a-components-lifecycle/field-values.md)
+* [Integrating the Hero](a-components-lifecycle/integrating-hero.md)
+* [Drupal Libraries](a-components-lifecycle/drupal-libraries.md)
+* [Hero Image styles](a-components-lifecycle/image-styles.md)
 
 ## Card component
 
@@ -50,9 +50,9 @@
 
 ## Drupal Integrations
 
-* [Integrating the Card](drupal-integrations/card.md)
-  * [Date formats](drupal-integrations/date-formats.md)
-  * [Taxonomy terms](drupal-integrations/taxonomy-terms.md)
+* [Integrating the Card](drupal-integrations/card/README.md)
+  * [Date formats](drupal-integrations/card/date-formats.md)
+  * [Taxonomy terms](drupal-integrations/card/taxonomy-terms.md)
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
 * [Author integration](drupal-integrations/author.md)
 * [From our blog](drupal-integrations/from-our-blog.md)
@@ -71,3 +71,4 @@
 ## Resources
 
 * [Resources](resources/resources.md)
+

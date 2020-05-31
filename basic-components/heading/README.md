@@ -81,3 +81,4 @@ While in your theme's root directory, run the following commands in your command
 The **build** command above compiles all scss, twig and js. files, and should build the new Heading component in Pattern Lab. The **watch** command watches for changes to your code and automatically compiles them. This is great so you don't have to keep compiling your code every time.
 
 At the bottom of the watch command you will notice a list of URLs. In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Heading pattern under components.
+

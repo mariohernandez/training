@@ -1,6 +1,6 @@
 # Featured Content
 
-
+## Featured Content
 
 {% tabs %}
 {% tab title="featured-content.json" %}
@@ -45,8 +45,6 @@
 {% endtab %}
 {% endtabs %}
 
-
-
 {% tabs %}
 {% tab title="featured-content.twig" %}
 ```php
@@ -83,8 +81,6 @@
 {% endtab %}
 {% endtabs %}
 
-
-
 {% tabs %}
 {% tab title="featured-content.scss" %}
 ```css
@@ -108,20 +104,19 @@
 {% endtab %}
 {% endtabs %}
 
-
-# Featured Content List
+## Featured Content List
 
 So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title of "Featured Content" .
 
 ![Featured Content List](../.gitbook/assets/featured-content.jpg)
 
-### Exercise: Build the Featured Content component
+#### Exercise: Build the Featured Content component
 
 Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
 
 This component will be completely different than the ones we've built thus far. All previous components have been a single item, this one will have an unlimited number of items. Let's start
 
-#### Component's stock content
+**Component's stock content**
 
 1. Inside `src/patterns/components`create a new folder called **featured-content**
 2. Inside the _featured-content_ folder create a new file called `featured-content.json`
@@ -254,7 +249,7 @@ There is a lot going on in this file. Let's go over it and you will see that it'
 * At around line 8, we declared an `items` array.  This will help us mimic the array of content to build the collection.
 * Each item in the items array represents a card.  Inside each card item we have defined the card's fields \(`image`, `title`, `body_text`, `cta` \).  We have repeated this 3 times to achieve the collection shown in the Featured Content image above.
 
-#### Component markup
+**Component markup**
 
 So the data is ready, let's go ahead and add the markup for the component.
 
@@ -305,7 +300,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 * **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array of content and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
 * Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
 
-#### Component's styles
+**Component's styles**
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
@@ -338,7 +333,7 @@ TODO: Create mixin below
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
-## Compiling the code to generate the Featured Content
+### Compiling the code to generate the Featured Content
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
@@ -354,20 +349,19 @@ In your browser of choice open the following URL: [http://localhost:3000](http:/
 
 Next, we are going to build the back-end infrastructure in Drupal for this collection. This also will be a unique approach compared to previous components we've built in Drupal.
 
-
-# Featured Content List
+## Featured Content List
 
 So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title of "Featured Content" .
 
 ![Featured Content List](../.gitbook/assets/featured-content.jpg)
 
-### Exercise: Build the Featured Content component
+#### Exercise: Build the Featured Content component
 
 Once the single Card component has been built, it is time to build the collection of Cards as shown in the image above.
 
 This component will be completely different than the ones we've built thus far. All previous components have been a single item, this one will have an unlimited number of items. Let's start
 
-#### Component's stock content
+**Component's stock content**
 
 1. Inside `src/patterns/components`create a new folder called **featured-content**
 2. Inside the _featured-content_ folder create a new file called `featured-content.json`
@@ -500,7 +494,7 @@ There is a lot going on in this file. Let's go over it and you will see that it'
 * At around line 8, we declared an `items` array.  This will help us mimic the array of content to build the collection.
 * Each item in the items array represents a card.  Inside each card item we have defined the card's fields \(`image`, `title`, `body_text`, `cta` \).  We have repeated this 3 times to achieve the collection shown in the Featured Content image above.
 
-#### Component markup
+**Component markup**
 
 So the data is ready, let's go ahead and add the markup for the component.
 
@@ -551,7 +545,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 * **Now, for the first time** we use a `for loop` which is a way for Twig to iterate or loop through an array of content and capture every item in the array.  In this case each item is a card.  For every item we find in the array, we are going to include the Card component and map its fields accordingly.
 * Finally, we close the `loop` and we close the `if` statement to complete the logic of the component.
 
-#### Component's styles
+**Component's styles**
 
 We'll skip styles for now, but let's at least create a Sass file for when we need to write styles.
 
@@ -584,7 +578,7 @@ TODO: Create mixin below
 
 The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
 
-## Compiling the code to generate the Featured Content
+### Compiling the code to generate the Featured Content
 
 While in your theme's root directory, run the following commands in your command line and press **Return**
 
@@ -599,3 +593,4 @@ While in your theme's root directory, run the following commands in your command
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
 Next, we are going to build the back-end infrastructure in Drupal for this collection. This also will be a unique approach compared to previous components we've built in Drupal.
+
