@@ -59,30 +59,32 @@ We created an object called `button` and added several properties or attributes 
 @import '../../global/utils/init';
 
 .button {
-  background-color: #003954;
-  border: 2px solid #003954;
-  color: #ffffff;
+  background-color: $color-navy-blue;
+  border: 2px solid $color-navy-blue;
+  color: $color-white;
   display: inline-block;
-  font-size: 16px;
   line-height: 1.3;
   padding: 15px 40px;
   text-transform: uppercase;
   text-decoration: none;
 
+  // Hover and focus states for base button
   &:hover,
   &:focus {
-    color: #ffffff;
+    color: $color-white;
   }
 
+  // Styles for white button with gray outline.
   &.button--ghost {
     background-color: transparent;
-    border: 2px solid #444444;
-    color: #444444;
+    border: 2px solid $color-gray-dark;
+    color: $color-gray-dark;
     padding: 8px 30px;
 
+    // Hover and focus styles for ghost button.
     &:hover,
     &:focus {
-      color: #444444;
+      color: $color-gray-dark;
     }
   }
 }

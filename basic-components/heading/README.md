@@ -35,7 +35,7 @@ On a typical Drupal project the full path may look something like this: `<projec
 
 ```yaml
 {
-  "title": "Welcome to the best training workshop!"
+  "title": "Welcome to Mediacurrent training!"
 }
 ```
 
