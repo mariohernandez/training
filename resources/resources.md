@@ -32,13 +32,11 @@
 
 * [A Walkthrough of Mediacurrent's Theme Generator](https://www.youtube.com/watch?v=cVyA2v-UwSQ)
 
-## Tools
+## Tools and Utilities
 
 * [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
 * [Pattern Lab](https://patternlab.io/)
-
-## Misc
-
+* [Free stock image from Unsplash.com](https://unsplash.com/)
 * [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
 * [Aspect ratio calculator](https://calculateaspectratio.com/)
 
