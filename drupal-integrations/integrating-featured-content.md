@@ -42,5 +42,7 @@ In this case we will only create one view template suggestion, only for the Feat
 * Save your changes and clear Drupal's cache.
 * Reload the homepage and you should see the **Featured content** section nicely styled.
 
+If we look at the homepage we can see all the content is displaying as expected with the exception of the images in the two types of cards.  We are going to fix this so all images for each type of card display consistent width and height.  We are going to use the power of images styles, responsive image styles, and view modes.  Let's do this now.
+
 
 

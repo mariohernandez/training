@@ -61,6 +61,7 @@
 
 ## Final components and integration
 
+* [Blog image styles](final-components-and-integration/blog-image-styles.md)
 * [Blog landing page](final-components-and-integration/blog.md)
 
 ## Extras \(work in progress\)
