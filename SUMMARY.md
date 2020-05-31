@@ -15,8 +15,8 @@
 ## Basic Components
 
 * [Global styles](basics/global-styles.md)
-* [Heading Component](basics/heading/README.md)
-  * [Improving the Heading](basics/heading/improving-the-heading.md)
+* [Heading Component](basics/heading.md)
+  * [Improving the Heading](basics/improving-the-heading.md)
 * [Button Component](basics/button.md)
 
 ## A component's lifecycle
@@ -35,10 +35,10 @@
 
 ## Card component
 
-* [Card Component](advanced-topics/card.md)
-* [Component Variants](advanced-topics/component-variants.md)
-* [Card Variant](advanced-topics/card-variant.md)
-* [Author component](advanced-topics/author-component.md)
+* [Card Component](card-component/card.md)
+* [Component Variants](card-component/component-variants.md)
+* [Card Variant](card-component/card-variant.md)
+* [Author component](card-component/author-component.md)
 
 ## Drupal site building
 
@@ -50,26 +50,23 @@
 
 ## Drupal Integrations
 
-* [Integrating the Card](drupal-integrations/integrating-the-card/README.md)
-  * [Date formats](drupal-integrations/integrating-the-card/date-formats.md)
-  * [Taxonomy terms](drupal-integrations/integrating-the-card/taxonomy-terms.md)
+* [Integrating the Card](drupal-integrations/card.md)
+  * [Date formats](drupal-integrations/date-formats.md)
+  * [Taxonomy terms](drupal-integrations/taxonomy-terms.md)
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
 * [Author integration](drupal-integrations/author.md)
 * [From our blog](drupal-integrations/from-our-blog.md)
 * [Integrating From our blog](drupal-integrations/integrating-from-our-blog.md)
-* [Featured Content](drupal-integrations/featured-content-list.md)
+* [Featured Content](drupal-integrations/featured-content.md)
 * [Integrating Featured Content](drupal-integrations/integrating-featured-content.md)
-
-## Final components and integration
-
-* [Blog image styles](final-components-and-integration/blog-image-styles.md)
-* [Blog detail page](final-components-and-integration/blog.md)
+* [Blog image styles](drupal-integrations/blog-image-styles.md)
+* [Blog detail page](drupal-integrations/blog.md)
 
 ## Extras
 
-* [Hook alter](extras-work-in-progress/hook-alter.md)
-* [Menu](extras-work-in-progress/menu.md)
-* [Adding webfonts](extras-work-in-progress/adding-webfonts.md)
+* [Hook alter](extras/hook-alter.md)
+* [Menu](extras/menu.md)
+* [Adding webfonts](extras/adding-webfonts.md)
 
 ## Resources
 
