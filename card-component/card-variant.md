@@ -83,11 +83,11 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% tab title="card~wide.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/360x450' alt='Women running' />",
+  "image": "<img src='https://source.unsplash.com/ny6qxqv_m04/400x520' alt='Women running' />",
   "title": {
     "heading_level": "2",
     "modifier": "card__title",
-    "title": "Level up your game",
+    "title": "Beauty of mother nature",
     "url": "#"
   },
   "date": "Mar 16",

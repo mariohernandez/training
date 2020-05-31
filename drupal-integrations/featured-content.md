@@ -14,30 +14,40 @@
   },
   "items": [
     {
-      "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/640x360' alt='Man doing yoga' />",
+      "image": "<img src='https://source.unsplash.com/EwKXn5CapA4/400x520' alt='Man doing yoga' />",
       "title": {
         "heading_level": "3",
-        "modifier": "",
+        "modifier": "card__title",
         "title": "The beauty of nature",
         "url": "#"
       },
       "date": "Jun 25",
-      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-      "author": "<div class=\"author__photo\"><img src=\"https://source.unsplash.com/qzDF5PNEWKc/180x180\" alt=\"Author\"s headshot\" /></div><div class=\"author__name\"><span>Valentina Delgado</span><span>Digital Strategist</span></div>",
-      "modifier": "card--wide"
+      "category": "Sports",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sgittis lacus vel augue laoreet.",
+      "author": {
+        "photo": "<img src='https://source.unsplash.com/_cvwXhGqG-o/100x100' alt='Author's headshot' />",
+        "name": "Valentina De Leon",
+        "title": "Digital Strategist"
+      },
+      "modifier": "card--wide featured-content__card"
     },
     {
-      "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
+      "image": "<img src='https://source.unsplash.com//a8lTjWJJgLA/400x520' alt='Tech gadgets' />",
       "title": {
         "heading_level": "3",
-        "modifier": "",
+        "modifier": "card__title",
         "title": "The beauty of nature",
         "url": "#"
       },
       "date": "Sep 27",
-      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.",
-      "author": "<div class=\"author__photo\"><img src=\"https://source.unsplash.com/qzDF5PNEWKc/180x180\" alt=\"Author\"s headshot\" /></div><div class=\"author__name\"><span>Valentina Delgado</span><span>Digital Strategist</span></div>",
-      "modifier": "card--wide"
+      "category": "Lifestyle",
+      "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sgittis lacus vel augue laoreet.",
+      "author": {
+        "photo": "<img src='https://source.unsplash.com/_cvwXhGqG-o/100x100' alt='Author's headshot' />",
+        "name": "Valentina De Leon",
+        "title": "Digital Strategist"
+      },
+      "modifier": "card--wide featured-content__card"
     }
   ]
 }
