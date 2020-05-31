@@ -74,8 +74,9 @@ body {
 }
 
 // Mixin for adding consistent spacing on components.
-@mixin component-spacing($margin: 100px) {
+@mixin component-spacing($margin: 100px, $max-width: 1900px) {
 	margin: 0 auto $margin;
+  max-width: $max-width;
 }
 ```
 {% endtab %}

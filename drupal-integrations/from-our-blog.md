@@ -228,7 +228,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 @import '../../global/utils/init';
 
 .from-our-blog  {
-  max-width: 1440px;
+  @include component-spacing;
   padding: 0 20px;
 
   @media screen and (min-width: $bp-xl) {

@@ -89,16 +89,41 @@
 
 .featured-content {
   @include component-spacing;
+  background-color: $color-gray-light;
+  padding: 0 20px 40px;
+
+  @include breakpoint($bp-md) {
+    padding-bottom: 100px;
+  }
 }
 
+// On mobile cards are displayed
+// vertically as a group.
 .featured-content__items {
+  align-items: center;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+
+  // On larger screens cards are displayed
+  // horizontally as a group.
+  @media screen and (min-width: $bp-lg) {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .featured-content__card {
-  flex: 0 0 22%;
-  max-width: 400px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $bp-xl) {
+    flex: 0 0 45%;
+    margin-bottom: 0;
+  }
+}
+
+.featured-content__cta {
+  margin: 50px auto 0;
+  text-align: center;
 }
 ```
 {% endtab %}
