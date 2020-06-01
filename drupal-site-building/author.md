@@ -38,7 +38,7 @@ We'll create a new view mode to control which user's fields we can display.
 
 ## Remove the link from the User's image
 
-1. While still in the People Account Settings screen, click the gear icon to the right of the Image field
+1. While still in the People Account Settings screen, click the cogwheel icon to the right of the Image field
 2. Change the **Link image to** dropdown to **Nothing**
 3. Click the **Update** button
 4. Click the **Save** button
@@ -48,7 +48,7 @@ We'll create a new view mode to control which user's fields we can display.
 1. Go to Blog content type's manage display screen \(**Structure &gt; Content types &gt; Blog &gt; Manage display**\)
 2. Click the **Featured** view mode
 3. For the Author field, ensure **Rendered entity** is set as the format
-4. Click the little gear icon to the right of the Author field
+4. Click the little cogwheel icon to the right of the Author field
 5. Change the view mode to **Author**
 6. Click the **Update** then **Save** buttons
 

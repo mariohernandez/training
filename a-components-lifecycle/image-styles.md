@@ -67,7 +67,7 @@ Now that image styles and responsive image styles are in place, we need to confi
 10. Click **Hero** from the list of view modes
 11. Ensure **Image** is the only field outside of the _Disabled_ group
 12. Change the FORMAT from _Image_ to **Responsive Image**
-13. Click the gear icon on the right of the page, next to _Select a responsive image style_
+13. Click the cogwheel icon on the right of the page, next to _Select a responsive image style_
 14. Under **Responsive Image Style** select **Hero**
 15. Click the **Update** button then the **Save** button
 
@@ -76,7 +76,7 @@ By creating a view mode for the Image Media Entity we can define configurations 
 ## Exercise: Configure the Hero image field Part 2
 
 1. From Drupal's admin toolbar click **Structure \| Paragraph types \| Hero \| Manage display**
-2. Identify the **Image** field in the table and click the gear icon located all the way to the right of the image field
+2. Identify the **Image** field in the table and click the cogwheel icon located all the way to the right of the image field
 3. Under **View mode** select **Hero**
 4. Click the **Update** button then the **Save** button
 

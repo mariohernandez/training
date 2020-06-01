@@ -34,9 +34,9 @@ Managing fields with view modes ensures we are letting Drupal do things the way 
 2. Click the **Featured** view mode
 3. Drag the **Tags** and **Links** fields into the **Disabled** section.  Tags are not needed in Card Wide.
 4. Change each of the field's labels to **Hidden**
-5. For the **Body** field, change the Format to **Trimmed** and change the **Trim limit** to 100 characters by clicking the gear icon to the right of the body field
+5. For the **Body** field, change the Format to **Trimmed** and change the **Trim limit** to 100 characters by clicking the cogwheel icon to the right of the body field
 6. Click the **Update** button
-7. For the **Author** field ensure its format is set to **Rendered entity** and select **Custom** as the view mode by clicking the gear to the right of the field
+7. For the **Author** field ensure its format is set to **Rendered entity** and select **Custom** as the view mode by clicking the cogwheel to the right of the field
 8. Click the **Update** button
 9. We'll comeback to configuring the image field with the right image styles later on
 10. Click the **Save** button

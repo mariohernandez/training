@@ -59,7 +59,7 @@ Since we are using media reference as the field for the blog images, we are goin
 10. Click **Blog teaser** from the list of view modes
 11. Ensure **Image** is the only field outside of the _Disabled_ group
 12. Change the FORMAT from _Image_ to **Responsive Image**
-13. Click the gear icon on the right of the page, next to _Select a responsive image style_
+13. Click the cogwheel icon on the right of the page, next to _Select a responsive image style_
 14. Under **Responsive Image Style** select **Blog teaser**
 15. Click the **Update** button then the **Save** button
 16. Repeat steps 10 through 15 with the **Blog featured** view mode
@@ -72,7 +72,7 @@ Now that we have image styles, responsive image styles, and have set up view mod
 
 1. From Drupal's admin toolbar click **Structure \| Content types \| Blog \| Manage display**
 2. Click the **Teaser** view mode
-3. Identify the **Image** field in the table and click the gear icon located all the way to the right of the image field
+3. Identify the **Image** field in the table and click the cogwheel icon located all the way to the right of the image field
 4. Under **View mode** select **Blog teaser**
 5. Click the **Update** button then the **Save** button
 6. Repeat these steps with the **Featured** view mode and use the **Blog featured** view mode for the image.
