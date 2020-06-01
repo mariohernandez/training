@@ -260,11 +260,11 @@ $color-gray-lt: #65737e;
 $color-gray-xlt: #a7adba;
 
 // Misc
-$color-catskill-white : #edf2f7;
-$color-error : #f00;
-$color-success : #089e00;
-$color-warning : #fff664;
-$color-info : #000db5;
+$color-catskill-white: #edf2f7;
+$color-error: #f00;
+$color-success: #089e00;
+$color-warning: #fff664;
+$color-info: #000db5;
 $color-gray-mid:  #cccccc;
 $color-gray-lt: #444444;
 $color-gray-xlt: #131313;
