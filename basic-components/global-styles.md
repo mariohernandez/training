@@ -248,7 +248,7 @@ $color-white: #fff;
 $color-black: #1b2b34;
 
 // Primary.
-$color-navy-blue : #003954;
+$color-navy-blue: #003954;
 
 // Grays.
 $color-gray: #808080;
@@ -269,6 +269,8 @@ $color-gray-mid:  #cccccc;
 $color-gray-lt: #444444;
 $color-gray-xlt: #131313;
 $color-tan-hide: #f99157;
+$color-gray-dk: #444444;
+$color-danube: $color-navy-blue;
 ```
 {% endtab %}
 {% endtabs %}
@@ -284,4 +286,3 @@ $bp-max: 1900px;
 ```
 {% endtab %}
 {% endtabs %}
-
