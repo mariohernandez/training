@@ -71,8 +71,6 @@ By now we should be well familiar with the fields structure above. The one field
 
 <article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
-  {{ title_prefix }}
-  {{ title_suffix }}
 
   {% if image %}
     <div class="card__media">
@@ -81,11 +79,13 @@ By now we should be well familiar with the fields structure above. The one field
   {% endif %}
   <div class="card__content">
     {% if title %}
+      {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
           heading: title
         } only
       %}
+      {{ title_suffix }}
     {% endif %}
 
     {% if date %}
@@ -138,7 +138,7 @@ Don't forget to create and attach the Card's library.
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  max-width: 340px;
+  max-width: 320px;
   position: relative;
 
   @media screen and (min-width: $bp-md) {

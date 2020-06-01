@@ -10,9 +10,11 @@ As we just saw, the Card wide variant uses some information from the article aut
 {% tab title="author.json" %}
 ```php
 {
-  "photo": "<img src='https://source.unsplash.com/_cvwXhGqG-o/100x100' alt='Author's headshot' />",
-  "name": "Valentina De Leon",
-  "title": "Digital Strategist"
+  "author": {
+    "photo": "<img src='https://source.unsplash.com/_cvwXhGqG-o/100x100' alt='Author's headshot' />",
+    "name": "Valentina De Leon",
+    "title": "Digital Strategist"
+  }
 }
 ```
 {% endtab %}
@@ -27,10 +29,10 @@ As we just saw, the Card wide variant uses some information from the article aut
   {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   <div class="author__meta">
-    <div class="author__name">{{ name }}</div>
-    <div class="author__title">{{ title }}</div>
+    <div class="author__name">{{ author.name }}</div>
+    <div class="author__title">{{ author.title }}</div>
   </div>
-  <div class="author__photo">{{ photo }}</div>
+  <div class="author__photo">{{ author.photo }}</div>
 </div>
 ```
 {% endtab %}
@@ -73,6 +75,7 @@ As we just saw, the Card wide variant uses some information from the article aut
 .author__title {
   font-style: italic;
 }
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -119,8 +122,7 @@ Windows users may need to run the two commands above separately \(`npm run build
 <article class="card{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
-  {{ title_prefix }}
-  {{ title_suffix }}
+
   {# Date for featured content cards. #}
   {% if 'card--wide' in modifier %}
     {% block featured_date %}
@@ -137,13 +139,16 @@ Windows users may need to run the two commands above separately \(`npm run build
   {% endif %}
   <div class="card__content">
     {% if title %}
+      {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
           heading: title
         } only
       %}
+      {{ title_suffix }}
     {% endif %}
 
+    {# Date for featured content cards. #}
     {% if 'card--wide' not in modifier %}
       {% block card_date %}
           <div class="eyebrow card__date">

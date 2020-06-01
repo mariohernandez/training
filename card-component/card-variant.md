@@ -201,10 +201,10 @@ If you are wondering why are we placing the code snippets in those very location
 {% if author %}
   <div class="author">
     <div class="author__meta">
-      <div class="author__name">{{ name }}</div>
-      <div class="author__title">{{ title }}</div>
+      <div class="author__name">{{ author.name }}</div>
+      <div class="author__title">{{ author.title }}</div>
     </div>
-    <div class="author__photo">{{ photo }}</div>
+    <div class="author__photo">{{ author.photo }}</div>
   </div>
 {% endif %}
 ```
@@ -223,8 +223,7 @@ If you are wondering why are we placing the code snippets in those very location
 <article class="card{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
-  {{ title_prefix }}
-  {{ title_suffix }}
+
   {# Date for featured content cards. #}
   {% if 'card--wide' in modifier %}
     {% block featured_date %}
@@ -241,11 +240,13 @@ If you are wondering why are we placing the code snippets in those very location
   {% endif %}
   <div class="card__content">
     {% if title %}
+      {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
           heading: title
         } only
       %}
+      {{ title_suffix }}
     {% endif %}
 
     {% if 'card--wide' not in modifier %}
@@ -281,14 +282,15 @@ If you are wondering why are we placing the code snippets in those very location
     {% if author %}
       <div class="author">
         <div class="author__meta">
-          <div class="author__name">{{ name }}</div>
-          <div class="author__title">{{ title }}</div>
+          <div class="author__name">{{ author.name }}</div>
+          <div class="author__title">{{ author.title }}</div>
         </div>
-        <div class="author__photo">{{ photo }}</div>
+        <div class="author__photo">{{ author.photo }}</div>
       </div>
     {% endif %}
   </div>
 </article>
+
 ```
 {% endtab %}
 {% endtabs %}
