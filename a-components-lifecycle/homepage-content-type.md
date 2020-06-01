@@ -10,7 +10,7 @@ We'll build a new content type which we will use to build the homepage with all 
 4. Click the **Save and manage fields** button at the bottom of the page
 5. Delete the **body** field
 
-### Adding the paragraph type to the Homepage content type
+### Adding the Hero paragraph type to the Homepage content type
 
 1. While still in the Homepage content type, click the **Add field** button
 2. Under the _Add a new field_ dropdown, scroll to the **Reference Revisions** section and select **Paragraph**

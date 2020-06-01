@@ -154,11 +154,10 @@ body {
 }
 
 // Mixin for adding consistent spacing on components.
-@mixin component-spacing($margin: 100px, $max-width: 1900px) {
+@mixin component-spacing($margin: 100px) {
 	margin: 0 auto $margin;
-  max-width: $max-width;
+  max-width: $bp-max;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -270,6 +269,18 @@ $color-gray-mid:  #cccccc;
 $color-gray-lt: #444444;
 $color-gray-xlt: #131313;
 $color-tan-hide: #f99157;
+```
+{% endtab %}
+{% endtabs %}
+
+### Breakpoints
+
+Add the following breakpoint to the existing list of breakpoints in `src/global/utils/_breakpoints.scss`
+
+{% tabs %}
+{% tab title="\_breakpoints.scss" %}
+```css
+$bp-max: 1900px;
 ```
 {% endtab %}
 {% endtabs %}
