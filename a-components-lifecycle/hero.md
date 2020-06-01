@@ -30,7 +30,7 @@ Based on the design above, we need the following fields:
   "heading": {
     "heading_level": "1",
     "modifier": "hero__title",
-    "title": "Leveling up",
+    "title": "Today's trends",
     "url": ""
   },
   "cta": {
