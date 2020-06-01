@@ -43,4 +43,37 @@ A fully functional Drupal 8 theme which includes all code in this training [can 
 * [Free stock image from Unsplash.com](https://unsplash.com/)
 * [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
 * [Aspect ratio calculator](https://calculateaspectratio.com/)
+* [Font sizing with REM](https://snook.ca/archives/html_and_css/font-size-with-rem)
 
+## Snippets
+
+### Create hook alter for user template suggestons
+```php
+/**
+ * Implements hook_theme_suggestions_user_alter().
+ *
+ *   An array of alternate, more specific names for template files or theme
+ *   functions for users.
+ */
+function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook) {
+  // Define the view mode.
+  $mode = $vars['elements']['#view_mode'];
+  // Create a theme hook suggestion which has the view mode name in it.
+  $suggestions[] = 'user__' . $mode;
+}
+```
+
+### Fixing 403 Forbidden error in Pattern Lab
+
+* Create an `.htaccess` file in the root of your theme with the following code:  \(Some have reported the file should be inside the `patternlab` directory.  Try the theme's room first and recompile your theme).
+```php
+<FilesMatch "\.(twig)$">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+  </IfModule>
+</FilesMatch>
+```
