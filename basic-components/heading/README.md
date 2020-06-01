@@ -64,9 +64,46 @@ We don't need to write any CSS for this component, but let's at least create a S
 ```css
 // Import site utilities
 @import '../../global/utils/init';
+
+.heading {
+  color: $color-gray;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.section-header {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $bp-lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  // Styles for extra large headings.
+  &.heading--large {
+    color: $color-gray;
+    font-size: 3rem;
+    text-align: center;
+
+    @media screen and (min-width: $bp-sm) {
+      font-size: 4rem;
+    }
+
+    @media screen and (min-width: $bp-md) {
+      font-size: 6rem;
+    }
+  }
+}
+
+// Removes underline when headings are links.
+.heading a {
+  text-decoration: none;
+}
 ```
 
-The code above simply imports global utilities from our theme which will be needed as we start writing styles in Sass. More on this later.
+* First we import the theme's utilities so we have access to any Sass variables, mixins, breakpoints, etc.  We will do the with every new stylesheet we create.
+* The remaining code are styles for the heading which include styles for when we need to style headings differently.  Moe on this later.
 
 ## Compiling the code
 

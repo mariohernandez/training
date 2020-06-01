@@ -29,18 +29,98 @@ body {
 {% tabs %}
 {% tab title="\_mixins.csss" %}
 ```css
+// Mixins.
+
+// Headings mixins
+@mixin heading1 {
+  font-size: 3rem;
+
+  @include breakpoint($bp-md) {
+    font-size: 3.6rem;
+  }
+}
+
+@mixin heading2 {
+  font-size: 2.4rem;
+
+  @include breakpoint($bp-md) {
+    font-size: 3rem;
+  }
+}
+
+@mixin heading3 {
+  font-size: 2.1rem;
+
+  @include breakpoint($bp-md) {
+    font-size: 2.4rem;
+  }
+}
+
+@mixin heading4 {
+  font-size: 1.6rem;
+
+  @include breakpoint($bp-md) {
+    font-size: 2rem;
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// Helper function for working with Sass maps.
+// Example: @include print($configuration);
+@mixin print($declarations) {
+  @each $property, $value in $declarations {
+    #{$property}: $value;
+  }
+}
+
 // Crop image in the middle and
 // set a fixed height.
 @mixin image-crop($height: 100%) {
   height: $height;
   overflow: hidden;
   position: relative;
-  width: 100%;
 
   img {
     height: 100%;
     left: 50%;
-    max-width: none;
+    max-width: auto;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -78,6 +158,79 @@ body {
 	margin: 0 auto $margin;
   max-width: $max-width;
 }
+
+```
+{% endtab %}
+{% endtabs %}
+
+### Typography
+
+* Replace all existing typography styles in `src/patterns/global/utils/_typography.scss` with the code below.
+
+{% tabs %}
+{% tab title="\_pography.scss" %}
+```css
+// Typography
+//
+// Typography variables.
+
+$font-sans: 'Open Sans', sans-serif;
+$font-serif: 'Georgia', serif;
+
+@mixin font-stack-primary {
+  font-family: $font-sans;
+}
+
+@mixin font-stack-secondary {
+  font-family: $font-serif;
+}
+
+// Font-Weights.
+$font-weight-light: 200;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-italic: italic;
+
+// Heading mixins.
+@mixin heading-1-style {
+  @include font-stack-secondary;
+  font-size: 1.5rem;
+  // 28px.
+  line-height: 1.16;
+
+  @include breakpoint($bp-sm) {
+    font-size: 3rem;
+    // 56px.
+    line-height: 1.16;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem;
+}
+
+h1 {
+  @include heading1;
+}
+
+h2 {
+  @include heading2;
+}
+
+h3 {
+  @include heading3;
+}
+
+h4 {
+  @include heading4;
+}
+
 ```
 {% endtab %}
 {% endtabs %}
