@@ -6,7 +6,7 @@ Whether you are building simple or complex components, the process for getting s
 
 First let's take a look at how this component looks so we can identify the different data fields we need.
 
-![](../.gitbook/assets/hero.png)
+![Hero component](../.gitbook/assets/hero.jpg)
 
 Based on the design above, we need the following fields:
 
