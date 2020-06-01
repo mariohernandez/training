@@ -1,6 +1,6 @@
 # Homepage content type
 
-### Building a Homepage content type
+### Exercise: Building a Homepage content type
 
 We'll build a new content type which we will use to build the homepage with all of its components shown in our design.
 
@@ -10,7 +10,7 @@ We'll build a new content type which we will use to build the homepage with all 
 4. Click the **Save and manage fields** button at the bottom of the page
 5. Delete the **body** field
 
-### Adding the Hero paragraph type to the Homepage content type
+### Exercise: Adding the Hero paragraph type to the Homepage content type
 
 1. While still in the Homepage content type, click the **Add field** button
 2. Under the _Add a new field_ dropdown, scroll to the **Reference Revisions** section and select **Paragraph**
@@ -24,7 +24,7 @@ We'll build a new content type which we will use to build the homepage with all 
 5. In the _Reference Type_ section, choose **Hero** under _Paragraph type_
 6. Click the **Save settings** button
 
-### Create a new Node with a Hero
+### Exercise: Create a new Node with a Hero
 
 Using the Homepage content type, create a new node and add a Hero component in it:
 

@@ -47,7 +47,7 @@ If you look at the image above, you will see a few things that are extremely hel
 * Just above that line, under **FILE NAME SUGGESTIONS**:, there is a list of files all of which begin with **paragraph**. This is because we created a Paragraph type called Hero to use as the data entry form for any Hero content. Drupal is telling us we can create a Twig template with any of the names listed above and we can customize it to our needs.  This list is what we mean when we say _Template suggestions_.
 * The file with an **"X"** next to it is the template Drupal is currently using to render the Hero.
 
-### Creating new template suggestions
+### Exercise: Creating new template suggestions
 
 {% hint style="warning" %}
 **IMPORTANT:** The first rule of Drupal is "**Don't hack core**".  This means you should never modify a template provided by Drupal core, or a contrib module.  Instead, you create a copy of that template in your theme.  This is a best practice and we are going to follow it throughout this training.

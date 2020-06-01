@@ -17,7 +17,7 @@ Some components may also include:
 | `.js` | Component's interactive behavior |
 | `.md` | Component's annotations or specs details |
 
-## Building the component
+### Exercise: Building the component
 
 ### Component's stock content
 
@@ -105,7 +105,7 @@ We don't need to write any CSS for this component, but let's at least create a S
 * First we import the theme's utilities so we have access to any Sass variables, mixins, breakpoints, etc.  We will do the with every new stylesheet we create.
 * The remaining code are styles for the heading which include styles for when we need to style headings differently.  Moe on this later.
 
-## Compiling the code
+### Compiling the code
 
 Now that the Heading component is done, let's compile the code so we can see it in Pattern Lab.
 
