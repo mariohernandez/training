@@ -1,6 +1,6 @@
 # Blog image styles
 
-Before creating image styles we need to fully understand the need for our images.  This will allow us to create image styles that can be reused rather than creating one-offs.
+Before creating image styles we need to fully understand the need for our images. This will allow us to create image styles that can be reused rather than creating one-offs.
 
 For the homepage blog posts we are going to create two types of image styles:
 
@@ -9,7 +9,7 @@ For the homepage blog posts we are going to create two types of image styles:
 
 In addition, we will create 2x image styles for each to cover high resolution screens.
 
-### Creating blog posts image styles
+## Creating blog posts image styles
 
 Create the following image styles:
 
@@ -20,7 +20,7 @@ Create the following image styles:
 | 2:3 Small 200x260 | 200x260 | Scale and crop |
 | 2:3 Medium 400x520 | 400x520 | Scale and crop |
 
-### Creating blog posts responsive image styles
+## Creating blog posts responsive image styles
 
 Now let's create responsive image styles where we can combine each of the similar image styles into separate bundles.
 
@@ -43,9 +43,9 @@ It can be confusing, but Responsive Image Styles are not the same as Image Style
 10. Click the **Save** button
 11. Repeat steps 3 throughout 10 with **Blog featured**.
 
-### Media view modes
+## Media view modes
 
-Since we are using media reference as the field for the blog images, we are going to create two view modes for the media type **Image**.  These view modes are **Blog teaser** and **Blog featured**.
+Since we are using media reference as the field for the blog images, we are going to create two view modes for the media type **Image**. These view modes are **Blog teaser** and **Blog featured**.
 
 1. From Drupal's admin toolbar click **Structure \| Media types \| Image** **&gt; Manage display**
 2. Expand the CUSTOM DISPLAY SETTINGS fieldset
@@ -66,7 +66,7 @@ Since we are using media reference as the field for the blog images, we are goin
 
 By creating a view mode for the Image Media Entity we can define configurations that will only affect the Blog images and not other images on our site. However, there is one more step to do before we can see the changes reflected in the hero image.
 
-### Configure blogs image field with image styles
+## Configure blogs image field with image styles
 
 Now that we have image styles, responsive image styles, and have set up view modes for each type of blog images, it's time to do the final step which is configure the image field in the Blog content type to use the newly configured settings.
 
