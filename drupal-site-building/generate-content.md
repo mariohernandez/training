@@ -14,6 +14,7 @@ Since we will need blog posts to display on our homepage, let's create a few of 
 
 1. From Drupal's admin toolbar click **Configuration &gt; Development &gt; Generate content**
 2. Under **Content type** check **Blog**  then click **Generate**
+3. Be sure none of the blog posts are promoted to the frontpage.
 
 We should now have plenty of blog posts to use.  Some values in our content may be need to be tweaked as some content may be too long for our purpose.
 
