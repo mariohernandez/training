@@ -4,7 +4,7 @@ To build the _Featured Content_ and _From our blog_ sections we are going to use
 
 ### Exercise: Blog posts View
 
-Let's start by creating a new view to pull all blog posts.  Then we will create two block displays out of the view; one for the Featured Content blog posts, and the other one to show the latest 4 blog posts.
+Let's start by creating a new view to pull all blog posts.  Then we will create two block displays out of the view; one for the **Featured Content** blog posts, and the other one to show the **From our Blog** posts.
 
 1. From Drupal's Admin toolbar click **Structure \| Views**
 2. Click the **Add view** button
