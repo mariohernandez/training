@@ -28,7 +28,8 @@ Let's start by creating a new view to pull all blog posts.  Then we will create 
 8. Under BLOCK SETTINGS, change the block name to **From our blog** by clicking _block,_ then clicking the **Apply** button.  This will appear as the name of this block in administer &gt;&gt; structure &gt;&gt; blocks.
 9. Expand the ADVANCED fieldset to the right of the view page
 10. Under _Machine name**,**_ click the current value and change it to **from\_our\_blog**, the click the **Apply** button.  Using a custom and meaningful name ensures our twig template suggestions will use names that make sense. _****_You will see this later.
-11. _Finally, save all your changes by pressing the **Save** button._  Failing to press __**Save**, will result in loosing all your changes.
+11. In the PAGER section, click the **display all items** link and change its setting to **Display a specified number of items**, when prompted type **4** for the number of items to display.
+12. _Finally, save all your changes by pressing the **Save** button._  Failing to press __**Save**, will result in loosing all your changes.
 
 Your view should look like the image below.  _Click on it to zoom in._
 
@@ -45,10 +46,10 @@ Now we are going to create a new views display for the Featured Content.  We wil
 1. At the top of the new view, just below the word **Displays** click the **+ Add** button next to _From our blog_
 2. Choose __**Block** from the dropdown
 3. You will follow most of the steps from the **Updating the view** section above, but will make some modifications.
-4. First, change any _From our blog_ reference to **Featured content**.  Be sure to the _Machine Name_ reference in step 10, is typed as follows: **featured\_content**.
+4. First, change any _From our blog_ reference to **Featured content**.  Be sure the _Machine Name_ reference in step 10, is typed as follows: **featured\_content**
 5. For step 3 above, choose **Featured** as the view mode
 6. For step 4, FILTER CRITERIA, click the existing value from _No_ to **Yes** for _Promoted to front page status_.  In addition, and **SUPER IMPORTANT**, change the **for** dropdown to **This block \(override\)**.  This will ensure the changes you are making don't affect the first display we built above.
-7. In the middle of the view under **PAGER**, change _All items_ to **2** items to display by clicking the _All items link and typing **2** in the items to display field then pressing the **Apply** button.  This means we will only show two articles as featued content on the homepage._
+7. In the middle of the view under **PAGER**, change **4 items** link and change it to **2** items to display.  Then press the **Apply** _button._  Be sure the **for** dropdown reads **This block \(override\)**.
 8. Once you made all the updates, **Save** the view to conserve your changes.
 
 The Featured Content display/block should look like this.  Click on it to zoom in.,
