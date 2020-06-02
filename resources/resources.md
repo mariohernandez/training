@@ -2,7 +2,8 @@
 
 ## Fully functional D8 theme
 
-A fully functional Drupal 8 theme which includes all code in this training [can be downloaded from github](https://github.com/mariohernandez/training).
+* A fully functional Drupal 8 theme which includes all code in this training [can be downloaded from github](https://github.com/mariohernandez/training).
+* [Google drive resources](https://drive.google.com/drive/folders/1oqwqIgEPP9V2qt_5lA5-mM6x9cEukHCj?usp=sharing)
 
 ## Drupal
 
