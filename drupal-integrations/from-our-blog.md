@@ -58,7 +58,7 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         }
       ],
-      "modifier": "from-our-blog__card"
+      "modifier": ""
     },
     {
       "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
@@ -84,7 +84,7 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         }
       ],
-      "modifier": "from-our-blog__card"
+      "modifier": ""
     },
     {
       "image": "<img src='https://source.unsplash.com/4b9Talfia6c/640x360' alt='Candy in shape of heart' />",
@@ -110,7 +110,7 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         }
       ],
-      "modifier": "from-our-blog__card"
+      "modifier": ""
     },
     {
       "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Painting of a tiger' />",
@@ -136,7 +136,7 @@ This component will be completely different than the ones we've built thus far. 
           "url": "#"
         }
       ],
-      "modifier": "from-our-blog__card"
+      "modifier": ""
     }
   ]
 }

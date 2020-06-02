@@ -29,7 +29,7 @@
         "name": "Valentina De Leon",
         "title": "Digital Strategist"
       },
-      "modifier": "card--wide featured-content__card"
+      "modifier": "card--wide"
     },
     {
       "image": "<img src='https://source.unsplash.com//a8lTjWJJgLA/400x520' alt='Tech gadgets' />",
@@ -47,7 +47,7 @@
         "name": "Valentina De Leon",
         "title": "Digital Strategist"
       },
-      "modifier": "card--wide featured-content__card"
+      "modifier": "card--wide"
     }
   ]
 }
