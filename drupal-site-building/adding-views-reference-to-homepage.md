@@ -2,6 +2,8 @@
 
 Let's add two new fields to the Homepage content type.  These will be views reference fields in order to display the blocks we created in the Blog posts view.
 
+Be sure to enable the **Views reference field** module before proceeding.
+
 1. From Drupal's admin toolbar, select **Structure &gt; Content types &gt; Homepage &gt; Manage fields**
 2. Click the **Add field**  button
 3. From the **Add new field** dropdown, under the _Reference_ group, select **Views reference**
@@ -20,5 +22,5 @@ Let's add two new fields to the Homepage content type.  These will be views refe
 3. For the **Display ID** select **Featured content**
 4. Click **Add another item**
 5. This time select **From our blog** as the **Display ID**
-6. Save your node
+6. **Save** your node
 
