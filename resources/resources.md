@@ -24,6 +24,7 @@ A fully functional Drupal 8 theme which includes all code in this training [can 
 * [Twig for Template Designers](https://twig.symfony.com/doc/2.x/templates.html)
 * [Twig blocks](https://twig.symfony.com/doc/2.x/tags/extends.html)
 * [When to use Include, embed or extends](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
+* [Limit Kint levels when debugging](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 
 ## Blog Posts/Tutorials
 
