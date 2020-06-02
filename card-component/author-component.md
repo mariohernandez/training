@@ -171,11 +171,15 @@ Windows users may need to run the two commands above separately \(`npm run build
 
     {% block tags %}
       {% if tags %}
-        {%
-          include '@training_theme/tags/tags.twig' with {
-            "items": tags
-          } only
-        %}
+        <ul class="tags">
+          {% for item in tags %}
+            <li class="tag__item">
+              <a href="{{ item.url }}" class="tag__link">
+                {{ item.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       {% endif %}
     {% endblock tags %}
 
