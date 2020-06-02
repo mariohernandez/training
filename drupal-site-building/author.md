@@ -25,7 +25,7 @@ We'll create a new view mode to control which user's fields we can display.
 3. Click **Manage view modes**
 4. Scroll down to the **Users** section and click **Add new User view mode** link
 5. Type **Author** as the view mode name and click the **Save** button
-6. Repeat steps 1 & 2 from \_Add new fields to the User Profile _\*\*_\_section at the top of the page
+6. Repeat steps 1 & 2 from **Add new fields to the User Profile** section at the top of the page
 7. Expand the **CUSTOM DISPLAY SETTINGS** fieldset
 8. Check **Author** and click the **Save** button
 
