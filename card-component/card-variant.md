@@ -274,11 +274,15 @@ If you are wondering why are we placing the code snippets in those very location
 
     {% block tags %}
       {% if tags %}
-        {%
-          include '@training_theme/tags/tags.twig' with {
-            "items": tags
-          } only
-        %}
+        <ul class="tags">
+          {% for item in tags %}
+            <li class="tag__item">
+              <a href="{{ item.url }}" class="tag__link">
+                {{ item.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       {% endif %}
     {% endblock tags %}
 
