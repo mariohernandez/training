@@ -12,9 +12,12 @@ Make the updates below to improve our theming experience.
 html {
   @include font-stack-primary;
   font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
+  box-sizing: border-box;
+  margin: 0;
   font-size: 1.8rem;
   line-height: 1.5;
 }
