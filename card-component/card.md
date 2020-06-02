@@ -101,11 +101,15 @@ By now we should be well familiar with the fields structure above. The one field
     {% endif %}
 
     {% if tags %}
-      {%
-        include '@training_theme/tags/tags.twig' with {
-          "items": tags
-        } only
-      %}
+      <ul class="tags">
+        {% for item in tags %}
+          <li class="tag__item">
+            <a href="{{ item.url }}" class="tag__link">
+              {{ item.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     {% endif %}
   </div>
 </article>
