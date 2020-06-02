@@ -46,6 +46,7 @@
 * [View modes](drupal-site-building/view-modes.md)
 * [Drupal Views](drupal-site-building/drupal-views.md)
 * [Author](drupal-site-building/author.md)
+* [Adding Views reference to homepage](drupal-site-building/adding-views-reference-to-homepage.md)
 * [Generate content](drupal-site-building/generate-content.md)
 
 ## Drupal Integrations
