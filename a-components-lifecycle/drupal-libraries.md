@@ -15,7 +15,7 @@ In the context of component-based theming, we are going to create a library for 
 In your editor, open `training_theme.libraries.yml` \(located in your theme's root\). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site \(i.e. typography, brand colors, global styles, etc.\). The global library looks something like this:
 
 {% tabs %}
-{% tab title="theme\_name.libraries.yml" %}
+{% tab title="training\_theme.libraries.yml" %}
 ```yaml
 global:
   css:
@@ -42,7 +42,7 @@ Let's create a new Drupal library for the Hero component so we can apply all css
 * Somewhere at the bottom of the file, add the code below:
 
 {% tabs %}
-{% tab title="theme\_name.libraries.yml" %}
+{% tab title="training\_theme.libraries.yml" %}
 ```text
 hero:
   css:
