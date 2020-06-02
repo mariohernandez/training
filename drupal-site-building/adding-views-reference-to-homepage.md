@@ -11,3 +11,12 @@ Let's add two new fields to the Homepage content type.  These will be views refe
 7. Under **View display plugins to allow** select **Block**
 8. Under **Preselect View Options** select **Blog posts**
 
+### **Adding the views block to the homepage**
+
+1. Edit the existing homepage node
+2. In the **Blog articles** field, type **Blog posts** and select **Blog posts** when displayed
+3. For the **Display ID** select **Featured content**
+4. Click **Add another item**
+5. This time select **From our blog** as the **Display ID**
+6. Save your node
+
