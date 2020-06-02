@@ -36,7 +36,7 @@ We'll create a new view mode to control which user's fields we can display.
 3. For the remaining fields, hide their labels by selecting **Hidden** in the Label's dropdowns
 4. Click the **Save** button
 
-## Remove the link from the User's image
+## Remove the link from the Author's image
 
 1. While still in the People Account Settings screen, click the cogwheel icon to the right of the Image field
 2. Change the **Link image to** dropdown to **Nothing**
