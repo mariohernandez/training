@@ -99,7 +99,6 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
     "name": "Valentina De Leon",
     "title": "Digital Strategist"
   },
-  "view_mode": "featured",
   "modifier": "card--wide"
 }
 ```
