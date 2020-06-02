@@ -17,3 +17,7 @@ Since we will need blog posts to display on our homepage, let's create a few of 
 
 We should now have plenty of blog posts to use.  Some values in our content may be need to be tweaked as some content may be too long for our purpose.
 
+### Promote blog posts to homepage
+
+Pick two blog posts, edit them and choose **Promote to the frontpage** from the **Promotion Options** tag in the node edit page.
+
