@@ -250,18 +250,18 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
     justify-content: space-between;
     flex-wrap: wrap;
   }
-}
 
-.from-our-blog__card {
-  margin-bottom: 60px;
+  .card {
+    margin-bottom: 60px;
 
-  @media screen and (min-width: $bp-sm) {
-    flex: 0 0 45%;
-  }
+    @media screen and (min-width: $bp-sm) {
+      flex: 0 0 45%;
+    }
 
-  @media screen and (min-width: $bp-lg) {
-    flex: 0 0 22%;
-    margin-bottom: 0;
+    @media screen and (min-width: $bp-lg) {
+      flex: 0 0 22%;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -269,6 +269,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
   margin: 50px auto 0;
   text-align: center;
 }
+
 ```
 {% endtab %}
 {% endtabs %}
