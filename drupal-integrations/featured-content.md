@@ -100,7 +100,7 @@
 .featured-content {
   @include component-spacing;
   background-color: $color-gray-light;
-  padding: 0 20px 40px;
+  padding: 40px 20px 0;
 
   @include breakpoint($bp-md) {
     padding-bottom: 100px;
@@ -118,22 +118,17 @@
   // horizontally as a group.
   @media screen and (min-width: $bp-lg) {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
   }
-}
 
-.featured-content__card {
-  margin-bottom: 60px;
+  .card {
+    margin-bottom: 60px;
 
-  @media screen and (min-width: $bp-xl) {
-    flex: 0 0 45%;
-    margin-bottom: 0;
+    @media screen and (min-width: $bp-xl) {
+      flex: 0 0 45%;
+      margin-bottom: 0;
+    }
   }
-}
-
-.featured-content__cta {
-  margin: 50px auto 0;
-  text-align: center;
 }
 ```
 {% endtab %}

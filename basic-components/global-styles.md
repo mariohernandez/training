@@ -2,7 +2,7 @@
 
 Make the updates below to improve our theming experience.
 
-### Global
+## Global
 
 * Update `src/patterns/global/global.scss` with the following changes.  Leave all other code in `html` and `body` as is.
 
@@ -22,7 +22,7 @@ body {
 {% endtab %}
 {% endtabs %}
 
-### Mixins
+## Mixins
 
 * Add the following mixins at the bottom of `src/patterns/global/util/_mixins.scss`.
 
@@ -155,14 +155,14 @@ body {
 
 // Mixin for adding consistent spacing on components.
 @mixin component-spacing($margin: 100px) {
-	margin: 0 auto $margin;
+    margin: 0 auto $margin;
   max-width: $bp-max;
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-### Typography
+## Typography
 
 * Replace all existing typography styles in `src/patterns/global/utils/_typography.scss` with the code below.
 
@@ -229,12 +229,11 @@ h3 {
 h4 {
   @include heading4;
 }
-
 ```
 {% endtab %}
 {% endtabs %}
 
-### Color variables
+## Color variables
 
 * Replace all existing color variables in `src/patterns/global/colors/_colors.scss` with the code below.
 
@@ -275,7 +274,7 @@ $color-danube: $color-navy-blue;
 {% endtab %}
 {% endtabs %}
 
-### Breakpoints
+## Breakpoints
 
 Add the following breakpoint to the existing list of breakpoints in `src/global/utils/_breakpoints.scss`
 
@@ -286,3 +285,4 @@ $bp-max: 1900px;
 ```
 {% endtab %}
 {% endtabs %}
+

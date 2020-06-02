@@ -114,6 +114,7 @@ Now let's write some HTML for the component.
 .hero {
   @include component-spacing;
   @include image-crop (320px);
+  margin-bottom: 0;
 
   @media screen and (min-width: $bp-sm) {
     height: 400px;
@@ -166,6 +167,7 @@ Now let's write some HTML for the component.
     position: unset;
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}

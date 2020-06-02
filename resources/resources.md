@@ -48,6 +48,7 @@ A fully functional Drupal 8 theme which includes all code in this training [can 
 ## Snippets
 
 ### Create hook alter for user template suggestons
+
 ```php
 /**
  * Implements hook_theme_suggestions_user_alter().
@@ -65,9 +66,10 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 
 ### Fixing 403 Forbidden error in Pattern Lab
 
-* Create an `.htaccess` file in the root of your theme with the following code:  \(Some have reported the file should be inside the `patternlab` directory.  Try the theme's room first and recompile your theme).
-```php
-<FilesMatch "\.(twig)$">
+* Create an `.htaccess` file in the root of your theme with the following code:  \(Some have reported the file should be inside the `patternlab` directory.  Try the theme's room first and recompile your theme\).
+
+  ```php
+  <FilesMatch "\.(twig)$">
   <IfModule mod_authz_core.c>
     Require all granted
   </IfModule>
@@ -75,5 +77,6 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
     Order allow,deny
     Allow from all
   </IfModule>
-</FilesMatch>
-```
+  </FilesMatch>
+  ```
+
