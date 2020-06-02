@@ -10,6 +10,8 @@ Let's add two new fields to the Homepage content type.  These will be views refe
 6. Click the **Save field settings** button
 7. Under **View display plugins to allow** select **Block**
 8. Under **Preselect View Options** select **Blog posts**
+9. **Save** your changes
+10. In Manage display hide the field label.
 
 ### **Adding the views block to the homepage**
 
