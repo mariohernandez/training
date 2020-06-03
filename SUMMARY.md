@@ -65,8 +65,6 @@
 
 ## Extras
 
-* [Hook alter](extras/hook-alter.md)
-* [Menu](extras/menu.md)
 * [Adding webfonts](extras/adding-webfonts.md)
 
 ## Resources
