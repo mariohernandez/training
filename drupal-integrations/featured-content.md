@@ -1,6 +1,10 @@
 # Featured Content
 
-## Featured Content
+## Featured Content List
+
+So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title of "Featured Content" .
+
+![Featured Content List](../.gitbook/assets/featured-content.jpg)
 
 {% tabs %}
 {% tab title="featured-content.json" %}
@@ -9,7 +13,7 @@
   "heading": {
     "heading_level": "2",
     "modifier": "heading--large center section-header",
-    "title": "Our Featured Content",
+    "title": "Featured Content",
     "url": ""
   },
   "items": [
@@ -76,7 +80,7 @@
         {%
           include '@training_theme/card/card.twig' with {
             "image": item.image,
-            "heading": item.title,
+            "heading": item.heading,
             "date": item.date,
             "body_text": item.body_text,
             "author": item.author,
@@ -133,12 +137,6 @@
 ```
 {% endtab %}
 {% endtabs %}
-
-## Featured Content List
-
-So far we've been building individual components and built them in a way we can re-use them. Well, the time has come to build a list of content where we will re-use most components we've built. This is where component-based shines. By looking at the design comp below, we can see that we will be showing a collection of cards. In addition, the section has a title of "Featured Content" .
-
-![Featured Content List](../.gitbook/assets/featured-content.jpg)
 
 #### Exercise: Build the Featured Content component
 
