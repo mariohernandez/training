@@ -15,7 +15,7 @@
   "items": [
     {
       "image": "<img src='https://source.unsplash.com/EwKXn5CapA4/400x520' alt='Man doing yoga' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "card__title",
         "title": "The beauty of nature",
@@ -33,7 +33,7 @@
     },
     {
       "image": "<img src='https://source.unsplash.com//a8lTjWJJgLA/400x520' alt='Tech gadgets' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "card__title",
         "title": "The beauty of nature",
@@ -76,7 +76,7 @@
         {%
           include '@training_theme/card/card.twig' with {
             "image": item.image,
-            "title": item.title,
+            "heading": item.title,
             "date": item.date,
             "body_text": item.body_text,
             "author": item.author,
@@ -165,7 +165,7 @@ This component will be completely different than the ones we've built thus far. 
   "items": [
     {
       "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/640x360' alt='Man doing yoga' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -191,7 +191,7 @@ This component will be completely different than the ones we've built thus far. 
     },
     {
       "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -217,7 +217,7 @@ This component will be completely different than the ones we've built thus far. 
     },
     {
       "image": "<img src='https://source.unsplash.com/4b9Talfia6c/640x360' alt='Candy in shape of heart' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -243,7 +243,7 @@ This component will be completely different than the ones we've built thus far. 
     },
     {
       "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Painting of a tiger' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -307,7 +307,7 @@ So the data is ready, let's go ahead and add the markup for the component.
           {%
             include '@training_theme/card/card.twig' with {
               "image": item.image,
-              "title": item.title,
+              "heading": item.title,
               "body": item.body,
               "tags": item.tags,
               "modifier": ' featured-content__item'
@@ -410,7 +410,7 @@ This component will be completely different than the ones we've built thus far. 
   "items": [
     {
       "image": "<img src='https://source.unsplash.com/qQGAQMbURhU/640x360' alt='Man doing yoga' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -436,7 +436,7 @@ This component will be completely different than the ones we've built thus far. 
     },
     {
       "image": "<img src='https://source.unsplash.com/HONJP8DyiSM/640x360' alt='Tech gadgets' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -462,7 +462,7 @@ This component will be completely different than the ones we've built thus far. 
     },
     {
       "image": "<img src='https://source.unsplash.com/4b9Talfia6c/640x360' alt='Candy in shape of heart' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -488,7 +488,7 @@ This component will be completely different than the ones we've built thus far. 
     },
     {
       "image": "<img src='https://source.unsplash.com/hn6CC9aosEk/640x360' alt='Painting of a tiger' />",
-      "title": {
+      "heading": {
         "heading_level": "3",
         "modifier": "featured-content__card",
         "title": "The beauty of nature",
@@ -552,7 +552,7 @@ So the data is ready, let's go ahead and add the markup for the component.
           {%
             include '@training_theme/card/card.twig' with {
               "image": item.image,
-              "title": item.title,
+              "heading": item.title,
               "body": item.body,
               "tags": item.tags,
               "modifier": ' featured-content__item'

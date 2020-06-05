@@ -84,7 +84,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/ny6qxqv_m04/400x520' alt='Women running' />",
-  "title": {
+  "heading": {
     "heading_level": "2",
     "modifier": "card__title",
     "title": "Beauty of mother nature",
@@ -246,7 +246,7 @@ If you are wondering why are we placing the code snippets in those very location
       {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
-          heading: title
+          heading: heading
         } only
       %}
       {{ title_suffix }}

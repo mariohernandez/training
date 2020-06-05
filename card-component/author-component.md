@@ -142,7 +142,7 @@ Windows users may need to run the two commands above separately \(`npm run build
       {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
-          heading: title
+          heading: heading
         } only
       %}
       {{ title_suffix }}

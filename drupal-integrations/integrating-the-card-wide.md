@@ -46,7 +46,7 @@ and make use of twig blocks found in such component.
     "title_prefix": title_prefix,
     "title_suffix": title_suffix,
     "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
-    "title": article_title,
+    "heading": article_title,
     "date": date,
     "category": content.field_category|render|trim is not empty ? content.field_category,
     "body_text": content.body|render|trim is not empty ? content.body,

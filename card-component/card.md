@@ -29,7 +29,7 @@ Now that we have identified the fields our card component needs, let's start bui
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/640x360' alt='Women running' />",
-  "title": {
+  "heading": {
     "heading_level": "2",
     "modifier": "card__title",
     "title": "Level up your game",
@@ -82,7 +82,7 @@ By now we should be well familiar with the fields structure above. The one field
       {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
-          heading: title
+          heading: heading
         } only
       %}
       {{ title_suffix }}
