@@ -4,7 +4,7 @@ So far we've been building individual components and built them in a way we can 
 
 ![Featured Content List](../.gitbook/assets/featured-content.jpg)
 
-### Component data
+## Component data
 
 1. Inside `src/patterns/components`create a new folder called **featured-content**
 2. Inside the _featured-content_ folder create a new file called `featured-content.json`
@@ -12,7 +12,7 @@ So far we've been building individual components and built them in a way we can 
 
 {% tabs %}
 {% tab title="featured-content.json" %}
-```yml
+```yaml
 {
   "heading": {
     "heading_level": "2",
@@ -160,8 +160,7 @@ So the data is ready, let's go ahead and add the markup for the component.
 {% endtab %}
 {% endtabs %}
 
-### Don't forget to create the library.
-
+#### Don't forget to create the library.
 
 ### Compiling the code to generate the Featured Content
 
@@ -178,3 +177,4 @@ While in your theme's root directory, run the following commands in your command
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
 Next, we are going to build the back-end infrastructure in Drupal for this collection. This also will be a unique approach compared to previous components we've built in Drupal.
+
