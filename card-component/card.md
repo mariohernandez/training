@@ -139,6 +139,7 @@ Don't forget to create and attach the Card's library.
 .card {
   background-color: $color-white;
   box-shadow: 0 10px 15px -3px rgba($color-black, 0.1), 0 4px 6px -2px rgba($color-black, 0.05);
+  box-sizing: border-box;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -207,11 +208,6 @@ Don't forget to create and attach the Card's library.
         }
       }
 
-      .author {
-        margin-top: auto;
-        margin-left: auto;
-      }
-
       img {
         max-width: 100%;
       }
@@ -231,6 +227,11 @@ Don't forget to create and attach the Card's library.
     letter-spacing: 2px;
     text-transform: uppercase;
     padding-bottom: 8px;
+  }
+
+  .author {
+    margin-top: auto;
+    justify-content: flex-end;
   }
 }
 
