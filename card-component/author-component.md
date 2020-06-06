@@ -125,11 +125,11 @@ Windows users may need to run the two commands above separately \(`npm run build
 
   {# Date for featured content cards. #}
   {% if 'card--wide' in modifier %}
-    {% block featured_date %}
-      <div class="card__featured--date">
+    <div class="card__featured--date">
+      {% block featured_date %}
         {{ date }}
-      </div>
-    {% endblock featured_date %}
+      {% endblock featured_date %}
+    </div>
   {% endif %}
 
   {% if image %}
@@ -137,8 +137,9 @@ Windows users may need to run the two commands above separately \(`npm run build
       {{ image }}
     </div>
   {% endif %}
+
   <div class="card__content">
-    {% if title %}
+    {% if heading %}
       {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
@@ -150,11 +151,11 @@ Windows users may need to run the two commands above separately \(`npm run build
 
     {# Date for featured content cards. #}
     {% if 'card--wide' not in modifier %}
-      {% block card_date %}
-          <div class="eyebrow card__date">
-            {{ date }}
-          </div>
-      {% endblock card_date %}
+      <div class="eyebrow card__date">
+        {% block card_date %}
+          {{ date }}
+        {% endblock card_date %}
+      </div>
     {% endif %}
 
     {% if category %}

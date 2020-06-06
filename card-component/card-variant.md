@@ -122,11 +122,11 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 
 ```php
 {% if 'card--wide' in modifier %}
-  {% block featured_date %}
-    <div class="card__featured--date">
+  <div class="card__featured--date">
+    {% block featured_date %}
       {{ date }}
-    </div>
-  {% endblock featured_date %}
+    {% endblock featured_date %}
+  </div>
 {% endif %}
 ```
 
@@ -141,11 +141,11 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 
 ```php
 {% if 'card--wide' not in modifier %}
-  {% block card_date %}
-      <div class="eyebrow card__date">
-        {{ date }}
-      </div>
-  {% endblock card_date %}
+  <div class="eyebrow card__date">
+    {% block card_date %}
+      {{ date }}
+    {% endblock card_date %}
+  </div>
 {% endif %}
 ```
 
@@ -229,11 +229,11 @@ If you are wondering why are we placing the code snippets in those very location
 
   {# Date for featured content cards. #}
   {% if 'card--wide' in modifier %}
-    {% block featured_date %}
-      <div class="card__featured--date">
+    <div class="card__featured--date">
+      {% block featured_date %}
         {{ date }}
-      </div>
-    {% endblock featured_date %}
+      {% endblock featured_date %}
+    </div>
   {% endif %}
 
   {% if image %}
@@ -241,8 +241,9 @@ If you are wondering why are we placing the code snippets in those very location
       {{ image }}
     </div>
   {% endif %}
+
   <div class="card__content">
-    {% if title %}
+    {% if heading %}
       {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
@@ -252,12 +253,13 @@ If you are wondering why are we placing the code snippets in those very location
       {{ title_suffix }}
     {% endif %}
 
+    {# Date for featured content cards. #}
     {% if 'card--wide' not in modifier %}
-      {% block card_date %}
-          <div class="eyebrow card__date">
-            {{ date }}
-          </div>
-      {% endblock card_date %}
+      <div class="eyebrow card__date">
+        {% block card_date %}
+          {{ date }}
+        {% endblock card_date %}
+      </div>
     {% endif %}
 
     {% if category %}
