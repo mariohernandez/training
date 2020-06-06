@@ -99,6 +99,7 @@ So the data is ready, let's go ahead and add the markup for the component.
             "image": item.image,
             "heading": item.heading,
             "date": item.date,
+            "category": item.category,
             "body_text": item.body_text,
             "author": item.author,
             "modifier": item.modifier
