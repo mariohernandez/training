@@ -118,7 +118,7 @@ The tags component is going to be a little unusual compared to other components 
 Don't forget to create the Drupal library for the tags.
 {% endhint %}
 
-## \#\# Updated the card
+## Updated the card
 
 Now that we have a component for tags, let's modify the card so we make use of it.  Here's the full card.twig code which now uses an include for the tags.
 
