@@ -118,6 +118,91 @@ The tags component is going to be a little unusual compared to other components 
 Don't forget to create the Drupal library for the tags.
 {% endhint %}
 
+## \#\# Updated the card
+
+Now that we have a component for tags, let's modify the card so we make use of it.  Here's the full card.twig code which now uses an include for the tags.
+
+{% tabs %}
+{% tab title="card.twig" %}
+```php
+{{ attach_library('training_theme/card') }}
+
+<article class="card{{ modifier ? ' ' ~ modifier }}
+  {{- attributes ? ' ' ~ attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
+
+  {# Date for featured content cards. #}
+  {% if 'card--wide' in modifier %}
+    <div class="card__featured--date">
+      {% block featured_date %}
+        {{ date }}
+      {% endblock featured_date %}
+    </div>
+  {% endif %}
+
+  {% if image %}
+    <div class="card__media">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  <div class="card__content">
+    {% if heading %}
+      {{ title_prefix }}
+      {%
+        include '@training_theme/heading/heading.twig' with {
+          heading: heading
+        } only
+      %}
+      {{ title_suffix }}
+    {% endif %}
+
+    {# Date for featured content cards. #}
+    {% if 'card--wide' not in modifier %}
+      <div class="eyebrow card__date">
+        {% block card_date %}
+          {{ date }}
+        {% endblock card_date %}
+      </div>
+    {% endif %}
+
+    {% if category %}
+      <div class="eyebrow card__category">
+        {{ category }}
+      </div>
+    {% endif %}
+
+    {% if body_text %}
+      <div class="card__body">
+        {{ body_text }}
+      </div>
+    {% endif %}
+
+    {% block tags %}
+      {% if tags %}
+        {%
+          include '@training_theme/tags/tags.twig' with {
+            "items": tags
+          } only
+        %}
+      {% endif %}
+    {% endblock tags %}
+
+    {% block author %}
+      {% if author %}
+        {%
+          include '@training_theme/author/author.twig' with {
+            "author": author
+          } only
+        %}
+      {% endif %}
+    {% endblock author %}
+  </div>
+</article>
+```
+{% endtab %}
+{% endtabs %}
+
 ## Integrating the Tags component
 
 We will use the **Tags** Taxonomy vocabulary that comes out of the box with Drupal.
