@@ -7,6 +7,7 @@
 
 ## Drupal
 
+* [Drupal Composer Project Templates ](https://www.drupal.org/docs/develop/using-composer/starting-a-site-using-drupal-composer-project-templates)
 * [Drupal 8 Theming](https://www.drupal.org/docs/8/theming)
 * [Drupal 8 Theming Guide](https://sqndr.github.io/d8-theming-guide/index.html)
 * [Adding CSS and JavaScript to a Drupal 8 theme](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme)
