@@ -41,7 +41,7 @@ Add the following fields and settings to the paragraph type:
 
 | Field label | Machine name | Field type |
 | :--- | :--- | :--- |
-| Title | `field_title` | Text \(Plain\) |
+| Hero title | `field_title` | Text \(Plain\) |
 | Image | `field_image` | Media Reference |
 | Call To Action | `field_cta` | Link |
 
