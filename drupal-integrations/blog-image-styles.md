@@ -15,8 +15,8 @@ Create the following image styles:
 
 | Name | Dimensions | Effect |
 | :--- | :--- | :--- |
-| 16:9 Small 460x258 | 460x258 | Scale and crop |
-| 16:9 Small 720x405 | 720x405 | Scale and crop |
+| 16:9 Medium 460x258 | 460x258 | Scale and crop |
+| 16:9 Large 720x405 | 720x405 | Scale and crop |
 | 2:3 Small 200x260 | 200x260 | Scale and crop |
 | 2:3 Medium 400x520 | 400x520 | Scale and crop |
 
