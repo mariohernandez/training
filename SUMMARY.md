@@ -1,7 +1,9 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Local Setup](local-setup.md)
+* [Start here](local-setup/README.md)
+  * [Setup](local-setup/setup.md)
+  * [What's included?](local-setup/whats-included.md)
 
 ## Getting Started
 
