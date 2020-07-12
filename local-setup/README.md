@@ -15,3 +15,7 @@ Before you get started, review the requirements below to ensure you are ready to
 * Working knowledge of Twig is required
 * Good understanding of HTML and CSS is required
 
+### Command line tutorial
+
+[Learn command line basics](https://tutorial.djangogirls.org/en/intro_to_command_line/)
+
