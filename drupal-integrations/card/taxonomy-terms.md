@@ -13,14 +13,14 @@ The tags component is going to be a little unusual compared to other components 
 {% tabs %}
 {% tab title="\_tag-item.twig" %}
 ```php
-<li class="tag__item{{- attributes ? ' ' ~ attributes.class -}}"
+<span{% if attributes %} class="{{ attributes.class }}"{% endif %}
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   <a href="{{ url }}" class="tag__link">
     {{ name }}
   </a>
   {{ title_suffix }}
-</li>
+</span>
 ```
 {% endtab %}
 {% endtabs %}
@@ -55,17 +55,20 @@ The tags component is going to be a little unusual compared to other components 
 ```php
 {{ attach_library('training_theme/tags') }}
 
-<ul class="tags{{- attributes ? ' ' ~ attributes.class -}}"
+<ul class="tags{{ modifier ? ' ' ~ modifier }}
+  {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {% for item in items %}
-    {% block tag_item %}
-      {%
-        include '@training_theme/tags/_tag-item.twig' with {
-          "name": item.name,
-          "url": item.url
-        } only
-      %}
-    {% endblock %}
+    <li class="tag__item">
+      {% block tag_item %}
+        {%
+          include '@training_theme/tags/_tag-item.twig' with {
+            "name": item.name,
+            "url": item.url
+          } only
+        %}
+      {% endblock %}
+    </li>
   {% endfor %}
 </ul>
 ```
@@ -88,23 +91,28 @@ The tags component is going to be a little unusual compared to other components 
 }
 
 .tag__item {
-  background-color: $color-catskill-white;
-  border-radius: 99999px;
+  align-items: center;
+  border-radius: 2px;
   color: $color-gray-dark;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
   margin-right: 10px;
 
+
   a {
-    color: lighten($color-gray-dark, 25%);
-    display: inline-block;
+    background-color: $color-black;
+    color: $color-white;
+    display: block;
     font-size: 1.3rem;
     line-height: 1.2;
-    padding: 2px 10px;
+    padding: 6px 12px;
     text-decoration: none;
+    transition: background-color 0.2s ease;
 
     &:hover,
     &:focus {
-      color: $color-gray-dark;
+      background-color: lighten($color-black, 15%);
     }
   }
 }
