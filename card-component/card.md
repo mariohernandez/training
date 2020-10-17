@@ -28,26 +28,26 @@ Now that we have identified the fields our card component needs, let's start bui
 {% tab title="card.json" %}
 ```yaml
 {
-  "image": "<img src='https://source.unsplash.com/BJrgqUKYx8M/640x360' alt='Women running' />",
+  "image": "<img src='https://source.unsplash.com/6VhPY27jdps/640x360' alt='Cups of coffee' />",
   "heading": {
     "heading_level": "2",
     "modifier": "card__title",
-    "title": "Level up your game",
+    "title": "Staying sane in times of chaos",
     "url": "#"
   },
   "date": "March 16 2020",
   "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-  "tags": [
+  "items": [
     {
-      "name": "Photography",
+      "name": "Health",
       "url": "#"
     },
     {
-      "name": "Sports",
+      "name": "Friend",
       "url": "#"
     },
     {
-      "name": "Outdors",
+      "name": "Life",
       "url": "#"
     }
   ],
