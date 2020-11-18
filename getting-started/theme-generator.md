@@ -8,7 +8,7 @@ The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generat
 
 [Watch the video tutorial,](https://www.youtube.com/watch?v=cVyA2v-UwSQ&feature=youtu.be) or follow the instructions below.
 
-1. In your Drupal 8 site, create a new folder for your theme \(i.e. `/themes/custom/training_theme`\)
+1. In your Drupal 8 site, create a new folder for your theme \(i.e. `/themes/custom/training_theme`\).  Although you can use any name you wish, all exercises in this curriculum use **training\_theme**.
 2. In your command line app, change into the newly created directory \(**training\_theme**\),  type the following command and press **Return**:
 
 ```bash
@@ -26,7 +26,7 @@ npm create yo mc-d8-theme
 #### Respond to the on-screen prompts as follows:
 
 1. Assign a Human readable name to your theme
-2. **IMPORTANT:** When the **What is your theme's machine name?** question comes up, be sure it matches the name of the directory you created in step 1 above \(i.e. `training_theme`\).  By default the system will try to use the name name as the human readable name, but you need to make sure you type the name of the directory you created or you will run into issues in Drupal.
+2. **IMPORTANT:** When the **What is your theme's machine name?** question comes up, be sure it matches the name of the directory you created above \(i.e. `training_theme`\).
 3. Type a description for your theme
 4. Select **Use stable** **as your base theme**
 5. Type **Y** and press **Return** when **Should we update the .gitignore to ignore compiled files?** comes up.  This will hide `/dist` from git to avoid having to commit already compiled files.
@@ -52,9 +52,9 @@ npm run watch
 
 If you wish to access Pattern Lab using Drupal's URL, use the following path:
 
-* [http://\*\*&lt;drupal-url&gt;\*\*/themes/custom/\*\*training\_theme\*\*/patternlab/index.html](http://**<drupal-url>**/themes/custom/**training_theme**/patternlab/index.html)
+* [https://drupaltraining.ddev.site/themes/custom/training\_theme/patternlab/index.html](https://drupaltraining.ddev.site) 
 
-_Update **&lt;drupal-url&gt;** and **training\_theme** to match your environment_.
+_If you don't have HTTPS enabled, use HTTP in the url above._
 
 ## Resources
 
