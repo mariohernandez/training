@@ -274,6 +274,7 @@ $color-gray-lt: #444444;
 $color-gray-xlt: #131313;
 $color-tan-hide: #f99157;
 $color-gray-dk: #444444;
+$color-tradewind: #5fb3b3;
 $color-danube: $color-navy-blue;
 ```
 {% endtab %}
