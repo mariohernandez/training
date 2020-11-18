@@ -4,7 +4,7 @@ Make the updates below to improve our theming experience.
 
 ## Global
 
-* Update `src/patterns/global/global.scss` with the following changes.  Leave all other code in `html` and `body` as is.
+* Update `src/patterns/global/global.scss` with the following changes. 
 
 {% tabs %}
 {% tab title="global.scss" %}
@@ -27,7 +27,7 @@ body {
 
 ## Mixins
 
-* Add the following mixins at the bottom of `src/patterns/global/util/_mixins.scss`.
+* Replace the content of `src/patterns/global/util/_mixins.scss`with the code below:
 
 {% tabs %}
 {% tab title="\_mixins.csss" %}
