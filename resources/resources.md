@@ -26,7 +26,9 @@
 * [Twig for Template Designers](https://twig.symfony.com/doc/2.x/templates.html)
 * [Twig blocks](https://twig.symfony.com/doc/2.x/tags/extends.html)
 * [When to use Include, embed or extends](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
+* [Twig in Drupal](https://www.drupal.org/docs/theming-drupal/twig-in-drupal)
 * [Limit Kint levels when debugging](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
+* [Twig for Drupal 8/9 Development](https://www.electriccitizen.com/citizen-blog/twig-drupal-8-development-twig-templating-part-1-2) \(Part 1 & 2\)
 
 ## Blog Posts/Tutorials
 
