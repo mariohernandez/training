@@ -79,16 +79,18 @@ body {
 // Makes an element visually hidden, but accessible.
 // @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin element-invisible {
-  position: absolute !important;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   height: 1px;
-  width: 1px;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 // Turns off the element-invisible effect.
 @mixin element-invisible-off {
-  position: static !important;
+  position: static;
   clip: auto;
   height: auto;
   width: auto;
