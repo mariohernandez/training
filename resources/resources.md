@@ -20,6 +20,10 @@
 * [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 
+#### Layout Builder
+
+* [Advanced Techniques with Layout Builder](https://www.youtube.com/watch?v=4uilQEunoME)
+
 ## Twig
 
 * [Twig documentation](https://twig.symfony.com/doc/3.x/)
