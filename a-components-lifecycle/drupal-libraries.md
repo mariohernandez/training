@@ -105,6 +105,6 @@ Create libraries for each of the components we've built so far \(Heading and But
 From now on for every new component we create in Pattern Lab, we are going to create a new library for it. In addition, we are going to attach the new library to the component. As I mentioned before, libraries have no effect in Pattern Lab, but it is a good practice to create and attach a component's library while you are working on the component as it can be easy to forget to do it later.
 
 {% hint style="info" %}
-**More on Drupal Libraries:** Mediacurrent's Director of Front-End Development, Zack Hawkins, explains libraries in detail: [https://www.youtube.com/watch?v=V8hnfxSx4Ck](https://www.youtube.com/watch?v=V8hnfxSx4Ck)
+**More on Drupal Libraries**: [https://www.youtube.com/watch?v=V8hnfxSx4Ck](https://www.youtube.com/watch?v=V8hnfxSx4Ck)
 {% endhint %}
 
