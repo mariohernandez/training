@@ -25,21 +25,6 @@ The tags component is going to be a little unusual compared to other components 
 {% endtab %}
 {% endtabs %}
 
-{% tabs %}
-{% tab title="\_tag-item.twig" %}
-```php
-<span{% if attributes %} class="{{ attributes.class }}"{% endif %}
-  {{- attributes ? attributes|without(class) -}}>
-  {{ title_prefix }}
-  <a href="{{ url }}" class="tag__link">
-    {{ name }}
-  </a>
-  {{ title_suffix }}
-</span>
-```
-{% endtab %}
-{% endtabs %}
-
 1. Now inside the _tags_ folder create the following files with the following code:
 
 {% tabs %}
@@ -61,31 +46,6 @@ The tags component is going to be a little unusual compared to other components 
     }
   ]
 }
-```
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="tags.twig" %}
-```php
-{{ attach_library('training_theme/tags') }}
-
-<ul class="tags{{ modifier ? ' ' ~ modifier }}
-  {{- attributes ? ' ' ~ attributes.class -}}"
-  {{- attributes ? attributes|without(class) -}}>
-  {% for item in items %}
-    <li class="tag__item">
-      {% block tag_item %}
-        {%
-          include '@training_theme/tags/_tag-item.twig' with {
-            "name": item.name,
-            "url": item.url
-          } only
-        %}
-      {% endblock %}
-    </li>
-  {% endfor %}
-</ul>
 ```
 {% endtab %}
 {% endtabs %}
@@ -160,49 +120,6 @@ The tags component is going to be a little unusual compared to other components 
 {% endtab %}
 {% endtabs %}
 
-{% tabs %}
-{% tab title="tags.scss" %}
-```css
-// Import site utilities
-@import '../../global/utils/init';
-
-.tags {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.tag__item {
-  align-items: center;
-  border-radius: 2px;
-  color: $color-gray-dark;
-  display: flex;
-  justify-content: center;
-  line-height: 1;
-  margin-right: 10px;
-
-
-  a {
-    background-color: $color-black;
-    color: $color-white;
-    display: block;
-    font-size: 1.3rem;
-    line-height: 1.2;
-    padding: 6px 12px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-
-    &:hover,
-    &:focus {
-      background-color: lighten($color-black, 15%);
-    }
-  }
-}
-```
-{% endtab %}
-{% endtabs %}
-
 * If you save your changes and compile your code you should see a list of tags in Pattern Lab.  Let's integrate this component with Drupal now to fix our tags inside the card of blog posts.
 
 {% hint style="info" %}
@@ -211,7 +128,7 @@ Don't forget to create the Drupal library for the tags.
 
 ## Updated the card
 
-Now that we have a component for tags, let's modify the card so we make use of it.  Here's the full card.twig code which now uses an include for the tags.
+Now that we have a component for tags, let's modify the card so we make use of it. Here's the full card.twig code which now uses an include for the tags.
 
 {% tabs %}
 {% tab title="card.twig" %}
@@ -371,3 +288,4 @@ Go ahead and make a copy of this template from its original location into your t
 * Twig blocks to the rescue again.  We're embedding the tags component and using the `tag_item` twig block to pass the template's variables so they match what Drupal expects.
 
 Now if you save your changes and clear Drupal's cache, reload the homepage and the regular cards will now displayed as shown in our designs.
+
