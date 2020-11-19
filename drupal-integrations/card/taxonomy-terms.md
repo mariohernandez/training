@@ -25,6 +25,21 @@ The tags component is going to be a little unusual compared to other components 
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="\_tag-item.twig" %}
+```php
+<span{% if attributes %} class="{{ attributes.class }}"{% endif %}
+  {{- attributes ? attributes|without(class) -}}>
+  {{ title_prefix }}
+  <a href="{{ url }}" class="tag__link">
+    {{ name }}
+  </a>
+  {{ title_suffix }}
+</span>
+```
+{% endtab %}
+{% endtabs %}
+
 1. Now inside the _tags_ folder create the following files with the following code:
 
 {% tabs %}
@@ -75,7 +90,75 @@ The tags component is going to be a little unusual compared to other components 
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="tags.twig" %}
+```php
+{{ attach_library('training_theme/tags') }}
+
+<ul class="tags{{ modifier ? ' ' ~ modifier }}
+  {{- attributes ? ' ' ~ attributes.class -}}"
+  {{- attributes ? attributes|without(class) -}}>
+  {% for item in items %}
+    <li class="tag__item">
+      {% block tag_item %}
+        {%
+          include '@training_theme/tags/_tag-item.twig' with {
+            "name": item.name,
+            "url": item.url
+          } only
+        %}
+      {% endblock %}
+    </li>
+  {% endfor %}
+</ul>
+```
+{% endtab %}
+{% endtabs %}
+
 * Notice we are including the single tag item while we look through the items array.
+
+{% tabs %}
+{% tab title="tags.scss" %}
+```css
+// Import site utilities
+@import '../../global/utils/init';
+
+.tags {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag__item {
+  align-items: center;
+  border-radius: 2px;
+  color: $color-gray-dark;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  margin-right: 10px;
+
+
+  a {
+    background-color: $color-black;
+    color: $color-white;
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    padding: 6px 12px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($color-black, 15%);
+    }
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="tags.scss" %}
