@@ -33,6 +33,7 @@
 * [Twig in Drupal](https://www.drupal.org/docs/theming-drupal/twig-in-drupal)
 * [Limit Kint levels when debugging](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 * [Twig for Drupal 8/9 Development](https://www.electriccitizen.com/citizen-blog/twig-drupal-8-development-twig-templating-part-1-2) \(Part 1 & 2\)
+* [Upgrade Pattern Lab to Twig 2.0](https://www.1xinternet.de/en/blog/patternlab-drupal9)
 
 ## Blog Posts/Tutorials
 
