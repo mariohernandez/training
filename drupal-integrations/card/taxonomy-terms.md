@@ -371,4 +371,3 @@ Go ahead and make a copy of this template from its original location into your t
 * Twig blocks to the rescue again.  We're embedding the tags component and using the `tag_item` twig block to pass the template's variables so they match what Drupal expects.
 
 Now if you save your changes and clear Drupal's cache, reload the homepage and the regular cards will now displayed as shown in our designs.
-

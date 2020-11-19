@@ -69,12 +69,9 @@
 
 ## Extras
 
----
-
-* [Image Styles](image-styles.md)
-* [Navigation](navigation.md)
+* [Image Styles](extras/image-styles.md)
+* [Navigation](extras/navigation.md)
 
 ## Resources
 
 * [Resources](resources/resources.md)
-
