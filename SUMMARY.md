@@ -9,6 +9,7 @@
 
 * [Front-end tooling](getting-started/frontend-tooling.md)
 * [Create a new D8 theme](getting-started/theme-generator.md)
+* [Drupal 9 compliance](getting-started/drupal-9-compliance.md)
 * [Component Architecture](getting-started/component-architecture.md)
 * [Drupal Best Practices](getting-started/drupal-best-practices.md)
 * [Drupal Attributes](getting-started/drupal-attributes.md)
@@ -17,6 +18,7 @@
 ## Basic Components
 
 * [Global styles](basic-components/global-styles.md)
+* [Adding webfonts](basic-components/adding-webfonts.md)
 * [Heading Component](basic-components/heading/README.md)
   * [Improving the Heading](basic-components/heading/improving-the-heading.md)
 * [Button Component](basic-components/button.md)
@@ -67,7 +69,10 @@
 
 ## Extras
 
-* [Adding webfonts](extras/adding-webfonts.md)
+---
+
+* [Image Styles](image-styles.md)
+* [Navigation](navigation.md)
 
 ## Resources
 
