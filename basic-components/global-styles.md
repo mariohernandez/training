@@ -121,6 +121,7 @@ body {
   height: $height;
   overflow: hidden;
   position: relative;
+  width: 100%;
 
   img {
     height: 100%;
