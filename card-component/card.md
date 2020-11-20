@@ -100,9 +100,9 @@ By now we should be well familiar with the fields structure above. The one field
       </div>
     {% endif %}
 
-    {% if tags %}
+    {% if items %}
       <ul class="tags">
-        {% for item in tags %}
+        {% for item in items %}
           <li class="tag__item">
             <a href="{{ item.url }}" class="tag__link">
               {{ item.name }}
