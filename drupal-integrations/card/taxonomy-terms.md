@@ -165,7 +165,7 @@ Now that we have a component for tags, let's modify the card so we make use of i
       {{ title_suffix }}
     {% endif %}
 
-    {# Date for featured content cards. #}
+    {# Date for regular content cards. #}
     {% if 'card--wide' not in modifier %}
       <div class="eyebrow card__date">
         {% block card_date %}
