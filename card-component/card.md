@@ -37,7 +37,7 @@ Now that we have identified the fields our card component needs, let's start bui
   },
   "date": "March 16 2020",
   "body_text": "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-  "items": [
+  "tags": [
     {
       "name": "Health",
       "url": "#"
@@ -100,9 +100,9 @@ By now we should be well familiar with the fields structure above. The one field
       </div>
     {% endif %}
 
-    {% if items %}
+    {% if tags %}
       <ul class="tags">
-        {% for item in items %}
+        {% for item in tags %}
           <li class="tag__item">
             <a href="{{ item.url }}" class="tag__link">
               {{ item.name }}
