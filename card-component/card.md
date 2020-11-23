@@ -78,7 +78,7 @@ By now we should be well familiar with the fields structure above. The one field
     </div>
   {% endif %}
   <div class="card__content">
-    {% if title %}
+    {% if heading %}
       {{ title_prefix }}
       {%
         include '@training_theme/heading/heading.twig' with {
