@@ -19,6 +19,7 @@
 * [Render API](https://www.drupal.org/docs/8/api/render-api)
 * [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
+* [Cropping images in Drupal](https://www.youtube.com/playlist?list=PLI6celP4IrvIxFoSGRlsNizmG7NgS2axJ)
 
 #### Layout Builder
 
