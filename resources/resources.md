@@ -38,7 +38,7 @@
 
 ### JavaScript
 
-* J[avaScript30](https://javascript30.com/) \(Video course\)
+* J[avaScript30](https://javascript30.com/) \(Video course by Wes Bos\)
 
 ## Blog Posts/Tutorials
 
