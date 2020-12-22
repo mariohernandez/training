@@ -20,6 +20,7 @@
 * [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 * [Cropping images in Drupal](https://www.youtube.com/playlist?list=PLI6celP4IrvIxFoSGRlsNizmG7NgS2axJ)
+* [Managing images in large scale websites](https://www.youtube.com/watch?v=xYgxZ8TLM0I&t=1954s) \(screencast\)
 
 #### Layout Builder
 

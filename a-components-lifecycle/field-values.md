@@ -15,6 +15,10 @@ Kint is a PHP Debugging tool. Kint for PHP is a tool designed to present your de
 * Clear Drupal's cache and reload the page
 * You should see output like the one below:
 
+{% hint style="info" %}
+**TIP**: To extend an array in Kint, **DO NOT** click the **\[+\]** in the array, for some reason this crashes the page. Instead click the the bar/row away from the **\[+\]**.
+{% endhint %}
+
 ![](../.gitbook/assets/kint.png)
 
 {% hint style="warning" %}
@@ -22,10 +26,6 @@ Kint is a PHP Debugging tool. Kint for PHP is a tool designed to present your de
 {% endhint %}
 
 The example above shows us the fields or variables available in the `content` array. Notice how each field has a **\[** **+ \]** sign next to it. This means each field is an array you can drill down into until you get to its value. See example below:
-
-{% hint style="info" %}
-**TIP**: To extend an array in Kint, **DO NOT** click the **\[+\]** in the array, for some reason this crashes the page. Instead click the the bar/row away from the **\[+\]**.
-{% endhint %}
 
 ![](../.gitbook/assets/field-value.png)
 
