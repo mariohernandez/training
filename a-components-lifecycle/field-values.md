@@ -8,22 +8,14 @@ In addition to enabling Twig debugging, we need the [devel module](https://www.d
 
 Kint is a PHP Debugging tool. Kint for PHP is a tool designed to present your debugging data in the absolutely best way possible. In the Presenter template method you'll quickly discover that when passing the value of a field to your component, Drupal does not give us the raw value of that field, we're instead given a [render array](https://www.drupal.org/docs/8/api/render-api/render-arrays), and when that array is rendered, it includes a lot of default markup that will often get in the way. While we may be tempted to just pluck the value that we want from the render array and pass it to our component, it's best to try and let Drupal fully render the field to avoid cache invalidation issues.
 
-## Exercise: Using Kint
+## Exercise: Debugging Twig
 
-* Before you can use Kint, you need to enable the **devel** and **devel\_kint** modules \(both part of the devel module\)
-* In the twig template you wish to get variables for \(i.e. `paragraph--hero.html.twig`\), type `{{ kint(content) }}`
-* Clear Drupal's cache and reload the page
-* You should see output like the one below:
+1. Before you can debug Twig, you need to enable the **devel** module
+2. In the twig template you wish to get variables for \(i.e. `node--article--hero.html.twig`\), type `{{ dmp() }}`
+3. Clear Drupal's cache and reload the page
+4. You should see the render output as shown below:
 
-{% hint style="info" %}
-**TIP**: To extend an array in Kint, **DO NOT** click the **\[+\]** in the array, for some reason this crashes the page. Instead click the the bar/row away from the **\[+\]**.
-{% endhint %}
 
-![](../.gitbook/assets/kint.png)
-
-{% hint style="warning" %}
-**WARNING**: By default kint will try to print all available variables on a page unless otherwise specified. This could slow your site down drastically and even crash it. If you experience these issues you can fix them by limiting the number of levels that can be viewed in a render array. [Follow these instructions](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb) to enable this fix.
-{% endhint %}
 
 The example above shows us the fields or variables available in the `content` array. Notice how each field has a **\[** **+ \]** sign next to it. This means each field is an array you can drill down into until you get to its value. See example below:
 
