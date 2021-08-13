@@ -44,3 +44,16 @@ Just like with Amazon, we are now going to determine which fields we want to dis
 **WARNING: Where is the title field?**  If you were looking for the title field in the previous exercise, you probably noticed that it is not available.  This is a Drupal thing and I honestly don't know why Drupal does this.  The point is that although the field is not visibly available, it is still being available when the articles renders on the page.  For now, just know that although we can't see the title field, it will still be available when the page renders.
 {% endhint %}
 
+### Exercise: Configure the Hero to display in right format
+
+With the fields in place to display as hero, let's make some final updates to ensure the image and title fields display in the right format.
+
+1. From Drupal's admin toolbar, click **Structure \| Content types \| Homepage \| Manage display**
+2. Under the **Label** column select the dropdown and choose **Hidden** to hide the field label
+3. Under the **Format** column select **Rendered Entity** from the dropdown
+4. Click the cogwheel at the far right of the Hero field
+5. For view mode select **Hero** and click the **Update** button
+6. Click the **Save** button
+
+So with these updates we are telling Drupal that when the hero is rendered in the page, we want to use the Hero view mode display which will give us only the selected article's Image and title and will ignore all other fields for the article.
+

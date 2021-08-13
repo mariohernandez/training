@@ -31,6 +31,7 @@
 * [Drupal entities](a-components-lifecycle/drupal-entities.md)
 * [Homepage content type](a-components-lifecycle/homepage-content-type.md)
 * [View modes](a-components-lifecycle/view-modes.md)
+* [Add Hero to homepage](a-components-lifecycle/add-hero-to-homepage.md)
 * [Drupal cache & twig debugging](a-components-lifecycle/cache-debug.md)
 * [Twig template suggestions](a-components-lifecycle/twig-template-suggestions.md)
 * [Getting field values](a-components-lifecycle/field-values.md)
