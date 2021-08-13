@@ -25,7 +25,7 @@ If you haven't already, enable the following modules:
 
 * [Components Libraries](https://www.drupal.org/project/components)
 * [Paragraphs](https://www.drupal.org/project/paragraphs) \(depends on [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)\)
-* [Devel & Kint](https://www.drupal.org/project/devel) \(both in same module\)
+* [Devel](https://www.drupal.org/project/devel)
 * [Admin toolbar](https://www.drupal.org/project/admin_toolbar) & Admin Toolbar Extra Tools
 * [Twig Field Value](https://www.drupal.org/project/twig_field_value)
 * [Focal Point](https://www.drupal.org/project/focal_point) \(depends on [Crop API](https://www.drupal.org/project/crop)\)

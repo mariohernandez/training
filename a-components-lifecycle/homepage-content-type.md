@@ -10,10 +10,10 @@ We'll build a new content type which we will use to build the homepage with all 
 4. Click the **Save and manage fields** button at the bottom of the page
 5. Delete the **body** field
 
-### Exercise: Adding the Hero paragraph type to the Homepage content type
+### Exercise: Adding the Hero field to the Homepage
 
 1. While still in the Homepage content type, click the **Add field** button
-2. Under the _Add a new field_ dropdown, scroll to the **Reference Revisions** section and select **Paragraph**
+2. Under the _Add a new field_ dropdown, scroll to the **Reference** section and select **Content**
 
    | Label | Machine name |
    | :--- | :--- |
@@ -21,7 +21,7 @@ We'll build a new content type which we will use to build the homepage with all 
 
 3. Click the **Save and continue** button
 4. Change _Allowed number of values\__ to **Limited - 1**
-5. In the _Reference Type_ section, choose **Hero** under _Paragraph type_
+5. In the _Reference Type_ section, choose **Article** under _Content type_
 6. Click the **Save settings** button
 
 ### Exercise: Create a new Node with a Hero
