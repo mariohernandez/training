@@ -17,20 +17,20 @@ Kint is a PHP Debugging tool. Kint for PHP is a tool designed to present your de
 
 
 
-The example above shows us the fields or variables available in the `content` array. Notice how each field has a **\[** **+ \]** sign next to it. This means each field is an array you can drill down into until you get to its value. See example below:
+The example above shows us the value of the title field for the hero. Notice how some fields have a **\[** &gt; **\]** sign next to it. This means each field is an array you can drill down into until you get to its value. See example below:
 
-![](../.gitbook/assets/field-value.png)
+![](../.gitbook/assets/title-value.png)
 
-In the example above we expanded `field_title` until we get to the `value` property of it. This shows us the actual value entered in Drupal for this field \(_Leveling up_\). So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us by Kint. In this example it would be something like this:
+In the example above we expanded `label` until we get to the `value` of it. This shows us the actual value entered in Drupal for this field \(_How to build drupal websites with components_\). So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us above. In this example it would be something like this:
 
 ```php
-content.field_title.0['#context'].value
+content.field_image.0['#context'].value
 ```
 
 However, this is not necessarily best practice. Although using the format above to get the field's value will work, there are some issues related to Drupal cache validation that can arise from this approach. A better approach would be to use the [Twig Field Value](https://www.drupal.org/project/twig_field_value) or [Twig Tweak](https://www.drupal.org/project/twig_tweak) modules. Using one of these modules would allow us to format the field in such a way that caching validation is not compromised. Example:
 
 ```php
-content.field_title|field_value
+content.field_name|field_value
 ```
 
 This will get us the same value but it will do it in a responsible way without breaking Drupal caching validation.
