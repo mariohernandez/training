@@ -51,7 +51,16 @@ It can be confusing, but Responsive Image Styles are not the same as Image Style
 9. Under Image Styles check all the image styles we created for Hero
 10. Click the **Save** button
 
-## Exercise: Configure the Hero image field Part I
+## Exercise: Configure Hero with Responsive images \(Non-Media image field\)
+
+1. Click **Structure \| Content Types \| Article \| Manage Display**
+2. Click the **Hero** view mode display
+3. For **Format** select **Responsive Images**  from the dropdown
+4. Click the little cogwheel icon at the far right of the row
+5. For **Responsive Image style** select **Hero**
+6. Click the **Update** button then click the **Save** button
+
+## Exercise: Configure the Hero image field Part I \(For Media image field\)
 
 Now that image styles and responsive image styles are in place, we need to configure the Hero image field to use them. Since we used a Media entity reference for the Hero image, we would do this configuration in the Image Entity by using a view mode. If we had used a plain Image field type for the Hero, we would configure the image field directly in the Hero paragraph type. However, using the media features give us more options and a better interface when working with Media assets.
 
@@ -73,9 +82,9 @@ Now that image styles and responsive image styles are in place, we need to confi
 
 By creating a view mode for the Image Media Entity we can define configurations that will only affect the Hero image and not other images on our site. However, there is one more step to do before we can see the changes reflected in the hero image.
 
-## Exercise: Configure the Hero image field Part 2
+## Exercise: Configure the Hero image field Part 2 \(For media image field\)
 
-1. From Drupal's admin toolbar click **Structure \| Paragraph types \| Hero \| Manage display**
+1. From Drupal's admin toolbar click **Structure \| Content types \| Article \| Manage display**
 2. Identify the **Image** field in the table and click the cogwheel icon located all the way to the right of the image field
 3. Under **View mode** select **Hero**
 4. Click the **Update** button then the **Save** button
@@ -84,8 +93,6 @@ If you visit a page on your site with a hero image, you should notice the update
 
 * Inspect the hero by right-clicking on the hero image and select **Inspect** or **Inspect element** depending on your browser
 * You will notice that the code for the image has now changed to include all the image styles we created as well as their dimensions and the sizes information \(100vw\).  With this we are giving the browser a collection of images to choose from, how big we want them to be rendered at \(100vw\).  Now the browser can pick the best image possible for each breakpoint.
-
-## Exercise:  Hide Hero fields labels
 
 You may have noticed that each of the fields in the Hero are showing their labels \(Title, Hero, etc.\). Let's remove these labels so we only see the actual content on the page.
 
