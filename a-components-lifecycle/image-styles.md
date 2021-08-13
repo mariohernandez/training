@@ -12,7 +12,7 @@ Before creating an image it is important to have a good understanding on how we 
 
 For the Hero, we want the image to always render full width on all devices. However, the image should not exceed 1900px on large devices. On tablet devices we want to use an image that is smaller maybe a maximum width of 1200px, and finally on mobile we want the image keep a specific height rather than simply scaling it down.
 
-Although we can accomplish most of the requirements above with Image styles, doing so will require we use the `<picture>` element to pick the different images at different breakpoints. This is not always recommended due to issues that may arise from telling the browser which image to use. It's best to let the browser select the best image possible based on factors such as device size, screen density, onnection speed, browser user preferences, etc. So this means we will use some CSS tricks to get our mobile image to display at a specific height as required above.
+Although we can accomplish most of the requirements above with Image styles, doing so will require we use the `<picture>` element to pick the different images at different breakpoints. This is not always recommended due to issues that may arise from telling the browser which image to use. It's best to let the browser select the best image possible based on factors such as device size, screen density, connection speed, browser user preferences, etc. So this means we will use some CSS tricks to get our mobile image to display at a specific height as required above.
 
 {% hint style="info" %}
 Read more about [how to serve responsive images ](https://www.mediacurrent.com/blog/responsive-images-d8/)on your Drupal 8 website.
