@@ -2,9 +2,9 @@
 
 ## What are Twig Blocks?
 
-Blocks are used for inheritance and act as placeholders and replacements at the same time. Twig blocks can be thought of as holes to fill in in a Drupal page.  Or perhaps as regions in your pages.
+Twig blocks are used for inheritance and act as placeholders and replacements at the same time. Twig blocks can be thought of as holes to fill in in a Drupal page.  Or perhaps as regions in your pages.
 
-The challenge we face is having control of the markup while adhering to Drupal's best practices for rendering content. When the time to integrate a component with Drupal comes, often times using `include` statements will do the job, but there are times when we want to modify content or markup before Drupal renders a component and `include` statements don't allow for this. We could use the `extends` Twig statements but these could also be limiting. In these situations the best option is to use Twig's `embed` statements. Embed statements combine the functionality of both, `include` and `extends` statements. Let's see an example.
+The challenge we face is having control of the markup while adhering to Drupal's best practices for rendering content. When the time to integrate a component with Drupal comes, oftentimes using `include` statements will do the job, but there are times when we want to modify content or markup before Drupal renders a component and `include` statements don't allow for this. We could use the `extends` Twig statements but these could also be limiting. In these situations the best option is to use Twig's `embed` statements. Embed statements combine the functionality of both, `include` and `extends` statements. Let's see an example.
 
 {% tabs %}
 {% tab title="card.twig" %}
