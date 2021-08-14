@@ -9,7 +9,6 @@
 
 * [Front-end tooling](getting-started/frontend-tooling.md)
 * [Create a new D8 theme](getting-started/theme-generator.md)
-* [Drupal 9 compliance](getting-started/drupal-9-compliance.md)
 * [Component Architecture](getting-started/component-architecture.md)
 * [Drupal Best Practices](getting-started/drupal-best-practices.md)
 * [Drupal Attributes](getting-started/drupal-attributes.md)
