@@ -4,7 +4,7 @@
 
 Presenter templates are Twig template suggestions in a theme \(e.g., `node--news.html.twig`, `block--card.html.twig`, `field--something.html.twig`, etc.\), but in the context of Component-based development, their only purpose is to pass data from Drupal to the component. This means everything related to the component such as Markup, CSS and Javascript is done at the component level in Pattern Lab, and when is time to wire the component with Drupal, we use the appropriate presenter template, or Twig template suggestion, to simply map Drupal fields with the component's fields we defined in Pattern Lab.
 
-There are other ways to integrate component with Drupal, such as the [UI Patterns](https://www.drupal.org/project/ui_patterns) module, pre-processing, but the most popular approach is presenter templates.
+There are other ways to integrate components with Drupal, such as the [UI Patterns](https://www.drupal.org/project/ui_patterns) module, pre-processing, but the most popular approach is presenter templates.
 
 ## Presenter templates best practices
 
