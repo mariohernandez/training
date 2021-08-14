@@ -8,3 +8,5 @@ This training uses an automated training environment which will strealine the se
 2. Clone the **drupaltraining** repo \([Follow the instructions in the repo](https://github.com/mariohernandez/drupaltraining)\)
 3. Run `ddev start`
 
+
+
