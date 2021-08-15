@@ -102,8 +102,8 @@ We don't need to write any CSS for this component, but let's at least create a S
 }
 ```
 
-* First we import the theme's utilities so we have access to any Sass variables, mixins, breakpoints, etc.  We will do the with every new stylesheet we create.
-* The remaining code are styles for the heading which include styles for when we need to style headings differently.  Moe on this later.
+* First we import the theme's utilities so we have access to any Sass variables, mixins, breakpoints, etc.  We will do this with every new stylesheet we create.
+* The remaining code are styles for the heading which include styles for when we need to style headings differently.  More on this later.
 
 ### Compiling the code
 
