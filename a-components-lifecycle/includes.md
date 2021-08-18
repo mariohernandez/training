@@ -10,9 +10,9 @@ An example of an typical `include` statement looks like this:
 
 Include statements accept a path parameter to the file you want to include.
 
-## Includes in context of Drupal 8 components
+## Includes in context of Drupal components
 
-In a Drupal 8 theme includes are mainly used to include or nest components into other components or templates. This is powerful because by including a component we avoid duplicating code. As we saw in the Hero component, we were able to include previously built components and lavarage all the work we did with those components without repeating ourselves. Because the Heading component was built in such a way, they still provide a mechanism for us to change them while being included so they meet our needs per use case.
+In a Drupal theme, include statements are mainly used to nest components into other components or templates. This is powerful because by including a component we avoid duplicating code. As we saw in the Hero component, we were able to include previously built components and leverage all the work we did with those components without repeating ourselves. Because the Heading and Button components were built in such a way, they still provide a mechanism for us to change them while being included so they meet our needs per use case.
 
 ### Let's review the Heading include in the Hero
 
