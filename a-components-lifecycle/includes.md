@@ -28,9 +28,8 @@ In a Drupal theme, include statements are mainly used to nest components into ot
 {% endtab %}
 {% endtabs %}
 
-* The include statement above uses a relative path.  This was done by creating a theme namespace \(`training_theme`\), which is mapped to `src/patterns/components/`, then we complete the path by providing the template name for the component.  More on namespaces later.
-* The keyword `with` allows to pass additional variable to an include \(i.e. `heading`\)
-* The keyword `only` restricts access to the context of the component.  For example, if a component has multiple variable we can opt to only pass some of them in the include.
+* The include statement above uses a relative path. This was done by creating a theme namespace \(components\_theme\), which is mapped to src/patterns/components/, then we complete the path by providing the template name for the component. The keyword with allows to pass additional variable to an include \(i.e. heading\)
+* The keywords `with` and `only`  restrict access to the context of the component. For example, if a component has multiple variables we can opt to only pass some of them in the include.
 
 Being able to customize components during the "include" process is a must. There are two ways we can change variables, properties, or values of a component.  Let's use the Hero as an example:
 
