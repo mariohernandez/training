@@ -7,7 +7,9 @@ Taxonomy are Drupal entities just like Nodes, blocks, etc. This means we can cre
 The tags component is going to be a little unusual compared to other components we've built. The main reason for the way this component will be built is how Drupal handles templates for taxonomy terms and vocabularies. We will see more about this when we integrate the tag components with Drupal.
 
 1. Inside `src/patterns/components/` create a new folder called **tags**
-2. Inside the _tags_ folder create a new file called `tag-item.twig` \(_notice the underscore in the file name_\).  Using an underscore in-front of a twig file name allows [Pattern Lab to ignore the file](https://patternlab.io/docs/hiding-patterns-in-the-navigation/).  We don't need to see an individual tag in Pattern Lab, we want to see the full collection of tags.  More on this shortly.
+2. Inside the _tags_ folder create a new file called `tag-item.twig` \(_we will first create a component for a single tag item_\).  
+   1. Since we wouldn't want to display only a single tag item in Pattern Lab, let's hide it by creating a new file called **tag-item.md** Inside the markdown file add the following code: `--- hidden: true ---`
+   2. Using a markdown file with the same name of the pattern you wish to hide will hide the pattern in Pattern Lab.  The pattern is still available if we need to use it in another component. 
 3. Add the following code inside `_tag-item.twig`
 
 {% tabs %}
