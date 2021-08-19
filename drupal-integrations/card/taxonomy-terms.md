@@ -264,7 +264,7 @@ Go ahead and make a copy of this template from its original location into your t
 {% tabs %}
 {% tab title="taxonomy-term--tags.html.twig" %}
 ```php
-{% include '@training_theme/tags/_tag-item.twig' %}
+{% include '@training_theme/tags/tag-item.twig' %}
 ```
 {% endtab %}
 {% endtabs %}
