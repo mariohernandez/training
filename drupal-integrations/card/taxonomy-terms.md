@@ -269,7 +269,7 @@ Go ahead and make a copy of this template from its original location into your t
 {% endtab %}
 {% endtabs %}
 
-* Since our tag item template \(`_tag-item.twig`\) was build as a single link with variables for `url` and `name`, all we need to integrate it with Drupal is to include the template. No need for fields mapping because the taxonomy term template provides **url** and **name** by default.
+* Since our tag item template \(`tag-item.twig`\) was build as a single link with variables for `url` and `name`, all we need to integrate it with Drupal is to include the template. No need for fields mapping because the taxonomy term template provides **url** and **name** by default.
 * Open `field--node--field-blog-tags--blog.html.twig` and also remove all of the code except for the comments
 * Add the following code at the bottom of the template:
 
