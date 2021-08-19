@@ -7,11 +7,11 @@ Taxonomy are Drupal entities just like Nodes, blocks, etc. This means we can cre
 The tags component is going to be a little unusual compared to other components we've built. The main reason for the way this component will be built is how Drupal handles templates for taxonomy terms and vocabularies. We will see more about this when we integrate the tag components with Drupal.
 
 1. Inside `src/patterns/components/` create a new folder called **tags**
-2. Inside the _tags_ folder create a new file called `_tag-item.twig` \(_notice the underscore in the file name_\).  Using an underscore in-front of a twig file name allows [Pattern Lab to ignore the file](https://patternlab.io/docs/hiding-patterns-in-the-navigation/).  We don't need to see an individual tag in Pattern Lab, we want to see the full collection of tags.  More on this shortly.
+2. Inside the _tags_ folder create a new file called `tag-item.twig` \(_notice the underscore in the file name_\).  Using an underscore in-front of a twig file name allows [Pattern Lab to ignore the file](https://patternlab.io/docs/hiding-patterns-in-the-navigation/).  We don't need to see an individual tag in Pattern Lab, we want to see the full collection of tags.  More on this shortly.
 3. Add the following code inside `_tag-item.twig`
 
 {% tabs %}
-{% tab title="\_tag-item.twig" %}
+{% tab title="tag-item.twig" %}
 ```php
 <span{% if attributes %} class="{{ attributes.class }}"{% endif %}
   {{- attributes ? attributes|without(class) -}}>
@@ -62,7 +62,7 @@ The tags component is going to be a little unusual compared to other components 
     <li class="tag__item">
       {% block tag_item %}
         {%
-          include '@training_theme/tags/_tag-item.twig' with {
+          include '@training_theme/tags/tag-item.twig' with {
             "name": item.name,
             "url": item.url
           } only
