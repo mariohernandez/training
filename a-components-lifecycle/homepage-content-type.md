@@ -31,11 +31,12 @@ Using the Homepage content type, create a new node and add a Hero component in i
 1. From Drupal's Admin toolbar, click **Content**
 2. Click the **Add content** button
 3. Select **Homepage**
-4. Fill out the Page's title using **Homepage**
-5. Then fill out all fields in the Hero paragraph type
+4. As the Page title type **Homepage**
+5. In the Hero field, begin typing any characters and as article suggestions begin to display, select an article of your choice
 6. Click the **Save** button
 
-After saving your page the hero component should look something similar to this:
+The above exercise will create a node of type Homepage, with an article as the Hero.  It is clear we have more work to do since the Hero article does not look like a Hero at all.  We will clean things up in the following exercises.  
+
 
 ![Drupal Node with Hero Paragraph](../.gitbook/assets/d8-hero.png)
 
