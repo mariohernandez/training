@@ -7,7 +7,7 @@
 Drupal provides the ability of creating view modes to be able to display content in many ways.  If we look at the Amazon example above, we have outlined each of the ways in which any product can be displayed.  There are actually many other ways in which a product is displayed in Amazon but we don't have enough room for all of them.  The point is that based on where a product should be displayed, amazon changes the information for each display.  
 
 1. This is the full view of any product.  Here you will see all the details about the product including name, brand, price, dimensions, etc.
-2. This option shows us a more compact option for the products which are main their rating and a link to a page where they can be found, in addition to the image.
+2. This option shows us a more compact option for the products which are the rating and a link to a page where they can be found, in addition to the image.
 3. This view display is even more compact than the previous one with only an image, name and rating
 4. The same is true for this view display option
 5. Finally, this option is as bare bones as possible with only the image of the product
@@ -55,5 +55,5 @@ With the fields in place to display as hero, let's make some final updates to en
 5. For view mode select **Hero** and click the **Update** button
 6. Click the **Save** button
 
-So with these updates we are telling Drupal that when the hero is rendered in the page, we want to use the Hero view mode display which will give us only the selected article's Image and title and will ignore all other fields for the article.
+With these updates we are telling Drupal that when the hero is rendered in the page, we want to use the Hero view mode display which will give us only the selected article's Image and title and will ignore all other fields for the article.
 
