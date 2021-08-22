@@ -4,7 +4,7 @@ Now it's time to begin the integration process for the Hero component. We are go
 
 ### Exercise: Integrate the Hero
 
-1. In your code editor, open `/src/templates/contnet/node--article--hero.html.twig` 
+1. In your code editor, open `/src/templates/content/node--article--hero.html.twig` 
 2. Remove all code from the file except for comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
 3. Add the following code at the bottom of the template:
 
