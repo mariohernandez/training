@@ -38,7 +38,7 @@ Using the Homepage content type, create a new node and add a Hero component in i
 The above exercise will create a node of type Homepage, with an article as the Hero.  It is clear we have more work to do since the Hero article does not look like a Hero at all.  We will clean things up in the following exercises.  
 
 
-![Drupal Node with Hero Paragraph](../.gitbook/assets/d8-hero.png)
+![Drupal Node with Hero](../.gitbook/assets/d8-hero.png)
 
 It's pretty obvious there are a lot of things that need improvement with our Hero, but we will get to that shortly.  
 
