@@ -11,10 +11,14 @@ Let's start by creating a new view to pull all article posts.  Then we will crea
 3. For View name type **Blog posts**
 4. Machine name should auto complete to `blog_posts`
 5. For VIEW SETTINGS, **Show** _Content_ **Of type:** _Article_
-6. Check **Create a block** under BLOCK SETTINGS
-7. Type **From our blog** as the block title
-8. Clear the value from the **Items per block** field
-9. Click the **Save and edit** button
+6. Check **Create a page** and set its path to **blog**
+7. For PAGE DISPLAY SETTINGS, ensure **Teasers** is selected 
+8. Leave **Use a pager** checkbox checked
+9. Check **Create a block**
+10. Under BLOCK SETTINGS be sure **Teasers** is selected
+11. Type **From our blog** as the block title
+12. Accept the value from the **Items per block** field
+13. Click the **Save and edit** button
 
 #### Updating the view
 
