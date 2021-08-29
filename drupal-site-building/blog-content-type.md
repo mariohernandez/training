@@ -17,9 +17,9 @@ We'll build a new content type which we will use to build blog articles.  Blog a
 | Body | `body` | **This** **field is auto generated.  No need to create it** |
 | Date | `date` | **This** **field is auto generated.  No need to create it** |
 | Image | `field_blog_image` | Media Reference |
-| Tags | field\_blog\_tags | Taxonomy Term Reference |
-| Author | field\_author | User Reference |
-| Category | field\_category | Text \(plain\) |
+| Tags | `field_blog_tags` | Taxonomy Term Reference |
+| Author | `field_author` | User Reference |
+| Category | `field_category` | Text \(plain\) |
 
 {% hint style="info" %}
 **NOTE**: We don't need to add a `title` , `date`, or `body` fields since these already come out of the box on any content types.
