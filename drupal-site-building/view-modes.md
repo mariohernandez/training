@@ -33,11 +33,12 @@ Managing fields with view modes ensures we are letting Drupal do things the way 
 1. While still in the Article content type, click **Manage display**
 2. Click the **Featured** view mode
 3. Drag the **Tags** and **Links** fields into the **Disabled** section.  Tags are not needed in Card Wide.
-4. Change each of the field's labels to **Hidden**
-5. For the **Body** field, change the Format to **Trimmed** and change the **Trim limit** to 125 characters by clicking the cogwheel icon to the right of the body field
-6. Click the **Update** button
-7. We'll comeback to configuring the image field with the right image styles later on
-8. Click the **Save** button
+4. For the Author field change its format to **Rendered entity**
+5. Change each of the field's labels to **Hidden**
+6. For the **Body** field, change the Format to **Trimmed** and change the **Trim limit** to 125 characters by clicking the cogwheel icon to the right of the body field
+7. Click the **Update** button
+8. We'll comeback to configuring the image field with the right image styles later on
+9. Click the **Save** button
 
 ## Teaser view mode
 
@@ -49,5 +50,6 @@ Managing fields with view modes ensures we are letting Drupal do things the way 
 ## **Full content view mode**
 
 1. Hide the labels of all the fields
-2. Save your changes
+2. For the Tags and Author fields change their format to **Rendered entity**
+3. Save your changes
 

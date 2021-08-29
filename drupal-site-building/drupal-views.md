@@ -1,16 +1,16 @@
 # Drupal Views
 
-To build the _Featured Content_ and _From our blog_ sections we are going to use the power of Drupal's views and View Modes. By querying all Blog content we can generate a list of blog posts, then using View Modes, we can determine the fields we'll expose as well as the format in which fields will be rendered. Drupal Views are database queries you can write and execute using Drupal's UI.
+To build the _Featured Content_ and _From our blog_ sections we are going to use the power of Drupal's views and View Modes. By querying all Article content we can generate a list of blog article posts, then using View Modes, we can determine the fields we'll expose as well as the format in which fields will be rendered. Drupal Views are database queries you can write and execute using Drupal's UI.
 
-### Exercise: Blog posts View
+### Exercise: Blog articles View
 
-Let's start by creating a new view to pull all blog posts.  Then we will create two block displays out of the view; one for the **Featured Content** blog posts, and the other one to show the **From our Blog** posts.
+Let's start by creating a new view to pull all article posts.  Then we will create two block displays out of the view; one for the **Featured Content** posts, and the other one to show the **From our Blog** posts.
 
 1. From Drupal's Admin toolbar click **Structure \| Views**
 2. Click the **Add view** button
 3. For View name type **Blog posts**
 4. Machine name should auto complete to `blog_posts`
-5. For VIEW SETTINGS, **Show** _Content_ **Of type:** _Blog_
+5. For VIEW SETTINGS, **Show** _Content_ **Of type:** _Article_
 6. Check **Create a block** under BLOCK SETTINGS
 7. Type **From our blog** as the block title
 8. Clear the value from the **Items per block** field
