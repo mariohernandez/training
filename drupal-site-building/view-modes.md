@@ -19,18 +19,18 @@ There are many ways to manage how the same type of content can be displayed diff
 
 Managing fields with view modes ensures we are letting Drupal do things the way Drupal like to do things for rendering content. Then through the use of twig template suggestions per each view mode we integrate the components we want to use to render our content.
 
-1. While still in the Blog content type, click **Manage display**
+1. While still in the **Article** content type, click **Manage display**
 2. Expand the **CUSTOM DISPLAY SETTINGS** fieldset
 3. Click the **Manage view modes** link
 4. Under the Content section click the **Add new Content view mode** link
 5. Type **Featured** in the name field and click the **Save** button
-6. Return to the Blog content type **Manage display** screen
+6. Return to the Article content type **Manage display** screen
 7. Expand the **CUSTOM DISPLAY SETTINGS** fieldset
 8. Ensure **Full Content**, **Featured**, and **Teaser** are checked and press the **Save** button
 
 ## Configure the Featured view mode
 
-1. While still in the Blog content type, click **Manage display**
+1. While still in the Article content type, click **Manage display**
 2. Click the **Featured** view mode
 3. Drag the **Tags** and **Links** fields into the **Disabled** section.  Tags are not needed in Card Wide.
 4. Change each of the field's labels to **Hidden**
@@ -42,7 +42,7 @@ Managing fields with view modes ensures we are letting Drupal do things the way 
 ## Teaser view mode
 
 1. Repeat all the steps above for the **Teaser** view mode except on step 3, drag the **Author, Category**, and **Links** into the **Disabled** section
-2. For the image field, change its format to be **Rendered entity**
+2. For the Tags field, change its format to be **Rendered entity**
 3. For step 4 above, trim the body text to 160 characters
 4. Click the **Save** button
 
