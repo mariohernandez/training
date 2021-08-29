@@ -1,13 +1,12 @@
-# Blog content type
+# Blog articles
 
-We'll build a new content type which we will use to build blog articles.  Blog articles are the content we will display on the homepage as Featured Content and From our Blog.  This means each card in the homepage represents a blog article in a compact view.  We will achieve the Card and Card Wide displays using Drupal's View Modes.  More on view modes shortly.
+We'll modify Drupal core's Article content type so we can use it to generate blog post for our site. Blog articles are the content we will display on the homepage as Featured Content and From our Blog.  This means each card in the homepage represents a blog article in a compact view.  We will achieve the Card and Card Wide displays using Drupal's View Modes.  
 
 1. From Drupal's Admin Toolbar, click **Structure \| Content Types**
-2. Click the **Add content type** button
-3. In the _name_ field type **Blog**
-4. Click the **Publishing Options** tab in the Vertical Tabs options
-5. Under **Default options** leave **Published** checked.  All other check boxes should **not be checked**.
-6. Click the **Save and manage fields** button at the bottom of the page
+2. Click **Manage fields** next to **Article**
+3. Delete the **Comments** field
+4. Add the missing fields based on the table below
+5. Click the **Save and manage fields** button at the bottom of the page
 
 #### Add the following fields:
 
@@ -16,25 +15,10 @@ We'll build a new content type which we will use to build blog articles.  Blog a
 | Title | `label` | **This** **field is auto generated.  No need to create it** |
 | Body | `body` | **This** **field is auto generated.  No need to create it** |
 | Date | `date` | **This** **field is auto generated.  No need to create it** |
-| Image | `field_blog_image` | Media Reference |
-| Tags | `field_blog_tags` | Taxonomy Term Reference |
+| Image | `field_image` | Media Reference |
+| Tags | `field_tags` | Taxonomy Term Reference |
 | Author | `field_author` | User Reference |
 | Category | `field_category` | Text \(plain\) |
-
-{% hint style="info" %}
-**NOTE**: We don't need to add a `title` , `date`, or `body` fields since these already come out of the box on any content types.
-{% endhint %}
-
-For the Image field, set the following configuration:
-
-* **Media type**: `image`
-
-For the Tags field, set the following configuration:
-
-* **Allowed number of values**: _Unlimited_
-* **Reference method**: _Default_
-* _Check the box for_ **Create referenced entities if they don't already exist**
-* _**Vocabulary**:_ Tags
 
 For the Author field, set the following configuration:
 

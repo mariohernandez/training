@@ -47,7 +47,7 @@
 
 ## Drupal site building
 
-* [Blog content type](drupal-site-building/blog-content-type.md)
+* [Blog articles](drupal-site-building/blog-content-type.md)
 * [View modes](drupal-site-building/view-modes.md)
 * [Drupal Views](drupal-site-building/drupal-views.md)
 * [Author](drupal-site-building/author.md)
