@@ -8,7 +8,7 @@ Visually we know the two different variants look similar, however, if we pay clo
 
 ![Card wide variant](../.gitbook/assets/card-wide.png)
 
-We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and, there is also a new field in this variant that is not part of the original card \(button\).
+We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and, there is also a new field in this variant that is not part of the original card \(author\).
 
 Before we can create a new variant, we need to make some updates to the original Card component so it is easier to adapt it to new variants.
 
@@ -75,7 +75,7 @@ From a navigation and naming perspective **patternName** and **pseudoPatternName
 
 ### Selecting the right fields for the card variant
 
-As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card title in the variant should not be a link. And finally, the card variant uses a button but the original card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
+As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card variant uses an author field which the original card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
 
 * Update `card~wide.json` as shown below:
 
@@ -130,7 +130,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 {% endif %}
 ```
 
-* First we are checking whether the value of the `modifier` variable is `card--wide`, or if the Drupal view mode we are using is `featured`.  This will ensure that only if one of this conditions is met we will be able to access this twig block.  
+* First we are checking whether the value of the `modifier` variable is `card--wide`This will ensure that only if this conditions is met we will be able to access this twig block.  
 * The twig block name is `featured_date`.  However this name can be anything that makes sense to you.
 * Inside the twig block we are printing the date variable.
 * Finally we close the twig block and the if statement.  The name of the twig block in the `endblock` statement is optional.  For example, the following should also work: `{% endblock %}`.  However, we expect a few twig blocks on this template so adding each of the block's names at the end makes it clear where blocks start and end.
@@ -149,12 +149,11 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 {% endif %}
 ```
 
-* The conditional statement above is checking that the view\_mode's value is not `featured`.  If so, it will print the date directly under the card's title.
-* Again, using a twig block gives us the ability to modify this field before Drupal prints it.
+* The conditional statement above is checking that the `card--wide`is not being passed in the modifier and If so, it will print the date directly under the card's title. Again, using a twig block gives us the ability to modify this field before Drupal prints it.
 
 #### Category field
 
-* For the category field we don't need to perform any type of conditional since it will only be displayed in the card wide variant.  This means we can hide it from the regular card view mode \(teaser\).  Modify the category field as shown below:
+* For the category field we don't need to perform any type of conditional to check which card we are working with since it will only be displayed in the card wide variant.  This means we can hide it from the regular card view mode \(teaser\).  Modify the category field as shown below:
 
 ```php
 {% if category %}
@@ -167,7 +166,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * Notice that both, the date and category fields use the same CSS class of `eyebrow`.  This will allow us to style both fields identically.
 
 {% hint style="info" %}
-If you are wondering why are we placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card. 
+If you are wondering why we are placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card. 
 {% endhint %}
 
 #### Card tags
