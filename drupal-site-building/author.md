@@ -45,7 +45,7 @@ We'll create a new view mode to control which user's fields we can display.
 
 ## Update the blog content type to use the Author view mode
 
-1. Go to Blog content type's manage display screen \(**Structure &gt; Content types &gt; Blog &gt; Manage display**\)
+1. Go to Blog content type's manage display screen \(**Structure &gt; Content types &gt; Article &gt; Manage display**\)
 2. Click the **Featured** view mode
 3. For the Author field, ensure **Rendered entity** is set as the format
 4. Click the little cogwheel icon to the right of the Author field
