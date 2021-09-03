@@ -43,7 +43,7 @@ We'll create a new view mode to control which user's fields we can display.
 3. Click the **Update** button
 4. Click the **Save** button
 
-## Update the blog content type to use the Author view mode
+## Update the Article content type to use the Author view mode
 
 1. Go to Blog content type's manage display screen \(**Structure &gt; Content types &gt; Article &gt; Manage display**\)
 2. Click the **Featured** view mode
