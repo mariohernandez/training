@@ -27,18 +27,18 @@ We'll get back to the full view of a blog post later, for now we are going to fo
 * Finally, I have pointed out where the current template being used \(`node.html.twig`\) is located.
 
 {% hint style="info" %}
-**IMPORTANT:** To ensure we are all following along with the same article type, please ensure you selected an article from the _From our blog_ collection of articles. This means you should see the word `teaser` somewhere in the list of template names above. If don't see it, close your code inspector and repeat steps 2 & 3 above with a different article.
+**IMPORTANT:** To ensure we are all following along with the same article type, please ensure you selected an article from the _From our blog_ collection of articles. This means you should see the word `teaser` somewhere in the list of template names above. If you don't see it, close your code inspector and repeat steps 2 & 3 above with a different article.
 {% endhint %}
 
-#### Creating a template suggestion for Blog teaser view mode
+#### Creating a template suggestion for Articles in teaser view mode
 
-The focus at this point is to create template suggestions for all article nodes that will be displayed in the **Teaser** view mode. So if we look at the list of file name suggestions above we can ignore the top 4 names as those are either related to the full section of content or are extremely specific to only the single article we are looking at \(**node--6\***\).
+The focus at this point is to create template suggestions for all article nodes that will be displayed in the **Teaser** view mode. So if we look at the list of file name suggestions above we can ignore the top 4 names as those are either related to the full section of content or are extremely specific to only the single article we are looking at.
 
-1. So based on the remaining names after ignoring the first 4, we can select the following name: `node--blog--teaser.html.twig`.  
+1. So based on the remaining names after ignoring the first 4, we can select the following name: `node--article--teaser.html.twig`.  
    1. **node** is the Drupal entity we are trying to integrate with
    2. **blog** is the content type \(also an entity\)This names is exactly what we need to style all blog nodes that will be displayed in teaser view mode.
 2. Now that we've selected the template we need, let's create it by making a copy from `core/themes/stable/templates/content/node.html.twig` into your theme's templates directory \(`/themes/custom/training_theme/src/templates/content/`
-3. Rename the newly copied template as `node--blog--teaser.html.twig`
+3. Rename the newly copied template as `node--article--teaser.html.twig`
 4. Click your Drupal's cache
 
 {% hint style="info" %}
@@ -55,7 +55,7 @@ OK, now that our custom twig template is ready, it's time to plug it to our Card
 
 We'll break the integration process down so we can explain each part of it. You will find the full template at the bottom of this page.
 
-1. Open **node--blog--teaser.html.twig** in your editor and remove all the code except for the comments at the top of the template
+1. Open **node--article--teaser.html.twig** in your editor and remove all the code except for the comments at the top of the template
 2. At the bottom of the template, add the following code:
 
    ```php
@@ -64,7 +64,7 @@ We'll break the integration process down so we can explain each part of it. You 
 
    First thing we are setting a twig variable to trigger a full render of the content variable
 
-3. Now let's create twig variable for the card's title field
+3. Now let's create a twig variable for the card's title field
 
    ```php
    {% set article_title = {
@@ -78,15 +78,15 @@ We'll break the integration process down so we can explain each part of it. You 
 
    Why are we doing this? Well, Drupal gives us the article title text and url, but we still need to add a modifier class and a heading level. We are setting a variable so we can construct the title the same way we did when we built the heading component.
 
-4. Now, let's add an `embed` statement for the Card component:
+4. Now, let's add an `embed` twig statement for the Card component:
 
    ```php
    {% embed '@training_theme/card/card.twig' with { ... } %} {% endembed %}
    ```
 
-   Why use `embed` and not `include`? Twig gives us 3 ways to nest or "include" templates/components into other twig templates; `include`, `extends`, and `embed`. Each have their pros/cons. You can [learn more about them](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed). We need to use `embed` instead of `include` to be able to use the twig blocks we added in the Card component for the `date` and `tags` fields
+   Why use `embed` and not `include`? Twig gives us 3 ways to nest or "include" templates/components into other twig templates; `include`, `extends`, and `embed`. Each has their pros/cons. You can [learn more about them](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed). We need to use `embed` instead of `include` to be able to use the twig blocks we added in the Card component for the `date` and `tags` fields
 
-5. Now let's start mapping the card's variables with Drupal fields or variables.
+5. Now let's start mapping the card's variables with Drupal fields and variables.
 
    ```php
    {% embed '@training_theme/card/card.twig' with
@@ -101,7 +101,7 @@ We'll break the integration process down so we can explain each part of it. You 
    {% endembed %}
    ```
 
-   The first 3 items inside the `embed` statement above are Drupal specific variables so we laverage Drupal's use of `attributes`, `title_prefix` and `title suffix`. Adding these items will allows us to make use of Drupal's contextual links to quickly edit content as well as allowing Drupal to add its attributes to our component's markup.
+   The first 3 items inside the `embed` statement above are Drupal specific variables so we leverage Drupal's use of `attributes`, `title_prefix` and `title suffix`. Adding these items will allows us to make use of Drupal's contextual links to quickly edit content as well as allowing Drupal to add its attributes to our component's markup.
 
 6. Let's now make use of the `article_title` variable we created above
 
@@ -112,7 +112,7 @@ We'll break the integration process down so we can explain each part of it. You 
       "title_prefix": title_prefix,
       "title_suffix": title_suffix,
       "heading": article_title,
-      "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
+      "image": content.field_blog_image is not empty ? content.field_blog_image,
       "date": date,
       "body_text": content.body|render|trim is not empty ? content.body,
       "tags": content.field_blog_tags|render|trim is not empty ? content.field_blog_tags,
@@ -155,8 +155,8 @@ We'll break the integration process down so we can explain each part of it. You 
    {% endembed %}
    ```
 
-   * Mapping each of the components with Drupal's equivalent fields is only half the job. At least for the date and tags fields in this case. By using Twig blocks we can explicitly declare the data we want to render in the cards. 
-   * If you remember, we created two twig blocks for the date field. One for the regular card and one for the card wide. Twig blocks in the embed statement above let us pick which of the two we want to use. 
+   * Mapping each of the components with Drupal's equivalent fields is only half the job. At least for the date and tags fields in this case. By using Twig blocks we can explicitly declare the date we want to render in the cards. 
+   * If you remember, we created two twig blocks for the date field. One for the regular card and one for the card wide. Twig blocks in the embed statement above let us pick which one the two we want to use while leaving the other one empty.
    * We start by declaring the `featured_date` twig block but we leave it empty.  This means Drupal will not output any content for that block.  Since the featured\_date is only used in the card wide, we don't need to render it in the regular card.
    * Next we declare the `card_date` twig block to print the date information.
    * Finally we declare the `tags` twig block to render the tags.
@@ -192,10 +192,10 @@ and make use of twig blocks found in such component.
     "title_prefix": title_prefix,
     "title_suffix": title_suffix,
     "heading": article_title,
-    "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
+    "image": content.field_image is not empty ? content.field_image,
     "date": date,
     "body_text": content.body|render|trim is not empty ? content.body,
-    "tags": content.field_blog_tags|render|trim is not empty ? content.field_blog_tags,
+    "tags": content.field_tags|render|trim is not empty ? content.field_tags,
     "modifier": ""
   } only
 %}
