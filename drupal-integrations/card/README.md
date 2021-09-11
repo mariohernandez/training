@@ -113,7 +113,7 @@ We'll break the integration process down so we can explain each part of it. You 
       "title_suffix": title_suffix,
       "heading": article_title,
       "image": content.field_blog_image is not empty ? content.field_blog_image,
-      "date": date,
+      "date": node.createdtime|date('F j, Y'),
       "body_text": content.body|render|trim is not empty ? content.body,
       "tags": content.field_blog_tags|render|trim is not empty ? content.field_blog_tags,
       "modifier": ""
@@ -123,7 +123,8 @@ We'll break the integration process down so we can explain each part of it. You 
    {% endembed %}
    ```
 
-   Next we are mapping the `image`, `date`, `body_text`, and `tags` variables with Drupal fields for those elements but first we check that the fields are not empty.
+   * Next we are mapping the `image`, `date`, `body_text`, and `tags` variables with Drupal fields for those elements but first we check that the fields are not empty.
+   * For the date format we are using a custom one so we can print the date in the right format.
 
 7. Time to add the twig blocks for date and tag fields.  Update your template as follows:
 
@@ -135,7 +136,7 @@ We'll break the integration process down so we can explain each part of it. You 
       "title_suffix": title_suffix,
       "heading": article_title,
       "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
-      "date": date,
+      "date": node.createdtime|date('F j, Y'),
       "body_text": content.body|render|trim is not empty ? content.body,
       "tags": content.field_blog_tags|render|trim is not empty ? content.field_blog_tags,
       "modifier": ""
@@ -193,7 +194,7 @@ and make use of twig blocks found in such component.
     "title_suffix": title_suffix,
     "heading": article_title,
     "image": content.field_image is not empty ? content.field_image,
-    "date": date,
+    "date": node.createdtime|date('F j, Y'),
     "body_text": content.body|render|trim is not empty ? content.body,
     "tags": content.field_tags|render|trim is not empty ? content.field_tags,
     "modifier": ""
