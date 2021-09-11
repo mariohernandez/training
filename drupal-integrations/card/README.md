@@ -230,7 +230,7 @@ Now that the card integration is complete, let's take a look at how the blog nod
 1. After saving all your changes to **node--blog--teaser.html.twig**, clear Drupal's cache
 2. Reload the homepage
 
-### Date format issue
+### What's up with the Tags?
 
-The card looks great but it looks like the date format does not match our designs. Also the tags are not styled at all.  Let's fix these two issues.
+The card looks great but it looks like the tags are not styled at all.  We'll fix them next.
 

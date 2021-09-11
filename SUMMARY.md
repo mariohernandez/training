@@ -57,7 +57,6 @@
 ## Drupal Integrations
 
 * [Integrating the Card](drupal-integrations/card/README.md)
-  * [Date formats](drupal-integrations/card/date-formats.md)
   * [Taxonomy terms](drupal-integrations/card/taxonomy-terms.md)
 * [Integrating the Card Wide](drupal-integrations/integrating-the-card-wide.md)
 * [Author integration](drupal-integrations/author.md)
