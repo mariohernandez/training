@@ -40,14 +40,14 @@ modifier, title, and url).
 Uses embed to be able to include card component
 and make use of twig blocks found in such component.
 #}
-{% embed '@training_theme/card/card.twig' with
+{% embed '@components_theme/card/card.twig' with
   {
     "attributes": attributes,
     "title_prefix": title_prefix,
     "title_suffix": title_suffix,
-    "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
+    "image": content.field_image is not empty ? content.field_image,
     "heading": article_title,
-    "date": date,
+    "date": node.createdtime|date('M d'),
     "category": content.field_category|render|trim is not empty ? content.field_category,
     "body_text": content.body|render|trim is not empty ? content.body,
     "author": content.field_author,
