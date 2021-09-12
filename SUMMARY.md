@@ -52,7 +52,7 @@
 * [Drupal Views](drupal-site-building/drupal-views.md)
 * [Author](drupal-site-building/author.md)
 * [Generate content](drupal-site-building/generate-content.md)
-* [Adding Views reference to homepage](drupal-site-building/adding-views-reference-to-homepage.md)
+* [Adding Blog Lists to the Homepage](drupal-site-building/adding-views-reference-to-homepage.md)
 
 ## Drupal Integrations
 
