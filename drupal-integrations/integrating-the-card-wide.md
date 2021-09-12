@@ -8,11 +8,11 @@ In the previous exercise we used the default card component to display blog post
 * In order to achieve the Card Wide look, we need to pass a modifier class of `card--wide` when the component is integrated
 * The card wide does not use `tags`, but it does use the `author` field
 * Use the appropriate twig block for displaying the date, in **short** format.  Remember, we created two twig blocks in the card component to determine where the date will be displayed depending on the card we are working with.
-* Finally, the template suggestion you will need to create is `node--blog--featured.html.twig`
+* Finally, the template suggestion you will need to create is `node--article--featured.html.twig`
 
 ## Full integration code
 
-Here is what **node--blog--featured.html.twig** looks like when the Card Wide is integrated.
+Here is what **node--article--featured.html.twig** looks like when the Card Wide is integrated.
 
 {% tabs %}
 {% tab title="node--blog--featured.html.twig" %}
