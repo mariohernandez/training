@@ -10,7 +10,7 @@ The tags component is going to be a little unusual compared to other components 
 2. Inside the _tags_ folder create a new file called `tag-item.twig` \(_we will first create a component for a single tag item_\).  
    1. Since we wouldn't want to display only a single tag item in Pattern Lab, let's hide it by creating a new file called **tag-item.md** Inside the markdown file add the following code: `--- hidden: true ---`
    2. Using a markdown file with the same name of the pattern you wish to hide will hide the pattern in Pattern Lab.  The pattern is still available if we need to use it in another component. 
-3. Add the following code inside `_tag-item.twig`
+3. Add the following code inside `tag-item.twig`
 
 {% tabs %}
 {% tab title="tag-item.twig" %}
@@ -223,11 +223,11 @@ We will use the **Tags** Taxonomy vocabulary that comes out of the box with Drup
 2. After the view mode has been created be sure to enable it in the Tags vocabulary.
 3. Hide the label for the description inside the **Blog** view mode.
 
-### Update the Blog content type
+### Update the Article content type
 
-Now let's make a quick change to the Tags field in the Blog content type so we can change the tag's format from Label to **Rendered entity**.
+Now let's make a quick change to the Tags field in the Article content type so we can change the tag's format from Label to **Rendered entity**.
 
-1. Go to the Blog content type's **Teaser** view mode
+1. Go to the Article content type's **Teaser** view mode
 2. Change the Tags fields format to `Rendered entity` and hide its label if not already done.
 3. Change the Tags fields view mode to **Blog** by clicking the little cogwheel icon to the right of the Tags' field.
 4. Be sure to click **Update** and then **Save**
@@ -254,7 +254,7 @@ The next template we need will be found just above the first one. The code looks
 
 ![Tags field info.](../../.gitbook/assets/taxonomy-field.png)
 
-As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-blog-tags--blog.html.twig` \(top one\), is the one that gives us the more specific target. This template is for the Tags field in the blog content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
+As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-blog-tags--article.html.twig` \(top one\), is the one that gives us the more specific target. This template is for the Tags field in the blog content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
 
 Go ahead and make a copy of this template from its original location into your theme's `/templates/field` folder, and rename it as we just discussed. This will be the template for the entire list of tags.
 
@@ -271,7 +271,7 @@ Go ahead and make a copy of this template from its original location into your t
 {% endtab %}
 {% endtabs %}
 
-* Since our tag item template \(`tag-item.twig`\) was build as a single link with variables for `url` and `name`, all we need to integrate it with Drupal is to include the template. No need for fields mapping because the taxonomy term template provides **url** and **name** by default.
+* Since our tag item template \(`tag-item.twig`\) was built as a single link with variables for `url` and `name`, all we need to integrate it with Drupal is to include the template. No need for fields mapping because the taxonomy term template provides **url** and **name** by default.
 * Open `field--node--field-blog-tags--blog.html.twig` and also remove all of the code except for the comments
 * Add the following code at the bottom of the template:
 
