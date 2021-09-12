@@ -17,9 +17,6 @@ Here is what **node--blog--featured.html.twig** looks like when the Card Wide is
 {% tabs %}
 {% tab title="node--blog--featured.html.twig" %}
 ```php
-{# Sets date variable to change to short format. #}
-{% set date = node.createdtime|format_date('short') %}
-
 {# Sets variable to trigger content render array. #}
 {% set rendered_content = content|render %}
 
