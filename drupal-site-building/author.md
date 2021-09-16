@@ -39,7 +39,7 @@ We'll create a new view mode to control which user's fields we can display.
 ## Remove the link from the Author's image
 
 1. While still in the People Account Settings screen, click the cogwheel icon to the right of the Image field
-2. Change the view mode to **Medium \(220 x 220\)**
+2. Change the view mode to **Thumbnail \(100 x 100\)**
 3. Change the **Link image to** dropdown to **Nothing**
 4. Click the **Update** button
 5. Click the **Save** button
