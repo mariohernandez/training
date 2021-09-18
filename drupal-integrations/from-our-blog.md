@@ -208,7 +208,7 @@ So the data is ready, let's go ahead and add the markup for the component.
 As I mentioned earlier, this is a unique component and nothing like we've built thus far. Let's review:
 
 * First we attach the component's library.  **Don't forget to create the library.**
-* Next we add a `<section>` element to wrap the entire component.  As we've done before, the first and main component wrapper should always use the name of the component as its class \(`from-our-blog`\).  In addition we pass the `modifier` and `attributes` placeholders.
+* Next we add a `<section>` element to wrap the entire component.  As we've done before, the first and main component wrapper should always use the name of the component as its class \(`from-our-blog`\).  In addition we pass the `modifier` and `attributes` and `title`_\__`prefix` _and `title_suffix`_ placeholders.
 * Next we make use of the **heading** component to print the component's main title.
 * Next we create a wrapper to hold all the blog posts/cards with the class of `from-our-blog__items`
 * Next we create twig block \(`blog_items`\), which we will use later to print Drupal's nodes.
