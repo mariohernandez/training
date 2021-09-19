@@ -254,7 +254,7 @@ The next template we need will be found just above the first one. The code looks
 
 ![Tags field info.](../../.gitbook/assets/taxonomy-field.png)
 
-As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-blog-tags--article.html.twig` \(top one\), is the one that gives us the more specific target. This template is for the Tags field in the blog content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
+As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-tags--article.html.twig` \(top one\), is the one that gives us the more specific target. This template is for the Tags field in the Article content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
 
 Go ahead and make a copy of this template from its original location into your theme's `/templates/field` folder, and rename it as we just discussed. This will be the template for the entire list of tags.
 

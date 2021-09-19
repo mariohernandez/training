@@ -38,9 +38,25 @@ Using the same method as before to create new template suggestions, follow these
 3. Clear Drupal's cache.
 4. If you reload the homepage, you will not see any visual changes on the content but if you inspect the page again you will notice that Drupal is now using the newly created template suggestions.
 
+### Reviewing the original templates
+
+Before we override the templates let's take a look at some of the elements of the templates as these are extremely critical to a successful integration.  Let's start with `views-view--blog-posts--from-our-blog.html.twig`:
+
+* This template is the wrapper of the entire view and the items being queried by the view. Think of this template as all the articles in the `items []` array when we created the **From our blog** component.
+* `{{ title }}` this is the view's title which we have customized to show the section title such as **From our blog** or **Featured content**.  Although we could print this title, we are going to opt to instead print the the View's title through the block itself which will allow content editors to change the title of each section if needed.  
+* `{{ rows }}` are the actual nodes that are returned from the view's query.  Basically rows represent a list of article nodes.  This is probably the only thing we need from this template as we don't need `header`, `exposed`, `pager` or any of the other available variables in the template.
+
+Now let's take a look at `views-view--unformatted--from-our-blog.html.twig`:
+
+* This template is the one that produces the result of a single item in the view.  Think of this template as each individual item inside the `items []` array in the **From our blog** component.  Basically each item is a node as a card.
+* `{% for row in rows %}` is the function that iterates through the `rows []` array and returns a single item or node.
+* `{{ item.content }}` renders a single node article on the page
+
+It is extremely important to understand the role of each template that interact with our components because this determines not only how our components are built but how our components relate to each of the templates.  In a moment we will see why when we built the **From our blog** component we split it into two parts; one for the node list and the other part for the block that will wrap the list and the list title.
+
 ### Integrating the view's main wrapper template
 
-1. In your editor open **views-view--blog-posts--from-our-blog.html.twig** and add the following code overriding the existing code in the template \(except for the comments as we would like to keep the comments intact\):
+1. In your editor open `views-view--blog-posts--from-our-blog.html.twig` and add the following code overriding the existing code in the template \(except for the comments as we would like to keep the comments intact\):
 
 {% tabs %}
 {% tab title="views-view--blog-posts--from-our-blog.html.twig" %}
@@ -83,7 +99,7 @@ Using the same method as before to create new template suggestions, follow these
 * Next we are setting a variable for the **CTA** button so we can manually add the value to each of its properties.  
 * We are then doing the same for the section's title, by passing some helper CSS classes as well as the fixed title, **From our blog**.  As long as the variables we are setting match the ones found in the component we are integrating, the integration process looks cleaner.  If variable names for **cta** and **heading** did not match those in **from-our-blog.twig**, we would need to do a little more work inside the twig embed to map things by hand.
 * Then we use a twig embed statement to include the **from-our-blog.twig** component.
-* Finally, Drupal provides the `rows` variable which basically provides the result of the view's query.  In this case the result is a list of blog post articles.  Since we've already integrated the Card component with the node blog for individual blog nodes, Drupal's views will provide us a number of blog posts each of which will automatically display already styled with the card.tag again to map the content of this view to our **Movie Card Collection** component, and passing in Drupal attributes so that they'll be output with our component's markup.
+* Finally, Drupal provides the `rows` variable which basically provides the result of the view's query. In this case the result is a list of blog post articles. Since we've already integrated the Card component with the node Article for individual blog articles, Drupal's views will provide us a list of Article posts each of which will automatically display already styled as a card.  We are passing Drupal attributes so that they'll be output with our component's markup.
 
 ### Integrating the view's individual item template \(unformatted\)
 
