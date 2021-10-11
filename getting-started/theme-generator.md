@@ -1,10 +1,10 @@
-# Create a new D8 theme
+# Create a new D9 theme
 
 ### Mediacurrent Theme Generator
 
 The [Mediacurrent theme generator](https://github.com/mediacurrent/theme_generator\_8) is a scaffolding tool that has evolved with the years to provide a production-ready Drupal 8 theme that is component-based ready out of the box.
 
-## Exercise:  Create a new D8 theme
+## Exercise:  Create a new D9 theme
 
 [Watch the video tutorial,](https://www.youtube.com/watch?v=cVyA2v-UwSQ\&feature=youtu.be) or follow the instructions below.
 
