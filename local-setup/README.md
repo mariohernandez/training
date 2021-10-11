@@ -4,9 +4,9 @@ Before you get started, review the requirements below to ensure you are ready to
 
 ### Software Requirements
 
-* macOS 10.14 or higher.  Windows 10 Pro
+* macOS 10.16 or higher.  Windows 10 Pro or higher
 * Docker and DDEV
-* A text/code editor.  We recommend [Microsoft Visual Studio Code](https://code.visualstudio.com/download) which works on macOS and Windows.
+* A code editor.  We recommend [Microsoft Visual Studio Code](https://code.visualstudio.com/download)
 * A Command Line Interface (CLI) tool.  On macOS use [Terminal](https://www.youtube.com/watch?v=Jm8-UFf8IMg), and on Windows use [PowerShell](https://www.youtube.com/watch?v=VFuobJbbDtU)
 
 ### Skills needed
