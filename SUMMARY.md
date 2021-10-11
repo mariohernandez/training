@@ -3,7 +3,7 @@
 * [Welcome](README.md)
 * [Start here](local-setup/README.md)
   * [Setup](local-setup/setup.md)
-  * [What's included?](local-setup/whats-included.md)
+  * [Dependencies](local-setup/whats-included.md)
 
 ## Getting Started
 
@@ -75,4 +75,3 @@
 ## Resources
 
 * [Resources](resources/resources.md)
-
