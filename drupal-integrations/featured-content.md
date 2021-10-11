@@ -67,7 +67,7 @@ There is a lot going on in this file. Let's go over it and you will see that it'
 
 * First we defined the `heading`  object which will be used as the title for the entire collection.
 * At around line 8, we declared an `items` array.  This will help us mimic the array of content to build the collection.
-* Each item in the items array represents a card.  Inside each card item we have defined the card's fields \(`image`, `title`, `body_text`, `cta` \).  We have repeated this 3 times to achieve the collection shown in the Featured Content image above.
+* Each item in the items array represents a card.  Inside each card item we have defined the card's fields (`image`, `title`, `body_text`, `cta` ).  We have repeated this 3 times to achieve the collection shown in the Featured Content image above.
 
 ### Component markup
 
@@ -178,4 +178,3 @@ While in your theme's root directory, run the following commands in your command
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
 
 Next, we are going to build the back-end infrastructure in Drupal for this collection. This also will be a unique approach compared to previous components we've built in Drupal.
-

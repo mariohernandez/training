@@ -2,18 +2,18 @@
 
 ## Why view modes?
 
-Most of the content in our site is driven by Blog articles. However, articles are being displayed in different ways. The _Featured Content_ section shows articles differently than _From our Blog_. By "_different_" we don't mean they look different visually \(which they do\), but the fields displayed in each of the two sections vary. There are common fields such as the image, title, and body, but there are also fields that are unique to each section. Once we get into a full blog node, things look even more different.
+Most of the content in our site is driven by Blog articles. However, articles are being displayed in different ways. The _Featured Content_ section shows articles differently than _From our Blog_. By "_different_" we don't mean they look different visually (which they do), but the fields displayed in each of the two sections vary. There are common fields such as the image, title, and body, but there are also fields that are unique to each section. Once we get into a full blog node, things look even more different.
 
 There are many ways to manage how the same type of content can be displayed differently depending on the requirements, but one very effective way is to use Drupal's [View Modes](https://www.drupal.org/node/2511722#s-view-modes-and-view-displays). View modes allows us to control the fields we want to display on different areas of our website. We are going to setup 3 different view modes: **Full content**, **Featured**, and **Teaser**. Each of these 3 view modes can be configured to display different fields.
 
 ### Here's our plan with these view modes:
 
-| View mode | Purpose |
-| :--- | :--- |
-| **Default** | This will remain untouched so it can serve as template for new view modes we may create in the future |
-| **Full content** | This will be used when displaying the full node of a blog post \(detailed page\) |
-| **Featured** | This view mode will be used by the Card Wide variant to build the **Featured Content** section in the homepage |
-| **Teaser** | This view mode will be used by the regular Card component to build the **From our blog** section in the homepage |
+| View mode        | Purpose                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Default**      | This will remain untouched so it can serve as template for new view modes we may create in the future            |
+| **Full content** | This will be used when displaying the full node of a blog post (detailed page)                                   |
+| **Featured**     | This view mode will be used by the Card Wide variant to build the **Featured Content** section in the homepage   |
+| **Teaser**       | This view mode will be used by the regular Card component to build the **From our blog** section in the homepage |
 
 ## Manage fields with view modes
 
@@ -52,4 +52,3 @@ Managing fields with view modes ensures we are letting Drupal do things the way 
 1. Hide the labels of all the fields
 2. For the Tags and Author fields change their format to **Rendered entity**
 3. Save your changes
-

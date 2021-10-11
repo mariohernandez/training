@@ -3,7 +3,7 @@
 Pattern Lab:
 
 {% tabs %}
-{% tab title="\_00-head.twig" %}
+{% tab title="_00-head.twig" %}
 ```markup
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,300;1,400&display=swap">
  <link rel="stylesheet" href="../../css/all.css?{{ cacheBuster }}" media="all" />
@@ -14,7 +14,7 @@ Pattern Lab:
 Drupal Library:
 
 {% tabs %}
-{% tab title="training\_theme.libraries.yml" %}
+{% tab title="training_theme.libraries.yml" %}
 ```yaml
 webfonts:
   css:
@@ -23,4 +23,3 @@ webfonts:
 ```
 {% endtab %}
 {% endtabs %}
-

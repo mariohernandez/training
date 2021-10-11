@@ -4,7 +4,7 @@
 
 Now let's repeat what we just did with the From our blog section, with the Featured Content.
 
-In this case we will only create one view template suggestion, only for the Featured content block `views-view--blog-posts--featured-content.html.twig`. Since both blocks \(**from-our-blog** & **featured-content**\), are part of the same view \(Blog posts\), and they both use the same data format of `unformatted` , we can use the same template for both blocks. This means `views-view--unformatted--blog-posts.html.twig` will serve both sections of content.
+In this case we will only create one view template suggestion, only for the Featured content block `views-view--blog-posts--featured-content.html.twig`. Since both blocks (**from-our-blog** & **featured-content**), are part of the same view (Blog posts), and they both use the same data format of `unformatted` , we can use the same template for both blocks. This means `views-view--unformatted--blog-posts.html.twig` will serve both sections of content.
 
 1. Make a copy of `views-view.html.twig` and name it `views-view--blog-posts--featured-content.html.twig`
 2. Add the following code overriding all existing code in the template.  Don't delete the comments.
@@ -58,30 +58,30 @@ Views template suggestions are not as straight forward as the ones we have worke
 
 One key piece of information in the views article above is this:
 
-> For each view, there will be a minimum of **two templates** used. The first is used for all views: `views-view.html.twig`. The second template is determined by the style selected for the view \(i.e. unformatted, fields, etc.\), for which a template suggestion would look like `views-view-unformatted.html.twig`. Note that certain aspects of the view can also change which style is used; for example, arguments which provide a summary view might change the style to one of the special summary styles.
+> For each view, there will be a minimum of **two templates** used. The first is used for all views: `views-view.html.twig`. The second template is determined by the style selected for the view (i.e. unformatted, fields, etc.), for which a template suggestion would look like `views-view-unformatted.html.twig`. Note that certain aspects of the view can also change which style is used; for example, arguments which provide a summary view might change the style to one of the special summary styles.
 
 ### Discovering the right views template to override
 
 The process for discovering the templates Drupal's views are using is the same as what we've done so far, twig debugging. So repeat the same process as follows:
 
-1. Go to the site's homepage \(/homepage\), where the movie list is displayed
+1. Go to the site's homepage (/homepage), where the movie list is displayed
 2. Right-click on any of the movies within the list and select **Inspect** or **Inspect Element** depending on your browser.
 3. Within the code inspector, scroll up until you find template suggestions starting with **views-view--**. Example:
 
 ![Example of twig debug showing views templates](../.gitbook/assets/views-1.png)
 
-As we read in the excerpt above, there are usually two views templates using when rendering content, the first one I'd like to think of as the wrapper for the view and the second one wraps the content or content rows, and its name is based on the display format used when creating the view \(i.e. unformatted\). This is what we are seeing in the screenshot above.
+As we read in the excerpt above, there are usually two views templates using when rendering content, the first one I'd like to think of as the wrapper for the view and the second one wraps the content or content rows, and its name is based on the display format used when creating the view (i.e. unformatted). This is what we are seeing in the screenshot above.
 
 ### Creating Views template suggestions
 
 1. Copy the `views-view.html.twig` and `views-view-unformatted.html.twig` files from `/core/themes/stable/templates/views/`, and place them into `<project-root>/web/themes/custom/<theme-name>/src/templates/views/` If the **views** directory does not exist, create it.
 2. We need to rename the templates as follows:
    * `views-view--featured-content.html.twig` and `views-view-unformatted--featured-content.html.twig`
-   * If you are wondering where **featured-content** comes from, that's the name of the view we created \(machine name `latest_posts`\).
-   * You can find a View's machine name on the main views admin page \(/admin/structure/views\)
+   * If you are wondering where **featured-content** comes from, that's the name of the view we created (machine name `latest_posts`).
+   * You can find a View's machine name on the main views admin page (/admin/structure/views)
 3. Clear Drupal's cache
 4. If you reload the /news page, you will not see any visual changes on the content but if you inspect the page again you will notice that Drupal is now using the newly created template suggestions.
-5. In your editor open `views-view--featured-content.html.twig` and add the following code overriding the existing code in the template \(except for the comments as we would like to keep the comments intact\):
+5. In your editor open `views-view--featured-content.html.twig` and add the following code overriding the existing code in the template (except for the comments as we would like to keep the comments intact):
 
 {% tabs %}
 {% tab title="views-view--featured-content.html.twig" %}
@@ -106,7 +106,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 * First, we're keeping the `dom-id` class that views adds, and updating the `attributes`variable for the view to include that class. This will help keep classes intact that views and/or other modules may rely on.
 * Next, we're using the twig embed statement again to map the content of this view to our **Featured Content** component, and passing in Drupal attributes so that they'll be output with our component's markup.
 * For the twig block we named `latest_posts` in the **Featured Content** component, we output the `rows` variable that views provides, which is basically the content of this view, plus the `title_prefix` and `title_suffix` variables.
-* In your editor open **views-view-unformatted--lastest-posts.html.twig** and add the following code overriding the existing code in the template \(except for the comments as we would like to keep the comments intact\):
+* In your editor open **views-view-unformatted--lastest-posts.html.twig** and add the following code overriding the existing code in the template (except for the comments as we would like to keep the comments intact):
 
 {% tabs %}
 {% tab title="views-view-unformatted--featured-content.html.twig" %}
@@ -125,4 +125,3 @@ As we read in the excerpt above, there are usually two views templates using whe
 #### Clear Drupal's caches
 
 Now if you reload the /news page you should see the featured content in place. There is one more thing to do for the listing of movies and we will do that next.
-

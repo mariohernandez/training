@@ -22,7 +22,7 @@ The challenge we face is having control of the markup while adhering to Drupal's
 {% endtab %}
 {% endtabs %}
 
-We've declared a twig block \(`card_extra_content`\), in which we can add or remove any content we want. The block on its own does nothing. Currently we added the Twig block as a placeholder to use later.
+We've declared a twig block (`card_extra_content`), in which we can add or remove any content we want. The block on its own does nothing. Currently we added the Twig block as a placeholder to use later.
 
 {% hint style="warning" %}
 **IMPORTANT:** Twig blocks are not the same, or have anything to do with Drupal blocks.
@@ -47,4 +47,3 @@ We've declared a twig block \(`card_extra_content`\), in which we can add or rem
 {% endtabs %}
 
 The code above shows how we can use the Card component and we can make use of the Twig Block.  This gives us a lot of flexibility and control to alter content before rendering. We will see other examples of Twig Blocks throughout this training.
-

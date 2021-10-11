@@ -106,11 +106,11 @@ Let's update the card component so we make use of the newly built Author compone
 
 1. Rebuild your theme by running
 
-```text
+```
 npm run build && npm run watch
 ```
 
-Windows users may need to run the two commands above separately \(`npm run build` then `npm run watch`
+Windows users may need to run the two commands above separately (`npm run build` then `npm run watch`
 
 ### Full Card code
 
@@ -198,4 +198,3 @@ Windows users may need to run the two commands above separately \(`npm run build
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -8,7 +8,7 @@ Visually we know the two different variants look similar, however, if we pay clo
 
 ![Card wide variant](../.gitbook/assets/card-wide.png)
 
-We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here \(tags\), and, there is also a new field in this variant that is not part of the original card \(author\).
+We can see that the overall layout of the "Card wide" lends itself nicely to a variant. However, we see that some of the fields found in the original card are not present here (tags), and, there is also a new field in this variant that is not part of the original card (author).
 
 Before we can create a new variant, we need to make some updates to the original Card component so it is easier to adapt it to new variants.
 
@@ -60,22 +60,22 @@ Our test above proves that using a CSS modifier class can help achieve some of t
 
 Pattern Lab uses [Pseudo Patterns ](https://patternlab.io/docs/pattern-pseudo-patterns.html)to create variants of components. Pseudo-patterns are similar to [pattern-specific JSON files](https://patternlab.io/docs/data-pattern-specific.html) but are hinted in such a way that a developer can build a variant of an existing pattern. The idea of Pseudo Patterns is that Pattern Lab will create new instances of the source component, but it will not alter the source component. This is perfect because in the example of the card, we don't want to modify or change the way the original card component looks or behaves, when we create the **Card Wide** variant. The basic syntax for pseudo patterns is:
 
-```text
+```
 patternName~pseudoPatternName.json
 ```
 
-The tilde \(~\) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudoPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . But it has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s JSON file. This is not always a good thing and we will need to address this in our exercise.
+The tilde (\~) and .json file extension are the hints that Pattern Lab uses to determine that this is a pseudo-pattern. The **patternName** tells Pattern Lab which existing pattern it should use when rendering the pseudo-pattern. The **pesudoPatternName** tells Pattern Lab the name for the new variant. The JSON file itself works exactly like the [pattern-specific JSON file](https://patternlab.io/docs/data-pattern-specific.html) . But it has the added benefit that the pseudo-pattern will also inherit any values from the existing pattern’s JSON file. This is not always a good thing and we will need to address this in our exercise.
 
 From a navigation and naming perspective **patternName** and **pseudoPatternName** will be combined.
 
 ### Exercise: Creating a new variant
 
-1. Inside the _card_ folder create a new JSON file with the following name: `card~wide.json` \(notice the tilde \(~\)  in the file name\). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
+1. Inside the _card_ folder create a new JSON file with the following name: `card~wide.json` (notice the tilde (\~)  in the file name). We don't need to create a new Twig file because by default Pattern Lab will use the original pattern's.twig template.  This also will need updating in order for us to achieve our card variant.  More on this later.
 2. Copy all the code from `card.json` into `card~wide.json`
 
 ### Selecting the right fields for the card variant
 
-As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card variant uses an author field which the original card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
+As indicated above, by default the pseudo pattern file (`card~wide.json`), inherits all the fields from `card.json`. This is usually good but in our case, we don't need some of the fields in the Card variant. For example, we don't need the tags or the date fields. In addition, the card variant uses an author field which the original card does not. So how do we manage those fields without affecting the original Card component? Let's take a look:
 
 * Update `card~wide.json` as shown below:
 
@@ -106,7 +106,7 @@ As indicated above, by default the pseudo pattern file \(`card~wide.json`\), inh
 {% endtabs %}
 
 * Let's start with the new fields.  As you can see we have added the **category** and **Author** fields.
-* Next, for those fields we don't need in the card wide variant \(tags\), we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `card.twig` we first check if the field exists or it has content by using an `if` statement.  So any field that is empty above, will not be used.
+* Next, for those fields we don't need in the card wide variant (tags), we are declaring them with no values.  If we simply remove them, they would be inherited from `card.json` It is best to leave them empty. They will not be printed on the page because in `card.twig` we first check if the field exists or it has content by using an `if` statement.  So any field that is empty above, will not be used.
 
 ### Twig blocks
 
@@ -118,7 +118,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 **Code indentation:**  Be sure to properly indent your code.  The snippets below may not always match your current indentation settings.
 {% endhint %}
 
-* In your editor, open `card.twig` and at around line 7 \(your line numbers may vary\), we need to add a twig block for the date which in the Card wide variant is displayed on the top left corner of the card over a navy blue corner chip..  Add the following code snippet directly after the `{{ title_suffix }}` line:
+* In your editor, open `card.twig` and at around line 7 (your line numbers may vary), we need to add a twig block for the date which in the Card wide variant is displayed on the top left corner of the card over a navy blue corner chip..  Add the following code snippet directly after the `{{ title_suffix }}` line:
 
 ```php
 {% if 'card--wide' in modifier %}
@@ -153,7 +153,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 
 #### Category field
 
-* For the category field we don't need to perform any type of conditional to check which card we are working with since it will only be displayed in the card wide variant.  This means we can hide it from the regular card view mode \(teaser\).  Modify the category field as shown below:
+* For the category field we don't need to perform any type of conditional to check which card we are working with since it will only be displayed in the card wide variant.  This means we can hide it from the regular card view mode (teaser).  Modify the category field as shown below:
 
 ```php
 {% if category %}
@@ -310,4 +310,3 @@ If you don't have Pattern Lab running, run this command:
 ```php
 npm run watch
 ```
-

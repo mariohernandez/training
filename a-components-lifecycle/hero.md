@@ -12,7 +12,7 @@ Based on the design above, we need the following fields:
 
 * **title or heading**
 * **image**
-* **call to action \(CTA\)**
+* **call to action (CTA)**
 
 ## Exercise:  Build the Hero component
 
@@ -94,10 +94,10 @@ Now let's write some HTML for the component.
 #### Some things to notice:
 
 * We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore assigned the CSS class of **hero**, which also becomes the namespace for this component.  This namespace helps with CSS scope to ensure our styles are unique to this and this component only.
-* In line 1, in addition to the component's class of **hero** we are writing a conditional statement to determine if there is a value being passed for the modifier \(`{{ modifier ? '  ' ~ modifier }}`\), and if so, we are printing it as an additional CSS class.
+* In line 1, in addition to the component's class of **hero** we are writing a conditional statement to determine if there is a value being passed for the modifier (`{{ modifier ? '  ' ~ modifier }}`), and if so, we are printing it as an additional CSS class.
 * Still in line 1, we are preparing this component for when we integrate it with Drupal by assigning a placeholder for any Drupal attributes that may be available.  We will make use of `attributes` later in the process.
-* For each field we want to print, we first check if there is content to print using a Twig conditional statement \(`if`\).  This is a good practice so we don't print empty HTML tags.
-* Notice how every field and div uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace \(hero\_\_\), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
+* For each field we want to print, we first check if there is content to print using a Twig conditional statement (`if`).  This is a good practice so we don't print empty HTML tags.
+* Notice how every field and div uses a css class that starts with `hero__*`. Defining relationships between the parent elements and child elements by using the same namespace (hero\_\_), makes it easier to identify elements when inspecting code as well as finding those elements in our project.
 * **Lastly, and super important**, we make use of Twig's `include` statement to include or nest the Heading and Button components into the Hero. This is extremely powerful and we will be talking more about it later.  Biggest benefit of include statements is that we can reuse other components to avoid duplicating code.
 
 ### Component's styles
@@ -178,7 +178,7 @@ We'll refine these styles later on.
 
 If Pattern Lab is running you should see the Hero component in Pattern Lab under the Component menu item. Otherwise run the commands below:
 
-```text
+```
 npm run watch
 ```
 
@@ -187,4 +187,3 @@ npm run watch
 {% endhint %}
 
 In your browser of choice open the following URL: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Hero component under components.
-

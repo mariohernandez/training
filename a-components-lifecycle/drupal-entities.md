@@ -13,4 +13,3 @@ Typically in a component-based project, Drupal will use entities to build the co
 In our project, we have a large collection of movies.  It would be nice to be able to pick any movie and turn its image into the hero for our homepage.  Even better, it would be nice to be able to change the homepage hero to any movie at will.  Well, we can do this by using an entity reference field for our hero in the Homepage content type.  An entity reference field in combination with view mode display will allow us to achieve all of this.
 
 Before we can add a Hero to the homepage, let's first build a new content type for the homepage.
-

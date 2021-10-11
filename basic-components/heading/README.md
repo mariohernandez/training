@@ -4,18 +4,18 @@ Following the [Atomic Design ](https://bradfrost.com/blog/post/atomic-web-design
 
 As we saw in the [Component Architecture](https://github.com/mariohernandez/training/tree/fca41f8d153f177c347617210b4e3e2fbc4bcc0b/components/essentials/untitled-3.md) page, most components will need the following files:
 
-| File type | Purpose |
-| :--- | :--- |
-| `.twig` | Component's HTML and Twig logic |
-| `.scss` | Component's styles |
-| `.json` or `.yml` | Component's stock content |
+| File type         | Purpose                         |
+| ----------------- | ------------------------------- |
+| `.twig`           | Component's HTML and Twig logic |
+| `.scss`           | Component's styles              |
+| `.json` or `.yml` | Component's stock content       |
 
 Some components may also include:
 
-| File type | Purpose |
-| :--- | :--- |
-| `.js` | Component's interactive behavior |
-| `.md` | Component's annotations or specs details |
+| File type | Purpose                                  |
+| --------- | ---------------------------------------- |
+| `.js`     | Component's interactive behavior         |
+| `.md`     | Component's annotations or specs details |
 
 ### Exercise: Building the component
 
@@ -118,4 +118,3 @@ While in your theme's root directory, run the following commands in your command
 The **build** command above compiles all scss, twig and js. files, and should build the new Heading component in Pattern Lab. The **watch** command watches for changes to your code and automatically compiles them. This is great so you don't have to keep compiling your code every time.
 
 At the bottom of the watch command you will notice a list of URLs. In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the Heading pattern under components.
-

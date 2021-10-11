@@ -7,8 +7,12 @@ Taxonomy are Drupal entities just like Nodes, blocks, etc. This means we can cre
 The tags component is going to be a little unusual compared to other components we've built. The main reason for the way this component will be built is how Drupal handles templates for taxonomy terms and vocabularies. We will see more about this when we integrate the tag components with Drupal.
 
 1. Inside `src/patterns/components/` create a new folder called **tags**
-2. Inside the _tags_ folder create a new file called `tag-item.twig` \(_we will first create a component for a single tag item_\).  
-   1. Since we wouldn't want to display only a single tag item in Pattern Lab, let's hide it by creating a new file called **tag-item.md** Inside the markdown file add the following code: `--- hidden: true ---`
+2. Inside the _tags_ folder create a new file called `tag-item.twig` (_we will first create a component for a single tag item_).  
+   1. Since we wouldn't want to display only a single tag item in Pattern Lab, let's hide it by creating a new file called **tag-item.md**\
+      Inside the markdown file add the following code:\
+      `---`\
+      `hidden: true`\
+      `---`
    2. Using a markdown file with the same name of the pattern you wish to hide will hide the pattern in Pattern Lab.  The pattern is still available if we need to use it in another component. 
 3. Add the following code inside `tag-item.twig`
 
@@ -236,7 +240,7 @@ Now let's make a quick change to the Tags field in the Article content type so w
 
 If you recall when we built the Tags component above we did it in two steps, first we built a single tag item, then we built a list of tags by including the single item in a loop. We will follow the same approach for integrating the component with Drupal. We will create a twig template suggestion for a single link item, then we will create another one to wrap the entire list of tags.
 
-1. Inspect the tags found in the homepage From our blog section \(right-click + Inspect\)
+1. Inspect the tags found in the homepage From our blog section (right-click + Inspect)
 2. Identify the twig template suggestions for taxonomy.  This will be the template for the individual tag item.
 
 ![Taxonomy term template suggestions.](../../.gitbook/assets/term.png)
@@ -254,7 +258,7 @@ The next template we need will be found just above the first one. The code looks
 
 ![Tags field info.](../../.gitbook/assets/taxonomy-field.png)
 
-As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-tags--article.html.twig` \(top one\), is the one that gives us the more specific target. This template is for the Tags field in the Article content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
+As I mentioned before, we only want to affect tags that appear on blog posts. Looking at the list of options for template suggestions I can see that `field--node--field-tags--article.html.twig` (top one), is the one that gives us the more specific target. This template is for the Tags field in the Article content type and at the end it includes the view mode we just created for the Tags vocabulary, **blog**.
 
 Go ahead and make a copy of this template from its original location into your theme's `/templates/field` folder, and rename it as we just discussed. This will be the template for the entire list of tags.
 
@@ -271,7 +275,7 @@ Go ahead and make a copy of this template from its original location into your t
 {% endtab %}
 {% endtabs %}
 
-* Since our tag item template \(`tag-item.twig`\) was built as a single link with variables for `url` and `name`, all we need to integrate it with Drupal is to include the template. No need for fields mapping because the taxonomy term template provides **url** and **name** by default.
+* Since our tag item template (`tag-item.twig`) was built as a single link with variables for `url` and `name`, all we need to integrate it with Drupal is to include the template. No need for fields mapping because the taxonomy term template provides **url** and **name** by default.
 * Open `field--node--field-blog-tags--blog.html.twig` and also remove all of the code except for the comments
 * Add the following code at the bottom of the template:
 
@@ -290,4 +294,3 @@ Go ahead and make a copy of this template from its original location into your t
 * Twig blocks to the rescue again.  We're embedding the tags component and using the `tag_item` twig block to pass the template's variables so they match what Drupal expects.
 
 Now if you save your changes and clear Drupal's cache, reload the homepage and the regular cards will now displayed as shown in our designs.
-

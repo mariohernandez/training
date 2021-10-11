@@ -12,19 +12,19 @@ Views template suggestions are not as straight forward as the ones we have worke
 
 One key piece of information in the views article above is this:
 
-> For each view, there will be a minimum of **two templates** used. The first is used for all views: `views-view.html.twig`. The second template is determined by the style selected for the view \(i.e. unformatted, fields, etc.\), for which a template suggestion would look like `views-view-unformatted.html.twig`. Note that certain aspects of the view can also change which style is used; for example, arguments which provide a summary view might change the style to one of the special summary styles.
+> For each view, there will be a minimum of **two templates** used. The first is used for all views: `views-view.html.twig`. The second template is determined by the style selected for the view (i.e. unformatted, fields, etc.), for which a template suggestion would look like `views-view-unformatted.html.twig`. Note that certain aspects of the view can also change which style is used; for example, arguments which provide a summary view might change the style to one of the special summary styles.
 
 ## Discovering the right views template to override
 
 The process for discovering the templates Drupal's views are using is the same as what we've done so far, twig debugging. So repeat the same process as follows:
 
 1. Go to the site's homepage where the blog posts are displayed
-2. Right-click on any of the posts within the **From our blog** list and select **Inspect** or **Inspect Element** depending on your browser.
+2. Right-click on any of the posts within the **From our blog **list and select **Inspect** or **Inspect Element** depending on your browser.
 3. Within the code inspector, scroll up until you find template suggestions starting with **views-view--**. Example:
 
 ![Views twig templates](../.gitbook/assets/views.png)
 
-As we read in the excerpt above, there are usually two views templates using when rendering content, the first one I'd like to think of as the wrapper for the view and the second one wraps the content or content rows, and its name is based on the display format used when creating the view \(i.e. unformatted\). This is what we are seeing in the screenshot above.
+As we read in the excerpt above, there are usually two views templates using when rendering content, the first one I'd like to think of as the wrapper for the view and the second one wraps the content or content rows, and its name is based on the display format used when creating the view (i.e. unformatted). This is what we are seeing in the screenshot above.
 
 ## Creating Views template suggestions
 
@@ -34,7 +34,7 @@ Using the same method as before to create new template suggestions, follow these
 2. Rather than renaming these templates, let's first make copies of them because we will need them again when we work in the **Featured Content** list later on.  Name each of the copies as follows:
    * `views-view--blog-posts--from-our-blog.html.twig` and `views-view-unformatted--blog-posts.html.twig`
    * If you are wondering where these names come from, let's explain:  **blog-posts** is the name we used when we created the Blog Posts view.  **from-our-blog** is the views block machine name.  This is why is important to assign custom machine names that make sense so when is time to create template suggestion, their names also makes sense.  Had we not changed each of our view's blocks machine names we would had ended up with **views-view--blog-posts--block-1.html.twig** as our template name.
-   * You can find a View's machine name on the main views admin page \(/admin/structure/views\)
+   * You can find a View's machine name on the main views admin page (/admin/structure/views)
 3. Clear Drupal's cache.
 4. If you reload the homepage, you will not see any visual changes on the content but if you inspect the page again you will notice that Drupal is now using the newly created template suggestions.
 
@@ -56,7 +56,7 @@ It is extremely important to understand the role of each template that interact 
 
 ### Integrating the view's main wrapper template
 
-1. In your editor open `views-view--blog-posts--from-our-blog.html.twig` and add the following code overriding the existing code in the template \(except for the comments as we would like to keep the comments intact\):
+1. In your editor open `views-view--blog-posts--from-our-blog.html.twig `and add the following code overriding the existing code in the template (except for the comments as we would like to keep the comments intact):
 
 {% tabs %}
 {% tab title="views-view--blog-posts--from-our-blog.html.twig" %}
@@ -101,9 +101,9 @@ It is extremely important to understand the role of each template that interact 
 * Then we use a twig embed statement to include the **from-our-blog.twig** component.
 * Finally, Drupal provides the `rows` variable which basically provides the result of the view's query. In this case the result is a list of blog post articles. Since we've already integrated the Card component with the node Article for individual blog articles, Drupal's views will provide us a list of Article posts each of which will automatically display already styled as a card.  We are passing Drupal attributes so that they'll be output with our component's markup.
 
-### Integrating the view's individual item template \(unformatted\)
+### Integrating the view's individual item template (unformatted)
 
-1. In your editor open **views-view-unformatted--blog-posts.html.twig** and add the following code overriding the existing code in the template \(except for the comments as we would like to keep the comments intact\):
+1. In your editor open **views-view-unformatted--blog-posts.html.twig** and add the following code overriding the existing code in the template (except for the comments as we would like to keep the comments intact):
 
 ```php
 {% for row in rows %}
@@ -121,4 +121,3 @@ It is extremely important to understand the role of each template that interact 
 * Now if you reload the homepage you should see the From our blog section nicely styled. 
 
 Next we will repeat the steps above with the **Featured content** section.
-

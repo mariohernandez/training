@@ -43,10 +43,10 @@ To follow best practices we discussed earlier regarding letting Drupal render th
 
 * Reason for setting variables for the fields above is that they all have several properties in addition to the actual value of the field. Setting these variables allow us to configure all their properties and their values prior to using them.
 * The variable names, `hero_title` and `hero_cta` are optional.  You can use any name that makes sense to you.
-* The structure of these 2 variables matches the data structure in the components in Pattern Lab.  The biggest difference here is that for the **title** value \(line 4\), **text** value \(line 10\), and **url** value \(line 11\), we are passing Drupal data.
-* A good practice when getting field values is to strip white space by using the `|render|trim`Twig filters, and then check that the field is really not empty \(`is not empty ?`\) if that's true, we print the field's value \(i.e.`content.field_title`\).
+* The structure of these 2 variables matches the data structure in the components in Pattern Lab.  The biggest difference here is that for the **title** value (line 4), **text** value (line 10), and **url** value (line 11), we are passing Drupal data.
+*   A good practice when getting field values is to strip white space by using the `|render|trim`Twig filters, and then check that the field is really not empty (`is not empty ?`) if that's true, we print the field's value (i.e.`content.field_title`).
 
-  Now let's make use of the Hero component in the Paragraph template. Let's look at the code below and explain how this works.
+    Now let's make use of the Hero component in the Paragraph template. Let's look at the code below and explain how this works.
 
 {% tabs %}
 {% tab title="node--article--hero.html.twig" %}
@@ -63,7 +63,8 @@ To follow best practices we discussed earlier regarding letting Drupal render th
 {% endtab %}
 {% endtabs %}
 
-* We are using an `include` Twig statement to nest the Hero component into the paragraph template. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can direct Drupal to also look for Twig templates in our components directory, among other places.  **IMPORTANT**:  If your theme name is not **training\_theme** be sure you use your theme name in the `@include` above. 
+* We are using an `include` Twig statement to nest the Hero component into the paragraph template. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can direct Drupal to also look for Twig templates in our components directory, among other places. \
+  **IMPORTANT**:  If your theme name is not **training_theme** be sure you use your theme name in the `@include` above. 
 * Next we pass in Drupal's `attributes` variable so that Drupal  can inject any attributes it needs to the Hero node.  This is recommended, but not required.
 * The next step is to  map the `image`, `heading, and cta` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  the mapping of keys to their values, much cleaner.
 * Notice in the `@include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is a keyword `only` ?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title field,  we could just include that field and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.
@@ -110,7 +111,7 @@ Once you've written all that code, the full component integration should look li
 
 By default Drupal is printing the button field as a single `<a>` tag. While this may work in some situations, it does not in this particular situation since we need the URL and button text values as two separate items.
 
-1. In your Drupal site, click **Structure \| Paragraph Types \| Hero**
+1. In your Drupal site, click **Structure | Paragraph Types | Hero**
 2. Click the **Manage Display** tab
 3. For the **Call To Action** field, change its format to **Separate field text and URL**.  
 4. Save your changes.  
@@ -127,4 +128,3 @@ Just for fun, once the hero displays in Drupal, inspect the code again and you s
 ## But wait ...It didn't work 👎 😝
 
 Perhaps the Hero component is rendering properly in Drupal, and the Markup when we inspect the code all looks like it's coming from Pattern Lab. But the Hero is broken as it has no styles at all. What went wrong? The answer is Drupal Libraries. Let's fix this problem now by talking about [Drupal Libraries](drupal-libraries.md).
-

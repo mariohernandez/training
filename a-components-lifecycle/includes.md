@@ -1,6 +1,6 @@
 # Include statements
 
-The `include` statement includes or nests a twig template \(components, node, blocks, etc\), and returns the rendered content of that file.
+The `include` statement includes or nests a twig template (components, node, blocks, etc), and returns the rendered content of that file.
 
 An example of an typical `include` statement looks like this:
 
@@ -28,7 +28,7 @@ In a Drupal theme, include statements are mainly used to nest components into ot
 {% endtab %}
 {% endtabs %}
 
-* The include statement above uses a relative path. This was done by creating a theme namespace \(components\_theme\), which is mapped to src/patterns/components/, then we complete the path by providing the template name for the component. The keyword with allows to pass additional variable to an include \(i.e. heading\)
+* The include statement above uses a relative path. This was done by creating a theme namespace (components_theme), which is mapped to src/patterns/components/, then we complete the path by providing the template name for the component. The keyword with allows to pass additional variable to an include (i.e. heading)
 * The keywords `with` and `only`  restrict access to the context of the component. For example, if a component has multiple variables we can opt to only pass some of them in the include.
 
 Being able to customize components during the "include" process is a must. There are two ways we can change variables, properties, or values of a component.  Let's use the Hero as an example:
@@ -58,4 +58,3 @@ Being able to reuse components while still having the options to change them on 
 {% hint style="info" %}
 Learn more about [Twig includes](https://twig.symfony.com/doc/3.x/tags/include.html)
 {% endhint %}
-

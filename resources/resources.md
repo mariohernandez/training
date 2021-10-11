@@ -3,7 +3,7 @@
 ## Fully functional D8 theme
 
 * A fully functional Drupal 8 theme which includes all code in this training [can be downloaded from github](https://github.com/mariohernandez/training).
-* [Google drive resources](https://drive.google.com/drive/folders/1oqwqIgEPP9V2qt_5lA5-mM6x9cEukHCj?usp=sharing)
+* [Google drive resources](https://drive.google.com/drive/folders/1oqwqIgEPP9V2qt\_5lA5-mM6x9cEukHCj?usp=sharing)
 
 ## Drupal
 
@@ -20,7 +20,7 @@
 * [Setting Up Twig Debugging](https://www.chapterthree.com/blog/drupal-8-theming-setting-up-theme-debugging)
 * [Limit Kint levels](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
 * [Cropping images in Drupal](https://www.youtube.com/playlist?list=PLI6celP4IrvIxFoSGRlsNizmG7NgS2axJ)
-* [Managing images in large scale websites](https://www.youtube.com/watch?v=xYgxZ8TLM0I&t=1954s) \(screencast\)
+* [Managing images in large scale websites](https://www.youtube.com/watch?v=xYgxZ8TLM0I\&t=1954s) (screencast)
 
 #### Layout Builder
 
@@ -34,19 +34,19 @@
 * [When to use Include, embed or extends](https://github.com/fourkitchens/emulsify/wiki/When-to-use-include,-extends,-and-embed)
 * [Twig in Drupal](https://www.drupal.org/docs/theming-drupal/twig-in-drupal)
 * [Limit Kint levels when debugging](https://gist.github.com/JPustkuchen/a5f1eaeb7058856b7ef087b028ffdfeb)
-* [Twig for Drupal 8/9 Development](https://www.electriccitizen.com/citizen-blog/twig-drupal-8-development-twig-templating-part-1-2) \(Part 1 & 2\)
+* [Twig for Drupal 8/9 Development](https://www.electriccitizen.com/citizen-blog/twig-drupal-8-development-twig-templating-part-1-2) (Part 1 & 2)
 * [Upgrade Pattern Lab to Twig 2.0](https://www.1xinternet.de/en/blog/patternlab-drupal9)
 
 ### JavaScript
 
-* J[avaScript30](https://javascript30.com/) \(Video course by Wes Bos\)
+* J[avaScript30](https://javascript30.com) (Video course by Wes Bos)
 
 ## Blog Posts/Tutorials
 
 * [Responsive Images](https://cloudfour.com/thinks/responsive-images-101-definitions/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 * [Building and integrating drupal menus](https://www.mediacurrent.com/blog/building-and-integrating-menu-drupal/)
-* [A walkthrough of the Theme Generator](https://www.youtube.com/watch?v=cVyA2v-UwSQ&feature=youtu.be)
+* [A walkthrough of the Theme Generator](https://www.youtube.com/watch?v=cVyA2v-UwSQ\&feature=youtu.be)
 
 ## Screencasts/Video Tutorials
 
@@ -54,14 +54,14 @@
 
 ## Tools and Utilities
 
-* [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator_8)
-* [Pattern Lab](https://patternlab.io/)
-* [Free stock image from Unsplash.com](https://unsplash.com/)
+* [Mediacurrent Theme Generator](https://github.com/mediacurrent/theme_generator\_8)
+* [Pattern Lab](https://patternlab.io)
+* [Free stock image from Unsplash.com](https://unsplash.com)
 * [SMACSS](https://swapps.com/blog/what-is-smacss-and-how-to-use-it/)
-* [Aspect ratio calculator](https://calculateaspectratio.com/)
+* [Aspect ratio calculator](https://calculateaspectratio.com)
 * [Font sizing with REM](https://snook.ca/archives/html_and_css/font-size-with-rem)
 * [Command line tutorial](https://tutorial.djangogirls.org/en/intro_to_command_line/)
-* [Inclusive Components](https://inclusive-components.design/)
+* [Inclusive Components](https://inclusive-components.design)
 
 ## Snippets
 
@@ -84,17 +84,16 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 
 ### Fixing 403 Forbidden error in Pattern Lab
 
-* Create an `.htaccess` file in the root of your theme with the following code:  \(Some have reported the file should be inside the `patternlab` directory.  Try the theme's room first and recompile your theme\).
+*   Create an `.htaccess` file in the root of your theme with the following code:  (Some have reported the file should be inside the `patternlab` directory.  Try the theme's room first and recompile your theme).
 
-  ```php
-  <FilesMatch "\.(twig)$">
-  <IfModule mod_authz_core.c>
-    Require all granted
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order allow,deny
-    Allow from all
-  </IfModule>
-  </FilesMatch>
-  ```
-
+    ```php
+    <FilesMatch "\.(twig)$">
+    <IfModule mod_authz_core.c>
+      Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+      Order allow,deny
+      Allow from all
+    </IfModule>
+    </FilesMatch>
+    ```

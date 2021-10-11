@@ -7,7 +7,7 @@ In this two-day hands-on training workshop you will learn the process of identif
 #### This training covers the following topics:
 
 * Principles of Atomic Design for building flexible and scalable components
-* Building a custom Drupal 8 theme using [Mediacurrent's Theme Generator](https://github.com/mediacurrent/theme_generator_8)
+* Building a custom Drupal 8 theme using [Mediacurrent's Theme Generator](https://github.com/mediacurrent/theme_generator\_8)
 * Using Pattern Lab and Twig too build flexible and re-usable components
 * Twig's **include**, **extends**, **embed**, and **Twig Blocks** to nest and reuse components 
 * Debugging a Drupal site using Kint
@@ -26,4 +26,3 @@ In this two-day hands-on training workshop you will learn the process of identif
 * How to use debugging tools to identify templates and content arrays in drupal pages
 * How to integrate Pattern Lab components with Drupal's paragraph types, content types and Views
 * ... and more
-

@@ -11,15 +11,15 @@ Kint is a PHP Debugging tool. Kint for PHP is a tool designed to present your de
 ## Exercise: Debugging Twig
 
 1. Before you can debug Twig, you need to enable the **devel** module
-2. In the twig template you wish to get variables for \(i.e. `node--article--hero.html.twig`\), type `{{ dpm() }}`
+2. In the twig template you wish to get variables for (i.e. `node--article--hero.html.twig`), type `{{ dpm() }}`
 3. Clear Drupal's cache and reload the page
 4. You should see the render output as shown below:
 
-The example below shows us the value of the title field for the hero. Notice how some fields have a **\[** &gt; **\]** sign next to it. This means each field is an array you can drill down into until you get to its value. See example below:
+The example below shows us the value of the title field for the hero. Notice how some fields have a **\[** >** ]** sign next to it. This means each field is an array you can drill down into until you get to its value. See example below:
 
 ![](../.gitbook/assets/title-value.png)
 
-In the example above we expanded `label` until we get to the `value` of it. This shows us the actual value entered in Drupal for this field \(_How to build drupal websites with components_\). So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us above. In this example it would be something like this:
+In the example above we expanded `label` until we get to the `value` of it. This shows us the actual value entered in Drupal for this field (_How to build drupal websites with components_). So for us to get the right field value when integrating the components with Drupal we need to declare the full field structure as shown to us above. In this example it would be something like this:
 
 ```php
 content.field_image.0['#context'].value
@@ -36,4 +36,3 @@ This will get us the same value but it will do it in a responsible way without b
 {% hint style="info" %}
 Further reading: [Ensuring Drupal 8 Block Cache Tags bubble up to the Page](https://www.previousnext.com.au/blog/ensuring-drupal-8-block-cache-tags-bubble-up-page).
 {% endhint %}
-

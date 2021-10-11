@@ -8,4 +8,3 @@ Some of the things we need to do include:
 2. Create image styles for the hero image
 3. Style the author information and tags
 4. Clean up the overall look of the page
-

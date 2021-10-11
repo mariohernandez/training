@@ -77,4 +77,3 @@ and make use of twig blocks found in such component.
 * Save the changes above and clear Drupal's cache
 * Reload Drupal's homepage
 *  The Featured Content section rendered with the Card wide.  But there seems to be a problem with the author information.  Let's fix it next
-

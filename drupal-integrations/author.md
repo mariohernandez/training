@@ -6,7 +6,7 @@ Out of the box Drupal does not provide template suggestions for users. After res
 2. Add the following code:
 
 {% tabs %}
-{% tab title="training\_theme.theme" %}
+{% tab title="training_theme.theme" %}
 ```php
 /**
  * Implements hook_theme_suggestions_user_alter().
@@ -34,7 +34,7 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 ![User template suggestions](../.gitbook/assets/user.png)
 
 * By default Drupal uses `user.html.twig` to render all users. Thanks to the hook alter we added earlier we now see a new template suggestion, `user--author.html.twig`. This template is using the new view mode we created for our users earlier.
-* Copy `user.html.twig` from the path shown in the image above \(`core/themes/stable/templates/user/`, into your theme's `/templates/user` folder
+* Copy `user.html.twig` from the path shown in the image above (`core/themes/stable/templates/user/`, into your theme's `/templates/user` folder
 * Rename the newly copied template `user--author.html.twig`
 * Clear Drupal's cache
 * If you reload the homepage again and inspect the user you should see our new template suggestion being used by Drupal.
@@ -62,4 +62,3 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 {% endtabs %}
 
 * Reload Drupal's homepage and you should now see the author information properly themed.
-

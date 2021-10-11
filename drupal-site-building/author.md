@@ -6,15 +6,15 @@ Users in Drupal are another type of entity. This means we can theme them by usin
 
 As we just saw in the Card Wide variant, we are displaying the article's author information. By default Drupal does not have a full name or title fields as part of user's profiles. Let's add these fields so we can use them in our cards.
 
-1. From Drupal's admin toolbar, select **Configuration &gt; People &gt; Account Settings**
+1. From Drupal's admin toolbar, select **Configuration > People > Account Settings**
 2. Click **Manage fields**
 3. Click **Add field**
 4. Add the following fields and their properties
 
-| Label | Machine name | Field type | Allowed number of values |
-| :--- | :--- | :--- | :--- |
-| Full name | `field_full_name` | Text\(plain\) | 1 |
-| Title | `field_title` | Text\(plain\) | 1 |
+| Label     | Machine name      | Field type  | Allowed number of values |
+| --------- | ----------------- | ----------- | ------------------------ |
+| Full name | `field_full_name` | Text(plain) | 1                        |
+| Title     | `field_title`     | Text(plain) | 1                        |
 
 ## New User view mode
 
@@ -31,7 +31,7 @@ We'll create a new view mode to control which user's fields we can display.
 
 ## Customize Author view mode
 
-1. From the list of view modes now available \(Default, Author, and Compact\), click **Author**
+1. From the list of view modes now available (Default, Author, and Compact), click **Author**
 2. Drag the **Member for** field into the **Disabled** section
 3. For the remaining fields, hide their labels by selecting **Hidden** in the Label's dropdowns
 4. Click the **Save** button
@@ -39,14 +39,14 @@ We'll create a new view mode to control which user's fields we can display.
 ## Remove the link from the Author's image
 
 1. While still in the People Account Settings screen, click the cogwheel icon to the right of the Image field
-2. Change the view mode to **Thumbnail \(100 x 100\)**
+2. Change the view mode to **Thumbnail (100 x 100)**
 3. Change the **Link image to** dropdown to **Nothing**
 4. Click the **Update** button
 5. Click the **Save** button
 
 ## Update the Article content type to use the Author view mode
 
-1. Go to Blog content type's manage display screen \(**Structure &gt; Content types &gt; Article &gt; Manage display**\)
+1. Go to Blog content type's manage display screen (**Structure > Content types > Article > Manage display**)
 2. Click the **Featured** view mode
 3. For the Author field, ensure **Rendered entity** is set as the format
 4. Click the little cogwheel icon to the right of the Author field
@@ -54,4 +54,3 @@ We'll create a new view mode to control which user's fields we can display.
 6. Click the **Update** then **Save** buttons
 
 Changing the user's view mode to Author will help us create a new template suggestion for users.
-

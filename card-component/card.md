@@ -1,6 +1,6 @@
 # Card Component
 
-A component that will introduce us to a more useful technique for working with components is the image you see below. A Card component is a great way to display all sorts of content \(news, blog posts, events, etc.\), and you will see it in many websites nowadays. The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
+A component that will introduce us to a more useful technique for working with components is the image you see below. A Card component is a great way to display all sorts of content (news, blog posts, events, etc.), and you will see it in many websites nowadays. The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
 
 ![Example of a Card component](../.gitbook/assets/card.png)
 
@@ -11,7 +11,7 @@ Although we could build the content list components already as a collection of c
 As we've did with the Hero component, one of the first things we need to define are the data fields that makeup the component. If you look at the image above, a single Card has the following data fields:
 
 * image
-* title \(link to full article\)
+* title (link to full article)
 * date
 * body
 * & tags
@@ -270,6 +270,5 @@ When working with Pattern Lab locally it makes sense to use [http://localhost:30
 
 Two things to keep in mind with the path above:
 
-1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is _https://dev.pantheon.io_, the full URL would become **https://dev.pantheon.io/themes/custom/training\_theme/patternlab/index.html**
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is _https://dev.pantheon.io_, the full URL would become **https://dev.pantheon.io/themes/custom/training_theme/patternlab/index.html**
 2. Replace `training_theme` with your project's theme name if your theme name is different.
-

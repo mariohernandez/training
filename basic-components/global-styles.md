@@ -30,7 +30,7 @@ body {
 * Replace the content of `src/patterns/global/util/_mixins.scss`with the code below:
 
 {% tabs %}
-{% tab title="\_mixins.csss" %}
+{% tab title="_mixins.csss" %}
 ```css
 // Mixins.
 
@@ -173,7 +173,7 @@ body {
 * Replace all existing typography styles in `src/patterns/global/utils/_typography.scss` with the code below.
 
 {% tabs %}
-{% tab title="\_pography.scss" %}
+{% tab title="_pography.scss" %}
 ```css
 // Typography
 //
@@ -244,7 +244,7 @@ h4 {
 * Replace all existing color variables in `src/patterns/global/colors/_colors.scss` with the code below.
 
 {% tabs %}
-{% tab title="\_colors.scss" %}
+{% tab title="_colors.scss" %}
 ```css
 //Colors
 
@@ -286,10 +286,9 @@ $color-danube: $color-navy-blue;
 Add the following breakpoint to the existing list of breakpoints in `src/global/utils/_breakpoints.scss`
 
 {% tabs %}
-{% tab title="\_breakpoints.scss" %}
+{% tab title="_breakpoints.scss" %}
 ```css
 $bp-max: 1900px;
 ```
 {% endtab %}
 {% endtabs %}
-
