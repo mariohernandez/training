@@ -13,6 +13,10 @@ After Drupal has been installed, let's add the following modules which we will u
 * Responsive Images (core)
 * Media & Media Library (both on core)
 
+### Download modules with composer
+
 `ddev composer require drupal/components drupal/devel drupal/admin_toolbar drupal/twig_field_value drupal/focal_point drupal/crop`
+
+### Enable modules
 
 `ddev drush en components devel admin_toolbar admin_toolbar_tools twig_field_value focal_point crop`
