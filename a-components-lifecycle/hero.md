@@ -61,8 +61,11 @@ Now let's write some HTML for the component.
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
-<section class="hero{{ modifier ? ' ' ~ modifier }}{{- attributes ? attributes.class -}}"
+<section class="hero{{ modifier ? ' ' ~ modifier }}
+  {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
   {% if image %}
     <div class="hero__media">
       {{ image }}
@@ -93,7 +96,7 @@ Now let's write some HTML for the component.
 
 #### Some things to notice:
 
-* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag_section.asp) tag.  This is the parent selector of the component and therefore assigned the CSS class of **hero**, which also becomes the namespace for this component.  This namespace helps with CSS scope to ensure our styles are unique to this and this component only.
+* We're starting off with a `<section>` HTML5 tag.  Learn more about the [section](https://www.w3schools.com/tags/tag\_section.asp) tag.  This is the parent selector of the component and therefore assigned the CSS class of **hero**, which also becomes the namespace for this component.  This namespace helps with CSS scope to ensure our styles are unique to this and this component only.
 * In line 1, in addition to the component's class of **hero** we are writing a conditional statement to determine if there is a value being passed for the modifier (`{{ modifier ? '  ' ~ modifier }}`), and if so, we are printing it as an additional CSS class.
 * Still in line 1, we are preparing this component for when we integrate it with Drupal by assigning a placeholder for any Drupal attributes that may be available.  We will make use of `attributes` later in the process.
 * For each field we want to print, we first check if there is content to print using a Twig conditional statement (`if`).  This is a good practice so we don't print empty HTML tags.

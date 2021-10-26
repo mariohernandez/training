@@ -10,7 +10,7 @@ The challenge we face is having control of the markup while adhering to Drupal's
 {% tab title="card.twig" %}
 ```php
 <article class="card
-  {{- attributes ? attributes.class -}}"
+  {{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
