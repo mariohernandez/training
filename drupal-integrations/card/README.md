@@ -34,7 +34,7 @@ We'll get back to the full view of a blog post later, for now we are going to fo
 
 The focus at this point is to create template suggestions for all article nodes that will be displayed in the **Teaser** view mode. So if we look at the list of file name suggestions above we can ignore the top 4 names as those are either related to the full section of content or are extremely specific to only the single article we are looking at.
 
-1. So based on the remaining names after ignoring the first 4, we can select the following name: `node--article--teaser.html.twig`.  
+1. So based on the remaining names after ignoring the first 4, we can select the following name: `node--article--teaser.html.twig`. &#x20;
    1. **node** is the Drupal entity we are trying to integrate with
    2. **blog** is the content type (also an entity)This names is exactly what we need to style all blog nodes that will be displayed in teaser view mode.
 2. Now that we've selected the template we need, let's create it by making a copy from `core/themes/stable/templates/content/node.html.twig` into your theme's templates directory (`/themes/custom/training_theme/src/templates/content/`
@@ -108,10 +108,10 @@ We'll break the integration process down so we can explain each part of it. You 
        "title_prefix": title_prefix,
        "title_suffix": title_suffix,
        "heading": article_title,
-       "image": content.field_blog_image is not empty ? content.field_blog_image,
+       "image": content.field_image is not empty ? content.field_image,
        "date": node.createdtime|date('F j, Y'),
        "body_text": content.body|render|trim is not empty ? content.body,
-       "tags": content.field_blog_tags|render|trim is not empty ? content.field_blog_tags,
+       "tags": content.field_tags|render|trim is not empty ? content.field_tags,
        "modifier": ""
      } only
     %}
@@ -130,10 +130,10 @@ We'll break the integration process down so we can explain each part of it. You 
        "title_prefix": title_prefix,
        "title_suffix": title_suffix,
        "heading": article_title,
-       "image": content.field_blog_image|render|trim is not empty ? content.field_blog_image,
+       "image": content.field_image|render|trim is not empty ? content.field_image,
        "date": node.createdtime|date('F j, Y'),
        "body_text": content.body|render|trim is not empty ? content.body,
-       "tags": content.field_blog_tags|render|trim is not empty ? content.field_blog_tags,
+       "tags": content.field_tags|render|trim is not empty ? content.field_tags,
        "modifier": ""
      } only
     %}
@@ -151,9 +151,9 @@ We'll break the integration process down so we can explain each part of it. You 
     {% endembed %}
     ```
 
-    * Mapping each of the components with Drupal's equivalent fields is only half the job. At least for the date and tags fields in this case. By using Twig blocks we can explicitly declare the date we want to render in the cards. 
+    * Mapping each of the components with Drupal's equivalent fields is only half the job. At least for the date and tags fields in this case. By using Twig blocks we can explicitly declare the date we want to render in the cards.&#x20;
     * If you remember, we created two twig blocks for the date field. One for the regular card and one for the card wide. Twig blocks in the embed statement above let us pick which one the two we want to use while leaving the other one empty.
-    * We start by declaring the `featured_date` twig block but we leave it empty.  This means Drupal will not output any content for that block.  Since the featured_date is only used in the card wide, we don't need to render it in the regular card.
+    * We start by declaring the `featured_date` twig block but we leave it empty.  This means Drupal will not output any content for that block.  Since the featured\_date is only used in the card wide, we don't need to render it in the regular card.
     * Next we declare the `card_date` twig block to print the date information.
     * Finally we declare the `tags` twig block to render the tags.
 
