@@ -1,6 +1,7 @@
-# Welcome
+# Welcome to component-based development training
 
-In this two-day hands-on training workshop you will learn the process of identifying, building, and integrating components with Drupal 8 using Pattern Lab and Twig. Drupal 8 best practices will be at the core of the training to ensure components are built in a way that leverage caching, performance and re-usability.
+In this hands-on training curriculum you will learn the process of identifying, building, and integrating components with Drupal using Twig, Storybook and React. Drupal best practices are at the core of the training to ensure components are built in a way that leverage caching, performance and re-usability.
+This curriculum has been taught in person at various Drupal events such as meetups and DrupalCons across the U.S. and Europe.
 
 ![Homepage design](.gitbook/assets/homepage.jpg)
 
@@ -9,7 +10,7 @@ In this two-day hands-on training workshop you will learn the process of identif
 * Principles of Atomic Design for building flexible and scalable components
 * Building a custom Drupal 8 theme using [Mediacurrent's Theme Generator](https://github.com/mediacurrent/theme_generator\_8)
 * Using Pattern Lab and Twig too build flexible and re-usable components
-* Twig's **include**, **extends**, **embed**, and **Twig Blocks** to nest and reuse components 
+* Twig's **include**, **extends**, **embed**, and **Twig Blocks** to nest and reuse components
 * Debugging a Drupal site using Kint
 * Working with and creating Twig template suggestions
 * Working with content arrays to get field's values
