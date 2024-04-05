@@ -1,9 +1,9 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Start here](local-setup/README.md)
-  * [Setup](local-setup/setup.md)
-  * [Dependencies](local-setup/whats-included.md)
+* [Start](start/README.md)
+* [Installation](installation.md)
+* [Drupal modules](modules.md)
 
 ## Getting Started
 
