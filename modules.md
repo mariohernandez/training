@@ -4,13 +4,12 @@ After Drupal has been installed, let's add or enable the following modules which
 
 ## Core modules
 
-* **Media**:
-* **Responsive image**
+* Media & Media Library
+* Responsive image
 
 ## Contrib modules
 
 * [Components Libraries](https://www.drupal.org/project/components)
-* [Devel](https://www.drupal.org/project/devel)
 * [Admin toolbar](https://www.drupal.org/project/admin_toolbar)
 * [Twig Field Value](https://www.drupal.org/project/twig_field_value)
 * [Twig tweak](https://www.drupal.org/project/twig_tweak)
