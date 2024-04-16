@@ -75,7 +75,7 @@ Now let's write some HTML for the component.
   <div class="hero__content">
     {% if heading %}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@storybook/heading/heading.twig' with {
           "heading": heading
         } only
       %}
@@ -83,7 +83,7 @@ Now let's write some HTML for the component.
 
     {% if cta %}
       {%
-        include '@training_theme/button/button.twig' with {
+        include '@storybook/button/button.twig' with {
           "button": cta
         } only
       %}

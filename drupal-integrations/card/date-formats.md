@@ -59,7 +59,7 @@ modifier, title, and url).
 Uses embed to be able to include card component
 and make use of twig blocks found in such component.
 #}
-{% embed '@training_theme/card/card.twig' with
+{% embed '@storybook/card/card.twig' with
   {
     "attributes": attributes,
     "title_prefix": title_prefix,

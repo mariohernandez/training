@@ -79,13 +79,13 @@ So the data is ready, let's go ahead and add the markup for the component.
 {% tabs %}
 {% tab title="featured-content.twig" %}
 ```php
-{{ attach_library('training_theme/featured-content') }}
+{{ attach_library('storybook/featured-content') }}
 
 <section class="featured-content{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {% if heading %}
     {%
-      include '@training_theme/heading/heading.twig' with {
+      include '@storybook/heading/heading.twig' with {
         "heading": heading
       } only
     %}
@@ -95,7 +95,7 @@ So the data is ready, let's go ahead and add the markup for the component.
     {% block featured_items %}
       {% for item in items %}
         {%
-          include '@training_theme/card/card.twig' with {
+          include '@storybook/card/card.twig' with {
             "image": item.image,
             "heading": item.heading,
             "date": item.date,

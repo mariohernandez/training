@@ -14,7 +14,7 @@ Pattern Lab:
 Drupal Library:
 
 {% tabs %}
-{% tab title="training_theme.libraries.yml" %}
+{% tab title="storybook.libraries.yml" %}
 ```yaml
 webfonts:
   css:

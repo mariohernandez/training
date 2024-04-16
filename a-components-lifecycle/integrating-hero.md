@@ -4,7 +4,7 @@ Now it's time to begin the integration process for the Hero component. We are go
 
 ### Exercise: Integrate the Hero
 
-1. In your code editor, open `/src/templates/content/node--article--hero.html.twig` 
+1. In your code editor, open `/src/templates/content/node--article--hero.html.twig`
 2. Remove all code from the file except for comments. It is good to leave the comments untouched as they provide helpful information regarding available variables and other useful Drupal-specific details.
 3. Add the following code at the bottom of the template:
 
@@ -52,7 +52,7 @@ To follow best practices we discussed earlier regarding letting Drupal render th
 {% tab title="node--article--hero.html.twig" %}
 ```php
 {%
-  include '@training_theme/hero/hero.twig' with {
+  include '@storybook/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
     heading: hero_title,
@@ -63,8 +63,8 @@ To follow best practices we discussed earlier regarding letting Drupal render th
 {% endtab %}
 {% endtabs %}
 
-* We are using an `include` Twig statement to nest the Hero component into the paragraph template. Using  the  theme's namespace, `training_theme`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can direct Drupal to also look for Twig templates in our components directory, among other places. \
-  **IMPORTANT**:  If your theme name is not **training_theme** be sure you use your theme name in the `@include` above. 
+* We are using an `include` Twig statement to nest the Hero component into the paragraph template. Using  the  theme's namespace, `storybook`, we are able to point  Drupal to our  theme's `src/patterns/components/hero/hero.twig`  template.  As  we mentioned before, by default Drupal only looks for Twig templates inside  `src/templates/`, but thanks to the  [Component Libraries](https://www.drupal.org/project/components) module and the namespace we created, we can direct Drupal to also look for Twig templates in our components directory, among other places. \
+  **IMPORTANT**:  If your theme name is not **storybook** be sure you use your theme name in the `@include` above.
 * Next we pass in Drupal's `attributes` variable so that Drupal  can inject any attributes it needs to the Hero node.  This is recommended, but not required.
 * The next step is to  map the `image`, `heading, and cta` fields with  Drupal's equivalent of those fields.  While creating the variables above was not required nor needed, having done so makes  the mapping of keys to their values, much cleaner.
 * Notice in the `@include` statement after the twig template path there is a keyword `with`? and at the end of the block of code there is a keyword `only` ?   These are Twig's helpful keywords that make it possible to limit the fields we want to display.  For example, if we  only wanted the hero to show a title field,  we could just include that field and leave the others out.  For this to work the `with` and `only` keywords need to be present otherwise we would get errors when Drupal renders the Hero as it would expect all the other fields as well.
@@ -96,7 +96,7 @@ Once you've written all that code, the full component integration should look li
 
 {# Including hero component and mapping its fields to Drupal's fields #}
 {%
-  include '@training_theme/hero/hero.twig' with {
+  include '@storybook/hero/hero.twig' with {
     attributes: attributes,
     image: content.field_image|render|trim is not empty ? content.field_image,
     heading: hero_title,
@@ -113,8 +113,8 @@ By default Drupal is printing the button field as a single `<a>` tag. While this
 
 1. In your Drupal site, click **Structure | Paragraph Types | Hero**
 2. Click the **Manage Display** tab
-3. For the **Call To Action** field, change its format to **Separate field text and URL**.  
-4. Save your changes.  
+3. For the **Call To Action** field, change its format to **Separate field text and URL**.
+4. Save your changes.
 5. Clear Drupal's cache.  Now the variable we set above will work.
 
 ### Displaying the integrated Hero in Drupal

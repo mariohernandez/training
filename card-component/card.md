@@ -67,7 +67,7 @@ By now we should be well familiar with the fields structure above. The one field
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{{ attach_library('training_theme/card') }}
+{{ attach_library('storybook/card') }}
 
 <article class="card{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
@@ -81,7 +81,7 @@ By now we should be well familiar with the fields structure above. The one field
     {% if heading %}
       {{ title_prefix }}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@storybook/heading/heading.twig' with {
           heading: heading
         } only
       %}
@@ -266,9 +266,9 @@ In your browser of choice open the following URL: [http://localhost:3000](http:/
 
 When working with Pattern Lab locally it makes sense to use [http://localhost:3000](http://localhost:3000) to view your work. However, if you are viewing your project from a server during development, or want to show your work and progress to a stakeholder or client, this approach will not work. Luckily for us, we can access Pattern Lab using Drupal's URL as follows:
 
-`/themes/custom/training_theme/patternlab/index.html`
+`/themes/custom/storybook/patternlab/index.html`
 
 Two things to keep in mind with the path above:
 
-1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is _https://dev.pantheon.io_, the full URL would become **https://dev.pantheon.io/themes/custom/training_theme/patternlab/index.html**
-2. Replace `training_theme` with your project's theme name if your theme name is different.
+1. The path above is appended to your Drupal's base URL.  For example, if your Drupal's address is _https://dev.pantheon.io_, the full URL would become **https://dev.pantheon.io/themes/custom/storybook/patternlab/index.html**
+2. Replace `storybook` with your project's theme name if your theme name is different.

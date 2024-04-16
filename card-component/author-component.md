@@ -23,7 +23,7 @@ As we just saw, the Card wide variant uses some information from the article aut
 {% tabs %}
 {% tab title="author.twig" %}
 ```php
-{{ attach_library('training_theme/author') }}
+{{ attach_library('storybook/author') }}
 
 <div class="author{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -80,7 +80,7 @@ As we just saw, the Card wide variant uses some information from the article aut
 {% endtab %}
 {% endtabs %}
 
-* Create the **author** library in `training_theme.libraries.yml`.
+* Create the **author** library in `storybook.libraries.yml`.
 
 ### Update the Card component with new Author component
 
@@ -94,7 +94,7 @@ Let's update the card component so we make use of the newly built Author compone
 {% block author %}
   {% if author %}
     {%
-      include '@training_theme/author/author.twig' with {
+      include '@storybook/author/author.twig' with {
         "author": author
       } only
     %}
@@ -117,7 +117,7 @@ Windows users may need to run the two commands above separately (`npm run build`
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{{ attach_library('training_theme/card') }}
+{{ attach_library('storybook/card') }}
 
 <article class="card{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -142,7 +142,7 @@ Windows users may need to run the two commands above separately (`npm run build`
     {% if heading %}
       {{ title_prefix }}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@storybook/heading/heading.twig' with {
           heading: heading
         } only
       %}
@@ -187,7 +187,7 @@ Windows users may need to run the two commands above separately (`npm run build`
     {% block author %}
       {% if author %}
         {%
-          include '@training_theme/author/author.twig' with {
+          include '@storybook/author/author.twig' with {
             "author": author
           } only
         %}

@@ -30,7 +30,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 
 Using the same method as before to create new template suggestions, follow these steps:
 
-1. Copy the `views-view.html.twig` and `views-view-unformatted.html.twig` files from `/core/themes/stable/templates/views/`, and place them into `/themes/custom/training_theme/src/templates/views/`
+1. Copy the `views-view.html.twig` and `views-view-unformatted.html.twig` files from `/core/themes/stable/templates/views/`, and place them into `/themes/custom/storybook/src/templates/views/`
 2. Rather than renaming these templates, let's first make copies of them because we will need them again when we work in the **Featured Content** list later on.  Name each of the copies as follows:
    * `views-view--blog-posts--from-our-blog.html.twig` and `views-view-unformatted--blog-posts.html.twig`
    * If you are wondering where these names come from, let's explain:  **blog-posts** is the name we used when we created the Blog Posts view.  **from-our-blog** is the views block machine name.  This is why is important to assign custom machine names that make sense so when is time to create template suggestion, their names also makes sense.  Had we not changed each of our view's blocks machine names we would had ended up with **views-view--blog-posts--block-1.html.twig** as our template name.
@@ -43,7 +43,7 @@ Using the same method as before to create new template suggestions, follow these
 Before we override the templates let's take a look at some of the elements of the templates as these are extremely critical to a successful integration.  Let's start with `views-view--blog-posts--from-our-blog.html.twig`:
 
 * This template is the wrapper of the entire view and the items being queried by the view. Think of this template as all the articles in the `items []` array when we created the **From our blog** component.
-* `{{ title }}` this is the view's title which we have customized to show the section title such as **From our blog** or **Featured content**.  Although we could print this title, we are going to opt to instead print the the View's title through the block itself which will allow content editors to change the title of each section if needed.  
+* `{{ title }}` this is the view's title which we have customized to show the section title such as **From our blog** or **Featured content**.  Although we could print this title, we are going to opt to instead print the the View's title through the block itself which will allow content editors to change the title of each section if needed.
 * `{{ rows }}` are the actual nodes that are returned from the view's query.  Basically rows represent a list of article nodes.  This is probably the only thing we need from this template as we don't need `header`, `exposed`, `pager` or any of the other available variables in the template.
 
 Now let's take a look at `views-view--unformatted--from-our-blog.html.twig`:
@@ -86,7 +86,7 @@ It is extremely important to understand the role of each template that interact 
   }
 %}
 
-{% embed '@training_theme/from-our-blog/from-our-blog.twig' %}
+{% embed '@storybook/from-our-blog/from-our-blog.twig' %}
   {% block blog_items %}
     {{ rows }}
   {% endblock %}
@@ -96,7 +96,7 @@ It is extremely important to understand the role of each template that interact 
 {% endtabs %}
 
 * First, we're keeping the `dom-id` class that views adds, and updating the `attributes`variable for the view to include that class. This will help keep classes intact that views and/or other modules may rely on.
-* Next we are setting a variable for the **CTA** button so we can manually add the value to each of its properties.  
+* Next we are setting a variable for the **CTA** button so we can manually add the value to each of its properties.
 * We are then doing the same for the section's title, by passing some helper CSS classes as well as the fixed title, **From our blog**.  As long as the variables we are setting match the ones found in the component we are integrating, the integration process looks cleaner.  If variable names for **cta** and **heading** did not match those in **from-our-blog.twig**, we would need to do a little more work inside the twig embed to map things by hand.
 * Then we use a twig embed statement to include the **from-our-blog.twig** component.
 * Finally, Drupal provides the `rows` variable which basically provides the result of the view's query. In this case the result is a list of blog post articles. Since we've already integrated the Card component with the node Article for individual blog articles, Drupal's views will provide us a list of Article posts each of which will automatically display already styled as a card.  We are passing Drupal attributes so that they'll be output with our component's markup.
@@ -118,6 +118,6 @@ It is extremely important to understand the role of each template that interact 
 ### Rendering the From our blog section
 
 * Save your changes and clear Drupal's cache
-* Now if you reload the homepage you should see the From our blog section nicely styled. 
+* Now if you reload the homepage you should see the From our blog section nicely styled.
 
 Next we will repeat the steps above with the **Featured content** section.

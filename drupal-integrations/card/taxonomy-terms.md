@@ -7,13 +7,13 @@ Taxonomy are Drupal entities just like Nodes, blocks, etc. This means we can cre
 The tags component is going to be a little unusual compared to other components we've built. The main reason for the way this component will be built is how Drupal handles templates for taxonomy terms and vocabularies. We will see more about this when we integrate the tag components with Drupal.
 
 1. Inside `src/patterns/components/` create a new folder called **tags**
-2. Inside the _tags_ folder create a new file called `tag-item.twig` (_we will first create a component for a single tag item_).  
+2. Inside the _tags_ folder create a new file called `tag-item.twig` (_we will first create a component for a single tag item_).
    1. Since we wouldn't want to display only a single tag item in Pattern Lab, let's hide it by creating a new file called **tag-item.md**\
       Inside the markdown file add the following code:\
       `---`\
       `hidden: true`\
       `---`
-   2. Using a markdown file with the same name of the pattern you wish to hide will hide the pattern in Pattern Lab.  The pattern is still available if we need to use it in another component. 
+   2. Using a markdown file with the same name of the pattern you wish to hide will hide the pattern in Pattern Lab.  The pattern is still available if we need to use it in another component.
 3. Add the following code inside `tag-item.twig`
 
 {% tabs %}
@@ -59,7 +59,7 @@ The tags component is going to be a little unusual compared to other components 
 {% tabs %}
 {% tab title="tags.twig" %}
 ```php
-{{ attach_library('training_theme/tags') }}
+{{ attach_library('storybook/tags') }}
 
 <ul class="tags{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -68,7 +68,7 @@ The tags component is going to be a little unusual compared to other components 
     <li class="tag__item">
       {% block tag_item %}
         {%
-          include '@training_theme/tags/tag-item.twig' with {
+          include '@storybook/tags/tag-item.twig' with {
             "name": item.name,
             "url": item.url
           } only
@@ -139,7 +139,7 @@ Now that we have a component for tags, let's modify the card so we make use of i
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{{ attach_library('training_theme/card') }}
+{{ attach_library('storybook/card') }}
 
 <article class="card{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -164,7 +164,7 @@ Now that we have a component for tags, let's modify the card so we make use of i
     {% if heading %}
       {{ title_prefix }}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@storybook/heading/heading.twig' with {
           heading: heading
         } only
       %}
@@ -195,7 +195,7 @@ Now that we have a component for tags, let's modify the card so we make use of i
     {% block tags %}
       {% if tags %}
         {%
-          include '@training_theme/tags/tags.twig' with {
+          include '@storybook/tags/tags.twig' with {
             "items": tags
           } only
         %}
@@ -205,7 +205,7 @@ Now that we have a component for tags, let's modify the card so we make use of i
     {% block author %}
       {% if author %}
         {%
-          include '@training_theme/author/author.twig' with {
+          include '@storybook/author/author.twig' with {
             "author": author
           } only
         %}
@@ -270,7 +270,7 @@ Go ahead and make a copy of this template from its original location into your t
 {% tabs %}
 {% tab title="taxonomy-term--tags.html.twig" %}
 ```php
-{% include '@training_theme/tags/tag-item.twig' %}
+{% include '@storybook/tags/tag-item.twig' %}
 ```
 {% endtab %}
 {% endtabs %}
@@ -282,7 +282,7 @@ Go ahead and make a copy of this template from its original location into your t
 {% tabs %}
 {% tab title="field--node--field-blog-tags--blog.html.twig" %}
 ```php
-{% embed '@training_theme/tags/tags.twig' %}
+{% embed '@storybook/tags/tags.twig' %}
   {% block tag_item %}
     {{ item.content }}
   {% endblock %}

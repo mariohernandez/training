@@ -29,7 +29,7 @@ In this case we will only create one view template suggestion, only for the Feat
   }
 %}
 
-{% embed '@training_theme/featured-content/featured-content.twig' %}
+{% embed '@storybook/featured-content/featured-content.twig' %}
   {% block featured_items %}
     {{ rows }}
   {% endblock %}
@@ -94,7 +94,7 @@ As we read in the excerpt above, there are usually two views templates using whe
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% embed '@training_theme/featured-content/featured-content.twig' %}
+{% embed '@storybook/featured-content/featured-content.twig' %}
   {% block latest_posts %}
     {{ rows }}
   {% endblock %}

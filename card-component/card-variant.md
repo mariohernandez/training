@@ -130,7 +130,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 {% endif %}
 ```
 
-* First we are checking whether the value of the `modifier` variable is `card--wide`This will ensure that only if this conditions is met we will be able to access this twig block.  
+* First we are checking whether the value of the `modifier` variable is `card--wide`This will ensure that only if this conditions is met we will be able to access this twig block.
 * The twig block name is `featured_date`.  However this name can be anything that makes sense to you.
 * Inside the twig block we are printing the date variable.
 * Finally we close the twig block and the if statement.  The name of the twig block in the `endblock` statement is optional.  For example, the following should also work: `{% endblock %}`.  However, we expect a few twig blocks on this template so adding each of the block's names at the end makes it clear where blocks start and end.
@@ -166,7 +166,7 @@ Now that the variant's JSON is ready with only the fields we want, it's time to 
 * Notice that both, the date and category fields use the same CSS class of `eyebrow`.  This will allow us to style both fields identically.
 
 {% hint style="info" %}
-If you are wondering why we are placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card. 
+If you are wondering why we are placing the code snippets in those very locations within the file, the simple answer is that that's where those fields appear in the card.
 {% endhint %}
 
 #### Card tags
@@ -220,7 +220,7 @@ If you are wondering why we are placing the code snippets in those very location
 {% tabs %}
 {% tab title="card.twig" %}
 ```php
-{{ attach_library('training_theme/card') }}
+{{ attach_library('storybook/card') }}
 
 <article class="card{{ modifier ? ' ' ~ modifier }}
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -245,7 +245,7 @@ If you are wondering why we are placing the code snippets in those very location
     {% if heading %}
       {{ title_prefix }}
       {%
-        include '@training_theme/heading/heading.twig' with {
+        include '@storybook/heading/heading.twig' with {
           heading: heading
         } only
       %}
@@ -303,7 +303,7 @@ If you are wondering why we are placing the code snippets in those very location
 {% endtab %}
 {% endtabs %}
 
-* Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field under its title, and the other one without tags, with date on top left corner of the card.  In addition, the card wide variant should display the author's headshot, name and title. 
+* Now if we save our changes, we should see the two card variants in Pattern Lab, one with tags and a date field under its title, and the other one without tags, with date on top left corner of the card.  In addition, the card wide variant should display the author's headshot, name and title.
 
 If you don't have Pattern Lab running, run this command:
 

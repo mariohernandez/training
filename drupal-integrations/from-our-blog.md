@@ -161,14 +161,14 @@ So the data is ready, let's go ahead and add the markup for the component.
 {% tabs %}
 {% tab title="from-our-blog.twig" %}
 ```php
-{{ attach_library('training_theme/from-our-blog') }}
+{{ attach_library('storybook/from-our-blog') }}
 
 <section class="from-our-blog{{ modifier ? ' ' ~ modifier }}{{- attributes ? ' ' ~ attributes.class -}}"
   {{- attributes ? attributes|without(class) -}}>
   {{ title_prefix }}
   {{ title_suffix }}
   {%
-    include '@training_theme/heading/heading.twig' with {
+    include '@storybook/heading/heading.twig' with {
       "heading": heading
     } only
   %}
@@ -176,7 +176,7 @@ So the data is ready, let's go ahead and add the markup for the component.
   <div class="from-our-blog__items">
     {% block blog_items %}
       {% for item in items %}
-        {% embed '@training_theme/card/card.twig' with
+        {% embed '@storybook/card/card.twig' with
           {
             "image": item.image,
             "heading": item.heading,
@@ -195,7 +195,7 @@ So the data is ready, let's go ahead and add the markup for the component.
   </div>
   <div class="from-our-blog__cta">
     {%
-      include '@training_theme/button/button.twig' with {
+      include '@storybook/button/button.twig' with {
         button: cta
       } only
     %}
@@ -213,7 +213,7 @@ As I mentioned earlier, this is a unique component and nothing like we've built 
 * Next we create a wrapper to hold all the blog posts/cards with the class of `from-our-blog__items`
 * Next we create twig block (`blog_items`), which we will use later to print Drupal's nodes.
 * Inside the twig block we run a `for` loop function.  We are iterating through the items array and for each item we find in it, we include a card component using an `embed` statement.
-* Notice we are declaring the `featured_date` twig block.  This particular card or collection of cards does not need the date on the top-left corner of the card like the card wide does.  So by declaring an empty twig block for `featured_date`, we are basically excluding that content from rendering. 
+* Notice we are declaring the `featured_date` twig block.  This particular card or collection of cards does not need the date on the top-left corner of the card like the card wide does.  So by declaring an empty twig block for `featured_date`, we are basically excluding that content from rendering.
 * Finally we are including a button component so we can link it to `/blog` or `/news`.
 
 #### Component's styles

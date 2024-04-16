@@ -20,7 +20,7 @@ In a Drupal theme, include statements are mainly used to nest components into ot
 {% tab title="hero.twig" %}
 ```php
 {%
-  include '@training_theme/heading/heading.twig' with {
+  include '@storybook/heading/heading.twig' with {
     "heading": heading
   } only
 %}
@@ -33,14 +33,14 @@ In a Drupal theme, include statements are mainly used to nest components into ot
 
 Being able to customize components during the "include" process is a must. There are two ways we can change variables, properties, or values of a component.  Let's use the Hero as an example:
 
-1. In `hero.json` we could change the `heading_level`, `modifier`, `title`, or `url` to the values we need. 
+1. In `hero.json` we could change the `heading_level`, `modifier`, `title`, or `url` to the values we need.
 2. We could make the changes directly in the `include` as follows:
 
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
 {%
-  include '@training_theme/heading/heading.twig' with {
+  include '@storybook/heading/heading.twig' with {
     "heading": {
       "title": "A new title here",
       "modifier": 'some-css-class',

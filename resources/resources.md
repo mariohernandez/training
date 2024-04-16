@@ -74,7 +74,7 @@
  *   An array of alternate, more specific names for template files or theme
  *   functions for users.
  */
-function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook) {
+function storybook_theme_suggestions_user_alter(&$suggestions, $vars, $hook) {
   // Define the view mode.
   $mode = $vars['elements']['#view_mode'];
   // Create a theme hook suggestion which has the view mode name in it.

@@ -12,10 +12,10 @@ In the context of component-based theming, we are going to create a library for 
 
 ### Structure of a library
 
-In your editor, open `training_theme.libraries.yml` (located in your theme's root). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site (i.e. typography, brand colors, global styles, etc.). The global library looks something like this:
+In your editor, open `storybook.libraries.yml` (located in your theme's root). You will notice the global library already declared which includes all of the global theme styles that apply to all pages on the site (i.e. typography, brand colors, global styles, etc.). The global library looks something like this:
 
 {% tabs %}
-{% tab title="training_theme.libraries.yml" %}
+{% tab title="storybook.libraries.yml" %}
 ```yaml
 global:
   css:
@@ -38,11 +38,11 @@ Drupal Asset Libraries are powerful and there is so much more about them. Learn 
 
 Let's create a new Drupal library for the Hero component so we can apply all css we've written for it when rendered in Drupal.
 
-* In the root of your Drupal theme, open `training_theme.libraries.yml` in your editor (replace `training_theme` if you used a different name for your theme).
+* In the root of your Drupal theme, open `storybook.libraries.yml` in your editor (replace `storybook` if you used a different name for your theme).
 * Somewhere at the bottom of the file, add the code below:
 
 {% tabs %}
-{% tab title="training_theme.libraries.yml" %}
+{% tab title="storybook.libraries.yml" %}
 ```
 hero:
   css:
@@ -68,14 +68,14 @@ Now that the Hero component's library is ready, we need to make Drupal aware of 
 {% tabs %}
 {% tab title="hero.twig" %}
 ```php
-{{ attach_library('training_theme/hero') }}
+{{ attach_library('storybook/hero') }}
 ```
 {% endtab %}
 {% endtabs %}
 
-_Replace `training_theme` if your theme name is different._
+_Replace `storybook` if your theme name is different._
 
-The `attach_library` function takes a path parameter which we are declaring by using the theme's namespace (the namespace is registered by the [Components Libraries](https://www.drupal.org/project/components) module), then the name of the library we want to attach (i.e. `training_theme/hero`).
+The `attach_library` function takes a path parameter which we are declaring by using the theme's namespace (the namespace is registered by the [Components Libraries](https://www.drupal.org/project/components) module), then the name of the library we want to attach (i.e. `storybook/hero`).
 
 With the code above, we are telling Drupal that whenever we render the Hero component, its library should be attached so the styles for the component can be applied.
 

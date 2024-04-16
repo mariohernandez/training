@@ -2,11 +2,11 @@
 
 Out of the box Drupal does not provide template suggestions for users. After researching a little I found a hook alter that will allow us to create new template suggestions.
 
-1. In your editor, open `training_theme.theme` which is located in the root of your theme
+1. In your editor, open `storybook.theme` which is located in the root of your theme
 2. Add the following code:
 
 {% tabs %}
-{% tab title="training_theme.theme" %}
+{% tab title="storybook.theme" %}
 ```php
 /**
  * Implements hook_theme_suggestions_user_alter().
@@ -14,7 +14,7 @@ Out of the box Drupal does not provide template suggestions for users. After res
  *   An array of alternate, more specific names for template files or theme
  *   functions for users.
  */
-function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook) {
+function storybook_theme_suggestions_user_alter(&$suggestions, $vars, $hook) {
 
   // Define the view mode.
   $mode = $vars['elements']['#view_mode'];
@@ -47,7 +47,7 @@ function training_theme_theme_suggestions_user_alter(&$suggestions, $vars, $hook
 {% tabs %}
 {% tab title="user--author.html.twig" %}
 ```php
-{% include "@training_theme/author/author.twig" with
+{% include "@storybook/author/author.twig" with
   {
     "attributes": attributes,
     "author": {
