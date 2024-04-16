@@ -1,25 +1,26 @@
 # Component Architecture
 
-I typically recommend to group components or patterns in individual folders within your Drupal theme. This not only provides organization as your catalog of components grows, but it also makes each component completely reusable and even portable as all the pieces of a component are encapsulated in a single folder. Here's an example of a typical component architecture. Your particular workflow may vary.
+Grouping components or patterns in individual directories within your Drupal theme is a great practice when building components. This not only provides organization as your catalog of components grows, but it also makes components easier to share as all the pieces of a component are encapsulated in a single directory. Here's an example of a typical component architecture. Depending on the design system you use, your file types may be different.
 
-```
+```json
 +
 |--src
 |  |--patterns
 |     |--components
 |        |--card
+|           |-- card.css
 |           |-- card.js
-|           |-- card.md
-|           |-- card.scss
 |           |-- card.twig
-|           |-- card.json
+|           |-- card.yml
+|           |-- card.stories.jsx
 +
 ```
 
-A component is typically broken down in four parts:
+A component is typically broken down as follows:
 
-* **Markup**: Markup or HTML for a component is written in [Twig templates, Drupal 8's templating engine](https://www.drupal.org/docs/theming-drupal/twig-in-drupal). 
-* **Data**: Demo or stock data for components is usually provided in YAML or JSON format. These are lightweight formats for storing data. In this training we will use JSON (**J**ava**S**cript **O**bject **N**otation).
-* **Styles**: These are written in CSS or SCSS.
-* **Behavior/interaction**: The component's behaviors are usually handled with JavaScript.  Most components don't need JavaScript.
-* **Annotations** (Optional): Annotations are used to document the details of a component and are typically written in markdown format (`.md`). This is extremely useful for teams because it outlines technical details of a pattern such as variable names, attributes, data structure, etc.
+* **Markup** (required): Markup or HTML for a component is written in Twig, [Drupal's templating engine](https://www.drupal.org/docs/theming-drupal/twig-in-drupal)
+* **Data** (optional): Demo or stock content for components is usually provided in YAML or JSON format. These are lightweight formats for storing data. In this training we will use [YAML](https://www.redhat.com/en/topics/automation/what-is-yaml){target=_blank rel=nooperner} to be more compatible with Drupal.
+* **Styles** (optional): These are typically written in CSS or Preprocessor like Sass.
+* **Behavior/interaction** (optional): The component's behaviors are usually handled with JavaScript.  Most components don't need JavaScript.
+* **Story** (required): If using Storybook as your site's Styleguide or Design System, you will need a [*.stories.jsx](https://storybook.js.org/docs/get-started/whats-a-story){target=_blank rel=nooperner} file to convert the component to a format Storybook can understand.  Stories files typically use React code.
+* **Documentation** (optional): Depending on your design system, this could be different type of files. For Storybook, a story's documentation is written in [MDX](https://storybook.js.org/docs/writing-docs/mdx){target=_blank rel=nooperner} format.

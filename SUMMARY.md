@@ -1,18 +1,18 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Start](start/README.md)
+<!-- * [Start](start/README.md)
 * [Installation](installation.md)
-* [Drupal modules](modules.md)
+* [Drupal modules](modules.md) -->
 
 ## Getting Started
 
-* [Front-end tooling](getting-started/frontend-tooling.md)
-* [Create a new Drupal theme](getting-started/drupal-theme.md)
 * [Component Architecture](getting-started/component-architecture.md)
+* [Tooling](getting-started/tooling.md)
 * [Drupal Best Practices](getting-started/drupal-best-practices.md)
 * [Drupal Attributes](getting-started/drupal-attributes.md)
 * [Twig Blocks](getting-started/twig-blocks.md)
+* [Create a new Drupal theme](getting-started/drupal-theme.md)
 
 ## Basic Components
 

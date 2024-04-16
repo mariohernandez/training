@@ -8,6 +8,7 @@ The challenge we face is having control of the markup while adhering to Drupal's
 
 {% tabs %}
 {% tab title="card.twig" %}
+
 ```php
 <article class="card
   {{- attributes ? ' ' ~ attributes.class -}}"
@@ -19,6 +20,7 @@ The challenge we face is having control of the markup while adhering to Drupal's
   {% endblock %}
 </article>
 ```
+
 {% endtab %}
 {% endtabs %}
 
