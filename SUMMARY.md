@@ -7,20 +7,23 @@
 
 ## Getting Started
 
-* [Component Architecture](getting-started/component-architecture.md)
+* [Getting started](getting-started/README.md)
 * [Tooling](getting-started/tooling.md)
+* [Component Architecture](getting-started/component-architecture.md)
 * [Drupal Best Practices](getting-started/drupal-best-practices.md)
 * [Drupal Attributes](getting-started/drupal-attributes.md)
 * [Twig Blocks](getting-started/twig-blocks.md)
-* [Create a new Drupal theme](getting-started/drupal-theme.md)
 
 ## Basic Components
 
-* [Global styles](basic-components/global-styles.md)
-* [Adding webfonts](basic-components/adding-webfonts.md)
-* [Heading Component](basic-components/heading/README.md)
-  * [Improving the Heading](basic-components/heading/improving-the-heading.md)
+* [Create a new Drupal theme](getting-started/drupal-theme.md)
+<!-- * [Global styles](basic-components/global-styles.md) -->
+<!-- * [Adding webfonts](basic-components/adding-webfonts.md) -->
+* [Title Component](basic-components/title/README.md)
+  * [Improving the title](basic-components/title/improving-the-title.md)
+* [Title story](basic-components/title/title-story.md)
 * [Button Component](basic-components/button.md)
+* [Button story](basic-components/button/button-story.md)
 
 ## A component's lifecycle
 

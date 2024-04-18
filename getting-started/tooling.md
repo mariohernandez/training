@@ -1,5 +1,17 @@
 # Front-end tooling
 
+Before we dive in let's go over the various tools that make up our front-end environment as well as the intended workflow for processing and optimizing our code for production.
+
+| Tooling                      | Workflow                                     |
+| :--------------------------- | :------------------------------------------- |
+| Storybook react edition      | Code compilation and minification            |
+| ViteJS                       | Code linting                                 |
+| NodeJS                       | Image optimization                           |
+| NPM                          | Assets copying                               |
+| PostCSS                      | HMR                                          |
+| TwigJS                       |                                              |
+| React                        |                                              |
+
 Here are some of the tooling we'll be using during this training:
 
 * [Storybook (React edition)](https://storybook.js.org/docs/get-started): Design system with living style-guide.
