@@ -8,11 +8,8 @@
 ## Getting Started
 
 * [Getting started](getting-started/README.md)
-* [Tooling](getting-started/tooling.md)
+* [Front-end tooling](getting-started/tooling.md)
 * [Component Architecture](getting-started/component-architecture.md)
-* [Drupal Best Practices](getting-started/drupal-best-practices.md)
-* [Drupal Attributes](getting-started/drupal-attributes.md)
-* [Twig Blocks](getting-started/twig-blocks.md)
 
 ## Basic Components
 
@@ -21,6 +18,9 @@
 <!-- * [Adding webfonts](basic-components/adding-webfonts.md) -->
 * [Title Component](basic-components/title/README.md)
   * [Improving the title](basic-components/title/improving-the-title.md)
+* [Drupal Best Practices](basic-components/drupal-best-practices.md)
+* [Drupal Attributes](basic-components/drupal-attributes.md)
+* [Twig Blocks](basic-components/twig-blocks.md)
 * [Title story](basic-components/title/title-story.md)
 * [Button Component](basic-components/button.md)
 * [Button story](basic-components/button/button-story.md)
