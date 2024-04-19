@@ -1,10 +1,10 @@
 # Card Component
 
-A component that will introduce us to a more useful technique for working with components is the image you see below. A Card component is a great way to display all sorts of content (news, blog posts, events, etc.), and you will see it in many websites nowadays. The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
+A component that will introduce us to a more advanced techniques is the image you see below. A Card component is a great way to display all sorts of content (news, blog posts, events, etc.). The card is not typically displayed on its own, although sometimes it is, but its most common use is as a collection of content. For example, we could use a collection of cards to display latest blog posts or upcoming events. In this training we will use the card component to build two content lists; Featured Content, and Blog Content.
 
 ![Example of a Card component](../.gitbook/assets/card.png)
 
-Although we could build the content list components already as a collection of content, a better approach is to first build a single instance of a card component that then we can reuse over and over. Having a single card component available makes it possible to even build other types of content collections.
+Before we can build the content lists we discussed above, we should build a single instance of the card component so we can reuse it to build the lists. This is Atomic Design in action.
 
 ## Exercise:  Card component
 
@@ -16,16 +16,17 @@ As we've did with the Hero component, one of the first things we need to define 
 * body
 * & tags
 
-Now that we have identified the fields our card component needs, let's start building it.
+Now that we have identified the card's fields, let's start building it.
 
 ### Component's stock content
 
 1. Inside `src/patterns/components` create a new folder called **card**
-2. Inside the _card_ folder create a new file called **card.json**
-3. Inside _card.json_ add the following code:
+2. Inside the _card_ folder create a new file called **card.yml**
+3. Inside _card.yml_ add the following code:
 
 {% tabs %}
-{% tab title="card.json" %}
+{% tab title="card.yml" %}
+
 ```yaml
 {
   "image": "<img src='https://source.unsplash.com/6VhPY27jdps/640x360' alt='Cups of coffee' />",
@@ -54,6 +55,7 @@ Now that we have identified the fields our card component needs, let's start bui
   "modifier": ""
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
