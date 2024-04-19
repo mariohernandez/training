@@ -4,9 +4,10 @@
 
 ## Getting started
 
-* [Getting started](getting-started/README.md)
+* [Requirements](getting-started/README.md)
 * [Front-end tooling](getting-started/tooling.md)
 * [Component Architecture](getting-started/component-architecture.md)
+* [Front-end setup](getting-started/setup.md)
 
 ## Basic components
 

@@ -1,44 +1,21 @@
-# Getting started
+# Requirements
 
-The first part of this training focuses on getting the front-end environment setup as well as building components in Storybook, later in the training we will start interacting with Drupal to make use of the Storybook components within Drupal.
+There are requirements that need to be met to get the most out of this training.  Please review the list below to ensure you are ready to proceed.
 
-## Building the front-end project
+## Software requirements
 
-To start we need to build a [ViteJS App](https://vitejs.dev/guide/){target=_blank rel=noopener} which will serve as the foundation of our front-end environment.
+* macOS 11 or higher.  Windows 10 Pro or higher
+* Docker and DDEV
+* A code editor.  I recommend [Microsoft Visual Studio Code](https://code.visualstudio.com/download), or any editor you currently use and are comfortable with
+* A Command Line Interface (CLI) tool.  On macOS use [Terminal](https://www.youtube.com/watch?v=Jm8-UFf8IMg), and on Windows use [PowerShell](https://www.youtube.com/watch?v=VFuobJbbDtU)
 
-**Important**: You need **NodeJS 18+ or 20+** ([See releases](https://nodejs.org/en/download){target=_blank rel=noopener}).
+## Skills needed
 
-### ViteJS
+* Basic familiarity with [running commands on a CLI](https://www.hongkiat.com/blog/web-designers-essential-command-lines/)
+* Working knowledge of Twig is helpful
+* Good understanding of HTML and CSS is required
 
-1. Anywhere in your computer, create a new directory called **storybook**
-1. In your command line, navigate into the newly created **storybook** directory and run the following commands:
+## Command line tutorials
 
-```bash
-npm create vite@latest . -- --template react
-npm install
-npm run dev
-```
-
-**Note**: _You could use any name for your project but this training uses **storybook** in all the exercises_.
-
-After running npm run dev above, you will be prompted with a local URL which will open to a basic Vite/React app.
-
-### Storybook
-
-With the Vite app now in place, we can proceed to integrating [Storybook](https://storybook.js.org/docs/get-started) into it. Before proceeding, stop the Vite app, if it's running, by pressing **Ctrl + C**.
-
-Still inside the **storybook** directory, run
-
-```bash
-npx storybook@latest init --type react
-```
-
-Upon completion of installing Storybook, a basic Storybook app should launch on your default browser. Storybook comes with a hand-ful of pre-built demo components.
-
-#### Starting/Stopping Storybook on demand
-
-Should you ever need to stop Storybook you can do so by pressing **Ctrl + C** on your keyboard. To restart Storybook run
-
-```bash
-npm run storybook
-```
+* [Learn command line basics](https://tutorial.djangogirls.org/en/intro_to_command_line/)
+* See other [CLI tutorials](https://www.youtube.com/results?search_query=basic+training+on+command+line+interface)
