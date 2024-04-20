@@ -1,35 +1,40 @@
 # Button Component
 
-![](../.gitbook/assets/button.png)
-
 Buttons are some of those things that are used over and over on a website. For this reason it makes sense to create a new component for it.
 
-1. Inside _components_ create a new folder called **button**
-2. Inside the _button_ folder create a new file called **button.yml**
-3. Inside _button.yml_ add the following code:
+## Requirements for the Button component
 
-{% tabs %}
-{% tab title="button.yml" %}
+* Be able to use either an **`<a>`** or **`<button>`** element when using the button component
+* Ability to create button variations based on modifier class
+
+## Exercise 2: Building the Button component
+
+### Data structure
+
+1. Inside the **components/01-atoms** directory create a new directory called **button**
+2. Inside the **button** directory create a new file called **button.yml**
+3. Inside **button.yml** add the following:
 
 ```yml
 ---
 modifier: ''
-text: 'Hi, I am a button'
+text: 'Visit our website'
 url: ''
 ```
 
-{% endtab %}
-{% endtabs %}
+The data structure above is as simple as it gets.
 
-We created an object called `button` and added several properties or attributes such as `text`, `url`, and `modifier`. By now we've seen this kind of data structure on other components.
+* The **modifier** key will allow us to add a modifier CSS class to the component so we can create variations.
+* The **text** key will print the button's label
+* The **url** will be used as the link's href value to create a link that looks like a button.
 
-## Writing the button's logic
+## Markup and logic
 
-1. Inside the _button_ folder create a new file called **button.twig**
-2. Inside `button.twig` add the following code:
+Before we start, let's review one of the requirements which calls for using an `<a>` or a `<button>` HTML element. The question is, how can we determine when to use one or the other?
+An easy way is by using the **url** key as the validator. For example, if the **url** key has a value, meaning a URL of some sort, this tells us that the intention is for the button to take the visitors to a website, a webpage or a section within the page we are reading. If this is true, then we know we need to use an `<a>` element. Whereas if the **url** key is empty, we don't need a link, we need an actual button element to perform an action like submit a form, toggle a switch, expand a panel, etc. So let's write the markup with this logic in mind.
 
-{% tabs %}
-{% tab title="button.twig" %}
+* Inside the **button** directory, create a new file called **button.twig**
+* Inside **button.twig** add the following:
 
 ```php
 {% if url %}
@@ -43,18 +48,12 @@ We created an object called `button` and added several properties or attributes 
 {% endif %}
 ```
 
-{% endtab %}
-{% endtabs %}
+In the code above we are simply checking if the URL is empty or not. If it has a value, we wrap the value of the **text** key in a link, otherwise we use the **button** element. Simple.
 
-* We've added some logic to the button to ensure we render the right HTML element based on the data we receive. For example, if a URL is passed, we use an `<a>` tag with the class of **button**, otherwise we use a `<button>` tag. We always want to make sure we use proper semantic markup for accessibility and for the task at hand. An `<a>` tag will allow us to link to another page or a section within the same page, whereas a `<button>` element will allow us to perform an action such as submit content.
+## Styles
 
-## Button Styles
-
-1. Inside the `button` folder create a new file called **button.css**
-2. Inside `button.scss` add the following code:
-
-{% tabs %}
-{% tab title="button.scss" %}
+1. Inside the **button** directory create a new file called **button.css**
+2. Inside **button.scss** add the following:
 
 ```css
 // Import site utilities
@@ -92,15 +91,53 @@ We created an object called `button` and added several properties or attributes 
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+## Button story
 
-* Some basic css styles to make our button look decent.  We can probably improve them but for now this will do.
+As we did with the Title component, we are going to create a story for the Button component.
 
-## Compiling the code
+* Inside the **button** directory create a new file called **button.stories.jsx**
+* Inside **button.stories.jsx** add the following:
 
-Now that the Button component is done, let's compile the code so we can see it in Pattern Lab. If you already have Pattern Lab running you should see the new Button component. Otherwise, run the following command in your command line and press **Return**
+```js
+import parse from 'html-react-parser';
+
+import button from './button.twig';
+import data from './button.yml';
+import './button.css';
+
+const settings = {
+  title: 'Atoms/Button',
+};
+
+// Default button story.
+export const Button = {
+  render: (args) => parse(button(args)),
+  args: { ...data },
+};
+
+/** Primary button story */
+export const Primary = {
+  ...Button,
+  name: 'Primary button',
+  args: {
+    ...Button.args,
+    modifier: 'button--primary',
+};
+
+/** Secondary button story */
+export const Primary = {
+  ...Button,
+  name: 'Secondary button',
+  args: {
+    ...Button.args,
+    modifier: 'button--secondary',
+};
+
+export default settings;
+```
+
+So we have created a story for the Button, but in addition, we also created two additional stories that represent different button states. The **Primary button** is intended to be used as the main button througout the site, where as the **Secondary button** can be used as a more subtle version of the button. You can see this if you run:
 
 ```bash
-npm run watch
+npm run storybook
 ```

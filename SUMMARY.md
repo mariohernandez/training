@@ -7,8 +7,8 @@
 * [Introduction to Atomic Design](intro.md)
 * [Requirements](getting-started/README.md)
 * [Front-end tooling](getting-started/tooling.md)
-* [Component architecture](getting-started/component-architecture.md)
 * [Front-end setup](getting-started/setup.md)
+* [Component architecture](getting-started/component-architecture.md)
 
 ## Building basic components
 

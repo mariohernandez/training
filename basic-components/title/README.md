@@ -26,8 +26,8 @@ As we saw in the [Component Architecture](getting-started/component-architecture
 
 Let's start by first identifying the variables we need for the component. This is a good time to start thinking how a title is created in Drupal. Since this is a title field, we only need a string of text, however, if we look at the requirements above, we see that we will need more than just a string of text.
 
-1. Inside the **components/01-atoms** directory create a new folder called **title**
-1. Inside the **title** folder create a new file called **title.yml**
+1. Inside the **components/01-atoms** directory create a new directory called **title**
+1. Inside the **title** directory create a new file called **title.yml**
 1. Inside **title.yml** add the following code:
 
 ```yml
@@ -40,7 +40,7 @@ url: ''
 
 In YAML or JSON files, data is structured using a **key/value** pair. Keys can be of any data type such as string, integer, array, object, etc.
 
-### HTML or Markup
+### Markup and logic
 
 Now let's write some HTML to be able to see the title component in the browser.
 
@@ -75,11 +75,9 @@ We don't need to write any CSS as part of the component for two reasons:
 1. Most titles are styled at a global level to inherit a consistent look/feel throughout your site,
 1. In the event a title needs special styling, those styles are usually written in the component where the title is being used.
 
-## Viewing in Storybook
+### Title story
 
 In Storybook you will notice that the Title component we just built is nowhere to be found. This is because Storybook can only render a component if it's written in React and in a file with a name such as ***.stories.jsx**, where ***** is the name of the story.
-
-### Storybook story
 
 With the component now in place, we can proceed to creating the Storybook story so we are able to view it inside Storybook.
 
