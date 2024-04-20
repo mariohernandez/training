@@ -4,16 +4,15 @@
 
 ## Getting started
 
+* [Introduction to Atomic Design](intro.md)
 * [Requirements](getting-started/README.md)
 * [Front-end tooling](getting-started/tooling.md)
-* [Component Architecture](getting-started/component-architecture.md)
+* [Component architecture](getting-started/component-architecture.md)
 * [Front-end setup](getting-started/setup.md)
 
-## Basic components
+## Building basic components
 
 * [Title Component](basic-components/title/README.md)
-* [Improving the title](basic-components/title/improving-the-title.md)
-* [Title story](basic-components/title/title-story.md)
 * [Button Component](basic-components/button/README.md)
 * [Button story](basic-components/button/button-story.md)
 

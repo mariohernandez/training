@@ -1,120 +1,122 @@
 # Title Component
 
-Following the [Atomic Design ](https://bradfrost.com/blog/post/atomic-web-design/)methodology we are going to build a simple component or pattern. The Title pattern is an atom which prints a string of text as the title for a page, paragraph, or other component.
+Following the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) methodology we are going to build a simple component or pattern. The Title is an atom which prints a string of text as the title for a page, paragraph, or another component.
 
-As we saw in the [Component Architecture](https://github.com/mariohernandez/training/tree/fca41f8d153f177c347617210b4e3e2fbc4bcc0b/components/essentials/untitled-3.md) page, most components will need the following files:
+As we saw in the [Component Architecture](getting-started/component-architecture.md) page, most components will need the following files:
 
-| File type         | Purpose                         |
-| ----------------- | ------------------------------- |
-| `.twig`           | Component's HTML and Twig logic |
-| `.css`            | Component's styles              |
-| `.yml`            | Component's stock content       |
-| `.stories.jsx`    | Storybook story                 |
-
-Some components may also include:
-
-| File type | Purpose                                  |
-| --------- | ---------------------------------------- |
+| File type         | Purpose                          |
+| ----------------- | -------------------------------  |
+| `.css`            | Component's styles               |
+| `.twig`           | Component's HTML and Twig logic  |
+| `.yml`            | Component's stock content        |
+| `.stories.jsx`    | Storybook story                  |
+| **Some components may also include**                 |
 | `.js`     | Component's interactive behavior         |
 | `.mdx`    | Component's annotations or specs details |
 
-## Exercise: Building the Title component
+## Requirements for the Title component
 
-### Component's stock content
+* Able to print title in plain text or as a link
+* Able to change heading level (h1, h2, h3, etc.)
+* Able to accept a modifier class if needed
 
-Let's start by first identifying the content for the component. Since this is a title field, we only need a string of text. We'll dive into more complex components in future exercises.
+## Exercise 1: Building the Title component
 
-{% hint style="info" %}
-**NOTE:** All components will be created inside `src/patterns/components`.
+### Data structure
 
-On a typical Drupal project the full path may look something like this: `<project-root>/web/themes/custom/<your-theme-name>/src/patterns/components/`
-{% endhint %}
+Let's start by first identifying the variables we need for the component. This is a good time to start thinking how a title is created in Drupal. Since this is a title field, we only need a string of text, however, if we look at the requirements above, we see that we will need more than just a string of text.
 
-1. Inside _components_ create a new folder called **title**
-2. Inside the _title_ folder create a new file called **title.yml**
-3. Inside _title.yml_ add the following code:
+1. Inside the **components/01-atoms** directory create a new folder called **title**
+1. Inside the **title** folder create a new file called **title.yml**
+1. Inside **title.yml** add the following code:
 
 ```yml
 ---
-title: 'Component-driven development with Storybook'
+level: ''
+modifier: ''
+text: 'Component-driven development with Storybook!'
+url: ''
 ```
 
-We just created key/value pair for the title with a key of **title** and **value** of _Welcome to the best training workshop!_.
+In YAML or JSON files, data is structured using a **key/value** pair. Keys can be of any data type such as string, integer, array, object, etc.
 
-### Component's Markup
+### HTML or Markup
 
 Now let's write some HTML to be able to see the title component in the browser.
 
-1. Inside the _title_ folder create a new file called **title.twig**
-2. Inside `title.twig` add the following code:
+1. Inside the ****title**** directory create a new file called **title.twig**
+2. Inside **title.twig** add the following code:
 
 ```php
-<h1 class="title">{{ title }}</h1>
+<h{{ level|default('2') }} class="title{{ modifier ? ' ' ~ modifier }}">
+  {% if url %}
+    <a href="{{ url }}" class="title__link">
+      {{ text }}
+    </a>
+  {% else %}
+    {{ text }}
+  {% endif %}
+</h{{ level|default('2') }}>
 ```
 
-We created a **h1** title in which we pass the value of title from the `json` file.
+Wow! What's all this? 😮 Let's go over what all this code means and does.
 
-### Component's styles
+* **level**: is a variable we can use to pass the value of the heading level we want (for example: 1, 2, 3 when paired with h woudl turn into h1, h2, h3, etc.)
+* **modifier**: We are using a variable called modifier as a placeholder for when we need to pass additional CSS classes to the title.
+* **text**: is the string of text that will be printed as a title
+* **url**: As you can see, we have a condition that if an URL exists, we will wrap the text variable in an anchor tag so the title would print as a link. If no URL is present, then we would just print a plain text title.
 
-We don't need to write any CSS for this component, but let's at least create a Sass file for when we need to write styles.
+As it is, the Title component satisfies all the requirements we established at the begining.
 
-1. Inside the _title_ folder create a new file called **title.scss**
-2. Inside `title.scss` add this code:
+### Styles
 
-```css
-// Import site utilities
-@import '../../global/utils/init';
+We don't need to write any CSS as part of the component for two reasons:
 
-.title {
-  color: $color-gray;
+1. Most titles are styled at a global level to inherit a consistent look/feel throughout your site,
+1. In the event a title needs special styling, those styles are usually written in the component where the title is being used.
 
-  &.center {
-    text-align: center;
-  }
+## Viewing in Storybook
 
-  &.section-header {
-    margin-bottom: 20px;
+In Storybook you will notice that the Title component we just built is nowhere to be found. This is because Storybook can only render a component if it's written in React and in a file with a name such as ***.stories.jsx**, where ***** is the name of the story.
 
-    @media screen and (min-width: $bp-lg) {
-      margin-bottom: 40px;
-    }
-  }
+### Storybook story
 
-  // Styles for extra large titles.
-  &.title--large {
-    color: $color-gray;
-    font-size: 3rem;
-    text-align: center;
+With the component now in place, we can proceed to creating the Storybook story so we are able to view it inside Storybook.
 
-    @media screen and (min-width: $bp-sm) {
-      font-size: 4rem;
-    }
+1. Inside the **title** directory create a new file called **title.stories.jsx**
+1. Inside **title.stories.jsx** add the following:
 
-    @media screen and (min-width: $bp-md) {
-      font-size: 6rem;
-    }
-  }
-}
+```js
+import parse from 'html-react-parser';
 
-// Removes underline when titles are links.
-.title a {
-  text-decoration: none;
-}
+import title from './title.twig';
+import data from './title.yml';
+
+const component = {
+  title: 'Atoms/Title',
+};
+
+// Plain text title story.
+export const Title = {
+  render: (args) => parse(title(args)),
+  args: { ...data },
+};
+
+export default component;
 ```
 
-* First we import the theme's utilities so we have access to any Sass variables, mixins, breakpoints, etc.  We will do this with every new stylesheet we create.
-* The remaining code are styles for the title which include styles for when we need to style titles differently.  More on this later.
+* First we import the parser extension to be able to parse html into react
+* Next we import Twig and YML files and assign a variable name to each
+* In the **component** object we define the story name and its location
+* Then we export the **Title** story in which we render everything from Twig while using variables from YML to pass as args.
+* Finally, we export the default component.
 
-### Compiling the code
+### Launching Storybook
 
-Now that the title component is done, let's compile the code so we can see it in Pattern Lab.
+If Storybook is not running, run
 
-While in your theme's root directory, run the following commands in your command line and press **Return**
+```bash
+npm run storybook
+```
 
-`npm run build`
-
-`npm run watch`
-
-The **build** command above compiles all scss, twig and js. files, and should build the new title component in Pattern Lab. The **watch** command watches for changes to your code and automatically compiles them. This is great so you don't have to keep compiling your code every time.
-
-At the bottom of the watch command you will notice a list of URLs. In your browser of choice open the following url: [http://localhost:3000](http://localhost:3000). This will open Pattern Lab where you can find the title pattern under components.
+Now you should be able to see the Title story under the Atoms section in the sidebar.
