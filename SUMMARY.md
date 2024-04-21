@@ -5,16 +5,15 @@
 ## Getting started
 
 * [Introduction to Atomic Design](intro.md)
-* [Requirements](getting-started/README.md)
+* [Training requirements](getting-started/README.md)
 * [Front-end tooling](getting-started/tooling.md)
 * [Front-end setup](getting-started/setup.md)
-* [Component architecture](getting-started/component-architecture.md)
 
 ## Building basic components
 
+* [Component architecture](basic-components/component-architecture.md)
 * [Title Component](basic-components/title/README.md)
 * [Button Component](basic-components/button/README.md)
-* [Button story](basic-components/button/button-story.md)
 
 ## Drupal best practices
 
