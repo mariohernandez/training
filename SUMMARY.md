@@ -7,11 +7,11 @@
 * [Introduction to Atomic Design](intro.md)
 * [Training requirements](getting-started/README.md)
 * [Front-end tooling](getting-started/tooling.md)
-* [Front-end setup](getting-started/setup.md)
+* [Environment setup](getting-started/setup.md)
 
 ## Building basic components
 
-* [Component architecture](basic-components/component-architecture.md)
+* [Anatomy of a component](basic-components/README.md)
 * [Title Component](basic-components/title/README.md)
 * [Button Component](basic-components/button/README.md)
 

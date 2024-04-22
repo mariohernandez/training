@@ -4,18 +4,19 @@ Grouping components or patterns in individual directories within your Drupal the
 
 ```twig
 |--src
-|  |--patterns
-|     |--components
+|  |--components/
+|     |--01-atoms/
+|     |--02-molecules/
 |        |--card
 |           |-- card.css
 |           |-- card.js
 |           |-- card.twig
 |           |-- card.yml
 |           |-- card.stories.jsx
-|
+|     |--03-organisms/
 ```
 
-A component is typically broken as follows:
+A component is typically broken down as follows:
 
 * **Markup** (required): Markup or HTML, is written in Twig, [Drupal's templating engine](https://www.drupal.org/docs/theming-drupal/twig-in-drupal)
 * **Data** (optional): Demo or stock content for components is usually provided in YAML or JSON format. These are lightweight formats for storing data. In this training we will use [YAML](https://www.redhat.com/en/topics/automation/what-is-yaml){target=_blank rel=nooperner} to be more compatible with Drupal

@@ -1,4 +1,4 @@
-# Title Component
+# Title component
 
 Following the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) methodology we are going to build a simple component or pattern. The Title is an atom which prints a string of text as the title for a page, paragraph, or another component.
 

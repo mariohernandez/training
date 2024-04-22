@@ -1,4 +1,4 @@
-# Button Component
+# Button component
 
 Buttons are some of those things that are used over and over on a website. For this reason it makes sense to create a new component for it.
 

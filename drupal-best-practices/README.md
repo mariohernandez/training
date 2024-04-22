@@ -1,4 +1,4 @@
-# Drupal Best Practices
+# Drupal best practices
 
 ## Presenter templates
 
@@ -9,7 +9,7 @@ Presenter templates are probably the most popular way to integrate front-end com
 ## Presenter templates best practices
 
 * It’s best to try and loyally follow the atomic design approach as much as possible when creating components.
-* When at the molecule/organism level of your components, use twig **blocks **(not the same or related to Drupal blocks), generously to help with future embeds of those components.  If in doubt, block it out.
+* When at the molecule/organism level of your components, use twig **blocks** (not the same or related to Drupal blocks), generously to help with future embeds of those components.  If in doubt, block it out.
 * Let Drupal render all fields at the theme level with little to no pre-processing and use view modes as much as possible.
 * Use modules that extend twig ([twig field value](https://www.drupal.org/project/twig_field_value), [twig tweak](https://www.drupal.org/project/twig_tweak), etc.) when only the field value is required.
 * Create twig templates to help remove bloated field markup, and make use of twig’s extends statements to help streamline reusability and reduce duiplicate code.
@@ -18,8 +18,8 @@ Presenter templates are probably the most popular way to integrate front-end com
 ## Benefits of this approach
 
 * It’s (mostly) twig, css, js, with no PHP.
-* Although you may end up with lots of twig template files, you can set up a directory structure that helps keep them logically organized, and easier to see how things piece together.
-* It should be more straightforward when it comes to accommodating Drupal’s methods for injecting features from contrib modules (i.e., attributes object).
+* Although you may end up with more twig template files, you can set up a directory structure that helps keep them logically organized, and easier to see how things piece together.
+* It is more straightforward when it comes to accommodating Drupal’s methods for injecting features from contrib modules (i.e., attributes object).
 
 ## Passing fields values to components
 
